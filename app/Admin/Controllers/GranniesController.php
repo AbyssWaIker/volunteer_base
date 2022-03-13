@@ -4,10 +4,12 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Actions\GrannyGive;
 use App\Models\Granny;
+use Carbon\Carbon;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\Config;
 
 class GranniesController extends AdminController
 {
@@ -26,11 +28,12 @@ class GranniesController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Granny());
-        $grid->quickSearch('name', 'address', 'phone');
+        $grid->quickSearch('granny_name', 'address', 'phone', 'passport_id');
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
-            $form->text('name', __('Full name'))->required();
+            $form->text('granny_name', __('Full name'))->required();
             $form->text('address', __('Address'));
-            $form->text('phone', __('Phone'));
+            $form->text('granny_phone', __('Phone'));
+            $form->text('passport_id', __('Passport id'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableEdit();
@@ -45,16 +48,13 @@ class GranniesController extends AdminController
         $grid->model()->orderByDesc('updated_at');
 
         $grid->column('id', __('Id'))->hide();
-        $grid->column('name', __('Full name'))->filter('like');
+        $grid->column('granny_name', __('Full name'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
-        $grid->column('phone', __('Phone'))->filter('like');
-        $grid->column('created_at', __('Created at'))->sortable()->hide();
-        $grid->column('updated_at', __('Last receiving'))->sortable()->display(function($value) {
-            $time = \Carbon\Carbon::createFromTimeStamp(strtotime($value));
-            $color = $time->isCurrentWeek() ? 'red' : 'green';
-            return <<<HTML
-            <span class="text-{$color}">{$time->diffForHumans()}</span>
-            HTML;
+        $grid->column('granny_phone', __('Phone'))->filter('like');
+        $grid->column('passport_id', __('Passport id'))->filter('like');
+        $grid->column('helpGiven',  __('Last receiving'))->display(function ($help) {
+            $dates = array_map(fn(array $helpGiven)=> Carbon::createFromDate($helpGiven['created_at'])->toDateString(), $help);
+            return implode(',', $dates);
         });
 
         return $grid;
@@ -91,9 +91,8 @@ class GranniesController extends AdminController
     {
         $form = new Form(new Granny());
 
-        $form->text('last_name', __('Last name'));
-        $form->text('first_name', __('First name'));
-        $form->text('middle_name', __('Middle name'));
+        $form->text('granny_name', __('Full name'))->required();
+        $form->text('granny_phone', __('Phone'));
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'));
 

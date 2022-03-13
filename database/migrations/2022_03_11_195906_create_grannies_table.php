@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('grannies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('granny_name');
             $table->string('address')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('granny_phone')->nullable();
+            $table->string('passport_id')->nullable();
             $table->timestamps();
         });
     }
