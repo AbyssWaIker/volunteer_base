@@ -10,6 +10,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Config;
+use Jenssegers\Date\Date;
 
 class GranniesController extends AdminController
 {
@@ -52,9 +53,15 @@ class GranniesController extends AdminController
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('granny_phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
-        $grid->column('helpGiven',  __('Last receiving'))->display(function ($help) {
-            $dates = array_map(fn(array $helpGiven)=> Carbon::createFromDate($helpGiven['created_at'])->toDateString(), $help);
-            return implode(',', $dates);
+        $grid->column('helpGiven',  __('Last receiving'))->display(function (array $help) {
+            $help_received_this_week = false;
+            $dates = array_map(function(array $helpGiven) use (&$help_received_this_week) {
+                $date = Date::parse($helpGiven['created_at']);
+                $help_received_this_week = $help_received_this_week || $date->isCurrentWeek();
+                return $date->format('j F');
+            }, $help);
+            $help_received_this_week = $help_received_this_week ? '❌' : '✅';
+            return implode(', ', $dates) . ' ' . $help_received_this_week;
         });
 
         return $grid;
