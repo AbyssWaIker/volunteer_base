@@ -6,7 +6,7 @@ use Encore\Admin\Actions\RowAction;
 
 class GrannyGive extends RowAction
 {
-    public $name = 'Передать помощь бабушке';
+    public $name = 'Помочь бабушке';
     public function handle(Granny $model)
     {
         $model->helpGiven()->create();
