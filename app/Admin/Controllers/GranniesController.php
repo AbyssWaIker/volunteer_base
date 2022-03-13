@@ -26,13 +26,11 @@ class GranniesController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Granny());
-        $grid->quickSearch('last_name','first_name','middle_name'.'address'.'passport_id');
+        $grid->quickSearch('name', 'address', 'phone');
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
-            $form->text('last_name', __('Last name'))->required();
-            $form->text('first_name', __('First name'));
-            $form->text('middle_name', __('Middle name'));
+            $form->text('name', __('Full name'))->required();
             $form->text('address', __('Address'));
-            $form->text('passport_id', __('Passport id'));
+            $form->text('phone', __('Phone'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableEdit();
@@ -47,15 +45,13 @@ class GranniesController extends AdminController
         $grid->model()->orderByDesc('updated_at');
 
         $grid->column('id', __('Id'))->hide();
-        $grid->column('last_name', __('Last name'))->filter('like');
-        $grid->column('first_name', __('First name'))->filter('like');
-        $grid->column('middle_name', __('Middle name'))->filter('like');
+        $grid->column('name', __('Full name'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
-        $grid->column('passport_id', __('Passport id'))->filter('like');
+        $grid->column('phone', __('Phone'))->filter('like');
         $grid->column('created_at', __('Created at'))->sortable()->hide();
         $grid->column('updated_at', __('Last receiving'))->sortable()->display(function($value) {
             $time = \Carbon\Carbon::createFromTimeStamp(strtotime($value));
-            $color = $time->isLastWeek() ? 'green' : 'red';
+            $color = $time->isCurrentWeek() ? 'red' : 'green';
             return <<<HTML
             <span class="text-{$color}">{$time->diffForHumans()}</span>
             HTML;

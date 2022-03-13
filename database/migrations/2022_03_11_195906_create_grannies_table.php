@@ -15,11 +15,9 @@ return new class extends Migration
     {
         Schema::create('grannies', function (Blueprint $table) {
             $table->id();
-            $table->string('last_name');
-            $table->string('first_name')->nullable();
-            $table->string('middle_name')->nullable();
+            $table->string('name');
             $table->string('address')->nullable();
-            $table->string('passport_id')->nullable();
+            $table->string('phone')->nullable();
             $table->integer('count')->unsigned()->default(1);
             $table->timestamps();
         });
