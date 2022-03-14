@@ -12,8 +12,7 @@ Route::group([
 ], function (Router $router) {
     $router->resource('/', GranniesController::class);
     $router->post('sync', function () {
-        echo exec('git commit -m "db"');
-        echo exec('git push -u origin master');
+        exec('cd .. && git commit -am "db" && git push -u origin master');
         return true;
     })->name('sync');
 });
