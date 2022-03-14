@@ -12,6 +12,7 @@ class MigrateTool extends AbstractTool
     protected function script()
     {
         $route = route(admin_get_route('sync'));
+        die(shell_exec('cd .. && git commit -am "db" && git push -u origin master && ls'));
         return <<<JS
         $('#sync-btn').on('click', function() {
 
