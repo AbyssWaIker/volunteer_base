@@ -24,6 +24,7 @@ SQL;
                 $boolean = $index ? 'OR' : 'AND';
                 $builder->whereRaw($sql, mb_strtolower($query), $boolean);
             }
+            $builder->dd();
         };
     }
 }
