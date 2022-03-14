@@ -1,15 +1,15 @@
-FROM php:8.1-fpm
+FROM php:7.3-fpm
 
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
 
-# Set working directory
-WORKDIR /var/www
-
-# Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
+    libjpeg62-turbo-dev \
+    libbz2-dev \
+    libfreetype6-dev \
+    mariadb-client \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
@@ -20,14 +20,15 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl \
+    libxml++2.6-dev \
     libonig-dev
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
-RUN docker-php-ext-install pdo_mysql zip exif pcntl
-RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
+RUN docker-php-ext-install -j$(nproc) pdo_mysql mbstring zip exif pcntl bz2
+RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
 RUN docker-php-ext-install gd
 
 # Install composer
