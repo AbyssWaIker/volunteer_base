@@ -3,14 +3,13 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\GrannyGive;
+use App\Admin\Helpers\FilterHelper;
 use App\Models\Granny;
 use Carbon\Carbon;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Grid\Model;
 use Encore\Admin\Show;
-use Illuminate\Support\Facades\Config;
 use Jenssegers\Date\Date;
 
 class GranniesController extends AdminController
@@ -30,7 +29,7 @@ class GranniesController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Granny());
-        $grid->quickSearch('granny_name', 'address', 'phone', 'passport_id');
+        $grid->quickSearch(FilterHelper::quickCaseInsensitiveSearch(['granny_name', 'address', 'granny_phone', 'passport_id']));
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('granny_name', __('Full name'))->required();
             $form->text('address', __('Address'));
@@ -51,7 +50,7 @@ class GranniesController extends AdminController
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('granny_phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
-        $grid->column('helpGiven',  __('Last receiving'))->display(function (array $help) {
+        $grid->column('helpGiven',  __('Receivings'))->display(function (array $help) {
             $help_received_this_week = false;
             $dates = array_map(function(array $helpGiven) use (&$help_received_this_week) {
                 $date = Date::parse($helpGiven['hg_timestamp']);
