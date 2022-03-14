@@ -15,4 +15,11 @@ class Granny extends Model
     {
         return $this->hasMany(HelpGiven::class);
     }
+    protected static function boot()
+    {
+        parent::boot();
+        parent::saved(function(self $granny) {
+            $granny->helpGiven()->create();
+        });
+    }
 }
