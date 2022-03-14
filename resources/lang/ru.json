@@ -1,0 +1,13 @@
+{
+    "Full name":"ФИО",
+    "Phone":"Телефон",
+    "Last name":"Фамилия",
+    "First name":"Имя",
+    "Middle name":"Отчество",
+    "Address":"Адресс",
+    "Passport id":"Номер Пенсонного",
+    "Created at":"Дата Добавления",
+    "Updated at":"Дата Изменения",
+    "Last receiving":"Последнее получение",
+    "Receivings": "Получения"
+}
