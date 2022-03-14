@@ -16,7 +16,7 @@ class CreateHelpGivensTable extends Migration
         Schema::create('help_givens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('granny_id')->constrained();
-            $table->dateTime('timestamp');
+            $table->dateTime('hg_timestamp');
         });
     }
 
