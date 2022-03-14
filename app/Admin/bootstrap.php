@@ -24,6 +24,6 @@ Encore\Admin\Form::forget(['map', 'editor']);
 
 Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
 
-    $navbar->right((new \App\Admin\Tools\Sync\MigrateTool)->render());
+//    $navbar->right((new \App\Admin\Tools\Sync\MigrateTool)->render());
 
 });
