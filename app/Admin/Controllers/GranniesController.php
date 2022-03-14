@@ -29,7 +29,7 @@ class GranniesController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Granny());
-        $grid->quickSearch(FilterHelper::quickCaseInsensitiveSearch(['granny_name', 'address', 'granny_phone', 'passport_id']));
+        $grid->quickSearch(['granny_name', 'address', 'granny_phone', 'passport_id']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('granny_name', __('Full name'))->required();
             $form->text('address', __('Address'));
