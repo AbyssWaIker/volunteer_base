@@ -41,8 +41,6 @@ class GranniesController extends AdminController
             $actions->disableView();
             $actions->add(new GrannyGive);
         });
-//        dd(Granny::query()->with('helpGiven')->get()->sortBy('first_receiving')->map->id->toArray());
-
         $grid->disableFilter();
         $grid->enableHotKeys();
         $grid->disableCreateButton();
