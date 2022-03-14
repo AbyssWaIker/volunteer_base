@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('help_givens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('granny_id')->constrained();
-            $table->timestamps();
+            $table->dateTime('timestamp');
         });
     }
 
