@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\GrannyGive;
+use App\Admin\Extensions\GrannyExporter;
 use App\Admin\Helpers\FilterHelper;
 use App\Models\Granny;
 use Carbon\Carbon;
@@ -44,22 +45,15 @@ class GranniesController extends AdminController
         $grid->disableFilter();
         $grid->enableHotKeys();
         $grid->disableCreateButton();
+        $grid->exporter(new GrannyExporter);
 
         $grid->column('id', __('Id'))->hide();
         $grid->column('granny_name', __('Full name'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('granny_phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
-        $grid->column('helpGiven',  __('Receivings'))->display(function (array $help) {
-            $help_received_this_week = false;
-            $dates = array_map(function(array $helpGiven) use (&$help_received_this_week) {
-                $date = Date::parse($helpGiven['hg_timestamp']);
-                $help_received_this_week = $help_received_this_week || $date->isCurrentWeek();
-                return $date->format('j F Y');
-            }, $help);
-            $help_received_this_week = '';//$help_received_this_week ? '❌' : '✅';
-            return implode(', ', $dates) . ' ' . $help_received_this_week;
-        });
+        $grid->column('helpGiven',  __('Receivings'))
+            ->display(function (array $help) {return Granny::getHelpHistory($help);});
 
         return $grid;
     }
