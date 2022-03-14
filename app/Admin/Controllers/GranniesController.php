@@ -41,15 +41,15 @@ class GranniesController extends AdminController
             $actions->disableView();
             $actions->add(new GrannyGive);
         });
-//         $grid->disableExport();
+//        dd(Granny::query()->with('helpGiven')->get()->sortBy('first_receiving')->map->id->toArray());
+
         $grid->disableFilter();
         $grid->enableHotKeys();
         $grid->disableCreateButton();
 
-        $grid->model()->orderByDesc('updated_at');
-
         $grid->column('id', __('Id'))->hide();
         $grid->column('granny_name', __('Full name'))->filter('like');
+        $grid->column('first_receiving', __('first_receiving'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('granny_phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
@@ -58,9 +58,9 @@ class GranniesController extends AdminController
             $dates = array_map(function(array $helpGiven) use (&$help_received_this_week) {
                 $date = Date::parse($helpGiven['created_at']);
                 $help_received_this_week = $help_received_this_week || $date->isCurrentWeek();
-                return $date->format('j F');
+                return $date->format('j F Y');
             }, $help);
-            $help_received_this_week = $help_received_this_week ? '❌' : '✅';
+            $help_received_this_week = '';//$help_received_this_week ? '❌' : '✅';
             return implode(', ', $dates) . ' ' . $help_received_this_week;
         });
 
