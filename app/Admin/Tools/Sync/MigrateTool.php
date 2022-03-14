@@ -11,9 +11,11 @@ class MigrateTool extends AbstractTool
 {
     protected function script()
     {
-        $route = route('admin.sync');
+        $route = route(admin_get_route('sync'));
 
-        return <<<EOT
+//        die(exec('git commit -m "db"'));
+//        echo exec('git push -u origin master');
+        return <<<JS
         $('#sync-btn').on('click', function() {
 
             $.ajax({
@@ -29,15 +31,15 @@ class MigrateTool extends AbstractTool
             });
         });
 
-        EOT;
+        JS;
     }
 
     public function render()
     {
         Admin::script($this->script());
-        return "<div class='btn-group pull-right grid-create-btn' style='margin-right: 10px'>
-                    <div id='sync-btn' class='btn btn-sm btn-danger' title='Сохранить данные в облако'>
-                        <i class='fa fa-database'></i><span class='hidden-xs'>&nbsp;&nbsp;Сохранить данные в облако</span>
+        return "<div class='btn-group' style='margin: 10px'>
+                    <div id='sync-btn' class='btn btn-sm btn-success' title='Сохранить данные в облако'>
+                        <i class='fa fa-cloud-upload'></i><span class='hidden-xs'>&nbsp;&nbsp;Сохранить данные в облако</span>
                     </div>
                 </div>";
     }
