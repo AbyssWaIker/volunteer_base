@@ -102,6 +102,18 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'parent_id' => 0,
+                'order' => 0,
+                'title' => 'Пенсионеры',
+                'icon' => 'fa-users',
+                'uri' => 'grannies',
+                'permission' => NULL,
+                'created_at' => '2022-03-15 13:38:21',
+                'updated_at' => '2022-03-15 13:38:21',
+            ),
         ));
 
         
