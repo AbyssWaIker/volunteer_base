@@ -1780,6 +1780,56 @@ class GranniesTableSeeder extends Seeder
                 'created_at' => '2022-03-15 10:38:32',
                 'updated_at' => '2022-03-15 10:38:32',
             ),
+            176 => 
+            array (
+                'id' => 672,
+            'granny_name' => 'Страйкова Анна Олеговна (инвалид)',
+                'address' => NULL,
+                'granny_phone' => NULL,
+                'passport_id' => 'ААБ278968',
+                'created_at' => '2022-03-15 10:59:06',
+                'updated_at' => '2022-03-15 10:59:06',
+            ),
+            177 => 
+            array (
+                'id' => 673,
+                'granny_name' => 'Оржиковская Светлана Анатолиевна',
+                'address' => 'Успенская 41 кв 14',
+                'granny_phone' => '099361073',
+            'passport_id' => '(многодетная семья)',
+                'created_at' => '2022-03-15 10:59:58',
+                'updated_at' => '2022-03-15 10:59:58',
+            ),
+            178 => 
+            array (
+                'id' => 674,
+                'granny_name' => 'Кошнорова Минька Владимировна',
+                'address' => '1-ая Станционная 52 23',
+                'granny_phone' => '0634020223',
+                'passport_id' => 'АЗ039455',
+                'created_at' => '2022-03-15 11:01:39',
+                'updated_at' => '2022-03-15 11:01:39',
+            ),
+            179 => 
+            array (
+                'id' => 675,
+                'granny_name' => 'Шестакова Наталья Александровна',
+                'address' => 'Гагарина 6а кв 22',
+                'granny_phone' => '0988102523',
+                'passport_id' => NULL,
+                'created_at' => '2022-03-15 11:02:48',
+                'updated_at' => '2022-03-15 11:02:48',
+            ),
+            180 => 
+            array (
+                'id' => 676,
+            'granny_name' => 'Баев Владимир Иванович (инвалид)',
+                'address' => 'Гагарина 22 кв 19',
+                'granny_phone' => '0988102522',
+                'passport_id' => NULL,
+                'created_at' => '2022-03-15 11:03:35',
+                'updated_at' => '2022-03-15 11:03:35',
+            ),
         ));
 
         
