@@ -4,14 +4,12 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Actions\GrannyGive;
 use App\Admin\Extensions\GrannyExporter;
-use App\Admin\Helpers\FilterHelper;
 use App\Models\Granny;
 use Carbon\Carbon;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use Jenssegers\Date\Date;
 
 class GranniesController extends AdminController
 {
@@ -41,8 +39,6 @@ class GranniesController extends AdminController
             $actions->disableView();
             $actions->add(new GrannyGive);
         });
-        $grid->disableFilter();
-        $grid->enableHotKeys();
         $grid->exporter(new GrannyExporter);
 
         $grid->column('id', __('Id'))->hide();
@@ -83,7 +79,7 @@ class GranniesController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form(): Form
     {
         $form = new Form(new Granny());
 
