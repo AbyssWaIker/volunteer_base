@@ -10,6 +10,6 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
-    $router->redirect('/', config('admin.route.prefix').'/бабушки');
+    $router->get('/', [HomeController::class, 'index']);
     $router->resource('бабушки', GranniesController::class);
 });
