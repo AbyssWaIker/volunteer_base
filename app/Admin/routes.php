@@ -10,6 +10,6 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
-    $router->resource('/', GranniesController::class);
-    $router->resource('/grannies', GranniesController::class);
+    $router->redirect('/', config('admin.route.prefix').'/бабушки');
+    $router->resource('бабушки', GranniesController::class);
 });
