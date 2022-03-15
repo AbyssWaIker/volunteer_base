@@ -38,13 +38,11 @@ class GranniesController extends AdminController
             $form->text('passport_id', __('Passport id'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
-            $actions->disableEdit();
             $actions->disableView();
             $actions->add(new GrannyGive);
         });
         $grid->disableFilter();
         $grid->enableHotKeys();
-        $grid->disableCreateButton();
         $grid->exporter(new GrannyExporter);
 
         $grid->column('id', __('Id'))->hide();
@@ -93,6 +91,11 @@ class GranniesController extends AdminController
         $form->text('granny_phone', __('Phone'));
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'));
+
+        $form->table('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
+            $form->hidden('id');
+            $form->date('hg_timestamp', 'Время')->default(Carbon::now());
+        });
 
         return $form;
     }
