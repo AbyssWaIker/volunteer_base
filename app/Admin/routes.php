@@ -12,4 +12,6 @@ Route::group([
 ], function (Router $router) {
     $router->resource('/', HomeController::class);
     $router->resource('grannies', GranniesController::class);
+    $router->resource('sendings', SendingController::class);
+
 });
