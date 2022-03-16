@@ -88,7 +88,7 @@ class GranniesController extends AdminController
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'));
 
-        $form->table('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
+        $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
         });
