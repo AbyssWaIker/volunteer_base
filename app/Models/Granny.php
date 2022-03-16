@@ -34,7 +34,7 @@ class Granny extends Model
     protected static function boot()
     {
         parent::boot();
-        parent::saved(function(self $granny) {
+        parent::created(function(self $granny) {
             if(!$granny->helpGiven->ciunt()) {
                 $granny->helpGiven()->create(['hg_timestamp' => Carbon::now()]);
             }
