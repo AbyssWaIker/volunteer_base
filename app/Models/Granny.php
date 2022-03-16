@@ -35,7 +35,9 @@ class Granny extends Model
     {
         parent::boot();
         parent::saved(function(self $granny) {
-            $granny->helpGiven()->create(['hg_timestamp'=>Carbon::now()]);
+            if(!$granny->helpGiven->ciunt()) {
+                $granny->helpGiven()->create(['hg_timestamp' => Carbon::now()]);
+            }
         });
     }
 }
