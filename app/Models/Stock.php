@@ -14,7 +14,7 @@ class Stock extends Model
 
     public function category():BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(StockCategory::class);
     }
 
     public function quantityUnit():BelongsToMany

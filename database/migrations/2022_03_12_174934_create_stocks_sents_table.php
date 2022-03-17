@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('stock_id')->constrained();
             $table->foreignId('quantity_unit_id')->constrained();
-            $table->foreignId('sending_id')->constrained();
+            $table->foreignId('sending_id')->constrained()->cascadeOnDelete();
             $table->integer('quantity')->unsigned();
+            $table->boolean('deficit')->default(false);
             $table->timestamps();
         });
     }
