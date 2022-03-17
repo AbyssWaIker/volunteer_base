@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->integer('deficit')->default(0);
-            $table->foreignId('category_id')->nullable()->constrained();
+            $table->foreignId('stock_category_id')->nullable()->constrained();
             $table->timestamps();
         });
     }
