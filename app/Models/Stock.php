@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Stock extends Model
 {
     use HasFactory;
+    public const DEFICIT_STATUS_NO_DEFICIT = 0;
+    public const DEFICIT_STATUS_STOCK_IS_LOW = 1;
+    public const DEFICIT_STATUS_NO_STOCK = 2;
     protected $fillable = ['name'];
 
     public function category():BelongsTo
