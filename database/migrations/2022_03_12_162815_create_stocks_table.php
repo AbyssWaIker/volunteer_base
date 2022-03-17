@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->integer('deficit')->default(0);
+            $table->integer('deficit_status')->default(\App\Models\Stock::DEFICIT_STATUS_NO_DEFICIT);
+            $table->integer('deficit_count_since_last_replenishment')->default(0);
             $table->foreignId('stock_category_id')->nullable()->constrained();
             $table->timestamps();
         });
