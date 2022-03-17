@@ -1,6 +1,28 @@
 version: '3'
 services:
 
+    #MySQL Service
+  db:
+    image: mysql:5.7.22
+    container_name: db
+    restart: unless-stopped
+    tty: true
+
+    ports:
+        - "3306:3306"
+    environment:
+        MYSQL_DATABASE: grannies_base
+        MYSQL_ROOT_PASSWORD: 25345Art
+        MYSQL_USER: arti
+        MYSQL_PASSWORD: 25345Art
+        SERVICE_TAGS: dev
+        SERVICE_NAME: mysql
+    volumes:
+        - dbdata:/var/lib/mysql/
+        - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+        - app-network
+
   #PHP Service
   app:
     build:
@@ -35,26 +57,6 @@ services:
     networks:
       - app-network
 
-  #MySQL Service
-  db:
-    image: mysql:5.7.22
-    container_name: db
-    restart: unless-stopped
-    tty: true
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_DATABASE: grannies_base
-      MYSQL_ROOT_PASSWORD: 25345Art
-      MYSQL_USER: arti
-      MYSQL_PASSWORD: 25345Art
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    volumes:
-      - dbdata:/var/lib/mysql/
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
-    networks:
-      - app-network
 
 #Docker Networks
 networks:
