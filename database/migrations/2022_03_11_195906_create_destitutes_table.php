@@ -21,6 +21,9 @@ class CreateDestitutesTable extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('passport_id')->nullable();
+            $table->year('year_of_birth')->nullable();
+            $table->string('comment')->nullable();
+
             $table->timestamps();
         });
     }
