@@ -2,9 +2,11 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Notifications\SendingReport;
 use App\Models\QuantityUnit;
 use App\Models\ReceivingPoint;
 use App\Models\Stock;
+use Carbon\Carbon;
 use Encore\Admin\Admin;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -37,8 +39,8 @@ class SendingController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('receivingPoint.name', __('Receiving Point'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+//        $grid->column('created_at', __('Created at'));
+//        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -97,8 +99,10 @@ class SendingController extends AdminController
             ->with($getValueSetter($receiving_point_options))
             ->required()
         ;
+        $form->date('date', __('Created at'))->default(Carbon::now());
         $form->hasMany('stocksSent', __('Sent'),
             function (Form\NestedForm $form) use($stock_options, $quantity_unit_options, $getValueSetter) {
+                $form->hidden('id');
                 $form->text('stock_id', __('Stock'))
                     ->with($getValueSetter($stock_options))
                     ->required()
@@ -108,7 +112,7 @@ class SendingController extends AdminController
                     ->required()
                 ;
                 $form->number('quantity', __('Quantity'))->default(0);
-                $form->radio('deficit_status', __('Deficit'))
+                $form->select('deficit_status', __('Deficit'))
                     ->options([
                         Stock::DEFICIT_STATUS_NO_DEFICIT => 'В наличии',
                         Stock::DEFICIT_STATUS_STOCK_IS_LOW => 'Дефицит',
@@ -126,9 +130,9 @@ class SendingController extends AdminController
 
                 $stock = Stock::query()->firstOrCreate(['name' => $item['stock_id']]);
                 $item['stock_id'] = $stock->id;
-
+                $item['deficit_status'] = intval($item['deficit_status']);
                 $stock->deficit_status = $item['deficit_status'];
-                if($item['deficit_status']){
+                if($stock->deficit_status){
                     $stock->deficit_count_since_last_replenishment+= 1;
                 } else {
                     $stock->deficit_count_since_last_replenishment = 0;
