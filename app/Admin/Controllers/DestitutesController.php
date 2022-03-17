@@ -46,8 +46,7 @@ class DestitutesController extends AdminController
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
-        $grid->column('helpGiven',  __('Receivings'))
-            ->display(function (array $help) {return Destitute::getHelpHistory($help);});
+        $grid->column('helpGiven',  __('Receivings'))->display(function (array $help) {return Destitute::getHelpHistory($help);});
 
         return $grid;
     }

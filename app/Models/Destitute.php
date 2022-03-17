@@ -20,9 +20,10 @@ class Destitute extends Model
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = true): string
     {
         $help_received_last_ten_days = false;
-        $dates = array_map(function(array $helpGiven) use (&$help_received_last_ten_days) {
+        $ten_day_ago = Carbon::now()->subDays(10);
+        $dates = array_map(function(array $helpGiven) use (&$help_received_last_ten_days, $ten_day_ago) {
             $date = Date::parse($helpGiven['hg_timestamp']);
-            $help_received_last_ten_days = $help_received_last_ten_days || $date->greaterThanOrEqualTo((clone $date)->subDays(10));
+            $help_received_last_ten_days = $help_received_last_ten_days || $date->greaterThanOrEqualTo($ten_day_ago);
             return $date->format('j F Y');
         }, $helpGiven);
         $give_help_when_resources_are_low = $help_received_last_ten_days ? '❌' : '✅';
