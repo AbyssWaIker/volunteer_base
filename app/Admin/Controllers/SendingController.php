@@ -88,7 +88,8 @@ class SendingController extends AdminController
         $form->hasMany('stocksSent', __('Sent'), function (Form\NestedForm $form) use($stocks, $quantity_units, $getValueSetter) {
             $form->text('stock_id', __('Stock'))->with($getValueSetter($stocks));
             $form->text('quantity_unit_id', __('Quantity Unit'))->with($getValueSetter($quantity_units));
-            $form->number('quantity', __('quantity'))->default(0);
+            $form->number('quantity', __('Quantity'))->default(0);
+            $form->switch('deficit', __('Deficit'))->default(0);
 
         });
 
@@ -96,11 +97,15 @@ class SendingController extends AdminController
             $receiving_point = ReceivingPoint::query()->firstOrCreate(['name'=> \request('receiving_point_id')]);
             $stock_sent = \request('stocksSent');
             foreach ($stock_sent as &$item) {
-                $stock = Stock::query()->firstOrCreate(['name' => $item['stock_id']]);
-                $item['stock_id'] = $stock->id;
-
                 $stock = QuantityUnit::query()->firstOrCreate(['name' => $item['quantity_unit_id']]);
                 $item['quantity_unit_id'] = $stock->id;
+
+                $stock = Stock::query()->firstOrCreate(['name' => $item['stock_id']]);
+                $item['stock_id'] = $stock->id;
+                if($item['deficit']){
+                    $stock->deficit = $stock->deficit+1;
+                    $stock->save();
+                }
             }
             $form->receiving_point_id = $receiving_point->id;
             $form->stocksSent = $stock_sent;

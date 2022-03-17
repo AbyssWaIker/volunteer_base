@@ -114,6 +114,30 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-15 13:38:21',
                 'updated_at' => '2022-03-15 13:38:21',
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'parent_id' => 0,
+                'order' => 0,
+                'title' => 'Запас',
+                'icon' => 'fa-archive',
+                'uri' => 'stocks',
+                'permission' => NULL,
+                'created_at' => '2022-03-17 11:23:57',
+                'updated_at' => '2022-03-17 11:29:41',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'parent_id' => 0,
+                'order' => 0,
+                'title' => 'Отпраавка',
+                'icon' => 'fa-ambulance',
+                'uri' => 'sending',
+                'permission' => NULL,
+                'created_at' => '2022-03-17 11:24:18',
+                'updated_at' => '2022-03-17 11:24:18',
+            ),
         ));
 
         

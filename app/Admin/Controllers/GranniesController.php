@@ -4,7 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Actions\GrannyGive;
 use App\Admin\Extensions\GrannyExporter;
-use App\Models\Granny;
+use App\Models\Destitute;
 use Carbon\Carbon;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -18,7 +18,7 @@ class GranniesController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Бабушки';
+    protected $title = 'Пенсионеры';
 
     /**
      * Make a grid builder.
@@ -27,12 +27,12 @@ class GranniesController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Granny());
-        $grid->quickSearch(['granny_name', 'address', 'granny_phone', 'passport_id']);
+        $grid = new Grid(new Destitute());
+        $grid->quickSearch(['name', 'address', 'phone', 'passport_id']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
-            $form->text('granny_name', __('Full name'))->required();
+            $form->text('name', __('Full name'))->required();
             $form->text('address', __('Address'));
-            $form->text('granny_phone', __('Phone'));
+            $form->text('phone', __('Phone'));
             $form->text('passport_id', __('Passport id'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
@@ -42,12 +42,12 @@ class GranniesController extends AdminController
         $grid->exporter(new GrannyExporter);
 
         $grid->column('id', __('Id'))->hide();
-        $grid->column('granny_name', __('Full name'))->filter('like');
+        $grid->column('name', __('Full name'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
-        $grid->column('granny_phone', __('Phone'))->filter('like');
+        $grid->column('phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
         $grid->column('helpGiven',  __('Receivings'))
-            ->display(function (array $help) {return Granny::getHelpHistory($help);});
+            ->display(function (array $help) {return Destitute::getHelpHistory($help);});
 
         return $grid;
     }
@@ -60,7 +60,7 @@ class GranniesController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Granny::findOrFail($id));
+        $show = new Show(Destitute::findOrFail($id));
 
         $show->field('id', __('Id'));
         $show->field('last_name', __('Last name'));
@@ -81,10 +81,10 @@ class GranniesController extends AdminController
      */
     protected function form(): Form
     {
-        $form = new Form(new Granny());
+        $form = new Form(new Destitute());
 
-        $form->text('granny_name', __('Full name'))->required();
-        $form->text('granny_phone', __('Phone'));
+        $form->text('name', __('Full name'))->required();
+        $form->text('phone', __('Phone'));
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'));
 

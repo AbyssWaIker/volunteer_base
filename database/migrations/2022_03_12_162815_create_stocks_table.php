@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('deficit')->default(0);
             $table->foreignId('category_id')->nullable()->constrained();
             $table->timestamps();
