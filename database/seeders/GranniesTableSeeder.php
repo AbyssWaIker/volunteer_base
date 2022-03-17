@@ -15,9 +15,9 @@ class GranniesTableSeeder extends Seeder
     {
 
 
-        \DB::table('grannies')->delete();
+        \DB::table('destitutes')->delete();
 
-        \DB::table('grannies')->insert(array (
+        \DB::table('destitutes')->insert(array (
             0 =>
             array (
                 'id' => 496,
