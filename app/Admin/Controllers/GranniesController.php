@@ -18,7 +18,7 @@ class GranniesController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Пенсионеры';
+    protected $title = 'Нуждающиеся';
 
     /**
      * Make a grid builder.
