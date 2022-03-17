@@ -20,7 +20,7 @@ class SendingController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Sending';
+    protected $title = 'Отправки';
 
     /**
      * Make a grid builder.
@@ -32,7 +32,7 @@ class SendingController extends AdminController
         $grid = new Grid(new Sending());
 
         $grid->column('id', __('Id'));
-        $grid->column('receiving_point_id', __('Receiving point id'));
+        $grid->column('receivingPoint.name', __('Receiving point id'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -84,11 +84,11 @@ class SendingController extends AdminController
                 return $true_value;
             };
         };
-        $form->text('receiving_point_id')->with($getValueSetter($receiving_point));
-        $form->hasMany('stocksSent', 'Отправленно', function (Form\NestedForm $form) use($stocks, $quantity_units, $getValueSetter) {
-            $form->text('stock_id')->with($getValueSetter($stocks));
-            $form->text('quantity_unit_id')->with($getValueSetter($quantity_units));
-            $form->number('quantity')->default(0);
+        $form->text('receiving_point_id', __('Receiving Point'))->with($getValueSetter($receiving_point));
+        $form->hasMany('stocksSent', __('Sent'), function (Form\NestedForm $form) use($stocks, $quantity_units, $getValueSetter) {
+            $form->text('stock_id', __('Stock'))->with($getValueSetter($stocks));
+            $form->text('quantity_unit_id', __('Quantity Unit'))->with($getValueSetter($quantity_units));
+            $form->number('quantity', __('quantity'))->default(0);
 
         });
 
