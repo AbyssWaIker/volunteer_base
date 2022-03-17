@@ -32,7 +32,7 @@ class SendingController extends AdminController
         $grid = new Grid(new Sending());
 
         $grid->column('id', __('Id'));
-        $grid->column('receivingPoint.name', __('Receiving point id'));
+        $grid->column('receivingPoint.name', __('Receiving Point'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
