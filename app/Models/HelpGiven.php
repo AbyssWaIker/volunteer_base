@@ -13,6 +13,6 @@ class HelpGiven extends Model
     protected $fillable = ['hg_timestamp', 'granny_id'];
     public function granny():BelongsTo
     {
-        return $this->belongsTo(Granny::class);
+        return $this->belongsTo(Destitute::class);
     }
 }
