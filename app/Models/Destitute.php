@@ -9,27 +9,27 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
 
-class Granny extends Model
+class Destitute extends Model
 {
     use HasFactory;
-    protected $fillable = ['granny_name', 'granny_phone', 'address', 'passport_id'];
+    protected $fillable = ['name', 'phone', 'address', 'passport_id'];
     public function helpGiven():HasMany
     {
         return $this->hasMany(HelpGiven::class);
     }
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = true): string
     {
-        $help_received_this_week = false;
-        $dates = array_map(function(array $helpGiven) use (&$help_received_this_week) {
+        $help_received_last_ten_days = false;
+        $dates = array_map(function(array $helpGiven) use (&$help_received_last_ten_days) {
             $date = Date::parse($helpGiven['hg_timestamp']);
-            $help_received_this_week = $help_received_this_week || $date->isCurrentWeek();
+            $help_received_last_ten_days = $help_received_last_ten_days || $date->greaterThanOrEqualTo((clone $date)->subDays(10));
             return $date->format('j F Y');
         }, $helpGiven);
-        $ending = '';
-        if($use_emoji) {
-            $ending = $help_received_this_week ? '❌' : '✅';
+        $give_help_when_resources_are_low = $help_received_last_ten_days ? '❌' : '✅';
+        if(!$use_emoji) {
+            $give_help_when_resources_are_low = ' ';
         }
-        return implode(', ', $dates) . ' ' . $ending;
+        return trim($give_help_when_resources_are_low  . ' '. implode(', ', $dates));
     }
     protected static function boot()
     {
