@@ -11,7 +11,7 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
     $router->resource('/', HomeController::class);
-    $router->resource('grannies', GranniesController::class);
+    $router->resource('grannies', DestitutesController::class);
     $router->resource('sendings', SendingController::class);
     $router->resource('stocks', StockController::class);
 
