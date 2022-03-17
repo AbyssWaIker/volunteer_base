@@ -6,7 +6,7 @@ use App\Models\Destitute;
 use Encore\Admin\Grid\Exporters\ExcelExporter;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class GrannyExporter extends ExcelExporter implements WithMapping
+class DestitutesExporter extends ExcelExporter implements WithMapping
 {
     protected $fileName = 'бабушки.xlsx';
 
