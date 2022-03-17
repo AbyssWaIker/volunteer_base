@@ -5,7 +5,7 @@ use App\Models\Destitute;
 use Carbon\Carbon;
 use Encore\Admin\Actions\RowAction;
 
-class GrannyGive extends RowAction
+class DestituteHelper extends RowAction
 {
     public $name = 'Помочь бабушке';
     public function handle(Destitute $model)

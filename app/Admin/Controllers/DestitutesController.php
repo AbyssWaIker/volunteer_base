@@ -2,8 +2,8 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Actions\GrannyGive;
-use App\Admin\Extensions\GrannyExporter;
+use App\Admin\Actions\DestituteHelper;
+use App\Admin\Extensions\DestitutesExporter;
 use App\Models\Destitute;
 use Carbon\Carbon;
 use Encore\Admin\Controllers\AdminController;
@@ -11,7 +11,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class GranniesController extends AdminController
+class DestitutesController extends AdminController
 {
     /**
      * Title for current resource.
@@ -37,9 +37,9 @@ class GranniesController extends AdminController
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
-            $actions->add(new GrannyGive);
+            $actions->add(new DestituteHelper);
         });
-        $grid->exporter(new GrannyExporter);
+        $grid->exporter(new DestitutesExporter);
 
         $grid->column('id', __('Id'))->hide();
         $grid->column('name', __('Full name'))->filter('like');
