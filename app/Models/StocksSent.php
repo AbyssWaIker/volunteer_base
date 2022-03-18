@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class StocksSent extends Model
 {
     use HasFactory;
-    protected $fillable = ['stock_id', 'quantity_unit_id', 'sending_id', 'quantity','deficit_status'];
+    protected $fillable = ['stock_id', 'quantity_unit_id', 'sending_id', 'quantity_sent','deficit_status'];
     protected const DEFICIT_EXCLAMATION_MARK = '❗️';
 
     public function stock():BelongsTo
