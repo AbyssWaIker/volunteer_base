@@ -39,12 +39,15 @@ class CreateDbBackUpCommand extends Command
      */
     public function handle()
     {
-        dd(DB::select('SHOW TABLES'));
-        foreach ($tables as $table) {
+        $tables = DB::select('SHOW TABLES');
+        $total = count($tables);
+        foreach ($tables as $index => $table) {
+            echo "\r$index/$total";
             foreach ($table as $key => $value){
                 Artisan::call("iseed $value --force");
             }
         }
+        echo PHP_EOL;
         return 0;
     }
 }
