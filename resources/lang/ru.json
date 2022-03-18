@@ -9,5 +9,14 @@
     "Created at":"Дата Добавления",
     "Updated at":"Дата Изменения",
     "Last receiving":"Последнее получение",
-    "Receivings": "Получения"
+    "Receivings": "Получения",
+    "Receiving Point": "Точка Получения",
+    "Sent": "Отправленно",
+    "Stock": "Запас",
+    "Quantity Unit": "Единицы измерения",
+    "Quantity": "Количество",
+    "Deficit": "Дефицит",
+    "Category": "Категория",
+    "Year of birth": "Год Рождения",
+    "Comment": "Примечание"
 }
