@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class QuantityUnit extends Model
+class DestituteCategory extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+    public $timestamps = false;
 
-
-    public function quantityUnit():BelongsToMany
+    public function destitutes():BelongsToMany
     {
-        return $this->belongsToMany(Stock::class);
+        return $this->belongsToMany(Destitute::class);
     }
 }

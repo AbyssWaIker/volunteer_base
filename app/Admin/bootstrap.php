@@ -18,4 +18,13 @@
  *
  */
 
+use Encore\Admin\Grid\Column;
+
 Encore\Admin\Form::forget(['map', 'editor']);
+Column::$displayers = array_merge(
+    Column::$displayers,
+    [
+        'fixedBelongsToMany' => \App\Admin\Extentions\Grid\Displayers\BelongsToMany::class,
+        'checkboxForBelongsToMany' => \App\Admin\Extentions\Grid\Displayers\Checkbox::class,
+    ]
+);
