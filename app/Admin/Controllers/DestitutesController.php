@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Admin\Actions\DestituteHelper;
 use App\Admin\Extensions\DestitutesExporter;
 use App\Models\Destitute;
+use App\Models\DestituteCategory;
 use Carbon\Carbon;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -29,13 +30,15 @@ class DestitutesController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Destitute());
+        $grid->model()->with(['categories', 'helpGiven']);
         $grid->quickSearch(['name', 'address', 'phone', 'passport_id']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
-            $form->text('address', __('Address'));
-            $form->text('phone', __('Phone'));
             $form->text('passport_id', __('Passport id'));
-            $form->integer('year_of_birth', __('Year of birth'));
+            $form->text('phone', __('Phone'));
+            $form->text('address', __('Address'));
+            $form->multipleSelect('categories', __('Category'))
+                ->options(DestituteCategory::pluckNameAndID());
             $form->text('comment', __('Comment'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
@@ -56,6 +59,7 @@ class DestitutesController extends AdminController
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
+        $grid->column('categories', __('Category'))->checkboxForBelongsToMany(DestituteCategory::pluckNameAndID());
         $grid->column('helpGiven',  __('Receivings'))->display(function (array $help) {return Destitute::getHelpHistory($help);});
 
         return $grid;
@@ -98,7 +102,7 @@ class DestitutesController extends AdminController
         $form->text('passport_id', __('Passport id'));
         $form->year('year_of_birth', __('Year of birth'));
         $form->text('comment', __('Comment'));
-
+        $form->multipleSelect('categories', __('Category'))->options(DestituteCategory::pluckNameAndID());
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
