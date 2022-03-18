@@ -38,7 +38,7 @@ class DestitutesController extends AdminController
             $form->text('phone', __('Phone'));
             $form->text('address', __('Address'));
             $form->multipleSelect('categories', __('Category'))
-                ->options(DestituteCategory::query()->pluck('name', 'id'));
+                ->options(DestituteCategory::pluckNameAndID());
             $form->text('comment', __('Comment'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
@@ -59,7 +59,7 @@ class DestitutesController extends AdminController
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
         $grid->column('passport_id', __('Passport id'))->filter('like');
-        $grid->column('categories', __('Category'))->checkboxForBelongsToMany(DestituteCategory::query()->pluck('name','id')->toArray());
+        $grid->column('categories', __('Category'))->checkboxForBelongsToMany(DestituteCategory::pluckNameAndID());
         $grid->column('helpGiven',  __('Receivings'))->display(function (array $help) {return Destitute::getHelpHistory($help);});
 
         return $grid;
@@ -102,7 +102,7 @@ class DestitutesController extends AdminController
         $form->text('passport_id', __('Passport id'));
         $form->year('year_of_birth', __('Year of birth'));
         $form->text('comment', __('Comment'));
-        $form->multipleSelect('categories', __('Category'))->options(DestituteCategory::query()->pluck('name', 'id'));
+        $form->multipleSelect('categories', __('Category'))->options(DestituteCategory::pluckNameAndID());
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
