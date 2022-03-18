@@ -35,7 +35,7 @@ class DestitutesController extends AdminController
             $form->text('address', __('Address'));
             $form->text('phone', __('Phone'));
             $form->text('passport_id', __('Passport id'));
-            $form->integer('year_of_birth', __('Year of birth'))->default(1960);
+            $form->integer('year_of_birth', __('Year of birth'));
             $form->text('comment', __('Comment'));
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
@@ -96,7 +96,7 @@ class DestitutesController extends AdminController
         $form->text('phone', __('Phone'));
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'));
-        $form->year('year_of_birth', __('Year of birth'))->default(1960);
+        $form->year('year_of_birth', __('Year of birth'));
         $form->text('comment', __('Comment'));
 
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){

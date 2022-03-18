@@ -18,5 +18,9 @@
     "Deficit": "Дефицит",
     "Category": "Категория",
     "Year of birth": "Год Рождения",
-    "Comment": "Примечание"
+    "Comment": "Примечание",
+    "Availability": "Наличие",
+    "Quantity Sent": "Количество Отправленно",
+    "Quantity requested": "Количество Запрошено",
+    "Fill in case of deficit": "При нехватке"
 }

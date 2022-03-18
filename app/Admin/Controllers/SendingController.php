@@ -111,14 +111,14 @@ class SendingController extends AdminController
                     ->with($getValueSetter($quantity_unit_options))
                     ->required()
                 ;
-                $form->number('quantity', __('Quantity'))->default(0);
-                $form->select('deficit_status', __('Deficit'))
-                    ->options([
-                        Stock::DEFICIT_STATUS_NO_DEFICIT => 'В наличии',
-                        Stock::DEFICIT_STATUS_STOCK_IS_LOW => 'Дефицит',
-                        Stock::DEFICIT_STATUS_NO_STOCK => 'Отсутствие',
-                    ])
-                    ->default(Stock::DEFICIT_STATUS_NO_DEFICIT);
+                $form->decimal('quantity_sent', __('Quantity Sent'))->default(1);
+                $form->select('deficit_status', __('Availability'))
+                    ->options(Stock::DEFICIT_STATUS_OPTIONS)
+                    ->default(Stock::DEFICIT_STATUS_NO_DEFICIT)
+//                    ->when('!=', Stock::DEFICIT_STATUS_NO_DEFICIT, function (Form $form) {
+                        ;$form->decimal('quantity_requested', __('Quantity requested'))->placeholder(__('Fill in case of deficit'));
+//                    })
+                ;
             }
         );
         $form->submitted(function (\Encore\Admin\Form $form) {
@@ -130,12 +130,10 @@ class SendingController extends AdminController
 
                 $stock = Stock::query()->firstOrCreate(['name' => $item['stock_id']]);
                 $item['stock_id'] = $stock->id;
-                $item['deficit_status'] = intval($item['deficit_status']);
-                $stock->deficit_status = $item['deficit_status'];
-                if($stock->deficit_status){
+                $deficit = intval($item['deficit_status']);
+                if($deficit){
                     $stock->deficit_count_since_last_replenishment+= 1;
-                } else {
-                    $stock->deficit_count_since_last_replenishment = 0;
+                    $stock->deficit_status = $item['deficit_status'];
                 }
                 $stock->save();
             }
