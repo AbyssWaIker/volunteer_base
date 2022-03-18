@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sendings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('receiving_point_id')->constrained();
+            $table->integer('times')->unsigned()->default(0);
             $table->date('date');
             $table->timestamps();
         });
