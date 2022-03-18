@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class StocksSent extends Model
 {
     use HasFactory;
-    protected $fillable = ['stock_id', 'quantity_unit_id', 'sending_id', 'quantity_sent','deficit_status'];
+    protected $fillable = ['stock_id', 'quantity_unit_id', 'sending_id', 'quantity_sent','quantity_requested','deficit_status'];
     protected const DEFICIT_EXCLAMATION_MARK = '❗️';
 
     public function stock():BelongsTo
@@ -36,10 +36,11 @@ class StocksSent extends Model
     {
         $quantity_string = "$this->quantity_sent {$this->getExpectedQuantityForReport()} ({$this->quantityUnit->name}).";
         $emoji = self::DEFICIT_EXCLAMATION_MARK;
-        switch ($this->stock->deficit_status) {
+        switch ($this->deficit_status) {
             case Stock::DEFICIT_STATUS_NO_STOCK:
                 $quantity_string = $this->quantity_sent || $this->quantity_requested ? $quantity_string : '';
-                return trim("$emoji $quantity_string Нет на складе $emoji");
+                $no_in_stock = __('Not in stock');
+                return trim("$emoji $quantity_string $no_in_stock $emoji");
             case Stock::DEFICIT_STATUS_STOCK_IS_LOW:
                 return "$quantity_string $emoji";
             case Stock::DEFICIT_STATUS_NO_DEFICIT:
@@ -49,9 +50,9 @@ class StocksSent extends Model
     }
     private function getExpectedQuantityForReport():string
     {
-        if(!$this->quantity_expected || $this->quantity_expected === $this->quantity_sent) {
+        if(!$this->quantity_requested || $this->quantity_requested === $this->quantity_sent) {
             return '';
         }
-        return "(/{$this->quantity_expected})";
+        return "(\\{$this->quantity_requested})";
     }
 }

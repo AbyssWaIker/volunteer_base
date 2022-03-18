@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Console\Commands\CreateDbBackUpCommand;
+use App\Console\Commands\SendReportForToday;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command(SendReportForToday::class)->dailyAt('17:00')->timezone('Europe/Kiev');
+        $schedule->command(CreateDbBackUpCommand::class)->dailyAt('23:30')->timezone('Europe/Kiev');
     }
 
     /**
