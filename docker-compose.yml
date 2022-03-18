@@ -11,10 +11,10 @@ services:
     ports:
         - "3306:3306"
     environment:
-        MYSQL_DATABASE: grannies_base
-        MYSQL_ROOT_PASSWORD: 25345Art
-        MYSQL_USER: arti
-        MYSQL_PASSWORD: 25345Art
+        MYSQL_DATABASE: volunteers_base
+        MYSQL_ROOT_PASSWORD: example_password
+        MYSQL_USER: example_username
+        MYSQL_PASSWORD: example_password
         SERVICE_TAGS: dev
         SERVICE_NAME: mysql
     volumes:

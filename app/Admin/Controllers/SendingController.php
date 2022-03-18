@@ -83,9 +83,9 @@ class SendingController extends AdminController
         $form->tools(function (Form\Tools $tools) {
             $tools->disableView();
         });
-        $receiving_point_options = ReceivingPoint::query()->pluck('name', 'id')->toArray();
-        $stock_options = Stock::query()->pluck('name', 'id')->toArray();
-        $quantity_unit_options = QuantityUnit::query()->pluck('name', 'id')->toArray();
+        $receiving_point_options = ReceivingPoint::pluckNameAndID();
+        $stock_options = Stock::pluckNameAndID();
+        $quantity_unit_options = QuantityUnit::pluckNameAndID();
         $getValueSetter = function(array $options) {
             return function(?string $value, Form\Field\Text $field) use ($options){
                 $true_value = @$options[$value];
@@ -116,7 +116,8 @@ class SendingController extends AdminController
                     ->options(Stock::DEFICIT_STATUS_OPTIONS)
                     ->default(Stock::DEFICIT_STATUS_NO_DEFICIT)
 //                    ->when('!=', Stock::DEFICIT_STATUS_NO_DEFICIT, function (Form $form) {
-                        ;$form->decimal('quantity_requested', __('Quantity requested'))->placeholder(__('Fill in case of deficit'));
+                        ;$form->decimal('quantity_requested', __('Quantity requested'))
+                            ->placeholder(__('Fill in case of deficit'));
 //                    })
                 ;
             }
