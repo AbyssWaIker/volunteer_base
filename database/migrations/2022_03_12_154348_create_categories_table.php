@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHelpGivensTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateHelpGivensTable extends Migration
      */
     public function up()
     {
-        Schema::create('help_givens', function (Blueprint $table) {
+        Schema::create('stock_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('granny_id')->constrained()->cascadeOnDelete();
-            $table->dateTime('hg_timestamp');
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ class CreateHelpGivensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('help_givens');
+        Schema::dropIfExists('stock_categories');
     }
-}
+};

@@ -2,19 +2,19 @@
 
 namespace App\Admin\Extensions;
 
-use App\Models\Granny;
+use App\Models\Destitute;
 use Encore\Admin\Grid\Exporters\ExcelExporter;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class GrannyExporter extends ExcelExporter implements WithMapping
+class DestitutesExporter extends ExcelExporter implements WithMapping
 {
     protected $fileName = 'бабушки.xlsx';
 
     protected $columns = [
         'id' => 'id',
-        'granny_name' => 'фио',
+        'name' => 'фио',
         'address' => 'Адрес',
-        'granny_phone' => 'Телефон',
+        'phone' => 'Телефон',
         'passport_id' => 'Пенсионный',
         'helpGiven' => 'получения',
     ];
@@ -27,7 +27,7 @@ class GrannyExporter extends ExcelExporter implements WithMapping
     {
         return array_merge(
             $row->getAttributes(),
-            ['helpGiven'=>Granny::getHelpHistory($row->helpGiven->toArray(), false),],
+            ['helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),],
         );
     }
 }

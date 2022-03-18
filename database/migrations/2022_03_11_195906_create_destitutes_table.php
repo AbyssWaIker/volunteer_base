@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGranniesTable extends Migration
+class CreateDestitutesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateGranniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('grannies', function (Blueprint $table) {
+        Schema::create('destitutes', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'UTF8_general_ci';
             $table->id();
-            $table->string('granny_name');
+            $table->string('name');
             $table->string('address')->nullable();
-            $table->string('granny_phone')->nullable();
+            $table->string('phone')->nullable();
             $table->string('passport_id')->nullable();
+            $table->year('year_of_birth')->nullable();
+            $table->string('comment')->nullable();
+
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ class CreateGranniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grannies');
+        Schema::dropIfExists('destitutes');
     }
 };
