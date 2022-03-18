@@ -3,7 +3,7 @@
 namespace App\Admin\Controllers;
 
 use Encore\Admin\Controllers\AdminController;
-use Encore\Admin\Extentions\Grid\Displayers\Actions;
+use Encore\Admin\Grid\Displayers\Actions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Grid\Tools\QuickCreate;
