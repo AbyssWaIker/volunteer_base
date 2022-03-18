@@ -830,447 +830,513 @@ class HelpGivensTableSeeder extends Seeder
             ),
             135 => 
             array (
-                'id' => 139,
-                'destitute_id' => 522,
-                'hg_timestamp' => '2022-03-07 11:28:53',
-            ),
-            136 => 
-            array (
                 'id' => 140,
                 'destitute_id' => 523,
                 'hg_timestamp' => '2022-03-07 11:28:53',
             ),
-            137 => 
+            136 => 
             array (
                 'id' => 141,
                 'destitute_id' => 524,
                 'hg_timestamp' => '2022-03-07 11:28:53',
             ),
-            138 => 
+            137 => 
             array (
                 'id' => 142,
                 'destitute_id' => 525,
                 'hg_timestamp' => '2022-03-08 11:28:53',
             ),
-            139 => 
+            138 => 
             array (
                 'id' => 143,
                 'destitute_id' => 527,
                 'hg_timestamp' => '2022-03-09 11:28:53',
             ),
-            140 => 
+            139 => 
             array (
                 'id' => 144,
                 'destitute_id' => 527,
                 'hg_timestamp' => '2022-03-09 11:28:53',
             ),
-            141 => 
+            140 => 
             array (
                 'id' => 145,
                 'destitute_id' => 528,
                 'hg_timestamp' => '2022-03-09 11:28:53',
             ),
-            142 => 
+            141 => 
             array (
                 'id' => 146,
                 'destitute_id' => 529,
                 'hg_timestamp' => '2022-03-09 11:28:53',
             ),
-            143 => 
+            142 => 
             array (
                 'id' => 147,
                 'destitute_id' => 530,
                 'hg_timestamp' => '2022-03-09 11:28:53',
             ),
-            144 => 
+            143 => 
             array (
                 'id' => 148,
                 'destitute_id' => 531,
                 'hg_timestamp' => '2022-03-09 11:28:53',
             ),
-            145 => 
+            144 => 
             array (
                 'id' => 149,
                 'destitute_id' => 637,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            146 => 
+            145 => 
             array (
                 'id' => 150,
                 'destitute_id' => 638,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            147 => 
+            146 => 
             array (
                 'id' => 151,
                 'destitute_id' => 639,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            148 => 
+            147 => 
             array (
                 'id' => 152,
                 'destitute_id' => 640,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            149 => 
+            148 => 
             array (
                 'id' => 153,
                 'destitute_id' => 641,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            150 => 
+            149 => 
             array (
                 'id' => 154,
                 'destitute_id' => 642,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            151 => 
+            150 => 
             array (
                 'id' => 155,
                 'destitute_id' => 643,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            152 => 
+            151 => 
             array (
                 'id' => 156,
                 'destitute_id' => 644,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            153 => 
+            152 => 
             array (
                 'id' => 157,
                 'destitute_id' => 645,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            154 => 
+            153 => 
             array (
                 'id' => 158,
                 'destitute_id' => 646,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            155 => 
+            154 => 
             array (
                 'id' => 159,
                 'destitute_id' => 647,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            156 => 
+            155 => 
             array (
                 'id' => 160,
                 'destitute_id' => 648,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            157 => 
+            156 => 
             array (
                 'id' => 161,
                 'destitute_id' => 649,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            158 => 
+            157 => 
             array (
                 'id' => 162,
                 'destitute_id' => 650,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            159 => 
+            158 => 
             array (
                 'id' => 163,
                 'destitute_id' => 651,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            160 => 
+            159 => 
             array (
                 'id' => 164,
                 'destitute_id' => 652,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            161 => 
+            160 => 
             array (
                 'id' => 165,
                 'destitute_id' => 653,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            162 => 
+            161 => 
             array (
                 'id' => 166,
                 'destitute_id' => 654,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            163 => 
+            162 => 
             array (
                 'id' => 167,
                 'destitute_id' => 655,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            164 => 
+            163 => 
             array (
                 'id' => 168,
                 'destitute_id' => 656,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            165 => 
+            164 => 
             array (
                 'id' => 169,
                 'destitute_id' => 657,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            166 => 
+            165 => 
             array (
                 'id' => 170,
                 'destitute_id' => 658,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            167 => 
+            166 => 
             array (
                 'id' => 171,
                 'destitute_id' => 659,
                 'hg_timestamp' => '2022-03-13 11:28:53',
             ),
-            168 => 
+            167 => 
             array (
                 'id' => 172,
                 'destitute_id' => 660,
                 'hg_timestamp' => '2022-03-14 10:16:56',
             ),
-            169 => 
+            168 => 
             array (
                 'id' => 173,
                 'destitute_id' => 661,
                 'hg_timestamp' => '2022-03-14 10:17:46',
             ),
-            170 => 
+            169 => 
             array (
                 'id' => 174,
                 'destitute_id' => 662,
                 'hg_timestamp' => '2022-03-14 10:18:32',
             ),
-            171 => 
+            170 => 
             array (
                 'id' => 175,
                 'destitute_id' => 663,
                 'hg_timestamp' => '2022-03-14 10:19:42',
             ),
-            172 => 
+            171 => 
             array (
                 'id' => 176,
                 'destitute_id' => 664,
                 'hg_timestamp' => '2022-03-14 10:20:58',
             ),
-            173 => 
+            172 => 
             array (
                 'id' => 177,
                 'destitute_id' => 665,
                 'hg_timestamp' => '2022-03-14 10:22:07',
             ),
-            174 => 
+            173 => 
             array (
                 'id' => 178,
                 'destitute_id' => 666,
                 'hg_timestamp' => '2022-03-14 10:23:50',
             ),
-            175 => 
+            174 => 
             array (
                 'id' => 179,
                 'destitute_id' => 667,
                 'hg_timestamp' => '2022-03-14 10:34:17',
             ),
-            176 => 
+            175 => 
             array (
                 'id' => 180,
                 'destitute_id' => 668,
                 'hg_timestamp' => '2022-03-14 10:35:20',
             ),
-            177 => 
+            176 => 
             array (
                 'id' => 181,
                 'destitute_id' => 669,
                 'hg_timestamp' => '2022-03-14 10:36:43',
             ),
-            178 => 
+            177 => 
             array (
                 'id' => 182,
                 'destitute_id' => 670,
                 'hg_timestamp' => '2022-03-14 10:37:18',
             ),
-            179 => 
+            178 => 
             array (
                 'id' => 183,
                 'destitute_id' => 671,
                 'hg_timestamp' => '2022-03-14 10:38:32',
             ),
-            180 => 
+            179 => 
             array (
                 'id' => 184,
                 'destitute_id' => 672,
                 'hg_timestamp' => '2022-03-15 10:59:06',
             ),
-            181 => 
+            180 => 
             array (
                 'id' => 185,
                 'destitute_id' => 673,
                 'hg_timestamp' => '2022-03-15 10:59:58',
             ),
-            182 => 
+            181 => 
             array (
                 'id' => 186,
                 'destitute_id' => 674,
                 'hg_timestamp' => '2022-03-15 11:01:39',
             ),
-            183 => 
+            182 => 
             array (
                 'id' => 187,
                 'destitute_id' => 675,
                 'hg_timestamp' => '2022-03-15 11:02:48',
             ),
-            184 => 
+            183 => 
             array (
                 'id' => 188,
                 'destitute_id' => 676,
                 'hg_timestamp' => '2022-03-15 11:03:35',
             ),
-            185 => 
+            184 => 
             array (
                 'id' => 189,
                 'destitute_id' => 513,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            186 => 
+            185 => 
             array (
                 'id' => 190,
                 'destitute_id' => 576,
                 'hg_timestamp' => '2022-03-16 13:11:02',
             ),
-            187 => 
+            186 => 
             array (
                 'id' => 191,
                 'destitute_id' => 496,
                 'hg_timestamp' => '2022-03-16 13:30:51',
             ),
-            188 => 
+            187 => 
             array (
                 'id' => 193,
                 'destitute_id' => 678,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            189 => 
+            188 => 
             array (
                 'id' => 195,
                 'destitute_id' => 679,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            190 => 
+            189 => 
             array (
                 'id' => 196,
                 'destitute_id' => 680,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            191 => 
+            190 => 
             array (
                 'id' => 199,
                 'destitute_id' => 681,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            192 => 
+            191 => 
             array (
                 'id' => 201,
                 'destitute_id' => 682,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            193 => 
+            192 => 
             array (
                 'id' => 203,
                 'destitute_id' => 683,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            194 => 
+            193 => 
             array (
                 'id' => 205,
                 'destitute_id' => 684,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            195 => 
+            194 => 
             array (
                 'id' => 207,
                 'destitute_id' => 685,
                 'hg_timestamp' => '2022-03-15 00:00:00',
             ),
-            196 => 
+            195 => 
             array (
                 'id' => 208,
                 'destitute_id' => 686,
                 'hg_timestamp' => '2022-03-16 13:54:05',
             ),
-            197 => 
+            196 => 
             array (
                 'id' => 209,
                 'destitute_id' => 687,
                 'hg_timestamp' => '2022-03-16 14:01:27',
             ),
-            198 => 
+            197 => 
             array (
                 'id' => 211,
                 'destitute_id' => 689,
                 'hg_timestamp' => '2022-03-16 14:08:07',
             ),
-            199 => 
+            198 => 
             array (
                 'id' => 213,
                 'destitute_id' => 691,
                 'hg_timestamp' => '2022-03-16 14:13:10',
             ),
-            200 => 
+            199 => 
             array (
                 'id' => 214,
                 'destitute_id' => 692,
                 'hg_timestamp' => '2022-03-16 14:13:57',
             ),
-            201 => 
+            200 => 
             array (
                 'id' => 215,
                 'destitute_id' => 693,
                 'hg_timestamp' => '2022-03-16 14:15:07',
             ),
-            202 => 
+            201 => 
             array (
                 'id' => 216,
                 'destitute_id' => 694,
                 'hg_timestamp' => '2022-03-16 14:24:30',
             ),
-            203 => 
+            202 => 
             array (
                 'id' => 217,
                 'destitute_id' => 695,
                 'hg_timestamp' => '2022-03-17 09:35:52',
             ),
-            204 => 
+            203 => 
             array (
                 'id' => 218,
                 'destitute_id' => 696,
                 'hg_timestamp' => '2022-03-17 09:36:19',
             ),
-            205 => 
+            204 => 
             array (
                 'id' => 219,
                 'destitute_id' => 697,
                 'hg_timestamp' => '2022-03-17 11:42:57',
             ),
-            206 => 
+            205 => 
             array (
                 'id' => 220,
                 'destitute_id' => 698,
                 'hg_timestamp' => '2022-03-17 11:44:26',
             ),
-            207 => 
+            206 => 
             array (
                 'id' => 221,
                 'destitute_id' => 699,
                 'hg_timestamp' => '2022-03-17 12:51:46',
             ),
-            208 => 
+            207 => 
             array (
                 'id' => 222,
                 'destitute_id' => 700,
                 'hg_timestamp' => '2022-03-17 12:59:24',
+            ),
+            208 => 
+            array (
+                'id' => 223,
+                'destitute_id' => 701,
+                'hg_timestamp' => '2022-03-17 00:00:00',
+            ),
+            209 => 
+            array (
+                'id' => 224,
+                'destitute_id' => 702,
+                'hg_timestamp' => '2022-03-18 08:33:23',
+            ),
+            210 => 
+            array (
+                'id' => 225,
+                'destitute_id' => 703,
+                'hg_timestamp' => '2022-03-18 08:34:39',
+            ),
+            211 => 
+            array (
+                'id' => 226,
+                'destitute_id' => 704,
+                'hg_timestamp' => '2022-03-18 08:36:53',
+            ),
+            212 => 
+            array (
+                'id' => 227,
+                'destitute_id' => 705,
+                'hg_timestamp' => '2022-03-18 08:43:27',
+            ),
+            213 => 
+            array (
+                'id' => 228,
+                'destitute_id' => 706,
+                'hg_timestamp' => '2022-03-18 09:38:34',
+            ),
+            214 => 
+            array (
+                'id' => 229,
+                'destitute_id' => 707,
+                'hg_timestamp' => '2022-03-18 10:00:04',
+            ),
+            215 => 
+            array (
+                'id' => 230,
+                'destitute_id' => 708,
+                'hg_timestamp' => '2022-03-18 10:33:53',
+            ),
+            216 => 
+            array (
+                'id' => 231,
+                'destitute_id' => 709,
+                'hg_timestamp' => '2022-03-18 10:51:34',
+            ),
+            217 => 
+            array (
+                'id' => 232,
+                'destitute_id' => 710,
+                'hg_timestamp' => '2022-03-18 10:57:28',
+            ),
+            218 => 
+            array (
+                'id' => 233,
+                'destitute_id' => 711,
+                'hg_timestamp' => '2022-03-18 11:01:52',
+            ),
+            219 => 
+            array (
+                'id' => 234,
+                'destitute_id' => 712,
+                'hg_timestamp' => '2022-03-18 11:56:34',
             ),
         ));
 
