@@ -13,7 +13,6 @@ class Sending extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = ['name'];
-    protected const DEFICIT_EXCLAMATION_MARK = '❗️';
 
 
     public function receivingPoint():BelongsTo
@@ -26,20 +25,8 @@ class Sending extends Model
     }
     public function getReport():string
     {
-        $message = mb_convert_case($this->receivingPoint->name,MB_CASE_TITLE_SIMPLE) . PHP_EOL;
-        $sentStocks = $this->stocksSent;
-        foreach ($sentStocks as $sentStock) {
-            $line = $sentStock->stock->name . ' - ';
-
-            $not_in_stock = $sentStock->stock->deficit_status === Stock::DEFICIT_STATUS_NO_STOCK;
-            if(!$not_in_stock) {
-                return $line . self::DEFICIT_EXCLAMATION_MARK . ' нет ' . self::DEFICIT_EXCLAMATION_MARK;
-            }
-
-            $deficit_postfix = $sentStock->deficit_status ? self::DEFICIT_EXCLAMATION_MARK : '';
-            $line .= "$sentStock->quantity  ({$sentStock->quantityUnit->name}) $deficit_postfix";
-            $message .= $line . PHP_EOL;
-        }
-        return  $message;
+        $title = mb_convert_case($this->receivingPoint->name,MB_CASE_TITLE_SIMPLE);
+        $product_lines = $this->stocksSent->map(function (StocksSent $s):string{return $s->getLineForReport();})->toArray();
+        return $title . PHP_EOL. implode(PHP_EOL, $product_lines);
     }
 }

@@ -28,10 +28,10 @@ class StockController extends AdminController
         $grid->model()->orderByDesc('deficit');
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
-        $grid->column('deficit', __('Deficit'));
+        $grid->column('deficit_status', __('Deficit'))->using(Stock::DEFICIT_STATUS_OPTIONS);
         $grid->column('category.name', __('Category'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+//        $grid->column('created_at', __('Created at'));
+//        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
