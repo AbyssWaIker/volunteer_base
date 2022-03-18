@@ -131,12 +131,12 @@ class AdminMenuTableSeeder extends Seeder
                 'id' => 10,
                 'parent_id' => 0,
                 'order' => 0,
-                'title' => 'Отпраавка',
+                'title' => 'Отправка',
                 'icon' => 'fa-ambulance',
-                'uri' => 'sending',
+                'uri' => 'sendings',
                 'permission' => NULL,
                 'created_at' => '2022-03-17 11:24:18',
-                'updated_at' => '2022-03-17 11:24:18',
+                'updated_at' => '2022-03-18 08:05:49',
             ),
         ));
 
