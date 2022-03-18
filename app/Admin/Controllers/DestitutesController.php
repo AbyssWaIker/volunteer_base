@@ -10,6 +10,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Database\Eloquent\Builder;
 
 class DestitutesController extends AdminController
 {
@@ -40,6 +41,13 @@ class DestitutesController extends AdminController
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
             $actions->add(new DestituteHelper);
+        });
+        $grid->filter(function(Grid\Filter $filter) {
+            $filter->where(function(Builder $query) {
+                $query->whereHas('helpGiven', function (Builder $query) {
+                    $query->whereDate('hg_timestamp', $this->input);
+                });
+            }, 'Дата', 'date')->date();
         });
         $grid->exporter(new DestitutesExporter);
 
