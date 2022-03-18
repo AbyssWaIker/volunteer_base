@@ -24,5 +24,6 @@
     "Fill in case of deficit": "При нехватке",
     "Not in stock": "Нет на складе",
     "Comment": "Примечание",
-    "Report for :date": "Отчет за :date"
+    "Report for :date": "Отчет за :date",
+    "Name": "Имя"
 }
