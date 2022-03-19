@@ -113,7 +113,7 @@ class SendingController extends AdminController
             ->required()
         ;
         $form->date('date', __('Created at'))->default(Carbon::now());
-        $form->table('stocksSent', __('Sent'),
+        $form->hasMany('stocksSent', __('Sent'),
             function (Form\NestedForm $form) use($stock_options, $quantity_unit_options, $getValueSetter) {
                 $form->hidden('id');
                 $form->text('stock_id', __('Stock'))
