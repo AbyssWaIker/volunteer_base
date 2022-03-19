@@ -24,5 +24,16 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminRoleUsersTableSeeder::class);
         $this->call(AdminUserPermissionsTableSeeder::class);
         $this->call(DestituteCategoriesTableSeeder::class);
+        $this->call(AdminOperationLogTableSeeder::class);
+        $this->call(AdminRoleMenuTableSeeder::class);
+        $this->call(DestituteDestituteCategoryTableSeeder::class);
+        $this->call(PersonalAccessTokensTableSeeder::class);
+        $this->call(QuantityUnitsTableSeeder::class);
+        $this->call(ReceivingPointsTableSeeder::class);
+        $this->call(SendingsTableSeeder::class);
+        $this->call(StockCategoriesTableSeeder::class);
+        $this->call(StocksTableSeeder::class);
+        $this->call(StocksSentsTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }
