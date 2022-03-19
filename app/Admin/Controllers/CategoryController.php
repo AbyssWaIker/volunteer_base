@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Exporters\CategoryExporter;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Grid\Displayers\Actions;
 use Encore\Admin\Form;
@@ -33,6 +34,8 @@ abstract class CategoryController extends AdminController
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
         });
+
+        $grid->exporter(new CategoryExporter);
         $grid->quickCreate(function (QuickCreate $form) {
             $form->text('name', __('Name'));
         });
