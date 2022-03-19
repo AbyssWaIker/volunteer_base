@@ -15,6 +15,8 @@ use Encore\Admin\Grid\Displayers\Actions;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use \App\Models\Sending;
+use Jenssegers\Date\Date;
+use NotificationChannels\Telegram\TelegramUpdates;
 
 class SendingController extends AdminController
 {
@@ -36,9 +38,20 @@ class SendingController extends AdminController
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
         });
-
+        $grid->filter(function (Grid\Filter $filter) {
+            $filter->disableIdFilter();
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->equal('receiving_point_id', __('Receiving Point'))->select(ReceivingPoint::pluckNameAndID());
+            });
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->date('date', __('Sending Date'));
+            });
+        });
         $grid->column('id', __('Id'));
         $grid->column('receivingPoint.name', __('Receiving Point'));
+        $grid->column('date',__('Sending Date'))->display(function ($value) {
+            return Date::parse($value)->format('j F Y');
+        });
 //        $grid->column('created_at', __('Created at'));
 //        $grid->column('updated_at', __('Updated at'));
 
@@ -100,7 +113,7 @@ class SendingController extends AdminController
             ->required()
         ;
         $form->date('date', __('Created at'))->default(Carbon::now());
-        $form->hasMany('stocksSent', __('Sent'),
+        $form->table('stocksSent', __('Sent'),
             function (Form\NestedForm $form) use($stock_options, $quantity_unit_options, $getValueSetter) {
                 $form->hidden('id');
                 $form->text('stock_id', __('Stock'))
@@ -111,7 +124,7 @@ class SendingController extends AdminController
                     ->with($getValueSetter($quantity_unit_options))
                     ->required()
                 ;
-                $form->decimal('quantity_sent', __('Quantity Sent'))->default(1);
+                $form->number('quantity_sent', __('Quantity Sent'))->default(1);
                 $form->select('deficit_status', __('Availability'))
                     ->options(Stock::DEFICIT_STATUS_OPTIONS)
                     ->default(Stock::DEFICIT_STATUS_NO_DEFICIT)
