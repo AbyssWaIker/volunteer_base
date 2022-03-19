@@ -408,6 +408,36 @@ class StocksTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:36:50',
                 'updated_at' => '2022-03-19 11:36:50',
             ),
+            39 => 
+            array (
+                'id' => 40,
+            'name' => 'Лук, картошка, буряк, капуста (1 качан)',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-19 12:14:42',
+                'updated_at' => '2022-03-19 12:14:42',
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'name' => 'Социальный набор',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-19 12:14:42',
+                'updated_at' => '2022-03-19 12:14:42',
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'name' => 'Картошка, морковка, лук, буряк',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-19 12:16:49',
+                'updated_at' => '2022-03-19 12:16:49',
+            ),
         ));
 
         
