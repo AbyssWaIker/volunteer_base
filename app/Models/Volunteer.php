@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class VolunteerCategory extends Model
+class Volunteer extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'];
-
-    public function volunteers():BelongsToMany
+    public function categories():BelongsToMany
     {
-        return $this->belongsToMany(Volunteer::class);
+        return $this->belongsToMany(VolunteerCategory::class);
     }
 }
