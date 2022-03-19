@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class StockCategoriesTableSeeder extends Seeder
+class FailedJobsTableSeeder extends Seeder
 {
     /**
      * Auto generated seeder file.
@@ -15,7 +15,7 @@ class StockCategoriesTableSeeder extends Seeder
     {
         
 
-        \DB::table('stock_categories')->delete();
+        \DB::table('failed_jobs')->delete();
         
 
         
