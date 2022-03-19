@@ -25,7 +25,7 @@ class StockController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Stock());
-        $grid->model()->orderByDesc('deficit');
+        $grid->model()->orderByDesc('deficit_status');
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
         $grid->column('deficit_status', __('Deficit'))->using(Stock::DEFICIT_STATUS_OPTIONS);
@@ -48,7 +48,7 @@ class StockController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
-        $show->field('deficit', __('Deficit'));
+        $show->field('deficit_status', __('Deficit'));
         $show->field('category_id', __('Category id'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -66,8 +66,8 @@ class StockController extends AdminController
         $form = new Form(new Stock());
 
         $form->text('name', __('Name'));
-        $form->number('deficit', __('Deficit'));
-        $form->number('category_id', __('Category id'));
+        $form->number('deficit_status', __('Deficit'));
+        $form->number('stock_category_id', __('Category id'));
 
         return $form;
     }
