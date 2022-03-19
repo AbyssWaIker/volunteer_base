@@ -22,7 +22,7 @@ class VolunteerController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Волнотеры';
+    protected $title = 'Волонтеры';
 
     /**
      * Make a grid builder.
