@@ -3,7 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\DestituteHelper;
-use App\Admin\Extensions\DestitutesExporter;
+use App\Admin\Exporters\CategoryExporter;
 use App\Models\Destitute;
 use App\Models\DestituteCategory;
 use Carbon\Carbon;
@@ -52,7 +52,7 @@ class DestitutesController extends AdminController
                 });
             }, 'Дата', 'date')->date();
         });
-        $grid->exporter(new DestitutesExporter);
+        $grid->exporter(new CategoryExporter($grid, $this->title));
 
         $grid->column('id', __('Id'))->sortable()->hide();
         $grid->column('name', __('Full name'))->filter('like');
