@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Extensions;
+namespace App\Admin\Exporters;
 
 use App\Models\Destitute;
 use Encore\Admin\Grid\Exporters\ExcelExporter;
@@ -11,7 +11,7 @@ class DestitutesExporter extends ExcelExporter implements WithMapping
     protected $fileName = 'бабушки.xlsx';
 
     protected $columns = [
-        'id' => 'id',
+        'id' => '',
         'name' => 'фио',
         'address' => 'Адрес',
         'phone' => 'Телефон',
@@ -27,7 +27,10 @@ class DestitutesExporter extends ExcelExporter implements WithMapping
     {
         return array_merge(
             $row->getAttributes(),
-            ['helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),],
+            [
+                'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),
+                'id' => ''
+            ],
         );
     }
 }
