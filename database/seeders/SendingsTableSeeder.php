@@ -90,6 +90,15 @@ class SendingsTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:36:50',
                 'updated_at' => '2022-03-19 11:36:50',
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'receiving_point_id' => 9,
+                'times' => 0,
+                'date' => '2022-03-19',
+                'created_at' => '2022-03-19 12:16:49',
+                'updated_at' => '2022-03-19 12:16:49',
+            ),
         ));
 
         

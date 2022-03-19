@@ -74,6 +74,13 @@ class ReceivingPointsTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:36:50',
                 'updated_at' => '2022-03-19 11:36:50',
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'name' => 'Радужный',
+                'created_at' => '2022-03-19 12:14:42',
+                'updated_at' => '2022-03-19 12:14:42',
+            ),
         ));
 
         

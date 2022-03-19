@@ -654,6 +654,30 @@ class StocksSentsTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:36:50',
                 'updated_at' => '2022-03-19 11:36:50',
             ),
+            53 => 
+            array (
+                'id' => 54,
+                'stock_id' => 42,
+                'quantity_unit_id' => 8,
+                'sending_id' => 9,
+                'quantity_sent' => 1.0,
+                'quantity_requested' => NULL,
+                'deficit_status' => 0,
+                'created_at' => '2022-03-19 12:16:49',
+                'updated_at' => '2022-03-19 12:16:49',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'stock_id' => 41,
+                'quantity_unit_id' => 1,
+                'sending_id' => 9,
+                'quantity_sent' => 1.0,
+                'quantity_requested' => NULL,
+                'deficit_status' => 0,
+                'created_at' => '2022-03-19 12:16:49',
+                'updated_at' => '2022-03-19 12:16:49',
+            ),
         ));
 
         
