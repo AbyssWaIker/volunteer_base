@@ -14,8 +14,10 @@ Route::group([
     $router->resource('grannies', DestitutesController::class);
     $router->resource('sendings', SendingController::class);
     $router->resource('stocks', StockController::class);
+    $router->resource('volunteers', VolunteerController::class);
     $router->resource('destitute-categories', CategoryDestituteController::class);
     $router->resource('stock-categories', CategoryStockController::class);
+    $router->resource('volunteer-categories', CategoryVolunteerController::class);
 
 
 });
