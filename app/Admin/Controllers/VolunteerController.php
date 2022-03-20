@@ -33,8 +33,7 @@ class VolunteerController extends AdminController
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
             $form->text('phone', __('Phone'));
-            $form->multipleSelect('categories', __('Category'))
-                ->options(VolunteerCategory::pluckNameAndID());
+            $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
             $form->text('comment', __('Comment'));
         });
         $grid->filter(function(Grid\Filter $filter) {
