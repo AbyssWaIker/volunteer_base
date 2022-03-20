@@ -130,6 +130,20 @@ class ReceivingPointsTableSeeder extends Seeder
                 'created_at' => '2022-03-20 08:59:43',
                 'updated_at' => '2022-03-20 08:59:43',
             ),
+            16 => 
+            array (
+                'id' => 17,
+            'name' => 'Жд больница (60 человек)',
+                'created_at' => '2022-03-20 09:57:06',
+                'updated_at' => '2022-03-20 09:57:06',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+            'name' => 'Тероборона (Оксана)',
+                'created_at' => '2022-03-20 09:57:47',
+                'updated_at' => '2022-03-20 09:57:47',
+            ),
         ));
 
         
