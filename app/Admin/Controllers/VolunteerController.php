@@ -35,6 +35,7 @@ class VolunteerController extends AdminController
             $form->text('phone', __('Phone'));
             $form->multipleSelect('categories', __('Category'))
                 ->options(VolunteerCategory::pluckNameAndID());
+            $form->text('comment', __('Comment'));
         });
         $grid->filter(function(Grid\Filter $filter) {
             $filter->disableIdFilter();
@@ -58,7 +59,9 @@ class VolunteerController extends AdminController
         $grid->column('id', __('Id'))->sortable()->hide();
         $grid->column('name', __('Full name'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
-        $grid->column('categories', __('Category'))->checkboxForBelongsToMany(VolunteerCategory::pluckNameAndID());
+        $grid->column('categories', __('Category'))
+            ->checkboxForBelongsToMany(VolunteerCategory::pluckNameAndID());
+        $grid->column('comment', __('Comment'));
         return $grid;
     }
 
@@ -93,6 +96,7 @@ class VolunteerController extends AdminController
         $form->text('name', __('Full name'))->required();
         $form->text('phone', __('Phone'));
         $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
+        $form->text('comment', __('Comment'));
 
         return $form;
     }
