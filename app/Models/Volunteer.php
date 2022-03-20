@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Volunteer extends Model
 {
+    protected $fillable = ['comment', 'name', 'phone'];
     use HasFactory;
     public function categories():BelongsToMany
     {
