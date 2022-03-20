@@ -16,6 +16,7 @@ use NotificationChannels\Telegram\TelegramUpdates;
 
 class SendingController extends AdminController
 {
+    protected $model = Sending::class;
     /**
      * Title for current resource.
      *

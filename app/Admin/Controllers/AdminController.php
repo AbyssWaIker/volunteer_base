@@ -23,7 +23,7 @@ class AdminController extends BaseController
      */
     protected function grid()
     {
-        $grid = new Grid(new ($this->model));
+        $grid = new Grid(new $this->model);
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
         });
