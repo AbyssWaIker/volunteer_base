@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class DestitutesController extends AdminController
 {
+    protected $model = Destitute::class;
     /**
      * Title for current resource.
      *

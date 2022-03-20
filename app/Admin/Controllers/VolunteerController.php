@@ -11,6 +11,7 @@ use Encore\Admin\Show;
 
 class VolunteerController extends AdminController
 {
+    protected $model = Volunteer::class;
     /**
      * Title for current resource.
      *
