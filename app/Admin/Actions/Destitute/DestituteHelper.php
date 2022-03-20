@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Actions;
+namespace App\Admin\Actions\Destitute;
 use App\Models\Destitute;
 use Carbon\Carbon;
 use Encore\Admin\Actions\RowAction;
