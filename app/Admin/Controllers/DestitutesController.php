@@ -7,7 +7,6 @@ use App\Admin\Exporters\CategoryExporter;
 use App\Models\Destitute;
 use App\Models\DestituteCategory;
 use Carbon\Carbon;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -29,7 +28,7 @@ class DestitutesController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Destitute());
+        $grid = parent::grid();
         $grid->model()->with(['categories', 'helpGiven']);
         $grid->quickSearch(['name', 'address', 'phone', 'passport_id']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
@@ -73,7 +72,7 @@ class DestitutesController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Destitute::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('id', __('Id'));
         $show->field('last_name', __('Last name'));
@@ -92,9 +91,9 @@ class DestitutesController extends AdminController
      *
      * @return Form
      */
-    protected function form(): Form
+    protected function form($id = 0): Form
     {
-        $form = new Form(new Destitute());
+        $form = parent::form($id);
 
         $form->text('name', __('Full name'))->required();
         $form->text('phone', __('Phone'));
