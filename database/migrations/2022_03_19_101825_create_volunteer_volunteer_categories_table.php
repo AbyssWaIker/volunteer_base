@@ -15,7 +15,7 @@ class CreateVolunteerVolunteerCategoriesTable extends Migration
     {
         Schema::create('volunteer_volunteer_category', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('volunteer_id')->constrained();
+            $table->foreignId('volunteer_id')->constrained()->cascadeOnDelete();
             $table->foreignId('volunteer_category_id')->constrained();
         });
     }
