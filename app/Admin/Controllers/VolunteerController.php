@@ -39,9 +39,11 @@ class VolunteerController extends AdminController
         $grid->filter(function(Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->like('name', __('Name'));
                 $filter->date('created_at', 'Дата');
             });
             $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->like('phone', __('Phone'));
                 $filter->where(function(Builder $query) {
                     $query->whereHas('categories', function (Builder $query) {
                         $table = (new VolunteerCategory)->getTable();
