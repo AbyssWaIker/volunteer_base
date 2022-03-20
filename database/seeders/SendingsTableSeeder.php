@@ -39,11 +39,11 @@ class SendingsTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'receiving_point_id' => 3,
+                'receiving_point_id' => 13,
                 'times' => 0,
                 'date' => '2022-03-19',
                 'created_at' => '2022-03-19 08:26:57',
-                'updated_at' => '2022-03-19 08:26:57',
+                'updated_at' => '2022-03-20 07:38:21',
             ),
             3 => 
             array (
@@ -66,11 +66,11 @@ class SendingsTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 6,
-                'receiving_point_id' => 6,
+                'receiving_point_id' => 10,
                 'times' => 0,
                 'date' => '2022-03-19',
                 'created_at' => '2022-03-19 09:50:25',
-                'updated_at' => '2022-03-19 09:50:25',
+                'updated_at' => '2022-03-19 13:34:47',
             ),
             6 => 
             array (
@@ -98,6 +98,69 @@ class SendingsTableSeeder extends Seeder
                 'date' => '2022-03-19',
                 'created_at' => '2022-03-19 12:16:49',
                 'updated_at' => '2022-03-19 12:16:49',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'receiving_point_id' => 13,
+                'times' => 0,
+                'date' => '2022-03-19',
+                'created_at' => '2022-03-19 14:40:54',
+                'updated_at' => '2022-03-20 07:38:03',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'receiving_point_id' => 12,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 07:32:58',
+                'updated_at' => '2022-03-20 07:32:58',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'receiving_point_id' => 1,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 07:40:03',
+                'updated_at' => '2022-03-20 07:40:03',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'receiving_point_id' => 2,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 07:50:51',
+                'updated_at' => '2022-03-20 07:50:51',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'receiving_point_id' => 14,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 08:10:18',
+                'updated_at' => '2022-03-20 08:10:18',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'receiving_point_id' => 15,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 08:18:01',
+                'updated_at' => '2022-03-20 08:18:01',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'receiving_point_id' => 16,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 08:59:43',
+                'updated_at' => '2022-03-20 08:59:43',
             ),
         ));
 
