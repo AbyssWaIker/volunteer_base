@@ -8,6 +8,7 @@ use App\Models\VolunteerCategory;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Database\Eloquent\Builder;
 
 class VolunteerController extends AdminController
 {
@@ -37,6 +38,13 @@ class VolunteerController extends AdminController
         });
         $grid->filter(function(Grid\Filter $filter) {
             $filter->date('created_at', 'Дата');
+            $filter->disableIdFilter();
+            $filter->where(function(Builder $query) {
+                $query->whereHas('category', function (Builder $query) {
+                    $query->whereIn('id', $this->input);
+                });
+            }, 'Категории', 'categories')
+                ->multipleSelect(VolunteerCategory::pluckNameAndID());
         });
         $grid->exporter(new CategoryExporter($grid, $this->title));
 
