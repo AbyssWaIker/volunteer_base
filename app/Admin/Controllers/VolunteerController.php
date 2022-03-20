@@ -2,21 +2,16 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Actions\DestituteHelper;
 use App\Admin\Exporters\CategoryExporter;
-use App\Models\Destitute;
-use App\Models\DestituteCategory;
 use App\Models\Volunteer;
 use App\Models\VolunteerCategory;
-use Carbon\Carbon;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use Illuminate\Database\Eloquent\Builder;
 
 class VolunteerController extends AdminController
 {
+    protected $model = Volunteer::class;
     /**
      * Title for current resource.
      *
@@ -31,7 +26,7 @@ class VolunteerController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Volunteer());
+        $grid = parent::grid();
         $grid->model()->with(['categories']);
         $grid->quickSearch(['name', 'phone']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
@@ -39,9 +34,6 @@ class VolunteerController extends AdminController
             $form->text('phone', __('Phone'));
             $form->multipleSelect('categories', __('Category'))
                 ->options(VolunteerCategory::pluckNameAndID());
-        });
-        $grid->actions(function(Grid\Displayers\Actions $actions) {
-            $actions->disableView();
         });
         $grid->filter(function(Grid\Filter $filter) {
             $filter->date('created_at', 'Дата');
@@ -63,7 +55,7 @@ class VolunteerController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Volunteer::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('id', __('Id'));
         $show->field('name', __('Last name'));
@@ -79,9 +71,9 @@ class VolunteerController extends AdminController
      *
      * @return Form
      */
-    protected function form(): Form
+    protected function form($id = 0): Form
     {
-        $form = new Form(new Volunteer());
+        $form = parent::form($id);
 
         $form->text('name', __('Full name'))->required();
         $form->text('phone', __('Phone'));

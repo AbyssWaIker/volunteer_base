@@ -5,6 +5,6 @@ namespace App\Admin\Controllers;
 use App\Models\DestituteCategory;
 class CategoryDestituteController extends CategoryController
 {
-    protected $class = DestituteCategory::class;
+    protected $model = DestituteCategory::class;
     protected $title = 'Категории Нуждающихся';
 }
