@@ -163,30 +163,30 @@ class StocksTableSeeder extends Seeder
                 'id' => 15,
                 'name' => 'Апельсины',
                 'deficit_status' => 2,
-                'deficit_count_since_last_replenishment' => 4,
+                'deficit_count_since_last_replenishment' => 6,
                 'stock_category_id' => NULL,
                 'created_at' => '2022-03-19 08:18:51',
-                'updated_at' => '2022-03-19 08:46:51',
+                'updated_at' => '2022-03-20 08:16:10',
             ),
             15 => 
             array (
                 'id' => 16,
                 'name' => 'Кефир',
                 'deficit_status' => 2,
-                'deficit_count_since_last_replenishment' => 4,
+                'deficit_count_since_last_replenishment' => 6,
                 'stock_category_id' => NULL,
                 'created_at' => '2022-03-19 08:18:51',
-                'updated_at' => '2022-03-19 08:46:51',
+                'updated_at' => '2022-03-20 08:16:10',
             ),
             16 => 
             array (
                 'id' => 17,
                 'name' => 'Йогурт',
-                'deficit_status' => 0,
-                'deficit_count_since_last_replenishment' => 0,
+                'deficit_status' => 2,
+                'deficit_count_since_last_replenishment' => 2,
                 'stock_category_id' => NULL,
                 'created_at' => '2022-03-19 08:18:51',
-                'updated_at' => '2022-03-19 08:18:51',
+                'updated_at' => '2022-03-20 08:16:10',
             ),
             17 => 
             array (
@@ -437,6 +437,316 @@ class StocksTableSeeder extends Seeder
                 'stock_category_id' => NULL,
                 'created_at' => '2022-03-19 12:16:49',
                 'updated_at' => '2022-03-19 12:16:49',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'name' => 'Мандарины',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-19 14:40:54',
+                'updated_at' => '2022-03-19 14:40:54',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'name' => 'Сок',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-19 14:40:54',
+                'updated_at' => '2022-03-19 14:40:54',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'name' => 'Шоколадки',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-19 14:40:54',
+                'updated_at' => '2022-03-19 14:40:54',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'name' => 'Макароны',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:32:58',
+                'updated_at' => '2022-03-20 07:32:58',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'name' => 'Пшено',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:32:58',
+                'updated_at' => '2022-03-20 07:32:58',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'name' => 'Гречка',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:32:58',
+                'updated_at' => '2022-03-20 07:32:58',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'name' => 'Овсянка',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:32:58',
+                'updated_at' => '2022-03-20 07:32:58',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'name' => 'Масло',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:41:59',
+                'updated_at' => '2022-03-20 07:41:59',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'name' => 'Перец мрия',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'name' => 'Паприка мрия',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'name' => 'Приправа мивина куриная',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'name' => 'Приправа грибная мивина',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'name' => 'Приправа мясная мивина',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'name' => 'Приправа куриная мивина',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            56 => 
+            array (
+                'id' => 57,
+                'name' => 'Мивина',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            57 => 
+            array (
+                'id' => 58,
+                'name' => 'Сырки плавленые',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:48:27',
+                'updated_at' => '2022-03-20 07:48:27',
+            ),
+            58 => 
+            array (
+                'id' => 59,
+                'name' => 'Мясо',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:49:04',
+                'updated_at' => '2022-03-20 07:49:04',
+            ),
+            59 => 
+            array (
+                'id' => 60,
+                'name' => 'Компот',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:52:24',
+                'updated_at' => '2022-03-20 07:52:24',
+            ),
+            60 => 
+            array (
+                'id' => 61,
+                'name' => 'Сгущенка',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:53:21',
+                'updated_at' => '2022-03-20 07:53:21',
+            ),
+            61 => 
+            array (
+                'id' => 62,
+                'name' => 'Консервы аквамарин',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:56:58',
+                'updated_at' => '2022-03-20 07:56:58',
+            ),
+            62 => 
+            array (
+                'id' => 63,
+                'name' => 'Консервы рисовые с бараниной',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:56:58',
+                'updated_at' => '2022-03-20 07:56:58',
+            ),
+            63 => 
+            array (
+                'id' => 64,
+                'name' => 'Сухие супы',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 07:59:47',
+                'updated_at' => '2022-03-20 07:59:47',
+            ),
+            64 => 
+            array (
+                'id' => 65,
+                'name' => 'Сало',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:01:25',
+                'updated_at' => '2022-03-20 08:01:25',
+            ),
+            65 => 
+            array (
+                'id' => 66,
+                'name' => 'Мясо вяленое',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:02:31',
+                'updated_at' => '2022-03-20 08:02:31',
+            ),
+            66 => 
+            array (
+                'id' => 67,
+                'name' => 'Газировка',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:06:08',
+                'updated_at' => '2022-03-20 08:06:08',
+            ),
+            67 => 
+            array (
+                'id' => 68,
+                'name' => 'Сухпайки',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:10:18',
+                'updated_at' => '2022-03-20 08:10:18',
+            ),
+            68 => 
+            array (
+                'id' => 69,
+                'name' => 'Сахар рафинад',
+                'deficit_status' => 2,
+                'deficit_count_since_last_replenishment' => 2,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:15:52',
+                'updated_at' => '2022-03-20 08:16:10',
+            ),
+            69 => 
+            array (
+                'id' => 70,
+                'name' => 'Халва',
+                'deficit_status' => 2,
+                'deficit_count_since_last_replenishment' => 3,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:15:52',
+                'updated_at' => '2022-03-20 08:18:01',
+            ),
+            70 => 
+            array (
+                'id' => 71,
+                'name' => 'Текст',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:15:52',
+                'updated_at' => '2022-03-20 08:15:52',
+            ),
+            71 => 
+            array (
+                'id' => 72,
+                'name' => 'Соки',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 08:18:00',
+                'updated_at' => '2022-03-20 08:18:00',
+            ),
+            72 => 
+            array (
+                'id' => 73,
+                'name' => 'Суп сухой',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 09:07:13',
+                'updated_at' => '2022-03-20 09:07:13',
             ),
         ));
 
