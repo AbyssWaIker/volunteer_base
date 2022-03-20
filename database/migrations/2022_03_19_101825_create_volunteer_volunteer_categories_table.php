@@ -13,7 +13,7 @@ class CreateVolunteerVolunteerCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('volunteer_volunteer_categories', function (Blueprint $table) {
+        Schema::create('volunteer_volunteer_category', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateVolunteerVolunteerCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('volunteer_volunteer_categories');
+        Schema::dropIfExists('volunteer_volunteer_category');
     }
 }
