@@ -40,7 +40,7 @@ class VolunteerController extends AdminController
             $filter->date('created_at', 'Дата');
             $filter->disableIdFilter();
             $filter->where(function(Builder $query) {
-                $query->whereHas('category', function (Builder $query) {
+                $query->whereHas('categories', function (Builder $query) {
                     $query->whereIn('id', $this->input);
                 });
             }, 'Категории', 'categories')
