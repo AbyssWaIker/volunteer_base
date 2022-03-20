@@ -748,6 +748,56 @@ class StocksTableSeeder extends Seeder
                 'created_at' => '2022-03-20 09:07:13',
                 'updated_at' => '2022-03-20 09:07:13',
             ),
+            73 => 
+            array (
+                'id' => 74,
+                'name' => 'Рис',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 09:57:06',
+                'updated_at' => '2022-03-20 09:57:06',
+            ),
+            74 => 
+            array (
+                'id' => 75,
+                'name' => 'Соль',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 09:58:17',
+                'updated_at' => '2022-03-20 09:58:17',
+            ),
+            75 => 
+            array (
+                'id' => 76,
+                'name' => 'Буря4',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 09:59:43',
+                'updated_at' => '2022-03-20 09:59:43',
+            ),
+            76 => 
+            array (
+                'id' => 77,
+                'name' => 'Горох сухой',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 09:59:57',
+                'updated_at' => '2022-03-20 09:59:57',
+            ),
+            77 => 
+            array (
+                'id' => 78,
+                'name' => 'Консервы Килька',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 10:02:00',
+                'updated_at' => '2022-03-20 10:02:00',
+            ),
         ));
 
         
