@@ -109,6 +109,13 @@ class VolunteerCategoriesTableSeeder extends Seeder
                 'created_at' => '2022-03-20 12:28:21',
                 'updated_at' => '2022-03-20 12:28:21',
             ),
+            13 => 
+            array (
+                'id' => 15,
+            'name' => 'Машина (николаев)',
+                'created_at' => '2022-03-20 12:49:09',
+                'updated_at' => '2022-03-20 12:49:09',
+            ),
         ));
 
         
