@@ -37,15 +37,19 @@ class VolunteerController extends AdminController
                 ->options(VolunteerCategory::pluckNameAndID());
         });
         $grid->filter(function(Grid\Filter $filter) {
-            $filter->date('created_at', 'Дата');
             $filter->disableIdFilter();
-            $filter->where(function(Builder $query) {
-                $query->whereHas('categories', function (Builder $query) {
-                    $table = (new VolunteerCategory)->getTable();
-                    $query->whereIn("$table.id", $this->input);
-                });
-            }, 'Категории', 'categories')
-                ->multipleSelect(VolunteerCategory::pluckNameAndID());
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->date('created_at', 'Дата');
+            });
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->where(function(Builder $query) {
+                    $query->whereHas('categories', function (Builder $query) {
+                        $table = (new VolunteerCategory)->getTable();
+                        $query->whereIn("$table.id", $this->input);
+                    });
+                }, 'Категории', 'categories')
+                    ->multipleSelect(VolunteerCategory::pluckNameAndID());
+            });
         });
         $grid->exporter(new CategoryExporter($grid, $this->title));
 
