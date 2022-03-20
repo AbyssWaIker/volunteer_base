@@ -41,7 +41,8 @@ class VolunteerController extends AdminController
             $filter->disableIdFilter();
             $filter->where(function(Builder $query) {
                 $query->whereHas('categories', function (Builder $query) {
-                    $query->whereIn('id', $this->input);
+                    $table = (new VolunteerCategory)->getTable();
+                    $query->whereIn("$table.id", $this->input);
                 });
             }, 'Категории', 'categories')
                 ->multipleSelect(VolunteerCategory::pluckNameAndID());
