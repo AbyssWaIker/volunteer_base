@@ -86,10 +86,7 @@ class SendingController extends AdminController
     protected function form($id = 0)
     {
         $model = Sending::query()->findOrNew($id);
-        $form = new Form($model);
-        $form->tools(function (Form\Tools $tools) {
-            $tools->disableView();
-        });
+        $form = parent::form($id);
         $receiving_point_options = ReceivingPoint::pluckNameAndID();
         $stock_options = Stock::pluckNameAndID();
         $quantity_unit_options = QuantityUnit::pluckNameAndID();
