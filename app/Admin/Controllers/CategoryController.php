@@ -3,7 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Exporters\CategoryExporter;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Grid\Displayers\Actions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -18,7 +17,7 @@ abstract class CategoryController extends AdminController
      * @var string
      */
     protected $title = 'Категории';
-    protected $class;
+    protected $model;
     /**
      * Make a grid builder.
      *
@@ -26,14 +25,11 @@ abstract class CategoryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new $this->class);
+        $grid = parent::grid();
 
         $grid->disableCreateButton();
         $grid->disableFilter();
         $grid->quickSearch('name');
-        $grid->actions(function (Actions $actions) {
-            $actions->disableView();
-        });
 
         $grid->exporter(new CategoryExporter);
         $grid->quickCreate(function (QuickCreate $form) {
@@ -53,7 +49,7 @@ abstract class CategoryController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(($this->class)::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('name', __('Name'));
 
@@ -65,9 +61,9 @@ abstract class CategoryController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form($id = 0)
     {
-        $form = new Form(new $this->class());
+        $form = parent::form($id);
 
         $form->text('name', __('Name'));
 

@@ -2,16 +2,12 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Notifications\SendingReport;
 use App\Models\QuantityUnit;
 use App\Models\ReceivingPoint;
 use App\Models\Stock;
 use Carbon\Carbon;
-use Encore\Admin\Admin;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Grid\Displayers\Actions;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use \App\Models\Sending;
@@ -20,6 +16,7 @@ use NotificationChannels\Telegram\TelegramUpdates;
 
 class SendingController extends AdminController
 {
+    protected $model = Sending::class;
     /**
      * Title for current resource.
      *
@@ -34,10 +31,7 @@ class SendingController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Sending());
-        $grid->actions(function (Actions $actions) {
-            $actions->disableView();
-        });
+        $grid = parent::grid();
         $grid->filter(function (Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
@@ -66,7 +60,7 @@ class SendingController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Sending::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('id', __('Id'));
         $show->field('receiving_point_id', __('Receiving point id'));
