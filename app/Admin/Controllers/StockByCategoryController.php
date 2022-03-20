@@ -3,7 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Stock;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -24,7 +23,7 @@ abstract class StockByCategoryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Stock());
+        $grid = parent::grid();
         $grid->model()->where('category_id', $this->category_id)->orderByDesc('deficit');
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
@@ -44,7 +43,7 @@ abstract class StockByCategoryController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(Stock::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
@@ -61,9 +60,9 @@ abstract class StockByCategoryController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form($id = 0)
     {
-        $form = new Form(new Stock());
+        $form = parent::form($id);
 
         $form->text('name', __('Name'));
         $form->number('deficit', __('Deficit'));
