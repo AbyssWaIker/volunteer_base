@@ -64,7 +64,7 @@ class VolunteerController extends AdminController
         $grid->column('name', __('Full name'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
         $grid->column('categories', __('Category'))->checkboxForBelongsToMany(VolunteerCategory::pluckNameAndID());
-        $grid->column('sex', __('Sex'))->editable('select', Volunteer::SEX_OPTIONS);
+        $grid->column('sex', __('Sex'))->switch(Volunteer::SEX_SWITCH_STATES);
         $grid->column('comment', __('Comment'));
         return $grid;
     }
@@ -99,7 +99,7 @@ class VolunteerController extends AdminController
 
         $form->text('name', __('Full name'))->required();
         $form->text('phone', __('Phone'));
-        $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
+        $form->switch('sex', __('Sex'))->options(Volunteer::SEX_SWITCH_STATES);
         $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
         $form->text('comment', __('Comment'));
 
