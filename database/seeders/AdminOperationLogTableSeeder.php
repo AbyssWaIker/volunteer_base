@@ -11682,6 +11682,171 @@ class AdminOperationLogTableSeeder extends Seeder
                 'created_at' => '2022-03-21 11:25:39',
                 'updated_at' => '2022-03-21 11:25:39',
             ),
+            60 => 
+            array (
+                'id' => 1061,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-03-21 11:34:26',
+                'updated_at' => '2022-03-21 11:34:26',
+            ),
+            61 => 
+            array (
+                'id' => 1062,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_pjax":"#pjax-container","__search__":"208942"}',
+                'created_at' => '2022-03-21 11:34:51',
+                'updated_at' => '2022-03-21 11:34:51',
+            ),
+            62 => 
+            array (
+                'id' => 1063,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"__search__":"208942","_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container"}',
+                'created_at' => '2022-03-21 11:35:13',
+                'updated_at' => '2022-03-21 11:35:13',
+            ),
+            63 => 
+            array (
+                'id' => 1064,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container","__search__":"Abkby"}',
+                'created_at' => '2022-03-21 11:35:27',
+                'updated_at' => '2022-03-21 11:35:27',
+            ),
+            64 => 
+            array (
+                'id' => 1065,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"__search__":"208942","_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container"}',
+                'created_at' => '2022-03-21 11:35:31',
+                'updated_at' => '2022-03-21 11:35:31',
+            ),
+            65 => 
+            array (
+                'id' => 1066,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container","__search__":"\\u0424\\u0438\\u043b\\u0438\\u043d"}',
+                'created_at' => '2022-03-21 11:35:35',
+                'updated_at' => '2022-03-21 11:35:35',
+            ),
+            66 => 
+            array (
+                'id' => 1067,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container","__search__":null}',
+                'created_at' => '2022-03-21 11:35:56',
+                'updated_at' => '2022-03-21 11:35:56',
+            ),
+            67 => 
+            array (
+                'id' => 1068,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container","page":"3"}',
+                'created_at' => '2022-03-21 11:36:01',
+                'updated_at' => '2022-03-21 11:36:01',
+            ),
+            68 => 
+            array (
+                'id' => 1069,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","_pjax":"#pjax-container","page":"5"}',
+                'created_at' => '2022-03-21 11:36:06',
+                'updated_at' => '2022-03-21 11:36:06',
+            ),
+            69 => 
+            array (
+                'id' => 1070,
+                'user_id' => 1,
+                'path' => 'admin/_handle_action_',
+                'method' => 'POST',
+                'ip' => '46.37.216.231',
+                'input' => '{"_key":"578","_model":"App_Models_Destitute","_token":"ESjK66u56Bht7VQivqY1eEU3lxYQQMyLKOHfPNo9","_action":"App_Admin_Actions_Destitute_DestituteHelper"}',
+                'created_at' => '2022-03-21 11:36:19',
+                'updated_at' => '2022-03-21 11:36:19',
+            ),
+            70 => 
+            array (
+                'id' => 1071,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","page":"5","_pjax":"#pjax-container"}',
+                'created_at' => '2022-03-21 11:36:19',
+                'updated_at' => '2022-03-21 11:36:19',
+            ),
+            71 => 
+            array (
+                'id' => 1072,
+                'user_id' => 1,
+                'path' => 'admin/_handle_action_',
+                'method' => 'POST',
+                'ip' => '46.37.216.231',
+                'input' => '{"_key":"579","_model":"App_Models_Destitute","_token":"ESjK66u56Bht7VQivqY1eEU3lxYQQMyLKOHfPNo9","_action":"App_Admin_Actions_Destitute_DestituteHelper"}',
+                'created_at' => '2022-03-21 11:36:23',
+                'updated_at' => '2022-03-21 11:36:23',
+            ),
+            72 => 
+            array (
+                'id' => 1073,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","page":"5","_pjax":"#pjax-container"}',
+                'created_at' => '2022-03-21 11:36:23',
+                'updated_at' => '2022-03-21 11:36:23',
+            ),
+            73 => 
+            array (
+                'id' => 1074,
+                'user_id' => 1,
+                'path' => 'admin/_handle_action_',
+                'method' => 'POST',
+                'ip' => '46.37.216.231',
+                'input' => '{"_key":"580","_model":"App_Models_Destitute","_token":"ESjK66u56Bht7VQivqY1eEU3lxYQQMyLKOHfPNo9","_action":"App_Admin_Actions_Destitute_DestituteHelper"}',
+                'created_at' => '2022-03-21 11:36:27',
+                'updated_at' => '2022-03-21 11:36:27',
+            ),
+            74 => 
+            array (
+                'id' => 1075,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '46.37.216.231',
+                'input' => '{"_columns_":"address,categories,help_given,id,name,passport_id,phone","page":"5","_pjax":"#pjax-container"}',
+                'created_at' => '2022-03-21 11:36:27',
+                'updated_at' => '2022-03-21 11:36:27',
+            ),
         ));
 
         
