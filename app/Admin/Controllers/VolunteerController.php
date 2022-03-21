@@ -41,9 +41,7 @@ class VolunteerController extends AdminController
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('name', __('Name'));
-                $filter->where(function(Builder $query){
-                    $query->where('sex', $this->input)->orWhere('sex', Volunteer::SEX_MULTIPLE);
-                },  __('Sex'), 'sex')->select(Volunteer::SEX_OPTIONS);
+                $filter->equal('sex', __('Sex'))->select(Volunteer::SEX_OPTIONS);
             });
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('phone', __('Phone'));
