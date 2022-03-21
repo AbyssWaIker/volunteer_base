@@ -12,6 +12,8 @@
         "genealabs/laravel-model-caching": "^0.11.7",
         "guzzlehttp/guzzle": "^7.0.1",
         "jenssegers/date": "^4.0",
+        "laravel-admin-ext/config": "^1.1",
+        "laravel-admin-ext/scheduling": "^1.2",
         "laravel-notification-channels/telegram": "^1.0",
         "laravel/framework": "^v8.80",
         "laravel/sanctum": "^2.11",

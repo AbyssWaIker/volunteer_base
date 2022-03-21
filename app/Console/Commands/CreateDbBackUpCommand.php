@@ -20,7 +20,7 @@ class CreateDbBackUpCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Создает бекап базы данных';
 
     /**
      * Create a new command instance.
