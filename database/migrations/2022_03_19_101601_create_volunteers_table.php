@@ -17,6 +17,7 @@ class CreateVolunteersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
+            $table->integer('sex')->default(1);
             $table->string('comment')->nullable();
             $table->timestamps();
         });
