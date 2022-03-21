@@ -798,6 +798,86 @@ class StocksTableSeeder extends Seeder
                 'created_at' => '2022-03-20 10:02:00',
                 'updated_at' => '2022-03-20 10:02:00',
             ),
+            78 => 
+            array (
+                'id' => 79,
+                'name' => 'Хлопья',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 16:20:08',
+                'updated_at' => '2022-03-20 16:20:08',
+            ),
+            79 => 
+            array (
+                'id' => 80,
+                'name' => 'Консервы',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-20 16:20:08',
+                'updated_at' => '2022-03-20 16:20:08',
+            ),
+            80 => 
+            array (
+                'id' => 81,
+                'name' => 'Томатная паста',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-21 07:40:46',
+                'updated_at' => '2022-03-21 07:40:46',
+            ),
+            81 => 
+            array (
+                'id' => 82,
+                'name' => 'Банка',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-21 07:40:46',
+                'updated_at' => '2022-03-21 07:40:46',
+            ),
+            82 => 
+            array (
+                'id' => 83,
+                'name' => 'Маслины',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-21 07:40:46',
+                'updated_at' => '2022-03-21 07:40:46',
+            ),
+            83 => 
+            array (
+                'id' => 84,
+                'name' => 'Мед',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-21 07:40:46',
+                'updated_at' => '2022-03-21 07:40:46',
+            ),
+            84 => 
+            array (
+                'id' => 85,
+                'name' => 'Конфеты, печенья',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-21 07:42:47',
+                'updated_at' => '2022-03-21 07:42:47',
+            ),
+            85 => 
+            array (
+                'id' => 86,
+                'name' => 'Крупы',
+                'deficit_status' => 0,
+                'deficit_count_since_last_replenishment' => 0,
+                'stock_category_id' => NULL,
+                'created_at' => '2022-03-21 07:42:47',
+                'updated_at' => '2022-03-21 07:42:47',
+            ),
         ));
 
         
