@@ -54,7 +54,7 @@ class DestitutesController extends AdminController
         });
         $grid->exporter(new CategoryExporter($grid, $this->title));
 
-        $grid->column('id', __('Id'))->sortable()->hide();
+        $grid->column('id', __('Id'))->sortable();
         $grid->column('name', __('Full name'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');

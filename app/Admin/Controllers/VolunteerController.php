@@ -29,18 +29,21 @@ class VolunteerController extends AdminController
     {
         $grid = parent::grid();
         $grid->model()->with(['categories']);
-        $grid->quickSearch(['name', 'phone']);
+        $grid->quickSearch(['name', 'phone', 'comment']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
             $form->text('phone', __('Phone'));
             $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
+            $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
             $form->text('comment', __('Comment'));
         });
         $grid->filter(function(Grid\Filter $filter) {
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('name', __('Name'));
-                $filter->date('created_at', 'Дата');
+                $filter->where(function(Builder $query){
+                    $query->where('sex', $this->input)->orWhere('sex', Volunteer::SEX_MULTIPLE);
+                },  __('Sex'), 'sex')->select(Volunteer::SEX_OPTIONS);
             });
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('phone', __('Phone'));
@@ -55,11 +58,13 @@ class VolunteerController extends AdminController
         });
         $grid->exporter(new CategoryExporter($grid, $this->title));
 
+//        dd(Volunteer::all()->toArray());
+
         $grid->column('id', __('Id'))->sortable();
         $grid->column('name', __('Full name'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
-        $grid->column('categories', __('Category'))
-            ->checkboxForBelongsToMany(VolunteerCategory::pluckNameAndID());
+        $grid->column('categories', __('Category'))->checkboxForBelongsToMany(VolunteerCategory::pluckNameAndID());
+        $grid->column('sex', __('Sex'))->editable('select', Volunteer::SEX_OPTIONS);
         $grid->column('comment', __('Comment'));
         return $grid;
     }
@@ -94,6 +99,7 @@ class VolunteerController extends AdminController
 
         $form->text('name', __('Full name'))->required();
         $form->text('phone', __('Phone'));
+        $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
         $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
         $form->text('comment', __('Comment'));
 
