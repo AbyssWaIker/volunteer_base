@@ -31,10 +31,7 @@ class GetAllIpAddressesList extends \Illuminate\Console\Command
         $text = '';
         foreach ($days as $day => $connections) {
             $text .= PHP_EOL . $day . PHP_EOL;
-            $connections = $connections->groupBy('ip');
-            foreach ($connections as $ip => $useless_data) {
-                $text .= $ip . PHP_EOL;
-            }
+            $text .= $connections->groupBy('ip')->keys()->implode(PHP_EOL) . PHP_EOL;
         }
         $new_log_for_full_logs = fopen('full_logs.txt', 'w');
         fwrite($new_log_for_full_logs, $text);
