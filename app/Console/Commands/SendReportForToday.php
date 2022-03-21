@@ -18,7 +18,7 @@ class SendReportForToday extends \Illuminate\Console\Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Отправляет в телеграм отчет об отправленных продуктах';
 
     /**
      * Execute the console command.

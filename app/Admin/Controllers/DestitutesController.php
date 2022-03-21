@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Actions\DestituteHelper;
+use App\Admin\Actions\Destitute\DestituteHelper;
 use App\Admin\Exporters\CategoryExporter;
 use App\Models\Destitute;
 use App\Models\DestituteCategory;
