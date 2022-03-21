@@ -17,7 +17,7 @@ class CreateVolunteersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
-            $table->boolean('sex');
+            $table->boolean('sex')->default(\App\Models\Volunteer::SEX_MALE);
             $table->string('comment')->nullable();
             $table->timestamps();
         });
