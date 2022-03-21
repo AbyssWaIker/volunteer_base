@@ -1380,6 +1380,48 @@ class HelpGivensTableSeeder extends Seeder
                 'destitute_id' => 719,
                 'hg_timestamp' => '2022-03-20 11:37:20',
             ),
+            227 => 
+            array (
+                'id' => 242,
+                'destitute_id' => 720,
+                'hg_timestamp' => '2022-03-21 10:02:43',
+            ),
+            228 => 
+            array (
+                'id' => 243,
+                'destitute_id' => 721,
+                'hg_timestamp' => '2022-03-21 10:06:32',
+            ),
+            229 => 
+            array (
+                'id' => 244,
+                'destitute_id' => 722,
+                'hg_timestamp' => '2022-03-21 10:09:20',
+            ),
+            230 => 
+            array (
+                'id' => 245,
+                'destitute_id' => 723,
+                'hg_timestamp' => '2022-03-21 10:11:51',
+            ),
+            231 => 
+            array (
+                'id' => 246,
+                'destitute_id' => 724,
+                'hg_timestamp' => '2022-03-21 10:14:15',
+            ),
+            232 => 
+            array (
+                'id' => 247,
+                'destitute_id' => 725,
+                'hg_timestamp' => '2022-03-21 00:00:00',
+            ),
+            233 => 
+            array (
+                'id' => 248,
+                'destitute_id' => 726,
+                'hg_timestamp' => '2022-03-21 11:01:49',
+            ),
         ));
 
         

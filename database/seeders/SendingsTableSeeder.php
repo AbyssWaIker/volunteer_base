@@ -180,6 +180,33 @@ class SendingsTableSeeder extends Seeder
                 'created_at' => '2022-03-20 09:57:48',
                 'updated_at' => '2022-03-20 09:57:48',
             ),
+            18 => 
+            array (
+                'id' => 19,
+                'receiving_point_id' => 13,
+                'times' => 0,
+                'date' => '2022-03-20',
+                'created_at' => '2022-03-20 16:20:08',
+                'updated_at' => '2022-03-20 16:20:08',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'receiving_point_id' => 19,
+                'times' => 0,
+                'date' => '2022-03-21',
+                'created_at' => '2022-03-21 07:28:36',
+                'updated_at' => '2022-03-21 07:28:36',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'receiving_point_id' => 20,
+                'times' => 0,
+                'date' => '2022-03-21',
+                'created_at' => '2022-03-21 07:40:46',
+                'updated_at' => '2022-03-21 07:40:46',
+            ),
         ));
 
         
