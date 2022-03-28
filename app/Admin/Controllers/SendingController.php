@@ -119,6 +119,7 @@ class SendingController extends AdminController
                 $form->select('deficit_status', __('Availability'))
                     ->options(Stock::DEFICIT_STATUS_OPTIONS)
                     ->default(Stock::DEFICIT_STATUS_NO_DEFICIT)
+                    //TODO заменить дефолтный when,на тот который заработает внутри NestedForm
 //                    ->when('!=', Stock::DEFICIT_STATUS_NO_DEFICIT, function (Form $form) {
                         ;$form->decimal('quantity_requested', __('Quantity requested'))
                             ->placeholder(__('Fill in case of deficit'));
