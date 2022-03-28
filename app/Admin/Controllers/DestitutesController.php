@@ -46,11 +46,20 @@ class DestitutesController extends AdminController
             $actions->add(new DestituteHelper);
         });
         $grid->filter(function(Grid\Filter $filter) {
+            $filter->disableIdFilter();
             $filter->where(function(Builder $query) {
                 $query->whereHas('helpGiven', function (Builder $query) {
                     $query->whereDate('hg_timestamp', $this->input);
                 });
             }, 'Дата', 'date')->date();
+
+            $filter->where(function(Builder $query) {
+                $query->whereHas('categories', function (Builder $query) {
+                    $table = (new DestituteCategory)->getTable();
+                    $query->whereIn("$table.id", $this->input);
+                });
+            }, 'Категории', 'categories')
+                ->multipleSelect(DestituteCategory::pluckNameAndID());
         });
         $grid->exporter(new CategoryExporter($grid, $this->title));
 
