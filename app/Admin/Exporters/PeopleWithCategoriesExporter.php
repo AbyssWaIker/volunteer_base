@@ -20,7 +20,7 @@ class PeopleWithCategoriesExporter extends ExcelExporter /*implements WithMappin
     ];
     public function query()
     {
-        return parent::query()->with('helpGiven');
+        return parent::query()->with(['categories', /*'HelpGiven'*/]);
     }
 
 //    public function map($row): array
