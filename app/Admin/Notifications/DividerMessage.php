@@ -26,7 +26,7 @@ class DividerMessage extends Notification
         $message = $this->message ? $divider.PHP_EOL.PHP_EOL.$this->message.PHP_EOL.PHP_EOL.$divider : $divider;
         return TelegramMessage::create()
             // Optional recipient user id.
-            ->to(explode(',', config('RECEIVER_TELEGRAM_ID')))
+            ->to(config('RECEIVER_TELEGRAM_ID'))
             // Markdown supported.
             ->content($message);
     }
