@@ -42,9 +42,6 @@ class Actions extends DropdownActions
             'default' => $this->default,
             'custom'  => $this->custom,
         ];
-        if (empty($variables['default']) && empty($variables['custom'])) {
-            return '';
-        }
         return Admin::component($this->view, $variables);
     }
 
