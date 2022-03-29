@@ -35,7 +35,7 @@ abstract class CategoryController extends AdminController
         $grid->quickCreate(function (QuickCreate $form) {
             $form->text('name', __('Name'));
         });
-        $grid->column('name', __('Name'))->sortable();
+        $grid->column('name', __('Name'))->sortable()->editable();
 
 
         return $grid;
