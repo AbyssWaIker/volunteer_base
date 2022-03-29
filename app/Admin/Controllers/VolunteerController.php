@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Exporters\CategoryExporter;
+use App\Admin\Exporters\PeopleWithCategoriesExporter;
 use App\Models\Volunteer;
 use App\Models\VolunteerCategory;
 use Encore\Admin\Form;
@@ -56,7 +56,7 @@ class VolunteerController extends AdminController
                     ->multipleSelect(VolunteerCategory::pluckNameAndID());
             });
         });
-        $grid->exporter(new CategoryExporter($grid, $this->title));
+        $grid->exporter(new PeopleWithCategoriesExporter($grid, $this->title));
 
 //        dd(Volunteer::all()->toArray());
 
