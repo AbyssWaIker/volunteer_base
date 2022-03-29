@@ -17,7 +17,7 @@ class SendingReport extends Notification
     {
         return TelegramMessage::create()
             // Optional recipient user id.
-            ->to(explode(',', config('RECEIVER_TELEGRAM_ID')))
+            ->to(config('RECEIVER_TELEGRAM_ID'))
             // Markdown supported.
             ->content($sending->getReport());
     }
