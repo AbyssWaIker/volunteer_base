@@ -9,6 +9,7 @@ use Encore\Admin\Show;
 
 class StockController extends AdminController
 {
+    protected $model = Stock::class;
     /**
      * Title for current resource.
      *
