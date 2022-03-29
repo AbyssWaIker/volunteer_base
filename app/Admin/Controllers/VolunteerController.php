@@ -50,7 +50,7 @@ class VolunteerController extends AdminController
                         $table = (new VolunteerCategory)->getTable();
                         $query->whereIn("$table.id", $this->input);
                     });
-                }, 'Категории', 'categories')
+                }, 'Категории', 'categories[]')
                     ->multipleSelect(VolunteerCategory::pluckNameAndID());
             });
         });
