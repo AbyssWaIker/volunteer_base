@@ -43,7 +43,7 @@ class DestitutesController extends AdminController
         });
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
-            $actions->add(new DestituteHelper);
+            $actions->prepend(new DestituteHelper);
         });
         $grid->filter(function(Grid\Filter $filter) {
             $filter->disableIdFilter();
