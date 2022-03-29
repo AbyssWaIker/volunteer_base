@@ -26,7 +26,9 @@ abstract class CategoryController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-
+        $grid->actions(function (Actions $actions) {
+            $actions->disableEdit();
+        })
         $grid->disableCreateButton();
         $grid->disableFilter();
         $grid->quickSearch('name');
