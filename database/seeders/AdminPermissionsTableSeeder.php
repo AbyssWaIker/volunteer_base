@@ -72,6 +72,16 @@ class AdminPermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            5 => 
+            array (
+                'id' => 6,
+                'name' => 'Backup',
+                'slug' => 'ext.backup',
+                'http_method' => '',
+                'http_path' => '/backup*',
+                'created_at' => '2022-03-29 10:53:42',
+                'updated_at' => '2022-03-29 10:53:42',
+            ),
         ));
 
         
