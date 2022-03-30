@@ -2,7 +2,7 @@
 
 namespace App\Admin\Extentions\Grid\Displayers;
 
-class BelongsToMany extends \Encore\Admin\Extentions\Grid\Displayers\BelongsToMany
+class BelongsToMany extends \Encore\Admin\Grid\Displayers\BelongsToMany
 {
     public function getValue()
     {
