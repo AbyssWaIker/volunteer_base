@@ -28,7 +28,7 @@ class VolunteerController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->model()->with(['categories']);
+        $grid->model()->with(['categories'])->orderByDesc('id');
         $grid->quickSearch(['name', 'phone', 'comment']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
@@ -63,7 +63,7 @@ class VolunteerController extends AdminController
         $grid->column('id', __('Id'))->sortable();
         $grid->column('name', __('Full name'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
-        $grid->column('categories', __('Category'))->checkboxForBelongsToMany(VolunteerCategory::pluckNameAndID());
+        $grid->column('categories', __('Category'))->customMultipleSelect(VolunteerCategory::pluckNameAndID());
         $grid->column('sex', __('Sex'))->switch(Volunteer::SEX_SWITCH_STATES);
         $grid->column('comment', __('Comment'));
         return $grid;
