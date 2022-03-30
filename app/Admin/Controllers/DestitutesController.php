@@ -31,7 +31,7 @@ class DestitutesController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->model()->with(['categories', 'helpGiven']);
+        $grid->model()->with(['categories', 'helpGiven'])->orderByDesc('id');
         $grid->quickSearch(['name', 'address', 'phone', 'passport_id']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
