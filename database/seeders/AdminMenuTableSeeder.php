@@ -201,14 +201,38 @@ class AdminMenuTableSeeder extends Seeder
             15 => 
             array (
                 'id' => 16,
-                'parent_id' => 0,
-                'order' => 0,
+                'parent_id' => 2,
+                'order' => 16,
                 'title' => 'Расписание',
                 'icon' => 'fa-clock-o',
                 'uri' => 'scheduling',
                 'permission' => NULL,
                 'created_at' => '2022-03-20 16:40:52',
-                'updated_at' => '2022-03-20 16:40:52',
+                'updated_at' => '2022-03-21 13:57:16',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'parent_id' => 2,
+                'order' => 17,
+                'title' => 'Backup',
+                'icon' => 'fa-copy',
+                'uri' => 'backup',
+                'permission' => NULL,
+                'created_at' => '2022-03-29 10:53:42',
+                'updated_at' => '2022-03-29 10:55:54',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'parent_id' => 2,
+                'order' => 0,
+                'title' => 'Конфиг',
+                'icon' => 'fa-gears',
+                'uri' => 'config',
+                'permission' => NULL,
+                'created_at' => '2022-03-29 12:03:05',
+                'updated_at' => '2022-03-29 12:03:05',
             ),
         ));
 
