@@ -11,7 +11,7 @@ class Checkbox extends BaseCheckBox
         foreach ($value as &$item) {
             if(is_array($item) && key_exists('id', $item)) {
                 //Сраная jquery сравнивает id-шку со строкой и дает false на "есть ли '5' в [5,2,1]?"
-                return ''.$value['id'];
+                return ''.$item['id'];
             }
         }
         return $value;
