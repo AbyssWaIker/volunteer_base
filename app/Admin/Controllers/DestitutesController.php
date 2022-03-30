@@ -38,8 +38,7 @@ class DestitutesController extends AdminController
             $form->text('passport_id', __('Passport id'));
             $form->text('phone', __('Phone'));
             $form->text('address', __('Address'));
-            $form->multipleSelect('categories', __('Category'))
-                ->attribute('name', 'categories[]')
+            $form->multipleSelect('categories[]', __('Category'))
                 ->options(DestituteCategory::pluckNameAndID());
             $form->text('comment', __('Comment'));
         });
