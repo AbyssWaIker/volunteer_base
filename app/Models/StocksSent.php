@@ -27,7 +27,10 @@ class StocksSent extends Model
     public function getLineForReport():string
     {
         return $this->stock->name . ' - '. $this->getQuantityStringForReport();
-
+    }
+    public function getLineForStats():string
+    {
+        return $this->sending->receivingPoint->name . ' - '. $this->getQuantityStringForReport();
     }
 
     private function getQuantityStringForReport():string

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Stock extends Model
 {
@@ -27,5 +28,9 @@ class Stock extends Model
     public function quantityUnit():BelongsToMany
     {
         return $this->belongsToMany(QuantityUnit::class);
+    }
+    public function sentStocks():HasMany
+    {
+        return $this->hasMany(StocksSent::class);
     }
 }
