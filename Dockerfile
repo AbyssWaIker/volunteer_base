@@ -46,8 +46,8 @@ COPY . /var/www
 
 #Устанавливаем все пакеты php и javascript
 RUN cd /var/www/ && npm install && npm run prod
-#ЧЕРТОВ DOCKERFILE ПЛЮЕТ НА ВСЕ ЗАВИСИМОСТИ И НЕ ЖДЕТ ПОКА БАЗА ДАННЫХ ЗАПУСТИТСЯ!!!!!!!!!
-#RUN cd /var/www/ && php artisan migrate --seed && php artisan vendor:publish --all
+#ЧЕРТОВ DOCKERFILE ПЛЮЕТ НА ВСЕ ЗАВИСИМОСТИ DOCKER-COMPOSE И НЕ ЖДЕТ ПОКА БАЗА ДАННЫХ ЗАПУСТИТСЯ!!!!!!!!!
+#RUN cd /var/www/ && composer install && php artisan admin:install
 
 #Открываем прилложению доступ к папкам с установленными пакетами
 RUN chown -R www:www /var/www
@@ -57,5 +57,5 @@ USER www
 
 # Открываем порт 9000 и запускаем php-fpm сервер
 EXPOSE 9000
-CMD ["php-fpm", "composer install && php artisan migrate --seed && php artisan vendor:publish --all"]
+CMD ["php-fpm", "composer install && php artisan admin:install"]
 
