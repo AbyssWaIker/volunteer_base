@@ -43,14 +43,19 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Копируем существующее php приложение и его разрешения
 COPY . /var/www
-COPY --chown=www:www . /var/www
+
+#Устанавливаем все пакеты php и javascript
+RUN cd /var/www/ && npm install && npm run prod
+#ЧЕРТОВ DOCKERFILE ПЛЮЕТ НА ВСЕ ЗАВИСИМОСТИ И НЕ ЖДЕТ ПОКА БАЗА ДАННЫХ ЗАПУСТИТСЯ!!!!!!!!!
+#RUN cd /var/www/ && php artisan migrate --seed && php artisan vendor:publish --all
+
+#Открываем прилложению доступ к папкам с установленными пакетами
+RUN chown -R www:www /var/www
 
 # Меняем текущего пользователя
 USER www
 
 # Открываем порт 9000 и запускаем php-fpm сервер
 EXPOSE 9000
-CMD ["php-fpm"]
+CMD ["php-fpm", "composer install && php artisan migrate --seed && php artisan vendor:publish --all"]
 
-#Устанавливаем все пакеты php и javascript
-RUN cd /var/www/ && npm install && npm run prod && composer install && php artisan migrate:fresh --seed
