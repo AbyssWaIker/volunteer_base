@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Concerns\WithMapping;
 
 class PeopleWithCategoriesExporter extends ExcelExporter implements WithMapping
 {
-    protected $fileName = 'люди.xlsx';
+    protected $fileName = 'волонтеры.xlsx';
 
     protected $columns = [
         'id' => '',
@@ -32,6 +32,7 @@ class PeopleWithCategoriesExporter extends ExcelExporter implements WithMapping
             [
 //                'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),
                 'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
+                'phone' => ' '.$row->phone . ' ',
                 'id' => '',
             ],
         );
