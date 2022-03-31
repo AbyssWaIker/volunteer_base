@@ -32,7 +32,7 @@ class DestitutesController extends AdminController
     {
         $grid = parent::grid();
         $grid->model()->with(['categories', 'helpGiven'])->orderByDesc('id');
-        $grid->quickSearch(['name', 'address', 'phone', 'passport_id']);
+        $grid->quickSearch(['name', 'address', 'phone', 'passport_id', 'comment']);
         $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
             $form->text('passport_id', __('Passport id'));
@@ -71,6 +71,7 @@ class DestitutesController extends AdminController
         $grid->column('passport_id', __('Passport id'))->filter('like');
         $grid->column('categories', __('Category'))->customMultipleSelect(DestituteCategory::pluckNameAndID());
         $grid->column('helpGiven',  __('Receivings'))->display(function (array $help) {return Destitute::getHelpHistory($help);});
+        $grid->column('comment', __('Comment'));
 
         return $grid;
     }
