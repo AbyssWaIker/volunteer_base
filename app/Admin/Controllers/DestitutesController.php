@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Destitute\DestituteHelper;
 use App\Admin\Exporters\CategoryExporter;
+use App\Admin\Exporters\DestituteExporter;
 use App\Admin\Exporters\PeopleWithCategoriesExporter;
 use App\Models\Destitute;
 use App\Models\DestituteCategory;
@@ -62,7 +63,7 @@ class DestitutesController extends AdminController
             }, 'Категории', 'categories')
                 ->multipleSelect(DestituteCategory::pluckNameAndID());
         });
-        $grid->exporter(new PeopleWithCategoriesExporter($grid, $this->title));
+        $grid->exporter(new DestituteExporter($grid, $this->title));
 
         $grid->column('id', __('Id'))->sortable();
         $grid->column('name', __('Full name'))->filter('like');
