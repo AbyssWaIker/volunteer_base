@@ -66,6 +66,9 @@ class DestitutesController extends AdminController
         $grid->exporter(new DestituteExporter($grid, $this->title));
 
         $grid->column('id', __('Id'))->sortable();
+        $grid->column('tableInfo')
+            ->display(function (){return [$this->tableInfo];})
+            ->verticalTable(['name'=>'ФИО','phone'=>'Телефон', 'address'=>'Прописка','passport_id'=>'ИД', 'comment'=>'Примечание']);
         $grid->column('name', __('Full name'))->filter('like');
         $grid->column('address', __('Address'))->filter('like');
         $grid->column('phone', __('Phone'))->filter('like');
