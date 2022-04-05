@@ -27,5 +27,6 @@ Column::$displayers = array_merge(
         'fixedBelongsToMany' => \App\Admin\Extentions\Grid\Displayers\BelongsToMany::class,
         'checkboxForBelongsToMany' => \App\Admin\Extentions\Grid\Displayers\Checkbox::class,
         'customMultipleSelect' => \App\Admin\Extentions\Grid\Displayers\MultipleSelect::class,
+        'verticalTable' => \App\Admin\Extentions\Grid\Displayers\VerticalTable::class,
     ]
 );
