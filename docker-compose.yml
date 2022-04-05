@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-    #MySQL Service
+    #MySQL
   db:
     image: mysql:5.7.22
     container_name: "${DB_HOST}"
@@ -21,7 +21,7 @@ services:
         - dbdata:/var/lib/mysql/
         - ./mysql/my.cnf:/etc/mysql/my.cnf
 
-  #PHP Service
+  #PHP
   app:
     depends_on:
       - db
@@ -42,7 +42,7 @@ services:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
 
-  #Nginx Service
+  #Nginx
   webserver:
     image: nginx:alpine
     container_name: webserver
