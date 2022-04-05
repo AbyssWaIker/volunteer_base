@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class Delete extends RowAction
 {
+    public $name = 'Удалить';
     public function html()
     {
-        return '<abbr title="Удалить"><i class="fa fa-trash"></i></abbr>';
+        return '<i class="fa fa-trash"></i>';
     }
 
     /**
