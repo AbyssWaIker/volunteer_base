@@ -11,7 +11,7 @@ class DestituteHelper extends RowAction
 
     public function html()
     {
-        return '<abbr title="Помочь нуждающемся"><i class="fa fa-american-sign-language-interpreting"></i></abbr>';
+        return '<i class="fa fa-american-sign-language-interpreting"></i>';
     }
     public function handle(Destitute $model)
     {
