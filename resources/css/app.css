@@ -3,5 +3,6 @@
         font-size: 3rem;
         padding: 1rem;
         display: block;
+        border-bottom: none !important;
     }
 }
