@@ -10,7 +10,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Database\Eloquent\Builder;
 
-class VolunteerController extends AdminController
+class VolunteerController extends PersonController
 {
     protected $model = Volunteer::class;
     /**
@@ -20,6 +20,22 @@ class VolunteerController extends AdminController
      */
     protected $title = 'Волонтеры';
 
+    protected function quickCreateCallback(): callable
+    {
+        return function (Grid\Tools\QuickCreate $form) {
+            parent::quickCreateCallback()($form);
+            $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
+        };
+    }
+
+    protected function filterCallBack(): callable
+    {
+        return function(Grid\Filter $filter) {
+            parent::filterCallBack()($filter);
+            $filter->equal('sex', __('Sex'))->select(Volunteer::SEX_OPTIONS);
+        };
+    }
+
     /**
      * Make a grid builder.
      *
@@ -28,42 +44,7 @@ class VolunteerController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->model()->with(['categories'])->orderByDesc('id');
-        $grid->quickSearch(['name', 'phone', 'comment']);
-        $grid->quickCreate(function (Grid\Tools\QuickCreate $form) {
-            $form->text('name', __('Full name'))->required();
-            $form->text('phone', __('Phone'));
-            $form->multipleSelect('categories[]', __('Category'))->options(VolunteerCategory::pluckNameAndID());
-            $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
-            $form->text('comment', __('Comment'));
-        });
-        $grid->filter(function(Grid\Filter $filter) {
-            $filter->disableIdFilter();
-            $filter->column(1/2, function (Grid\Filter $filter) {
-                $filter->like('name', __('Name'));
-                $filter->equal('sex', __('Sex'))->select(Volunteer::SEX_OPTIONS);
-            });
-            $filter->column(1/2, function (Grid\Filter $filter) {
-                $filter->like('phone', __('Phone'));
-                $filter->where(function(Builder $query) {
-                    $query->whereHas('categories', function (Builder $query) {
-                        $table = (new VolunteerCategory)->getTable();
-                        $query->whereIn("$table.id", $this->input);
-                    });
-                }, 'Категории', 'categories')
-                    ->multipleSelect(VolunteerCategory::pluckNameAndID());
-            });
-        });
-        $grid->exporter(new PeopleWithCategoriesExporter($grid, $this->title));
-
-//        dd(Volunteer::all()->toArray());
-
-        $grid->column('id', __('Id'))->sortable();
-        $grid->column('name', __('Full name'))->filter('like');
-        $grid->column('phone', __('Phone'))->filter('like');
-        $grid->column('categories', __('Category'))->customMultipleSelect(VolunteerCategory::pluckNameAndID());
-        $grid->column('sex', __('Sex'))->switch(Volunteer::SEX_SWITCH_STATES);
-        $grid->column('comment', __('Comment'));
+        $grid->column('sex', __('Sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
         return $grid;
     }
 
@@ -94,13 +75,7 @@ class VolunteerController extends AdminController
     protected function form($id = 0): Form
     {
         $form = parent::form($id);
-
-        $form->text('name', __('Full name'))->required();
-        $form->text('phone', __('Phone'));
-        $form->switch('sex', __('Sex'))->options(Volunteer::SEX_SWITCH_STATES);
-        $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
-        $form->text('comment', __('Comment'));
-
+        $form->switch('sex', __('Sex'))->states(Volunteer::SEX_SWITCH_STATES);
         return $form;
     }
 }

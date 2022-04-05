@@ -10,7 +10,7 @@ use Jenssegers\Date\Date;
 
 class Destitute extends Person
 {
-    protected $categoryClass = DestituteCategory::class;
+    public $category_class = DestituteCategory::class;
     protected $fillable = ['name', 'phone', 'address', 'passport_id'];
     public function helpGiven():HasMany
     {
@@ -59,7 +59,7 @@ class Destitute extends Person
         return array_merge(
             parent::getTableInfoAttribute(),
             [
-                'helpGiven' => self::getHelpHistory($this->helpGiven)
+                'helpGiven' => self::getHelpHistory($this->helpGiven->toArray())
             ]
         );
     }
