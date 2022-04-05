@@ -20,6 +20,11 @@ class Destitute extends Model
     {
         return $this->belongsToMany(DestituteCategory::class);
     }
+    public function getTableInfoAttribute():array
+    {
+        return $this->getAttributes();
+    }
+
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = true): string
     {
         $help_received_last_ten_days = false;
