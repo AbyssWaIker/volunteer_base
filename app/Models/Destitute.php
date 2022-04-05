@@ -8,21 +8,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
 
-class Destitute extends Model
+class Destitute extends Person
 {
-    use HasFactory;
+    protected $categoryClass = DestituteCategory::class;
     protected $fillable = ['name', 'phone', 'address', 'passport_id'];
     public function helpGiven():HasMany
     {
         return $this->hasMany(HelpGiven::class);
-    }
-    public function categories():BelongsToMany
-    {
-        return $this->belongsToMany(DestituteCategory::class);
-    }
-    public function getTableInfoAttribute():array
-    {
-        return $this->getAttributes();
     }
 
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = true): string
@@ -48,5 +40,27 @@ class Destitute extends Model
                 $granny->helpGiven()->create(['hg_timestamp' => Carbon::now()]);
             }
         });
+    }
+
+    public static function getTableTitles(): array
+    {
+        return array_merge(
+            parent::getTableTitles(),
+            [
+                'passport_id' => __('Passport id'),
+                'address' => __('Address'),
+                'helpGiven' => __('Receivings')
+            ]
+        );
+    }
+
+    public function getTableInfoAttribute(): array
+    {
+        return array_merge(
+            parent::getTableInfoAttribute(),
+            [
+                'helpGiven' => self::getHelpHistory($this->helpGiven)
+            ]
+        );
     }
 }
