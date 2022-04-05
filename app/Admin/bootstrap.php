@@ -28,5 +28,7 @@ Column::$displayers = array_merge(
         'checkboxForBelongsToMany' => \App\Admin\Extentions\Grid\Displayers\Checkbox::class,
         'customMultipleSelect' => \App\Admin\Extentions\Grid\Displayers\MultipleSelect::class,
         'verticalTable' => \App\Admin\Extentions\Grid\Displayers\VerticalTable::class,
+        'hideOnMobile' => \App\Admin\Extentions\Grid\Displayers\HideOnMobile::class,
+        'hideOnDesktop' => \App\Admin\Extentions\Grid\Displayers\HideOnDesktop::class,
     ]
 );
