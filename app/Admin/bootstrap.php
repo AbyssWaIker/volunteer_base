@@ -18,9 +18,11 @@
  *
  */
 
+use Encore\Admin\Admin;
 use Encore\Admin\Grid\Column;
 
 Encore\Admin\Form::forget(['map', 'editor']);
+Admin::css(asset('css/app.css'));
 Column::$displayers = array_merge(
     Column::$displayers,
     [
