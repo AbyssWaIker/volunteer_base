@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Volunteer extends Person
 {
-    protected $categoryClass = VolunteerCategory::class;
+    public $category_class = VolunteerCategory::class;
     protected $fillable = ['comment', 'name', 'phone', 'sex'];
     public const SEX_MALE = 0;
     public const SEX_FEMALE = 1;
@@ -31,7 +31,9 @@ class Volunteer extends Person
     {
         return array_merge(
             parent::getTableInfoAttribute(),
-            ['sex' => @self::SEX_OPTIONS[$this->sex]?: ?: self::SEX_OPTIONS[self::SEX_MALE]]
+            [
+                'sex' => self::SEX_OPTIONS[(bool)$this->sex]
+            ]
         );
     }
 }

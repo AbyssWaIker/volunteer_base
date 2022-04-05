@@ -21,21 +21,43 @@ abstract class PersonController extends AdminController
      */
     protected $title = 'Человек';
 
+    protected function getModel():Person
+    {
+        return new $this->model;
+    }
+    protected function getAllCategories():array
+    {
+        return ($this->getModel()->category_class)::pluckNameAndID();
+    }
 
-
-    public function quickCreateCallback():callable
+    protected function quickCreateCallback():callable
     {
         return function (Grid\Tools\QuickCreate $form) {
             $form->text('name', __('Full name'))->required();
             $form->text('phone', __('Phone'));
-            $form->multipleSelect('categories[]', __('Category'))->options((($this->model)->categoryClass)::pluckNameAndID());
+            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
             $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
             $form->text('comment', __('Comment'));
         };
     }
-    public function filterCallBack():callable
+    protected function filterCallBack():callable
     {
-
+        return function(Grid\Filter $filter) {
+            $filter->disableIdFilter();
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->like('name', __('Name'));
+                $filter->like('phone', __('Phone'));
+            });
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->where(function(Builder $query) {
+                    $query->whereHas('categories', function (Builder $query) {
+                        $table = $this->getModel()->getTable();
+                        $query->whereIn("$table.id", $this->input);
+                    });
+                }, 'Категории', 'categories')
+                    ->multipleSelect($this->getAllCategories());
+            });
+        };
     }
     /**
      * Make a grid builder.
@@ -46,35 +68,22 @@ abstract class PersonController extends AdminController
     {
         $grid = parent::grid();
         $grid->model()->with(['categories'])->orderByDesc('id');
-        $grid->quickSearch(['name', 'phone', 'comment']);
+        $model = $this->getModel();
+        $grid->quickSearch($model->getFillable());
         $grid->quickCreate($this->quickCreateCallback());
-        $grid->filter(function(Grid\Filter $filter) {
-            $filter->disableIdFilter();
-            $filter->column(1/2, function (Grid\Filter $filter) {
-                $filter->like('name', __('Name'));
-                $filter->equal('sex', __('Sex'))->select(Volunteer::SEX_OPTIONS);
-            });
-            $filter->column(1/2, function (Grid\Filter $filter) {
-                $filter->like('phone', __('Phone'));
-                $filter->where(function(Builder $query) {
-                    $query->whereHas('categories', function (Builder $query) {
-                        $table = (new VolunteerCategory)->getTable();
-                        $query->whereIn("$table.id", $this->input);
-                    });
-                }, 'Категории', 'categories')
-                    ->multipleSelect(VolunteerCategory::pluckNameAndID());
-            });
-        });
+        $grid->filter($this->filterCallBack());
         $grid->exporter(new PeopleWithCategoriesExporter($grid, $this->title));
 
-//        dd(Volunteer::all()->toArray());
+        $grid->column('tableInfo', __('Info'))
+            ->display(function (){return [$this->tableInfo];})
+            ->verticalTable($model::getTableTitles())
+            ->hideOnDesktop();
 
-        $grid->column('id', __('Id'))->sortable();
-        $grid->column('name', __('Full name'))->filter('like');
-        $grid->column('phone', __('Phone'))->filter('like');
-        $grid->column('categories', __('Category'))->customMultipleSelect(VolunteerCategory::pluckNameAndID());
-        $grid->column('sex', __('Sex'))->switch(Volunteer::SEX_SWITCH_STATES);
-        $grid->column('comment', __('Comment'));
+        $grid->column('id', __('Id'))->sortable()->hideOnMobile();
+        $grid->column('name', __('Full Name'))->filter('like')->hideOnMobile();
+        $grid->column('phone', __('Phone'))->filter('like')->hideOnMobile();
+        $grid->column('categories', __('Category'))->customMultipleSelect($this->getAllCategories())->hideOnMobile();
+        $grid->column('comment', __('Comment'))->hideOnMobile();
         return $grid;
     }
 
@@ -108,8 +117,7 @@ abstract class PersonController extends AdminController
 
         $form->text('name', __('Full name'))->required();
         $form->text('phone', __('Phone'));
-        $form->switch('sex', __('Sex'))->options(Volunteer::SEX_SWITCH_STATES);
-        $form->multipleSelect('categories', __('Category'))->options(VolunteerCategory::pluckNameAndID());
+        $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->text('comment', __('Comment'));
 
         return $form;
