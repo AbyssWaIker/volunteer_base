@@ -33,7 +33,7 @@ abstract class PersonController extends AdminController
     protected function quickCreateCallback():callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->text('name', __('Full name'))->required();
+            $form->text('name', __('Full Name'))->required();
             $form->text('phone', __('Phone'));
             $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
             $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
@@ -98,7 +98,7 @@ abstract class PersonController extends AdminController
         $show = parent::detail($id);
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Last name'));
+        $show->field('name', __('Last Name'));
         $show->field('phone', __('Phone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -115,8 +115,11 @@ abstract class PersonController extends AdminController
     {
         $form = parent::form($id);
 
-        $form->text('name', __('Full name'))->required();
-        $form->text('phone', __('Phone'));
+        $form->text('name', __('Full Name'))
+            ->required()
+            ->rules("unique:{$this->getModel()->getTable()}",['unique'=>__('Name is Taken')]);
+        $form->text('phone', __('Phone'))
+            ->rules("unique:{$this->getModel()->getTable()}",['unique'=>__('Phone is Taken')]);
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->text('comment', __('Comment'));
 
