@@ -59,7 +59,7 @@ class VolunteerController extends PersonController
         $show = parent::detail($id);
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Last name'));
+        $show->field('name', __('Last Name'));
         $show->field('phone', __('Phone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
