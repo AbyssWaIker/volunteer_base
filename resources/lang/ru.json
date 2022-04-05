@@ -1,11 +1,11 @@
 {
-    "Full name":"ФИО",
+    "Full Name":"ФИО",
     "Phone":"Телефон",
     "Last name":"Фамилия",
     "First name":"Имя",
     "Middle name":"Отчество",
     "Address":"Прописка",
-    "Passport id":"ИД паспорта/пенсиоонного",
+    "Passport id":"ИД",
     "Created at":"Дата Добавления",
     "Updated at":"Дата Изменения",
     "Last receiving":"Последнее получение",
@@ -27,5 +27,6 @@
     "Report for :date": "Отчет за :date",
     "Name": "Имя",
     "Sending Date": "Дата Отправки",
-    "Sex": "Пол"
+    "Sex": "Пол",
+    "Info": "Инфо"
 }
