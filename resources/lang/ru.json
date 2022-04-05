@@ -1,9 +1,9 @@
 {
     "Full Name":"ФИО",
     "Phone":"Телефон",
-    "Last name":"Фамилия",
-    "First name":"Имя",
-    "Middle name":"Отчество",
+    "Last Name":"Фамилия",
+    "First Name":"Имя",
+    "Middle Name":"Отчество",
     "Address":"Прописка",
     "Passport id":"ИД",
     "Created at":"Дата Добавления",
@@ -28,5 +28,8 @@
     "Name": "Имя",
     "Sending Date": "Дата Отправки",
     "Sex": "Пол",
-    "Info": "Инфо"
+    "Info": "Инфо",
+    "Name is Taken": "Имя уже занято",
+    "Phone is Taken": "Телефон уже занят",
+    "Passport ID is Taken": "ИД уже занят"
 }

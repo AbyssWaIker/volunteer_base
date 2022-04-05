@@ -83,9 +83,9 @@ class DestitutesController extends PersonController
         $show = parent::detail($id);
 
         $show->field('id', __('Id'));
-        $show->field('last_name', __('Last name'));
-        $show->field('first_name', __('First name'));
-        $show->field('middle_name', __('Middle name'));
+        $show->field('last_name', __('Last Name'));
+        $show->field('first_name', __('First Name'));
+        $show->field('middle_name', __('Middle Name'));
         $show->field('address', __('Address'));
         $show->field('passport_id', __('Passport id'));
         $show->field('created_at', __('Created at'));
@@ -103,7 +103,8 @@ class DestitutesController extends PersonController
     {
         $form = parent::form($id);
         $form->text('address', __('Address'));
-        $form->text('passport_id', __('Passport id'));
+        $form->text('passport_id', __('Passport id'))
+            ->rules("unique:{$this->getModel()->getTable()}",['unique' => __('Passport ID is Taken')]);
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
