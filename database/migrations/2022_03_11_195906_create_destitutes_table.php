@@ -20,6 +20,7 @@ class CreateDestitutesTable extends Migration
             $table->string('name');
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
+            $table->string('id_code')->unique()->nullable();
             $table->string('passport_id')->nullable();
             $table->year('year_of_birth')->nullable();
             $table->string('comment')->nullable();
