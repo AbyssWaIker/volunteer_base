@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Exporters\PeopleWithCategoriesExporter;
+use App\Admin\Helpers\ValidatorHelper;
 use App\Models\Person;
 use App\Models\Volunteer;
 use App\Models\VolunteerCategory;
@@ -106,6 +107,12 @@ abstract class PersonController extends AdminController
         return $show;
     }
 
+    protected function formValidator($id):callable
+    {
+        $model = $this->getModel();
+        $table = $model->getTable();
+        return function(string $column)use($table,$id){return ValidatorHelper::validatorUnique($table,$column,$id);};
+    }
     /**
      * Make a form builder.
      *
@@ -114,12 +121,11 @@ abstract class PersonController extends AdminController
     protected function form($id = 0): Form
     {
         $form = parent::form($id);
-
+        $validator = $this->formValidator($id);
         $form->text('name', __('Full Name'))
-            ->required()
-            ->rules("nullable|sometimes|unique:{$this->getModel()->getTable()}",['unique'=>__('Name is Taken')]);
+            ->required();
         $form->text('phone', __('Phone'))
-            ->rules("nullable|sometimes|unique:{$this->getModel()->getTable()}",['unique'=>__('Phone is Taken')]);
+            ->rules($validator('phone'));
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->text('comment', __('Comment'));
 
