@@ -11,7 +11,7 @@ use Jenssegers\Date\Date;
 class Destitute extends Person
 {
     public $category_class = DestituteCategory::class;
-    protected $fillable = ['name', 'phone', 'address', 'passport_id'];
+    protected $fillable = ['name', 'phone', 'address', 'passport_id', 'id_code'];
     public function helpGiven():HasMany
     {
         return $this->hasMany(HelpGiven::class);

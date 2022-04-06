@@ -30,6 +30,7 @@ class DestitutesController extends PersonController
             $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
             $form->text('name', __('Full Name'))->required();
             $form->text('passport_id', __('Passport id'));
+            $form->text('id_code', __('id code'));
             $form->text('address', __('Address'));
             $form->text('phone', __('Phone'));
             $form->text('comment', __('Comment'));
@@ -55,7 +56,6 @@ class DestitutesController extends PersonController
     {
         $grid = parent::grid();
         $grid->model()->with(['categories', 'helpGiven'])->orderByDesc('id');
-        $grid->quickSearch(['name', 'address', 'phone', 'passport_id', 'comment']);
 
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
@@ -68,6 +68,7 @@ class DestitutesController extends PersonController
 
         $grid->column('address', __('Address'))->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('Passport id'))->filter('like')->hideOnMobile();
+        $grid->column('id_code', __('id code'))->filter('like')->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
             ->hideOnMobile();
@@ -110,6 +111,8 @@ class DestitutesController extends PersonController
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'))
             ->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
+        $form->text('id_code', __('id code'))
+            ->creationRules($validator('id_code'),['unique' => __('ID code is Taken')]);
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
