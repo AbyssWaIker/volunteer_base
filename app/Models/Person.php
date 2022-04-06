@@ -25,7 +25,7 @@ abstract class Person extends Model
     {
         return array_merge(
             $this->getAttributes(),
-            ['categories'=> $this->categories->implode('name', ', <br/>')]
+            ['categories'=> $this->categories->implode('name', ", <br/>")]
         );
     }
 

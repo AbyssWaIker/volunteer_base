@@ -5,7 +5,7 @@
 
         <td><b>{{ @$titles[$column] }}</b></td>
         @foreach($datum as $key => $value)
-            <td>{{ $value }}</td>
+            <td>{!!  $value !!}</td>
         @endforeach
     </tr>
     @endforeach
