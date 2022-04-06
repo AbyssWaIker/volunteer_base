@@ -3,11 +3,8 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Destitute\DestituteHelper;
-use App\Admin\Exporters\CategoryExporter;
 use App\Admin\Exporters\DestituteExporter;
-use App\Admin\Exporters\PeopleWithCategoriesExporter;
 use App\Models\Destitute;
-use App\Models\DestituteCategory;
 use Carbon\Carbon;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
