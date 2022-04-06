@@ -23,11 +23,8 @@ class VolunteerController extends PersonController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
             $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
-            $form->text('name', __('Full Name'))->required();
-            $form->text('phone', __('Phone'));
-            $form->text('comment', __('Comment'));
+            parent::quickCreateCallback()($form);
         };
     }
 
