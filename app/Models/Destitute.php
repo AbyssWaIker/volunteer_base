@@ -49,7 +49,8 @@ class Destitute extends Person
             [
                 'passport_id' => __('Passport id'),
                 'address' => __('Address'),
-                'helpGiven' => __('Receivings')
+                'helpGiven' => __('Receivings'),
+                'id_code' => __('id code'),
             ]
         );
     }
