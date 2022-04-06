@@ -37,7 +37,6 @@ abstract class PersonController extends AdminController
             $form->text('name', __('Full Name'))->required();
             $form->text('phone', __('Phone'));
             $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
-            $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
             $form->text('comment', __('Comment'));
         };
     }
