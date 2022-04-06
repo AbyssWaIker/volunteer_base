@@ -27,9 +27,12 @@ class DestitutesController extends PersonController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            parent::quickCreateCallback()($form);
+            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
+            $form->text('name', __('Full Name'))->required();
             $form->text('passport_id', __('Passport id'));
             $form->text('address', __('Address'));
+            $form->text('phone', __('Phone'));
+            $form->text('comment', __('Comment'));
         };
     }
     protected function filterCallBack(): callable
