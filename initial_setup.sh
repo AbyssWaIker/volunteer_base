@@ -9,3 +9,4 @@ php artisan vendor:publish --all
 php artisan migrate:fresh --seed
 
 php artisan key:generate
+php artisan schedule:work --daemon > /dev/null 2>&1 &
