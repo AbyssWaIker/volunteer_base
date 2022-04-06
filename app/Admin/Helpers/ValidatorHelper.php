@@ -9,9 +9,9 @@ class ValidatorHelper
         $nullable = $nullable ? 'nullable|sometimes|' : '';
         if($column) {
             $column = ','.$column;
-        }
-        if($id) {
-            $id=','.$id;
+            $id = $id ?:'';
+        } else {
+            $id= '';
         }
         return $nullable.'unique:'.$table.$column.$id;
 
