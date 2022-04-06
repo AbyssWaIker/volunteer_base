@@ -5,4 +5,7 @@
         display: block;
         border-bottom: none !important;
     }
+    .column-__row_selector__ {
+        display: none;
+    }
 }
