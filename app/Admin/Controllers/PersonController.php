@@ -42,16 +42,17 @@ abstract class PersonController extends AdminController
     }
     protected function filterCallBack():callable
     {
-        return function(Grid\Filter $filter) {
+        $model = $this->getModel();
+        return function(Grid\Filter $filter) use($model) {
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('name', __('Name'));
                 $filter->like('phone', __('Phone'));
             });
-            $filter->column(1/2, function (Grid\Filter $filter) {
-                $filter->where(function(Builder $query) {
-                    $query->whereHas('categories', function (Builder $query) {
-                        $table = $this->getModel()->getTable();
+            $filter->column(1/2, function (Grid\Filter $filter) use($model) {
+                $filter->where(function(Builder $query) use($model) {
+                    $query->whereHas('categories', function (Builder $query) use ($model) {
+                        $table = $model->getTable();
                         $query->whereIn("$table.id", $this->input);
                     });
                 }, 'Категории', 'categories')
