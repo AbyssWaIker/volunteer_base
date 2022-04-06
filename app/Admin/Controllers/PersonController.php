@@ -110,7 +110,7 @@ abstract class PersonController extends AdminController
     {
         $model = $this->getModel();
         $table = $model->getTable();
-        return function(string $column)use($table,$id){return ValidatorHelper::validatorUnique($table,$column,$id);};
+        return function(string $column)use($table,$id){return ValidatorHelper::validatorUnique($table);};
     }
     /**
      * Make a form builder.
@@ -124,7 +124,7 @@ abstract class PersonController extends AdminController
         $form->text('name', __('Full Name'))
             ->required();
         $form->text('phone', __('Phone'))
-            ->rules($validator('phone'));
+            ->creationRules($validator('phone'));
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->text('comment', __('Comment'));
 
