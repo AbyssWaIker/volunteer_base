@@ -109,7 +109,7 @@ class DestitutesController extends PersonController
         $validator = $this->formValidator($id);
         $form->text('address', __('Address'));
         $form->text('passport_id', __('Passport id'))
-            ->rules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
+            ->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
