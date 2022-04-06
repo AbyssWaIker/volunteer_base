@@ -9,7 +9,7 @@ class ValidatorHelper
         $nullable = $nullable ? 'nullable|sometimes|' : '';
         if($column) {
             $column = ','.$column;
-            $id = $id ?:'';
+            $id = $id ? (','.$id) :'';
         } else {
             $id= '';
         }
