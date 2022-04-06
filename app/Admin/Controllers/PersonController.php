@@ -34,9 +34,9 @@ abstract class PersonController extends AdminController
     protected function quickCreateCallback():callable
     {
         return function (Grid\Tools\QuickCreate $form) {
+            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
             $form->text('name', __('Full Name'))->required();
             $form->text('phone', __('Phone'));
-            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
             $form->text('comment', __('Comment'));
         };
     }
