@@ -117,9 +117,9 @@ abstract class PersonController extends AdminController
 
         $form->text('name', __('Full Name'))
             ->required()
-            ->rules("unique:{$this->getModel()->getTable()}",['unique'=>__('Name is Taken')]);
+            ->rules("nullable|sometimes|unique:{$this->getModel()->getTable()}",['unique'=>__('Name is Taken')]);
         $form->text('phone', __('Phone'))
-            ->rules("unique:{$this->getModel()->getTable()}",['unique'=>__('Phone is Taken')]);
+            ->rules("nullable|sometimes|unique:{$this->getModel()->getTable()}",['unique'=>__('Phone is Taken')]);
         $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
         $form->text('comment', __('Comment'));
 
