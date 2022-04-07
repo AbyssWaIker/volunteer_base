@@ -42,7 +42,8 @@ abstract class PersonController extends AdminController
     }
     protected function filterCallBack():callable
     {
-        $table = (new ($this->getModel())->category_class)->getTable();
+        $model = ($this->getModel());
+        $table = (new $model->category_class)->getTable();
         return function(Grid\Filter $filter) use($table) {
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
