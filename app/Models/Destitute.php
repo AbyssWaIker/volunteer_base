@@ -48,9 +48,10 @@ class Destitute extends Person
             parent::getTableTitles(),
             [
                 'passport_id' => __('Passport id'),
+                'id_code' => __('id code'),
                 'address' => __('Address'),
                 'helpGiven' => __('Receivings'),
-                'id_code' => __('id code'),
+                'comment' => __('Comment'),
             ]
         );
     }
