@@ -61,8 +61,6 @@ class DestitutesController extends PersonController
 
         $grid->exporter(new DestituteExporter($grid, $this->title));
 
-        $grid->column('id', __('Id'))->sortable();
-
         $grid->column('address', __('Address'))->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('Passport id'))->filter('like')->hideOnMobile();
         $grid->column('id_code', __('id code'))->filter('like')->hideOnMobile();
