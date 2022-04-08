@@ -12,8 +12,10 @@ class DestituteExporter extends PeopleWithCategoriesExporter
         'id' => '',
         'name' => 'фио',
         'phone' => 'Телефон',
+        'address' => 'Прописка',
         'comment' => 'Примечание',
         'passport_id' => 'Пасспорт/Пенсионный',
+        'id_code' => 'ID код',
         'helpGiven' => 'получения',
         'categories' => 'Категории',
     ];
@@ -29,7 +31,9 @@ class DestituteExporter extends PeopleWithCategoriesExporter
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
             'comment' => $row->comment,
+            'address' => $row->address,
             'passport_id' => ' '.$row->passport_id . ' ',
+            'id_code' => ' '.$row->id_code . ' ',
             'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),
             'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
         ];
