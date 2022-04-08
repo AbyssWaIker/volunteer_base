@@ -26,7 +26,7 @@ class DestituteExporter extends PeopleWithCategoriesExporter
             'id_code' => ' '.$row->id_code . ' ',
             'comment' => $row->comment,
             'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
-            'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),
+            'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray()),
         ];
     }
 }
