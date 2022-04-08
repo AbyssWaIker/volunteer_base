@@ -14,15 +14,11 @@ class DestituteExporter extends PeopleWithCategoriesExporter
     {
         return parent::query()->with(['categories', 'HelpGiven']);
     }
-    public function __construct(Grid $grid = null, Person $class, string $title)
-    {
-        parent::__construct($grid, $class, $title);
-    }
 
     public function map($row): array
     {
         return [
-            'id' => 'id',
+            'id' => '',
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
             'address' => $row->address,

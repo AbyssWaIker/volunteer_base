@@ -32,9 +32,9 @@ class PeopleWithCategoriesExporter extends ExcelExporter implements WithMapping
         return array_merge(
             $row->getAttributes(),
             [
+                'id' => '',
                 'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
                 'phone' => ' '.$row->phone . ' ',
-                'id' => '',
             ],
         );
     }
