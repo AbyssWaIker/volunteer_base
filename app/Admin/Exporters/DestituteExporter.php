@@ -3,6 +3,8 @@
 namespace App\Admin\Exporters;
 
 use App\Models\Destitute;
+use App\Models\Person;
+use Encore\Admin\Grid;
 
 class DestituteExporter extends PeopleWithCategoriesExporter
 {
@@ -12,16 +14,21 @@ class DestituteExporter extends PeopleWithCategoriesExporter
     {
         return parent::query()->with(['categories', 'HelpGiven']);
     }
+    public function __construct(Grid $grid = null, Person $class, string $title)
+    {
+        parent::__construct($grid, $class, $title);
+    }
 
     public function map($row): array
     {
         return [
+            'id' => 'id',
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
-            'comment' => $row->comment,
             'address' => $row->address,
             'passport_id' => ' '.$row->passport_id . ' ',
             'id_code' => ' '.$row->id_code . ' ',
+            'comment' => $row->comment,
             'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),
             'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
         ];

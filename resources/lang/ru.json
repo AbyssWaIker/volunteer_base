@@ -1,5 +1,5 @@
 {
-    "Full Name":"ФИО",
+    "name":"ФИО",
     "phone":"Телефон",
     "Last Name":"Фамилия",
     "First Name":"Имя",
@@ -17,7 +17,7 @@
     "Quantity Unit": "Единицы измерения",
     "Quantity": "Количество",
     "Deficit": "Дефицит",
-    "Category": "Категория",
+    "categories": "Категория",
     "Year of birth": "Год Рождения",
     "Availability": "Наличие",
     "Quantity Sent": "Количество Отправленно",
