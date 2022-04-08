@@ -18,8 +18,8 @@ class DestituteExporter extends PeopleWithCategoriesExporter
         return [
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
-            'comment' => $row->comment,
             'address' => $row->address,
+            'comment' => $row->comment,
             'passport_id' => ' '.$row->passport_id . ' ',
             'id_code' => ' '.$row->id_code . ' ',
             'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray(), false),
