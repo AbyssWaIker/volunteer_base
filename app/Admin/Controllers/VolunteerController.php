@@ -20,7 +20,7 @@ class VolunteerController extends PersonController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->select('sex', __('Sex'))->options(Volunteer::SEX_OPTIONS);
+            $form->select('sex', __('sex'))->options(Volunteer::SEX_OPTIONS);
             parent::quickCreateCallback()($form);
         };
     }
@@ -29,7 +29,7 @@ class VolunteerController extends PersonController
     {
         return function(Grid\Filter $filter) {
             parent::filterCallBack()($filter);
-            $filter->equal('sex', __('Sex'))->select(Volunteer::SEX_OPTIONS);
+            $filter->equal('sex', __('sex'))->select(Volunteer::SEX_OPTIONS);
         };
     }
 
@@ -41,7 +41,7 @@ class VolunteerController extends PersonController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->column('sex', __('Sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
+        $grid->column('sex', __('sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
         return $grid;
     }
 
@@ -57,7 +57,7 @@ class VolunteerController extends PersonController
 
         $show->field('id', __('Id'));
         $show->field('name', __('Last Name'));
-        $show->field('phone', __('Phone'));
+        $show->field('phone', __('phone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -72,7 +72,7 @@ class VolunteerController extends PersonController
     protected function form($id = 0): Form
     {
         $form = parent::form($id);
-        $form->switch('sex', __('Sex'))->states(Volunteer::SEX_SWITCH_STATES);
+        $form->switch('sex', __('sex'))->states(Volunteer::SEX_SWITCH_STATES);
         return $form;
     }
 }

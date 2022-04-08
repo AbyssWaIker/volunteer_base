@@ -10,21 +10,17 @@ abstract class Person extends Model
     use HasFactory;
     public $category_class;
     protected $fillable = ['comment', 'name', 'phone'];
-    protected $appends = ['table_info'];
     public static function getTableTitles():array
     {
-        return [
-            'name'=>__('Full Name'),
-            'phone'=>__('Phone'),
-            'comment' =>__('Comment'),
-            'categories'=>__('Category'),
-        ];
+        return array_merge(
+            parent::getTableTitles(),
+            ['categories'=>__('categories'),]
+        );
     }
-
     public function getTableInfoAttribute():array
     {
         return array_merge(
-            $this->getAttributes(),
+            parent::getTableInfoAttribute(),
             ['categories'=> $this->categories->implode('name', ", <br/>")]
         );
     }

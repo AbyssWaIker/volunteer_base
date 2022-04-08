@@ -21,12 +21,6 @@ class Volunteer extends Person
         self::SEX_FEMALE => 'Женщина',
 //        self::SEX_MULTIPLE => 'Несколько человек',
     ];
-
-    public static function getTableTitles(): array
-    {
-        return array_merge(parent::getTableTitles(), ['sex' => __('Sex')]);
-    }
-
     public function getTableInfoAttribute(): array
     {
         return array_merge(

@@ -17,7 +17,7 @@ class Destitute extends Person
         return $this->hasMany(HelpGiven::class);
     }
 
-    static public function getHelpHistory(array $helpGiven, bool $use_emoji = true): string
+    static public function getHelpHistory(array $helpGiven, bool $use_emoji = false): string
     {
         $help_received_last_ten_days = false;
         $ten_day_ago = Carbon::now()->subDays(9);
@@ -47,11 +47,7 @@ class Destitute extends Person
         return array_merge(
             parent::getTableTitles(),
             [
-                'passport_id' => __('Passport id'),
-                'id_code' => __('id code'),
-                'address' => __('Address'),
                 'helpGiven' => __('Receivings'),
-                'comment' => __('Comment'),
             ]
         );
     }
