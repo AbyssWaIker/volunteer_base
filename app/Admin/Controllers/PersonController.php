@@ -73,7 +73,7 @@ abstract class PersonController extends AdminController
         $grid->quickSearch($model->getFillable());
         $grid->quickCreate($this->quickCreateCallback());
         $grid->filter($this->filterCallBack());
-        $grid->exporter(new PeopleWithCategoriesExporter($grid, $this->title));
+        $grid->exporter(new PeopleWithCategoriesExporter($grid,$this->getModel(), $this->title));
 
         $grid->column('tableInfo', __('Info'))
             ->display(function (){return [$this->tableInfo];})
