@@ -34,10 +34,10 @@ abstract class PersonController extends AdminController
     protected function quickCreateCallback():callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
-            $form->text('name', __('Full Name'))->required();
-            $form->text('phone', __('Phone'));
-            $form->text('comment', __('Comment'));
+            $form->multipleSelect('categories[]', __('categories'))->options($this->getAllCategories());
+            $form->text('name', __('name'))->required();
+            $form->text('phone', __('phone'));
+            $form->text('comment', __('comment'));
         };
     }
     protected function filterCallBack():callable
@@ -48,7 +48,7 @@ abstract class PersonController extends AdminController
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('name', __('Name'));
-                $filter->like('phone', __('Phone'));
+                $filter->like('phone', __('phone'));
             });
             $filter->column(1/2, function (Grid\Filter $filter) use($table) {
                 $filter->where(function(Builder $query) use($table) {
@@ -81,10 +81,10 @@ abstract class PersonController extends AdminController
             ->hideOnDesktop();
 
         $grid->column('id', __('Id'))->sortable()->hideOnMobile();
-        $grid->column('name', __('Full Name'))->filter('like')->hideOnMobile();
-        $grid->column('phone', __('Phone'))->filter('like')->hideOnMobile();
-        $grid->column('categories', __('Category'))->customMultipleSelect($this->getAllCategories())->hideOnMobile();
-        $grid->column('comment', __('Comment'))->hideOnMobile();
+        $grid->column('name', __('name'))->filter('like')->hideOnMobile();
+        $grid->column('phone', __('phone'))->filter('like')->hideOnMobile();
+        $grid->column('categories', __('categories'))->customMultipleSelect($this->getAllCategories())->hideOnMobile();
+        $grid->column('comment', __('comment'))->hideOnMobile();
         return $grid;
     }
 
@@ -100,7 +100,7 @@ abstract class PersonController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('name', __('Last Name'));
-        $show->field('phone', __('Phone'));
+        $show->field('phone', __('phone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -122,12 +122,12 @@ abstract class PersonController extends AdminController
     {
         $form = parent::form($id);
         $validator = $this->formValidator($id);
-        $form->text('name', __('Full Name'))
+        $form->text('name', __('name'))
             ->required();
-        $form->text('phone', __('Phone'))
+        $form->text('phone', __('phone'))
             ->creationRules($validator('phone'));
-        $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
-        $form->text('comment', __('Comment'));
+        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
+        $form->text('comment', __('comment'));
 
         return $form;
     }
