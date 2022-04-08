@@ -13,13 +13,6 @@ class PeopleWithCategoriesExporter extends ExcelExporter implements WithMapping
 {
     protected $fileName = 'волонтеры.xlsx';
 
-    protected $columns = [
-        'id' => '',
-        'name' => 'фио',
-        'phone' => 'Телефон',
-        'comment' => 'Примечание',
-        'categories' => 'Категории',
-    ];
     public function query()
     {
         return parent::query()->with(['categories']);
