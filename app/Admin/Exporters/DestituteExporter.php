@@ -8,17 +8,6 @@ class DestituteExporter extends PeopleWithCategoriesExporter
 {
     protected $fileName = 'нуждающиеся.xlsx';
 
-    protected $columns = [
-        'id' => '',
-        'name' => 'фио',
-        'phone' => 'Телефон',
-        'address' => 'Прописка',
-        'comment' => 'Примечание',
-        'passport_id' => 'Пасспорт/Пенсионный',
-        'id_code' => 'ID код',
-        'helpGiven' => 'получения',
-        'categories' => 'Категории',
-    ];
     public function query()
     {
         return parent::query()->with(['categories', 'HelpGiven']);

@@ -24,13 +24,13 @@ class DestitutesController extends PersonController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->multipleSelect('categories[]', __('Category'))->options($this->getAllCategories());
-            $form->text('name', __('Full Name'))->required();
-            $form->text('passport_id', __('Passport id'));
-            $form->text('id_code', __('id code'));
-            $form->text('address', __('Address'));
-            $form->text('phone', __('Phone'));
-            $form->text('comment', __('Comment'));
+            $form->multipleSelect('categories[]', __('categories'))->options($this->getAllCategories());
+            $form->text('name', __('name'))->required();
+            $form->text('passport_id', __('passport_id'));
+            $form->text('id_code', __('id_code'));
+            $form->text('address', __('address'));
+            $form->text('phone', __('phone'));
+            $form->text('comment', __('comment'));
         };
     }
     protected function filterCallBack(): callable
@@ -61,9 +61,9 @@ class DestitutesController extends PersonController
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
 
-        $grid->column('address', __('Address'))->filter('like')->hideOnMobile();
-        $grid->column('passport_id', __('Passport id'))->filter('like')->hideOnMobile();
-        $grid->column('id_code', __('id code'))->filter('like')->hideOnMobile();
+        $grid->column('address', __('address'))->filter('like')->hideOnMobile();
+        $grid->column('passport_id', __('passport_id'))->filter('like')->hideOnMobile();
+        $grid->column('id_code', __('id_code'))->filter('like')->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
             ->hideOnMobile();
@@ -85,8 +85,8 @@ class DestitutesController extends PersonController
         $show->field('last_name', __('Last Name'));
         $show->field('first_name', __('First Name'));
         $show->field('middle_name', __('Middle Name'));
-        $show->field('address', __('Address'));
-        $show->field('passport_id', __('Passport id'));
+        $show->field('address', __('address'));
+        $show->field('passport_id', __('passport_id'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -103,12 +103,12 @@ class DestitutesController extends PersonController
         $form = parent::form($id);
 
         $validator = $this->formValidator($id);
-        $form->text('address', __('Address'));
-        $form->text('passport_id', __('Passport id'))
+        $form->text('address', __('address'));
+        $form->text('passport_id', __('passport_id'))
             ->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
-        $form->text('id_code', __('id code'))
+        $form->text('id_code', __('id_code'))
             ->creationRules($validator('id_code'),['unique' => __('ID code is Taken')]);
-        $form->multipleSelect('categories', __('Category'))->options($this->getAllCategories());
+        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
