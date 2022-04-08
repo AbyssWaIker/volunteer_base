@@ -21,7 +21,7 @@ class PeopleWithCategoriesExporter extends ExcelExporter implements WithMapping
     public function __construct(Grid $grid = null, Person $class, string $title)
     {
         parent::__construct($grid);
-        $this->columns = array_merge($class::getTableTitles(), ['id' => '']);
+        $this->columns = array_merge(['id' => 'id'], $class::getTableTitles());
         if($title) {
             $this->fileName = $title . '.xlsx';
         }
@@ -32,7 +32,6 @@ class PeopleWithCategoriesExporter extends ExcelExporter implements WithMapping
         return array_merge(
             $row->getAttributes(),
             [
-                'id' => '',
                 'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
                 'phone' => ' '.$row->phone . ' ',
             ],
