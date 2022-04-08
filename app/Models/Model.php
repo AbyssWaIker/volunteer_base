@@ -15,7 +15,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
 
     public static function getTableTitles():array
     {
-        $attributes = self::getFillable();
+        $attributes = (new static)->getFillable();
         $result = [];
         foreach ($attributes as $attribute) {
             $result[$attribute] = __($attribute);
