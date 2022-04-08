@@ -16,7 +16,6 @@ class DestituteExporter extends PeopleWithCategoriesExporter
     public function map($row): array
     {
         return [
-            'id' => '',
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
             'comment' => $row->comment,
