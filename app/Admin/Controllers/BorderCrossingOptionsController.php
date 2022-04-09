@@ -2,8 +2,8 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Exporters\ModelExporter;
 use App\Models\BorderCrossingOption;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -16,7 +16,7 @@ class BorderCrossingOptionsController extends AdminController
      * @var string
      */
     protected $title = 'BorderCrossingOption';
-
+    protected $model = BorderCrossingOption::class;
     /**
      * Make a grid builder.
      *
@@ -24,7 +24,7 @@ class BorderCrossingOptionsController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new BorderCrossingOption());
+        $grid = parent::grid();
 
         $grid->column('id', __('id'));
         $grid->column('name', __('name'));
@@ -47,7 +47,7 @@ class BorderCrossingOptionsController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(BorderCrossingOption::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('id', __('id'));
         $show->field('name', __('name'));
@@ -67,9 +67,9 @@ class BorderCrossingOptionsController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form($id)
     {
-        $form = new Form(new BorderCrossingOption());
+        $form = parent::form($id);
 
         $form->text('name', __('name'));
         $form->text('contact', __('contact'));

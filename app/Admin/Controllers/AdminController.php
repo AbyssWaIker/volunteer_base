@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Exporters\ModelExporter;
 use Encore\Admin\Controllers\AdminController as BaseController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -22,6 +23,7 @@ class AdminController extends BaseController
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
         });
+        $grid->exporter(new ModelExporter($grid, new ($this->model), $this->title));
         return $grid;
     }
 
