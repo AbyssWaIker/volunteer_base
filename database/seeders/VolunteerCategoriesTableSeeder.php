@@ -126,9 +126,9 @@ class VolunteerCategoriesTableSeeder extends Seeder
             15 => 
             array (
                 'id' => 17,
-                'name' => 'квартира',
+            'name' => 'квартира (по одессе)',
                 'created_at' => '2022-03-21 08:24:55',
-                'updated_at' => '2022-03-21 08:24:55',
+                'updated_at' => '2022-04-07 11:52:25',
             ),
             16 => 
             array (
@@ -164,6 +164,41 @@ class VolunteerCategoriesTableSeeder extends Seeder
                 'name' => 'Электрик',
                 'created_at' => '2022-03-21 11:16:11',
                 'updated_at' => '2022-03-21 11:16:11',
+            ),
+            21 => 
+            array (
+                'id' => 23,
+                'name' => 'меценат',
+                'created_at' => '2022-04-02 09:11:06',
+                'updated_at' => '2022-04-02 09:11:06',
+            ),
+            22 => 
+            array (
+                'id' => 24,
+                'name' => 'Лекарства',
+                'created_at' => '2022-04-02 10:35:54',
+                'updated_at' => '2022-04-02 10:35:54',
+            ),
+            23 => 
+            array (
+                'id' => 25,
+                'name' => 'Администратор',
+                'created_at' => '2022-04-04 13:27:11',
+                'updated_at' => '2022-04-04 13:27:11',
+            ),
+            24 => 
+            array (
+                'id' => 26,
+            'name' => 'квартира (по укрине)',
+                'created_at' => '2022-04-07 11:52:37',
+                'updated_at' => '2022-04-07 11:52:37',
+            ),
+            25 => 
+            array (
+                'id' => 27,
+                'name' => 'Вывоз за границу',
+                'created_at' => '2022-04-07 11:52:57',
+                'updated_at' => '2022-04-07 11:52:57',
             ),
         ));
 
