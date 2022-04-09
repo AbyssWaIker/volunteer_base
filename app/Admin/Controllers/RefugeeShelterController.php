@@ -24,6 +24,15 @@ class RefugeeShelterController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
+        $grid->quickCreate(function(Grid\Tools\QuickCreate $form){
+            $form->text('name', __('Name'));
+            $form->mobile('phone', __('Phone'));
+            $form->text('terms', __('Terms'));
+            $form->text('vacant_places', __('Vacant places'));
+            $form->text('conditions', __('Conditions'));
+            $form->text('comment', __('Comment'));
+            return $form;
+        });
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
