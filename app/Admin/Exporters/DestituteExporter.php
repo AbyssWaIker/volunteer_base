@@ -6,7 +6,7 @@ use App\Models\Destitute;
 use App\Models\Person;
 use Encore\Admin\Grid;
 
-class DestituteExporter extends PeopleWithCategoriesExporter
+class DestituteExporter extends ModelExporter
 {
     protected $fileName = 'нуждающиеся.xlsx';
 

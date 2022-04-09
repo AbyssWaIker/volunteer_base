@@ -5,7 +5,7 @@ namespace App\Admin\Exporters;
 use App\Models\Volunteer;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class VolunteerExporter extends PeopleWithCategoriesExporter implements WithMapping
+class VolunteerExporter extends ModelExporter implements WithMapping
 {
     protected $fileName = 'волонтеры.xlsx';
 
