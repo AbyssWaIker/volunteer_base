@@ -53,5 +53,6 @@ class DatabaseSeeder extends Seeder
 //        $this->call(VolunteersTableSeeder::class);
 //        $this->call(VolunteerVolunteerCategoryTableSeeder::class);
         $this->call(AdminConfigTableSeeder::class);
+        $this->call(RefugeeSheltersTableSeeder::class);
     }
 }
