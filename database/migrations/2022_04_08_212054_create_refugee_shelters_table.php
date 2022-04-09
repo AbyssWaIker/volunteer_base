@@ -17,7 +17,7 @@ class CreateRefugeeSheltersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
-            $table->string('adddress');
+            $table->string('address');
             $table->string('terms')->nullable();
             $table->string('vacant_places')->nullable();
             $table->string('conditions')->nullable();
