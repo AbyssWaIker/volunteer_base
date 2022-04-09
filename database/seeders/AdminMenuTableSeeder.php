@@ -234,6 +234,30 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-29 12:03:05',
                 'updated_at' => '2022-03-29 12:03:05',
             ),
+            18 => 
+            array (
+                'id' => 19,
+                'parent_id' => 0,
+                'order' => 0,
+                'title' => 'Места для беженцев',
+                'icon' => 'fa-building',
+                'uri' => 'refugee-shelters',
+                'permission' => NULL,
+                'created_at' => '2022-04-09 07:26:26',
+                'updated_at' => '2022-04-09 07:26:26',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'parent_id' => 0,
+                'order' => 0,
+                'title' => 'Пересечение границы',
+                'icon' => 'fa-train',
+                'uri' => 'border-crossing-options',
+                'permission' => NULL,
+                'created_at' => '2022-04-09 07:26:58',
+                'updated_at' => '2022-04-09 07:27:19',
+            ),
         ));
 
         
