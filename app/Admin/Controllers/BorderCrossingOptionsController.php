@@ -26,6 +26,16 @@ class BorderCrossingOptionsController extends AdminController
     {
         $grid = parent::grid();
 
+        $grid->quickCreate(function(Grid\Tools\QuickCreate $form){
+            $form->text('name', __('name'));
+            $form->text('contact', __('contact'));
+            $form->text('country', __('country'));
+            $form->text('time_of_crossing', __('Time of crossing'));
+            $form->text('vacant_places', __('Vacant places'));
+            $form->text('comment', __('Comment'));
+            return $form;
+        });
+
         $grid->column('id', __('id'));
         $grid->column('name', __('name'));
         $grid->column('contact', __('contact'));
