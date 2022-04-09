@@ -3,7 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Models\RefugeeShelter;
-use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
@@ -24,7 +23,7 @@ class RefugeeShelterController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new RefugeeShelter());
+        $grid = parent::grid();
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
@@ -47,7 +46,7 @@ class RefugeeShelterController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(RefugeeShelter::findOrFail($id));
+        $show = parent::detail($id);
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
@@ -67,9 +66,9 @@ class RefugeeShelterController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form($id)
     {
-        $form = new Form(new RefugeeShelter());
+        $form = parent::form($id);
 
         $form->text('name', __('Name'));
         $form->mobile('phone', __('Phone'));
