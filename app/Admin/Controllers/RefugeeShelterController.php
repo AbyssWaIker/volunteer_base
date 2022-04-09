@@ -39,6 +39,7 @@ class RefugeeShelterController extends AdminController
         $grid->column('id', __('id'));
         $grid->column('name', __('name'));
         $grid->column('phone', __('phone'));
+        $grid->column('address', __('address'));
         $grid->column('terms', __('Terms'));
         $grid->column('vacant_places', __('Vacant places'));
         $grid->column('conditions', __('Conditions'));
