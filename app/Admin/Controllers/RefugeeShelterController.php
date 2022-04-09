@@ -9,6 +9,7 @@ use Encore\Admin\Show;
 
 class RefugeeShelterController extends AdminController
 {
+    protected $model = RefugeeShelter::class;
     /**
      * Title for current resource.
      *
