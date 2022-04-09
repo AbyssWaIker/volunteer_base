@@ -66,7 +66,7 @@ class RefugeeShelterController extends AdminController
      *
      * @return Form
      */
-    protected function form($id)
+    protected function form($id = 0)
     {
         $form = parent::form($id);
 
