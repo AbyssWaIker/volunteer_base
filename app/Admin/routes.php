@@ -18,6 +18,8 @@ Route::group([
     $router->resource('destitute-categories', CategoryDestituteController::class);
     $router->resource('stock-categories', CategoryStockController::class);
     $router->resource('volunteer-categories', CategoryVolunteerController::class);
+    $router->resource('refugee-shelters', RefugeeShelterController::class);
+    $router->resource('border-crossing-options', BorderCrossingOptionsController::class);
 
 
 });
