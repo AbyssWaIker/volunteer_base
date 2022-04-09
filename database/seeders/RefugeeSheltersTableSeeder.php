@@ -20,7 +20,7 @@ class RefugeeSheltersTableSeeder extends Seeder
         \DB::table('refugee_shelters')->insert(array (
             0 => 
             array (
-                'adddress' => 'район жд',
+                'address' => 'район жд',
                 'comment' => 'Предпочтение под семью',
                 'conditions' => '',
                 'created_at' => NULL,
@@ -33,7 +33,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'adddress' => 'район таирово',
+                'address' => 'район таирово',
                 'comment' => 'Предпочтение под маму с детьми',
                 'conditions' => '',
                 'created_at' => NULL,
@@ -46,7 +46,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'adddress' => 'район Черноморки',
+                'address' => 'район Черноморки',
                 'comment' => '',
                 'conditions' => 'есть мебель',
                 'created_at' => NULL,
@@ -59,7 +59,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'adddress' => 'район Ольгиевской',
+                'address' => 'район Ольгиевской',
                 'comment' => NULL,
                 'conditions' => '',
                 'created_at' => NULL,
@@ -72,7 +72,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'adddress' => 'район Жуковского',
+                'address' => 'район Жуковского',
                 'comment' => 'временное проживание',
                 'conditions' => '',
                 'created_at' => NULL,
@@ -86,7 +86,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             5 => 
             array (
-            'adddress' => 'на совиньоне. 14(?) мест. ',
+            'address' => 'на совиньоне. 14(?) мест. ',
                 'comment' => 'Предпочтение под многодетных',
                 'conditions' => 'нет кухни, если организовать туда какой то холодильник, пару столов и стульев, то не проблема',
                 'created_at' => NULL,
@@ -99,7 +99,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'adddress' => 'надо уточнять',
+                'address' => 'надо уточнять',
                 'comment' => NULL,
                 'conditions' => 'надо уточнять',
                 'created_at' => NULL,
@@ -112,7 +112,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'adddress' => 'Большая Балка',
+                'address' => 'Большая Балка',
                 'comment' => NULL,
                 'conditions' => 'приют',
                 'created_at' => NULL,
@@ -125,7 +125,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'adddress' => 'Большая Балка',
+                'address' => 'Большая Балка',
                 'comment' => NULL,
                 'conditions' => 'приют',
                 'created_at' => NULL,
@@ -138,7 +138,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             9 => 
             array (
-                'adddress' => 'Молдованка',
+                'address' => 'Молдованка',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -151,7 +151,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             10 => 
             array (
-                'adddress' => 'Люсторвская дорога 178/1.',
+                'address' => 'Люсторвская дорога 178/1.',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -164,7 +164,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'adddress' => 'Нерубайское',
+                'address' => 'Нерубайское',
                 'comment' => NULL,
                 'conditions' => '',
                 'created_at' => NULL,
@@ -177,7 +177,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             12 => 
             array (
-                'adddress' => 'Софиевская 10',
+                'address' => 'Софиевская 10',
                 'comment' => NULL,
                 'conditions' => 'Жилье и питание для женщин и детей ',
                 'created_at' => NULL,
@@ -190,7 +190,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             13 => 
             array (
-                'adddress' => '10 апреля ',
+                'address' => '10 апреля ',
                 'comment' => 'пункт беженцев',
                 'conditions' => '',
                 'created_at' => NULL,
@@ -203,7 +203,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             14 => 
             array (
-                'adddress' => '',
+                'address' => '',
                 'comment' => 'гостиница',
                 'conditions' => '',
                 'created_at' => NULL,
@@ -216,7 +216,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'adddress' => '',
+                'address' => '',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -229,7 +229,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             16 => 
             array (
-                'adddress' => ' ',
+                'address' => ' ',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -242,7 +242,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             17 => 
             array (
-                'adddress' => ' ',
+                'address' => ' ',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -255,7 +255,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             18 => 
             array (
-                'adddress' => 'просили позвонить, чтобы согласовать как мы принимаем беженцев',
+                'address' => 'просили позвонить, чтобы согласовать как мы принимаем беженцев',
                 'comment' => 'просили позвонить, чтобы согласовать как мы принимаем беженцев',
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -268,7 +268,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             19 => 
             array (
-                'adddress' => ' ',
+                'address' => ' ',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -281,7 +281,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             20 => 
             array (
-                'adddress' => '50 км от Одессы Бурдовка.',
+                'address' => '50 км от Одессы Бурдовка.',
                 'comment' => 'У нас есть дача за городом двухэтажная',
                 'conditions' => NULL,
                 'created_at' => NULL,
@@ -294,7 +294,7 @@ class RefugeeSheltersTableSeeder extends Seeder
             ),
             21 => 
             array (
-                'adddress' => 'Житкова 76.',
+                'address' => 'Житкова 76.',
                 'comment' => NULL,
                 'conditions' => NULL,
                 'created_at' => NULL,
