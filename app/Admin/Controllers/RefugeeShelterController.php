@@ -28,7 +28,7 @@ class RefugeeShelterController extends AdminController
         $grid->quickCreate(function(Grid\Tools\QuickCreate $form){
             $form->text('name', __('name'));
             $form->mobile('phone', __('phone'));
-            $form->mobile('address', __('address'));
+            $form->text('address', __('address'));
             $form->text('terms', __('Terms'));
             $form->text('vacant_places', __('Vacant places'));
             $form->text('conditions', __('Conditions'));
