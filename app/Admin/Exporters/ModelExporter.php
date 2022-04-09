@@ -3,19 +3,24 @@
 namespace App\Admin\Exporters;
 
 use App\Models\Destitute;
+use App\Models\Model;
 use App\Models\Person;
 use App\Models\VolunteerCategory;
 use Encore\Admin\Grid;
 use Encore\Admin\Grid\Exporters\ExcelExporter;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class PeopleWithCategoriesExporter extends ModelExporter implements WithMapping
+class ModelExporter extends ExcelExporter implements WithMapping
 {
-    protected $fileName = 'волонтеры.xlsx';
+    protected $fileName = 'таблица.xlsx';
 
-    public function query()
+    public function __construct(Grid $grid = null, Model $class, string $title)
     {
-        return parent::query()->with(['categories']);
+        parent::__construct($grid);
+        $this->columns = array_merge(['id' => 'id'], $class::getTableTitles());
+        if($title) {
+            $this->fileName = $title . '.xlsx';
+        }
     }
 
     public function map($row): array
@@ -23,7 +28,6 @@ class PeopleWithCategoriesExporter extends ModelExporter implements WithMapping
         return array_merge(
             $row->getAttributes(),
             [
-                'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
                 'phone' => ' '.$row->phone . ' ',
             ],
         );
