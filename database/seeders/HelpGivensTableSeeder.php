@@ -520,7 +520,7 @@ class HelpGivensTableSeeder extends Seeder
             array (
                 'id' => 86,
                 'destitute_id' => 496,
-                'hg_timestamp' => '2022-03-05 22:59:25',
+                'hg_timestamp' => '2022-03-05 00:00:00',
             ),
             84 => 
             array (
@@ -1138,7 +1138,7 @@ class HelpGivensTableSeeder extends Seeder
             array (
                 'id' => 191,
                 'destitute_id' => 496,
-                'hg_timestamp' => '2022-03-16 13:30:51',
+                'hg_timestamp' => '2022-03-16 00:00:00',
             ),
             187 => 
             array (
@@ -1379,6 +1379,612 @@ class HelpGivensTableSeeder extends Seeder
                 'id' => 241,
                 'destitute_id' => 719,
                 'hg_timestamp' => '2022-03-20 11:37:20',
+            ),
+            227 => 
+            array (
+                'id' => 242,
+                'destitute_id' => 720,
+                'hg_timestamp' => '2022-03-21 10:02:43',
+            ),
+            228 => 
+            array (
+                'id' => 243,
+                'destitute_id' => 721,
+                'hg_timestamp' => '2022-03-21 10:06:32',
+            ),
+            229 => 
+            array (
+                'id' => 244,
+                'destitute_id' => 722,
+                'hg_timestamp' => '2022-03-21 10:09:20',
+            ),
+            230 => 
+            array (
+                'id' => 245,
+                'destitute_id' => 723,
+                'hg_timestamp' => '2022-03-21 10:11:51',
+            ),
+            231 => 
+            array (
+                'id' => 246,
+                'destitute_id' => 724,
+                'hg_timestamp' => '2022-03-21 10:14:15',
+            ),
+            232 => 
+            array (
+                'id' => 247,
+                'destitute_id' => 725,
+                'hg_timestamp' => '2022-03-21 00:00:00',
+            ),
+            233 => 
+            array (
+                'id' => 248,
+                'destitute_id' => 726,
+                'hg_timestamp' => '2022-03-21 11:01:49',
+            ),
+            234 => 
+            array (
+                'id' => 250,
+                'destitute_id' => 578,
+                'hg_timestamp' => '2022-03-21 11:36:19',
+            ),
+            235 => 
+            array (
+                'id' => 251,
+                'destitute_id' => 579,
+                'hg_timestamp' => '2022-03-21 11:36:23',
+            ),
+            236 => 
+            array (
+                'id' => 252,
+                'destitute_id' => 580,
+                'hg_timestamp' => '2022-03-21 11:36:27',
+            ),
+            237 => 
+            array (
+                'id' => 253,
+                'destitute_id' => 727,
+                'hg_timestamp' => '2022-03-21 12:22:44',
+            ),
+            238 => 
+            array (
+                'id' => 254,
+                'destitute_id' => 728,
+                'hg_timestamp' => '2022-03-21 00:00:00',
+            ),
+            239 => 
+            array (
+                'id' => 255,
+                'destitute_id' => 729,
+                'hg_timestamp' => '2022-03-21 13:09:40',
+            ),
+            240 => 
+            array (
+                'id' => 256,
+                'destitute_id' => 730,
+                'hg_timestamp' => '2022-03-21 13:11:39',
+            ),
+            241 => 
+            array (
+                'id' => 257,
+                'destitute_id' => 731,
+                'hg_timestamp' => '2022-03-21 13:15:09',
+            ),
+            242 => 
+            array (
+                'id' => 258,
+                'destitute_id' => 732,
+                'hg_timestamp' => '2022-03-21 13:17:39',
+            ),
+            243 => 
+            array (
+                'id' => 259,
+                'destitute_id' => 572,
+                'hg_timestamp' => '2022-03-21 13:18:03',
+            ),
+            244 => 
+            array (
+                'id' => 260,
+                'destitute_id' => 733,
+                'hg_timestamp' => '2022-03-21 13:39:45',
+            ),
+            245 => 
+            array (
+                'id' => 261,
+                'destitute_id' => 573,
+                'hg_timestamp' => '2022-03-22 08:01:23',
+            ),
+            246 => 
+            array (
+                'id' => 262,
+                'destitute_id' => 734,
+                'hg_timestamp' => '2022-03-22 08:10:02',
+            ),
+            247 => 
+            array (
+                'id' => 263,
+                'destitute_id' => 735,
+                'hg_timestamp' => '2022-03-22 08:30:03',
+            ),
+            248 => 
+            array (
+                'id' => 264,
+                'destitute_id' => 558,
+                'hg_timestamp' => '2022-03-22 09:31:28',
+            ),
+            249 => 
+            array (
+                'id' => 265,
+                'destitute_id' => 736,
+                'hg_timestamp' => '2022-03-22 10:04:02',
+            ),
+            250 => 
+            array (
+                'id' => 266,
+                'destitute_id' => 737,
+                'hg_timestamp' => '2022-03-22 10:05:45',
+            ),
+            251 => 
+            array (
+                'id' => 267,
+                'destitute_id' => 738,
+                'hg_timestamp' => '2022-03-22 11:30:35',
+            ),
+            252 => 
+            array (
+                'id' => 268,
+                'destitute_id' => 739,
+                'hg_timestamp' => '2022-03-22 12:06:58',
+            ),
+            253 => 
+            array (
+                'id' => 269,
+                'destitute_id' => 629,
+                'hg_timestamp' => '2022-03-22 13:31:59',
+            ),
+            254 => 
+            array (
+                'id' => 270,
+                'destitute_id' => 740,
+                'hg_timestamp' => '2022-03-23 09:23:08',
+            ),
+            255 => 
+            array (
+                'id' => 271,
+                'destitute_id' => 741,
+                'hg_timestamp' => '2022-03-27 11:52:15',
+            ),
+            256 => 
+            array (
+                'id' => 272,
+                'destitute_id' => 742,
+                'hg_timestamp' => '2022-03-27 11:53:37',
+            ),
+            257 => 
+            array (
+                'id' => 273,
+                'destitute_id' => 743,
+                'hg_timestamp' => '2022-03-27 12:02:01',
+            ),
+            258 => 
+            array (
+                'id' => 274,
+                'destitute_id' => 744,
+                'hg_timestamp' => '2022-03-27 00:00:00',
+            ),
+            259 => 
+            array (
+                'id' => 275,
+                'destitute_id' => 745,
+                'hg_timestamp' => '2022-03-27 12:09:04',
+            ),
+            260 => 
+            array (
+                'id' => 276,
+                'destitute_id' => 746,
+                'hg_timestamp' => '2022-03-27 12:10:03',
+            ),
+            261 => 
+            array (
+                'id' => 277,
+                'destitute_id' => 747,
+                'hg_timestamp' => '2022-03-27 12:10:37',
+            ),
+            262 => 
+            array (
+                'id' => 278,
+                'destitute_id' => 748,
+                'hg_timestamp' => '2022-03-27 12:11:18',
+            ),
+            263 => 
+            array (
+                'id' => 279,
+                'destitute_id' => 749,
+                'hg_timestamp' => '2022-03-27 12:12:05',
+            ),
+            264 => 
+            array (
+                'id' => 283,
+                'destitute_id' => 753,
+                'hg_timestamp' => '2022-03-28 07:44:38',
+            ),
+            265 => 
+            array (
+                'id' => 286,
+                'destitute_id' => 756,
+                'hg_timestamp' => '2022-03-28 11:35:55',
+            ),
+            266 => 
+            array (
+                'id' => 287,
+                'destitute_id' => 757,
+                'hg_timestamp' => '2022-03-28 00:00:00',
+            ),
+            267 => 
+            array (
+                'id' => 288,
+                'destitute_id' => 758,
+                'hg_timestamp' => '2022-03-28 12:13:41',
+            ),
+            268 => 
+            array (
+                'id' => 290,
+                'destitute_id' => 760,
+                'hg_timestamp' => '2022-03-29 07:22:46',
+            ),
+            269 => 
+            array (
+                'id' => 291,
+                'destitute_id' => 761,
+                'hg_timestamp' => '2022-03-29 07:42:06',
+            ),
+            270 => 
+            array (
+                'id' => 292,
+                'destitute_id' => 762,
+                'hg_timestamp' => '2022-03-29 08:54:08',
+            ),
+            271 => 
+            array (
+                'id' => 294,
+                'destitute_id' => 763,
+                'hg_timestamp' => '2022-03-29 00:00:00',
+            ),
+            272 => 
+            array (
+                'id' => 295,
+                'destitute_id' => 764,
+                'hg_timestamp' => '2022-03-29 10:30:18',
+            ),
+            273 => 
+            array (
+                'id' => 296,
+                'destitute_id' => 765,
+                'hg_timestamp' => '2022-03-29 10:43:34',
+            ),
+            274 => 
+            array (
+                'id' => 297,
+                'destitute_id' => 766,
+                'hg_timestamp' => '2022-03-29 00:00:00',
+            ),
+            275 => 
+            array (
+                'id' => 298,
+                'destitute_id' => 767,
+                'hg_timestamp' => '2022-03-29 12:02:25',
+            ),
+            276 => 
+            array (
+                'id' => 299,
+                'destitute_id' => 768,
+                'hg_timestamp' => '2022-03-30 00:00:00',
+            ),
+            277 => 
+            array (
+                'id' => 300,
+                'destitute_id' => 769,
+                'hg_timestamp' => '2022-03-30 10:03:43',
+            ),
+            278 => 
+            array (
+                'id' => 301,
+                'destitute_id' => 770,
+                'hg_timestamp' => '2022-03-30 10:33:43',
+            ),
+            279 => 
+            array (
+                'id' => 302,
+                'destitute_id' => 771,
+                'hg_timestamp' => '2022-03-30 11:25:08',
+            ),
+            280 => 
+            array (
+                'id' => 303,
+                'destitute_id' => 772,
+                'hg_timestamp' => '2022-03-30 11:28:00',
+            ),
+            281 => 
+            array (
+                'id' => 305,
+                'destitute_id' => 773,
+                'hg_timestamp' => '2022-03-21 00:00:00',
+            ),
+            282 => 
+            array (
+                'id' => 308,
+                'destitute_id' => 775,
+                'hg_timestamp' => '2022-03-31 08:00:01',
+            ),
+            283 => 
+            array (
+                'id' => 309,
+                'destitute_id' => 776,
+                'hg_timestamp' => '2022-03-31 08:01:02',
+            ),
+            284 => 
+            array (
+                'id' => 310,
+                'destitute_id' => 777,
+                'hg_timestamp' => '2022-03-31 08:02:27',
+            ),
+            285 => 
+            array (
+                'id' => 311,
+                'destitute_id' => 778,
+                'hg_timestamp' => '2022-03-31 00:00:00',
+            ),
+            286 => 
+            array (
+                'id' => 312,
+                'destitute_id' => 779,
+                'hg_timestamp' => '2022-03-31 08:04:47',
+            ),
+            287 => 
+            array (
+                'id' => 313,
+                'destitute_id' => 780,
+                'hg_timestamp' => '2022-03-31 08:07:53',
+            ),
+            288 => 
+            array (
+                'id' => 314,
+                'destitute_id' => 781,
+                'hg_timestamp' => '2022-03-31 08:08:56',
+            ),
+            289 => 
+            array (
+                'id' => 315,
+                'destitute_id' => 782,
+                'hg_timestamp' => '2022-03-31 08:10:07',
+            ),
+            290 => 
+            array (
+                'id' => 316,
+                'destitute_id' => 783,
+                'hg_timestamp' => '2022-03-31 08:32:46',
+            ),
+            291 => 
+            array (
+                'id' => 317,
+                'destitute_id' => 784,
+                'hg_timestamp' => '2022-03-31 08:33:31',
+            ),
+            292 => 
+            array (
+                'id' => 318,
+                'destitute_id' => 785,
+                'hg_timestamp' => '2022-03-31 00:00:00',
+            ),
+            293 => 
+            array (
+                'id' => 319,
+                'destitute_id' => 786,
+                'hg_timestamp' => '2022-03-31 11:28:21',
+            ),
+            294 => 
+            array (
+                'id' => 320,
+                'destitute_id' => 715,
+                'hg_timestamp' => '2022-03-31 11:51:04',
+            ),
+            295 => 
+            array (
+                'id' => 321,
+                'destitute_id' => 787,
+                'hg_timestamp' => '2022-03-31 12:16:46',
+            ),
+            296 => 
+            array (
+                'id' => 322,
+                'destitute_id' => 788,
+                'hg_timestamp' => '2022-03-31 12:49:25',
+            ),
+            297 => 
+            array (
+                'id' => 323,
+                'destitute_id' => 789,
+                'hg_timestamp' => '2022-03-31 12:57:49',
+            ),
+            298 => 
+            array (
+                'id' => 324,
+                'destitute_id' => 790,
+                'hg_timestamp' => '2022-04-01 08:09:19',
+            ),
+            299 => 
+            array (
+                'id' => 325,
+                'destitute_id' => 791,
+                'hg_timestamp' => '2022-04-01 08:36:44',
+            ),
+            300 => 
+            array (
+                'id' => 326,
+                'destitute_id' => 792,
+                'hg_timestamp' => '2022-04-01 08:48:28',
+            ),
+            301 => 
+            array (
+                'id' => 327,
+                'destitute_id' => 793,
+                'hg_timestamp' => '2022-04-01 08:49:20',
+            ),
+            302 => 
+            array (
+                'id' => 328,
+                'destitute_id' => 794,
+                'hg_timestamp' => '2022-04-01 10:12:05',
+            ),
+            303 => 
+            array (
+                'id' => 329,
+                'destitute_id' => 795,
+                'hg_timestamp' => '2022-04-01 00:00:00',
+            ),
+            304 => 
+            array (
+                'id' => 330,
+                'destitute_id' => 796,
+                'hg_timestamp' => '2022-04-01 10:43:41',
+            ),
+            305 => 
+            array (
+                'id' => 331,
+                'destitute_id' => 797,
+                'hg_timestamp' => '2022-04-01 00:00:00',
+            ),
+            306 => 
+            array (
+                'id' => 332,
+                'destitute_id' => 798,
+                'hg_timestamp' => '2022-04-01 11:15:46',
+            ),
+            307 => 
+            array (
+                'id' => 333,
+                'destitute_id' => 799,
+                'hg_timestamp' => '2022-04-02 09:02:50',
+            ),
+            308 => 
+            array (
+                'id' => 334,
+                'destitute_id' => 800,
+                'hg_timestamp' => '2022-04-02 09:03:54',
+            ),
+            309 => 
+            array (
+                'id' => 335,
+                'destitute_id' => 801,
+                'hg_timestamp' => '2022-04-02 09:04:34',
+            ),
+            310 => 
+            array (
+                'id' => 336,
+                'destitute_id' => 802,
+                'hg_timestamp' => '2022-04-02 00:00:00',
+            ),
+            311 => 
+            array (
+                'id' => 337,
+                'destitute_id' => 803,
+                'hg_timestamp' => '2022-04-02 09:07:11',
+            ),
+            312 => 
+            array (
+                'id' => 338,
+                'destitute_id' => 804,
+                'hg_timestamp' => '2022-04-02 09:12:44',
+            ),
+            313 => 
+            array (
+                'id' => 339,
+                'destitute_id' => 805,
+                'hg_timestamp' => '2022-04-02 00:00:00',
+            ),
+            314 => 
+            array (
+                'id' => 340,
+                'destitute_id' => 806,
+                'hg_timestamp' => '2022-04-02 11:04:30',
+            ),
+            315 => 
+            array (
+                'id' => 341,
+                'destitute_id' => 807,
+                'hg_timestamp' => '2022-04-02 11:16:17',
+            ),
+            316 => 
+            array (
+                'id' => 342,
+                'destitute_id' => 808,
+                'hg_timestamp' => '2022-04-02 11:20:42',
+            ),
+            317 => 
+            array (
+                'id' => 343,
+                'destitute_id' => 809,
+                'hg_timestamp' => '2022-04-03 00:00:00',
+            ),
+            318 => 
+            array (
+                'id' => 344,
+                'destitute_id' => 810,
+                'hg_timestamp' => '2022-04-03 00:00:00',
+            ),
+            319 => 
+            array (
+                'id' => 345,
+                'destitute_id' => 811,
+                'hg_timestamp' => '2022-04-03 11:26:59',
+            ),
+            320 => 
+            array (
+                'id' => 346,
+                'destitute_id' => 812,
+                'hg_timestamp' => '2022-04-04 00:00:00',
+            ),
+            321 => 
+            array (
+                'id' => 347,
+                'destitute_id' => 813,
+                'hg_timestamp' => '2022-04-04 08:26:48',
+            ),
+            322 => 
+            array (
+                'id' => 348,
+                'destitute_id' => 814,
+                'hg_timestamp' => '2022-04-04 09:22:38',
+            ),
+            323 => 
+            array (
+                'id' => 349,
+                'destitute_id' => 815,
+                'hg_timestamp' => '2022-04-04 09:23:41',
+            ),
+            324 => 
+            array (
+                'id' => 350,
+                'destitute_id' => 816,
+                'hg_timestamp' => '2022-04-04 09:24:48',
+            ),
+            325 => 
+            array (
+                'id' => 351,
+                'destitute_id' => 817,
+                'hg_timestamp' => '2022-04-04 09:36:00',
+            ),
+            326 => 
+            array (
+                'id' => 352,
+                'destitute_id' => 818,
+                'hg_timestamp' => '2022-04-04 09:37:10',
+            ),
+            327 => 
+            array (
+                'id' => 353,
+                'destitute_id' => 819,
+                'hg_timestamp' => '2022-04-04 00:00:00',
             ),
         ));
 
