@@ -1,0 +1,9 @@
+128.124.137.238 - Ukraine, Ternopil Oblast, Ternopil; lat: 49.5535, long: 25.5947
+46.37.216.231 - Ukraine, Odessa, Odessa; lat: 46.4888, long: 30.7474
+46.211.17.152 - Ukraine, Kyiv City, Kyiv; lat: 50.4501, long: 30.5234
+176.97.63.217 - Ukraine, Odessa, Odessa; lat: 46.4888, long: 30.7474
+128.124.88.205 - Ukraine, Ternopil Oblast, Ternopil; lat: 49.5535, long: 25.5947
+128.124.121.230 - Ukraine, Ternopil Oblast, Ternopil; lat: 49.5535, long: 25.5947
+128.124.116.223 - Ukraine, Ternopil Oblast, Ternopil; lat: 49.5535, long: 25.5947
+188.163.101.45 - Ukraine, Lvivska Oblast, Lviv; lat: 49.8396, long: 24.0297
+178.133.225.240 - Ukraine, Ternopil Oblast, Ternopil; lat: 49.5535, long: 25.5947
