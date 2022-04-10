@@ -344,6 +344,19 @@ class RefugeeSheltersTableSeeder extends Seeder
                 'created_at' => '2022-04-09 10:02:26',
                 'updated_at' => '2022-04-09 10:02:26',
             ),
+            25 => 
+            array (
+                'id' => 33,
+                'name' => 'Руденко',
+                'phone' => 'inst: @MSRUDENKO_N',
+                'address' => '-',
+            'terms' => 'Безвозмездно (возможно только по расходам на ком услуги) но период проверять',
+                'vacant_places' => '2 комнатная квартира',
+                'conditions' => NULL,
+                'comment' => NULL,
+                'created_at' => '2022-04-10 11:26:44',
+                'updated_at' => '2022-04-10 11:26:44',
+            ),
         ));
 
         
