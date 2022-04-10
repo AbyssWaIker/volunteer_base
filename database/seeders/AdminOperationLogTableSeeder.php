@@ -31103,6 +31103,61 @@ class AdminOperationLogTableSeeder extends Seeder
                 'created_at' => '2022-04-10 11:26:44',
                 'updated_at' => '2022-04-10 11:26:44',
             ),
+            325 => 
+            array (
+                'id' => 2826,
+                'user_id' => 1,
+                'path' => 'admin/backup',
+                'method' => 'GET',
+                'ip' => '176.97.63.237',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-10 15:10:42',
+                'updated_at' => '2022-04-10 15:10:42',
+            ),
+            326 => 
+            array (
+                'id' => 2827,
+                'user_id' => 1,
+                'path' => 'admin/backup',
+                'method' => 'GET',
+                'ip' => '176.97.63.237',
+                'input' => '[]',
+                'created_at' => '2022-04-10 15:10:44',
+                'updated_at' => '2022-04-10 15:10:44',
+            ),
+            327 => 
+            array (
+                'id' => 2828,
+                'user_id' => 1,
+                'path' => 'admin/backup',
+                'method' => 'GET',
+                'ip' => '176.97.63.237',
+                'input' => '[]',
+                'created_at' => '2022-04-10 15:10:45',
+                'updated_at' => '2022-04-10 15:10:45',
+            ),
+            328 => 
+            array (
+                'id' => 2829,
+                'user_id' => 1,
+                'path' => 'admin/backup',
+                'method' => 'GET',
+                'ip' => '176.97.63.237',
+                'input' => '[]',
+                'created_at' => '2022-04-10 15:11:48',
+                'updated_at' => '2022-04-10 15:11:48',
+            ),
+            329 => 
+            array (
+                'id' => 2830,
+                'user_id' => 1,
+                'path' => 'admin/backup/download',
+                'method' => 'GET',
+                'ip' => '176.97.63.237',
+                'input' => '{"disk":"\\u2705","file":"---------------------------------\\/2022-04-04-10-38-05.zip"}',
+                'created_at' => '2022-04-10 15:11:53',
+                'updated_at' => '2022-04-10 15:11:53',
+            ),
         ));
 
         
