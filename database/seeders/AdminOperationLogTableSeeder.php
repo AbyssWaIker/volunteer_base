@@ -33987,6 +33987,182 @@ class AdminOperationLogTableSeeder extends Seeder
                 'created_at' => '2022-04-11 12:05:57',
                 'updated_at' => '2022-04-11 12:05:57',
             ),
+            87 => 
+            array (
+                'id' => 3088,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"__search__":null}',
+                'created_at' => '2022-04-11 12:31:41',
+                'updated_at' => '2022-04-11 12:31:41',
+            ),
+            88 => 
+            array (
+                'id' => 3089,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"__search__":null}',
+                'created_at' => '2022-04-11 12:32:49',
+                'updated_at' => '2022-04-11 12:32:49',
+            ),
+            89 => 
+            array (
+                'id' => 3090,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'POST',
+                'ip' => '178.133.51.216',
+                'input' => '{"categories":["5"],"name":"\\u0416\\u0435\\u043b\\u0435\\u0445\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u041b\\u0430\\u0440\\u0438\\u0441\\u0430 \\u0418\\u0432\\u0430\\u043d\\u043e\\u0432\\u043d\\u0430","passport_id":"\\u043c\\u043e407130","id_code":null,"address":"\\u0447\\u0435\\u0440\\u043d\\u043e\\u0431\\u0430\\u0435\\u0432\\u043a\\u0430","phone":null,"comment":null,"_token":"ouCmNytCVcZGAVhPsuK7gtwblOYxSAj9NO3mBAHK"}',
+                'created_at' => '2022-04-11 12:44:35',
+                'updated_at' => '2022-04-11 12:44:35',
+            ),
+            90 => 
+            array (
+                'id' => 3091,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"__search__":null,"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:44:35',
+                'updated_at' => '2022-04-11 12:44:35',
+            ),
+            91 => 
+            array (
+                'id' => 3092,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'POST',
+                'ip' => '178.133.51.216',
+                'input' => '{"categories":["5"],"name":"\\u0416\\u0435\\u043b\\u0438\\u0445\\u043e\\u0432\\u0441\\u043a\\u0438\\u0439 \\u042f\\u0440\\u043e\\u0441\\u043b\\u0430\\u0432 \\u0412\\u0438\\u043a\\u0442\\u043e\\u0440\\u043e\\u0432\\u0438\\u0447","passport_id":"\\u043c\\u043e325671","id_code":null,"address":"\\u0447\\u0435\\u0440\\u043d\\u043e\\u0431\\u0430\\u0435\\u0432\\u043a\\u0430","phone":null,"comment":null,"_token":"ouCmNytCVcZGAVhPsuK7gtwblOYxSAj9NO3mBAHK"}',
+                'created_at' => '2022-04-11 12:45:17',
+                'updated_at' => '2022-04-11 12:45:17',
+            ),
+            92 => 
+            array (
+                'id' => 3093,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"__search__":null,"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:45:18',
+                'updated_at' => '2022-04-11 12:45:18',
+            ),
+            93 => 
+            array (
+                'id' => 3094,
+                'user_id' => 1,
+                'path' => 'admin/grannies/913/edit',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:45:39',
+                'updated_at' => '2022-04-11 12:45:39',
+            ),
+            94 => 
+            array (
+                'id' => 3095,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:45:52',
+                'updated_at' => '2022-04-11 12:45:52',
+            ),
+            95 => 
+            array (
+                'id' => 3096,
+                'user_id' => 1,
+                'path' => 'admin/grannies/912/edit',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:45:54',
+                'updated_at' => '2022-04-11 12:45:54',
+            ),
+            96 => 
+            array (
+                'id' => 3097,
+                'user_id' => 1,
+                'path' => 'admin/grannies/912',
+                'method' => 'PUT',
+                'ip' => '178.133.51.216',
+                'input' => '{"name":"\\u0416\\u0435\\u043b\\u0435\\u0445\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u041b\\u0430\\u0440\\u0438\\u0441\\u0430 \\u0418\\u0432\\u0430\\u043d\\u043e\\u0432\\u043d\\u0430","phone":"0500808819","categories":["5",null,"5",null],"comment":null,"address":"\\u0447\\u0435\\u0440\\u043d\\u043e\\u0431\\u0430\\u0435\\u0432\\u043a\\u0430","passport_id":"\\u043c\\u043e407130","id_code":null,"helpGiven":{"448":{"id":"448","hg_timestamp":"2022-04-11","_remove_":"0"}},"_token":"ouCmNytCVcZGAVhPsuK7gtwblOYxSAj9NO3mBAHK","_method":"PUT","_previous_":"http:\\/\\/178.62.229.82\\/admin\\/grannies"}',
+                'created_at' => '2022-04-11 12:46:21',
+                'updated_at' => '2022-04-11 12:46:21',
+            ),
+            97 => 
+            array (
+                'id' => 3098,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '[]',
+                'created_at' => '2022-04-11 12:46:22',
+                'updated_at' => '2022-04-11 12:46:22',
+            ),
+            98 => 
+            array (
+                'id' => 3099,
+                'user_id' => 1,
+                'path' => 'admin/grannies/913/edit',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:46:27',
+                'updated_at' => '2022-04-11 12:46:27',
+            ),
+            99 => 
+            array (
+                'id' => 3100,
+                'user_id' => 1,
+                'path' => 'admin/grannies/913',
+                'method' => 'PUT',
+                'ip' => '178.133.51.216',
+                'input' => '{"name":"\\u0416\\u0435\\u043b\\u0438\\u0445\\u043e\\u0432\\u0441\\u043a\\u0438\\u0439 \\u042f\\u0440\\u043e\\u0441\\u043b\\u0430\\u0432 \\u0412\\u0438\\u043a\\u0442\\u043e\\u0440\\u043e\\u0432\\u0438\\u0447","phone":"0961308987","categories":["5",null,"5",null],"comment":null,"address":"\\u0447\\u0435\\u0440\\u043d\\u043e\\u0431\\u0430\\u0435\\u0432\\u043a\\u0430","passport_id":"\\u043c\\u043e325671","id_code":null,"helpGiven":{"449":{"id":"449","hg_timestamp":"2022-04-11","_remove_":"0"}},"_token":"ouCmNytCVcZGAVhPsuK7gtwblOYxSAj9NO3mBAHK","_method":"PUT","_previous_":"http:\\/\\/178.62.229.82\\/admin\\/grannies"}',
+                'created_at' => '2022-04-11 12:46:35',
+                'updated_at' => '2022-04-11 12:46:35',
+            ),
+            100 => 
+            array (
+                'id' => 3101,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '[]',
+                'created_at' => '2022-04-11 12:46:36',
+                'updated_at' => '2022-04-11 12:46:36',
+            ),
+            101 => 
+            array (
+                'id' => 3102,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'POST',
+                'ip' => '178.133.51.216',
+                'input' => '{"categories":["5"],"name":"\\u0414\\u0430\\u043d \\u0410\\u043b\\u0435\\u043d\\u0430 \\u042f\\u0440\\u043e\\u0441\\u043b\\u043b\\u0430\\u0432\\u043e\\u0432\\u043d\\u0430","passport_id":"002508277","id_code":null,"address":"\\u0447\\u0435\\u0440\\u043d\\u043e\\u0431\\u0430\\u0435\\u0432\\u043a\\u0430","phone":"\\u041a\\u0430\\u043a \\u0443 \\u0416\\u0435\\u043b\\u0435\\u043e\\u0432\\u0441\\u043a\\u043e\\u0439 \\u041b\\u0430\\u0440\\u0438\\u0441\\u044b","comment":null,"_token":"ouCmNytCVcZGAVhPsuK7gtwblOYxSAj9NO3mBAHK"}',
+                'created_at' => '2022-04-11 12:48:29',
+                'updated_at' => '2022-04-11 12:48:29',
+            ),
+            102 => 
+            array (
+                'id' => 3103,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '178.133.51.216',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-04-11 12:48:29',
+                'updated_at' => '2022-04-11 12:48:29',
+            ),
         ));
 
         
