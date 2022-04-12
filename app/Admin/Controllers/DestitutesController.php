@@ -24,12 +24,15 @@ class DestitutesController extends PersonController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->multipleSelect('categories[]', __('categories'))->options($this->getAllCategories());
+            $form->multipleSelect('categories[]', __('categories'))
+                ->options($this->getAllCategories())
+                ->default([Destitute::REFUGEE_ID]);
+            ;
             $form->text('name', __('name'))->required();
-            $form->text('passport_id', __('passport_id'));
             $form->text('id_code', __('id_code'));
             $form->text('address', __('address'));
             $form->text('phone', __('phone'));
+            $form->text('passport_id', __('passport_id'));
             $form->text('comment', __('comment'));
         };
     }
@@ -52,7 +55,7 @@ class DestitutesController extends PersonController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->model()->with(['categories', 'helpGiven'])->orderByDesc('id');
+        $grid->model()->with(['categories', 'helpGiven']);
 
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
