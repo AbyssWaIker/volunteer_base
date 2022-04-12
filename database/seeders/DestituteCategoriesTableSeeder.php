@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Destitute;
 use Illuminate\Database\Seeder;
 
 class DestituteCategoriesTableSeeder extends Seeder
@@ -13,38 +14,38 @@ class DestituteCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('destitute_categories')->delete();
-        
+
         \DB::table('destitute_categories')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'name' => 'Инвалид',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 4,
                 'name' => 'Многодетная семья/мать',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'name' => 'Одиночка',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 2,
                 'name' => 'Пенсионер',
             ),
-            4 => 
+            4 =>
             array (
-                'id' => 5,
+                'id' => Destitute::REFUGEE_ID,
                 'name' => 'Переселенцы',
             ),
         ));
 
-        
+
     }
 }

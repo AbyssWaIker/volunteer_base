@@ -26,6 +26,7 @@ class AdminController extends BaseController
         });
         $model =($this->model);
         $grid->exporter(new ModelExporter($grid, new $model, $this->title));
+        $grid->model()->orderByDesc('id');
         return $grid;
     }
 
