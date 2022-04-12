@@ -26,7 +26,7 @@ class DestitutesController extends PersonController
         return function (Grid\Tools\QuickCreate $form) {
             $form->multipleSelect('categories[]', __('categories'))
                 ->options($this->getAllCategories())
-                ->default([Destitute::REFUGEE_ID]);
+                ->default(Destitute::REFUGEE_ID);
             ;
             $form->text('name', __('name'))->required();
             $form->text('id_code', __('id_code'));
