@@ -66,8 +66,8 @@ abstract class PersonController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->model()->with(['categories'])->orderByDesc('id');
         $model = $this->getModel();
+        $grid->model()->with($model->getRelations())->orderByDesc('id');
         $grid->quickSearch($model->getFillable());
         $grid->quickCreate($this->quickCreateCallback());
         $grid->filter($this->filterCallBack());
@@ -95,7 +95,7 @@ abstract class PersonController extends AdminController
         $show = parent::detail($id);
 
         $show->field('id', __('Id'));
-        $show->field('name', __('Last Name'));
+        $show->field('name', __('name'));
         $show->field('phone', __('phone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -107,6 +107,6 @@ abstract class PersonController extends AdminController
     {
         $model = $this->getModel();
         $table = $model->getTable();
-        return function(string $column)use($table,$id){return ValidatorHelper::validatorUnique($table);};
+        return function(?string $column = null)use($table,$id){return ValidatorHelper::validatorUnique($table, $column);};
     }
 }

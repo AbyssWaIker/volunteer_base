@@ -32,5 +32,7 @@
     "Info": "Инфо",
     "Name is Taken": "Имя уже занято",
     "phone is Taken": "Телефон уже занят",
-    "Passport ID is Taken": "ИД уже занят"
+    "Passport ID is Taken": "Паспорт уже занят",
+    "ID code is Taken": "ИД уже занят",
+    "family_members": "члены семьи"
 }

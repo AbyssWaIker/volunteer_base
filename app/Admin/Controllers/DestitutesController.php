@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Destitute\DestituteHelper;
 use App\Admin\Exporters\DestituteExporter;
+use App\Admin\Helpers\GridHelper;
 use App\Models\Destitute;
 use Carbon\Carbon;
 use Encore\Admin\Form;
@@ -56,8 +57,6 @@ class DestitutesController extends PersonController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->model()->with(['categories', 'helpGiven']);
-
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
             $actions->prepend(new DestituteHelper);
@@ -69,6 +68,17 @@ class DestitutesController extends PersonController
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('familyMembersCount',__('family_members'))
+            ->display(function ($test) {return$this->familyMembersCount;})
+            ->expand(function ($destitute) {
+                $all_family = array_merge(
+                    [$this->name],
+                    $destitute->family_members ?: []
+                );
+
+                return GridHelper::arrayToList($all_family);
+            })
+            ->hideOnMobile();
         $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
@@ -114,10 +124,11 @@ class DestitutesController extends PersonController
         $form->text('name', __('name'))->required();
         $form->text('id_code', __('id_code'))->creationRules($validator('id_code'),['unique' => __('ID code is Taken')]);
         $form->text('address', __('address'));
-        $form->text('phone', __('phone'))->creationRules($validator('phone'));
+        $form->text('phone', __('phone'))->creationRules($validator('phone'),['unique' => __('phone is Taken')]);
         $form->text('passport_id', __('passport_id'))
             ->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
         $form->text('comment', __('comment'));
+        $form->list('family_members', __('family_members'));
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
