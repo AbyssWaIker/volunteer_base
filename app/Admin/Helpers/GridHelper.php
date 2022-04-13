@@ -2,7 +2,6 @@
 
 namespace App\Admin\Helpers;
 
-use Encore\Admin\Grid\Model;
 use Illuminate\Database\Eloquent\Collection;
 
 class GridHelper
@@ -11,23 +10,23 @@ class GridHelper
     {
         return $ordered ? 'ol' : 'ul';
     }
-    public static function arrayToList(array $array, ?callable $extract = null, $ordered = true): string
+    /**
+     * @param array|Collection $array
+     * @param ?callable $extract
+     * @param bool $ordered
+     * @return string
+     */
+    public static function arrayToList($array, ?callable $extract = null, bool $ordered = true): string
     {
         $list_tag = self::getListTag($ordered);
         if(!$extract) {
             $extract = function ($value) {return $value;};
         }
-        $list = implode('<br/>', array_map($extract, $array));
-        return "<$list_tag> $list </$list_tag>";
-    }
-
-    public static function collectionToList(Collection $collection, ?callable $extract = null,$ordered = true): string
-    {
-        $list_tag = self::getListTag($ordered);
-        if(!$extract) {
-            $extract = function ($value) {return $value;};
+        if($array instanceof Collection) {
+            $list = implode('<br/>', array_map($extract, $array));
+        } else {
+            $list = $array->map($extract)->implode('<br/>');
         }
-        $list = $collection->map($extract)->implode('<br/>');
         return "<$list_tag> $list </$list_tag>";
     }
 }
