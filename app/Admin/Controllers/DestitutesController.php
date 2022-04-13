@@ -109,12 +109,15 @@ class DestitutesController extends PersonController
         $form = parent::form($id);
 
         $validator = $this->formValidator($id);
+
+        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
+        $form->text('name', __('name'))->required();
+        $form->text('id_code', __('id_code'))->creationRules($validator('id_code'),['unique' => __('ID code is Taken')]);
         $form->text('address', __('address'));
+        $form->text('phone', __('phone'))->creationRules($validator('phone'));
         $form->text('passport_id', __('passport_id'))
             ->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
-        $form->text('id_code', __('id_code'))
-            ->creationRules($validator('id_code'),['unique' => __('ID code is Taken')]);
-        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
+        $form->text('comment', __('comment'));
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
