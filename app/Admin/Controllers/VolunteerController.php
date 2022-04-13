@@ -74,7 +74,11 @@ class VolunteerController extends PersonController
     protected function form($id = 0): Form
     {
         $form = parent::form($id);
+        $form->text('name', __('name'))->required();
+        $form->text('phone', __('phone'))->creationRules($validator('phone'));
+        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
         $form->switch('sex', __('sex'))->states(Volunteer::SEX_SWITCH_STATES);
+        $form->text('comment', __('comment'));
         return $form;
     }
 }
