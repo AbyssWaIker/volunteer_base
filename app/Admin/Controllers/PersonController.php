@@ -4,13 +4,14 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Exporters\ModelExporter;
 use App\Admin\Helpers\ValidatorHelper;
+use App\Models\Model;
 use App\Models\Person;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Database\Eloquent\Builder;
 
-abstract class PersonController extends AdminController
+abstract class PersonController extends ModelController
 {
     protected $model = Person::class;
     /**
@@ -20,7 +21,7 @@ abstract class PersonController extends AdminController
      */
     protected $title = 'Человек';
 
-    protected function getModel():Person
+    protected function getModel():Model
     {
         return new $this->model;
     }
@@ -66,17 +67,6 @@ abstract class PersonController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-        $model = $this->getModel();
-        $grid->model()->with($model->getRelations())->orderByDesc('id');
-        $grid->quickSearch($model->getFillable());
-        $grid->quickCreate($this->quickCreateCallback());
-        $grid->filter($this->filterCallBack());
-        $grid->exporter(new ModelExporter($grid,$this->getModel(), $this->title));
-
-        $grid->column('tableInfo', __('Info'))
-            ->display(function (){return [$this->tableInfo];})
-            ->verticalTable($model::getTableTitles())
-            ->hideOnDesktop();
 
         $grid->column('id', __('Id'))->sortable()->hideOnMobile();
         $grid->column('categories', __('categories'))->customMultipleSelect($this->getAllCategories())->hideOnMobile();
@@ -101,12 +91,5 @@ abstract class PersonController extends AdminController
         $show->field('updated_at', __('Updated at'));
 
         return $show;
-    }
-
-    protected function formValidator($id):callable
-    {
-        $model = $this->getModel();
-        $table = $model->getTable();
-        return function(?string $column = null)use($table,$id){return ValidatorHelper::validatorUnique($table, $column);};
     }
 }
