@@ -23,9 +23,9 @@ class GridHelper
             $extract = function ($value) {return $value;};
         }
         if($array instanceof Collection) {
-            $list = implode('<br/>', array_map($extract, $array));
-        } else {
             $list = $array->map($extract)->implode('<br/>');
+        } else {
+            $list = implode('<br/>', array_map($extract, $array));
         }
         return "<$list_tag> $list </$list_tag>";
     }
