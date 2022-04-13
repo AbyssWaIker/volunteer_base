@@ -4,7 +4,7 @@
     "Last Name":"Фамилия",
     "First Name":"Имя",
     "Middle Name":"Отчество",
-    "address":"Прописка",
+    "address":"Адрес",
     "passport_id":"Пасспорт/Пенс.",
     "id_code": "ИД код",
     "Created at":"Дата Добавления",
@@ -34,5 +34,11 @@
     "phone is Taken": "Телефон уже занят",
     "Passport ID is Taken": "Паспорт уже занят",
     "ID code is Taken": "ИД уже занят",
-    "family_members": "члены семьи"
+    "family_members": "члены семьи",
+    "contact": "Контакт",
+    "country": "Страна",
+    "time_of_crossing": "Время пересечения",
+    "vacant_places": "Свободные места",
+    "terms": "Условия аренды",
+    "conditions": "Условия проживания"
 }
