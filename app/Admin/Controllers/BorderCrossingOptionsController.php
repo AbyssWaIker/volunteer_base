@@ -7,14 +7,14 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class BorderCrossingOptionsController extends AdminController
+class BorderCrossingOptionsController extends ModelController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = 'BorderCrossingOption';
+    protected $title = 'Отправка за границу';
     protected $model = BorderCrossingOption::class;
     /**
      * Make a grid builder.
@@ -29,9 +29,9 @@ class BorderCrossingOptionsController extends AdminController
             $form->text('name', __('name'));
             $form->text('contact', __('contact'));
             $form->text('country', __('country'));
-            $form->text('time_of_crossing', __('Time of crossing'));
-            $form->text('vacant_places', __('Vacant places'));
-            $form->text('comment', __('Comment'));
+            $form->text('time_of_crossing', __('time_of_crossing'));
+            $form->text('vacant_places', __('vacant_places'));
+            $form->text('comment', __('comment'));
             return $form;
         });
 
@@ -39,9 +39,9 @@ class BorderCrossingOptionsController extends AdminController
         $grid->column('name', __('name'));
         $grid->column('contact', __('contact'));
         $grid->column('country', __('country'));
-        $grid->column('time_of_crossing', __('Time of crossing'));
-        $grid->column('vacant_places', __('Vacant places'));
-        $grid->column('comment', __('Comment'));
+        $grid->column('time_of_crossing', __('time_of_crossing'));
+        $grid->column('vacant_places', __('vacant_places'));
+        $grid->column('comment', __('comment'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -62,9 +62,9 @@ class BorderCrossingOptionsController extends AdminController
         $show->field('name', __('name'));
         $show->field('contact', __('contact'));
         $show->field('country', __('country'));
-        $show->field('time_of_crossing', __('Time of crossing'));
-        $show->field('vacant_places', __('Vacant places'));
-        $show->field('comment', __('Comment'));
+        $show->field('time_of_crossing', __('time_of_crossing'));
+        $show->field('vacant_places', __('vacant_places'));
+        $show->field('comment', __('comment'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -83,9 +83,9 @@ class BorderCrossingOptionsController extends AdminController
         $form->text('name', __('name'));
         $form->text('contact', __('contact'));
         $form->text('country', __('country'));
-        $form->text('time_of_crossing', __('Time of crossing'));
-        $form->text('vacant_places', __('Vacant places'));
-        $form->text('comment', __('Comment'));
+        $form->text('time_of_crossing', __('time_of_crossing'));
+        $form->text('vacant_places', __('vacant_places'));
+        $form->text('comment', __('comment'));
 
         return $form;
     }

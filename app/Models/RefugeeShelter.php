@@ -8,5 +8,5 @@ class RefugeeShelter extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'phone', 'terms', 'description', 'conditions',];
+    protected $fillable = ['name', 'phone', 'terms','address', 'vacant_places', 'conditions', 'comment'];
 }

@@ -7,7 +7,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class RefugeeShelterController extends AdminController
+class RefugeeShelterController extends ModelController
 {
     protected $model = RefugeeShelter::class;
     /**
@@ -27,11 +27,11 @@ class RefugeeShelterController extends AdminController
         $grid = parent::grid();
         $grid->quickCreate(function(Grid\Tools\QuickCreate $form){
             $form->text('name', __('name'));
-            $form->text('phone', __('phone'));
+            $form->text('phone', __('contact'));
             $form->text('address', __('address'));
-            $form->text('terms', __('Terms'));
-            $form->text('vacant_places', __('Vacant places'));
-            $form->text('conditions', __('Conditions'));
+            $form->text('terms', __('terms'));
+            $form->text('vacant_places', __('vacant_places'));
+            $form->text('conditions', __('conditions'));
             $form->text('comment', __('comment'));
             return $form;
         });
@@ -40,9 +40,9 @@ class RefugeeShelterController extends AdminController
         $grid->column('name', __('name'));
         $grid->column('phone', __('phone'));
         $grid->column('address', __('address'));
-        $grid->column('terms', __('Terms'));
-        $grid->column('vacant_places', __('Vacant places'));
-        $grid->column('conditions', __('Conditions'));
+        $grid->column('terms', __('terms'));
+        $grid->column('vacant_places', __('vacant_places'));
+        $grid->column('conditions', __('conditions'));
         $grid->column('comment', __('comment'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -63,9 +63,9 @@ class RefugeeShelterController extends AdminController
         $show->field('id', __('id'));
         $show->field('name', __('name'));
         $show->field('phone', __('phone'));
-        $show->field('terms', __('Terms'));
-        $show->field('vacant_places', __('Vacant places'));
-        $show->field('conditions', __('Conditions'));
+        $show->field('terms', __('terms'));
+        $show->field('vacant_places', __('vacant_places'));
+        $show->field('conditions', __('conditions'));
         $show->field('comment', __('comment'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
@@ -85,10 +85,10 @@ class RefugeeShelterController extends AdminController
         $form->text('name', __('name'));
         $form->text('phone', __('phone'));
         $form->text('address', __('address'));
-        $form->text('terms', __('Terms'));
-        $form->text('vacant_places', __('Vacant places'));
-        $form->text('conditions', __('Conditions'));
-        $form->text('comment', __('Comment'));
+        $form->text('terms', __('terms'));
+        $form->text('vacant_places', __('vacant_places'));
+        $form->text('conditions', __('conditions'));
+        $form->text('comment', __('comment'));
 
         return $form;
     }
