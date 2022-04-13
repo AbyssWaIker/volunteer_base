@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Exporters\PersonExporter;
+use App\Admin\Exporters\ModelExporter;
 use App\Admin\Helpers\ValidatorHelper;
 use App\Models\Person;
 use Encore\Admin\Form;
@@ -71,7 +71,7 @@ abstract class PersonController extends AdminController
         $grid->quickSearch($model->getFillable());
         $grid->quickCreate($this->quickCreateCallback());
         $grid->filter($this->filterCallBack());
-        $grid->exporter(new PersonExporter($grid,$this->getModel(), $this->title));
+        $grid->exporter(new ModelExporter($grid,$this->getModel(), $this->title));
 
         $grid->column('tableInfo', __('Info'))
             ->display(function (){return [$this->tableInfo];})
