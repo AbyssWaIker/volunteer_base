@@ -13,7 +13,16 @@ class Destitute extends Person
     public $category_class = DestituteCategory::class;
     public const REFUGEE_ID = 5;
 
-    protected $fillable = ['name', 'phone', 'address', 'passport_id', 'id_code', 'comment'];
+    protected $fillable = ['name', 'phone', 'address', 'passport_id', 'id_code', 'comment', 'family_members'];
+    protected $casts = ['family_members' => 'json'];
+    protected $appends = ['FamilyMembersCount'];
+
+    public function getFamilyMembersCountAttribute():string
+    {
+        $family_members = $this->family_members ? array_filter($this->family_members) : [];
+        return count($family_members) + ($self = 1);
+    }
+
     public function helpGiven():HasMany
     {
         return $this->hasMany(HelpGiven::class);
