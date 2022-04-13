@@ -65,9 +65,11 @@ class DestitutesController extends PersonController
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
 
-        $grid->column('address', __('address'))->filter('like')->hideOnMobile();
-        $grid->column('passport_id', __('passport_id'))->filter('like')->hideOnMobile();
-        $grid->column('id_code', __('id_code'))->filter('like')->hideOnMobile();
+        $grid->column('id_code', __('id_code'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
             ->hideOnMobile();
