@@ -41,7 +41,9 @@ class VolunteerController extends PersonController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->column('sex', __('sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
+        $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('sex', __('sex'))->editable()->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
+        $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         return $grid;
     }
 
