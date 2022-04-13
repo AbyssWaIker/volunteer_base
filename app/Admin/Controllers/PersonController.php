@@ -109,22 +109,4 @@ abstract class PersonController extends AdminController
         $table = $model->getTable();
         return function(string $column)use($table,$id){return ValidatorHelper::validatorUnique($table);};
     }
-    /**
-     * Make a form builder.
-     *
-     * @return Form
-     */
-    protected function form($id = 0): Form
-    {
-        $form = parent::form($id);
-        $validator = $this->formValidator($id);
-        $form->text('name', __('name'))
-            ->required();
-        $form->text('phone', __('phone'))
-            ->creationRules($validator('phone'));
-        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
-        $form->text('comment', __('comment'));
-
-        return $form;
-    }
 }
