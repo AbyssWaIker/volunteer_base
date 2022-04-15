@@ -15,7 +15,7 @@ class Destitute extends Person
 
     protected $fillable = ['name', 'phone', 'address', 'passport_id', 'id_code', 'comment', 'family_members'];
     protected $casts = ['family_members' => 'json'];
-    protected $appends = ['FamilyMembersCount'];
+    protected $appends = ['family_members_count'];
 
     public function getFamilyMembersCountAttribute():string
     {
