@@ -34,6 +34,7 @@
     "phone is Taken": "Телефон уже занят",
     "Passport ID is Taken": "Паспорт уже занят",
     "ID code is Taken": "ИД уже занят",
+    ":attribute is Taken":":attribute уже занят",
     "family_members": "члены семьи",
     "contact": "Контакт",
     "country": "Страна",
