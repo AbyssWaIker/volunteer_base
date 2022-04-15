@@ -77,7 +77,10 @@ class DestitutesController extends PersonController
                     [$this->attributesToArray()],
                     $destitute->family_members ?: []
                 );
-                return GridHelper::arrayToList($all_family, function(array $member){
+                return GridHelper::arrayToList($all_family, function(?array $member){
+                    if(!$member) {
+                        return '';
+                    }
                     return @$member['name'] . ' ' . @$member['passport_id'] . '' . @$member['phone'] . ' ' . @$member['comment'];
                 });
             })
