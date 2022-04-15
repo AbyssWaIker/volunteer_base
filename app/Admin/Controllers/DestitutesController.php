@@ -67,11 +67,24 @@ class DestitutesController extends PersonController
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
         $grid->header(function($all){
-            $today = $all->whereHas('helpGiven',function (Builder $query) {
-                $query->whereDate('hg_timestamp', Carbon::today());
-            })->get();
-            $today_people = $today->sum('family_members_count');
-            return __('Today we helped :number of people', ['number' => $today_people]);
+            $today_count = $all->whereHas(
+                'helpGiven',
+                function (Builder $query) {
+                    $query->whereDate('hg_timestamp', Carbon::today());
+                }
+            )
+                ->get()
+                ->sum('family_members_count');
+            $people_helped = __('Today we helped :number of people', ['number' => $today_count]);
+
+
+            return "<div style='display: grid; grid-template-columns: repeat(3, 1fr)' class='text-info`'>
+    <div></div>
+    <h3 class='text-black'>$people_helped</h3>
+    <div>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
+    <div>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
+
+</div>";
         });
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
@@ -84,8 +97,8 @@ class DestitutesController extends PersonController
                     [$this->attributesToArray()],
                     $destitute->family_members ?: []
                 );
-                return GridHelper::arrayToList($all_family, function(?array $member){
-                    if(!$member) {
+                return GridHelper::arrayToList($all_family, function( $member){
+                    if(!$member || is_string($member)) {
                         return '';
                     }
                     return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'];
