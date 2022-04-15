@@ -136,8 +136,8 @@ class DestitutesController extends PersonController
         $form->text('comment', __('comment'));
         $form->table('family_members', __('family_members'), function(\Encore\Admin\Form\NestedForm $form) {
             $form->text('name',__('name'))->required();
-            $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
-            $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
+            $form->text('passport_id', __('passport_id'));
+            $form->text('phone', __('phone'));
             $form->text('comment', __('comment'));
         });
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
