@@ -81,7 +81,7 @@ class DestitutesController extends PersonController
                     if(!$member) {
                         return '';
                     }
-                    return @$member['name'] . ' ' . @$member['passport_id'] . '' . @$member['phone'] . ' ' . @$member['comment'];
+                    return @$member['name'] . ' ' . @$member['passport_id'] . ' ' . @$member['phone'] . ' ' . @$member['comment'];
                 });
             })
             ->hideOnMobile();
