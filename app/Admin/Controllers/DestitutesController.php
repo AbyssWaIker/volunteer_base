@@ -69,6 +69,17 @@ class DestitutesController extends PersonController
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('id_code', __('id_code'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('familyMembersCount',__('family_members'))
+            ->display(function ($test) {return$this->familyMembersCount;})
+            ->expand(function ($destitute) {
+                $all_family = array_merge(
+                    [$this->name],
+                    $destitute->family_members ?: []
+                );
+
+                return GridHelper::arrayToList($all_family);
+            })
+            ->hideOnMobile();
         $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
