@@ -66,13 +66,19 @@ class DestitutesController extends PersonController
         });
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
-
+        $grid->header(function($all){
+            $today = $all->whereHas('helpGiven',function (Builder $query) {
+                $query->whereDate('hg_timestamp', Carbon::today());
+            })->get();
+            $today_people = $today->sum('family_members_count');
+            return __('Today we helped :number of people', ['number' => $today_people]);
+        });
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('id_code', __('id_code'))->editable()->filter('like')->hideOnMobile();
-        $grid->column('familyMembersCount',__('family_members'))
-            ->display(function ($test) {return$this->familyMembersCount;})
+        $grid->column('family_members_count',__('family_members'))
+            ->display(function ($test) {return$this->family_members_count;})
             ->expand(function ($destitute) {
                 $all_family = array_merge(
                     [$this->attributesToArray()],
@@ -90,7 +96,6 @@ class DestitutesController extends PersonController
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
             ->hideOnMobile();
-
         return $grid;
     }
 
