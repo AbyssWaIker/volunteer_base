@@ -74,13 +74,12 @@ class DestitutesController extends PersonController
             ->display(function ($test) {return$this->familyMembersCount;})
             ->expand(function ($destitute) {
                 $all_family = array_merge(
-                    [$this->name],
+                    [$this->attributesToArray()],
                     $destitute->family_members ?: []
                 );
-                if(!is_string(@$all_family[1])) {
-                    return '';
-                }
-                return GridHelper::arrayToList($all_family);
+                return GridHelper::arrayToList($all_family, function(array $member){
+                    return @$member['name'] . ' ' . @$member['passport_id'] . '' . @$member['phone'] . ' ' . @$member['comment'];
+                });
             })
             ->hideOnMobile();
         $grid->column('comment', __('comment'))->editable()->hideOnMobile();
