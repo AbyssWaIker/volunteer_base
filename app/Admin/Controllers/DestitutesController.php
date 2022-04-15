@@ -128,7 +128,7 @@ class DestitutesController extends PersonController
         $form->text('passport_id', __('passport_id'))->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
         $form->text('address', __('address'));
         $form->text('comment', __('comment'));
-        $form->table('family_members', __('family_members'), function(NestedForm $form) {
+        $form->table('family_members', __('family_members'), function(\Encore\Admin\Form\NestedForm $form) {
             $form->text('name',__('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('phone', __('phone'));
