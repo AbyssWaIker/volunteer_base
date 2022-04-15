@@ -73,6 +73,7 @@ class DestitutesController extends PersonController
         $grid->column('familyMembersCount',__('family_members'))
             ->display(function ($test) {return$this->familyMembersCount;})
             ->expand(function ($destitute) {
+                return '';
                 $all_family = array_merge(
                     [$this->name],
                     $destitute->family_members ?: []
