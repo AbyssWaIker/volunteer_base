@@ -11,6 +11,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Database\Eloquent\Builder;
 use App\Admin\Helpers\GridHelper;
+use App\Rules\UniquenesForDestitute;
 
 class DestitutesController extends PersonController
 {
@@ -128,14 +129,15 @@ class DestitutesController extends PersonController
 
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
         $form->text('name', __('name'))->required();
-        $form->text('phone', __('phone'))->creationRules($validator('phone'));
-        $form->text('passport_id', __('passport_id'))->creationRules($validator('passport_id'),['unique' => __('Passport ID is Taken')]);
+        $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
+        $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
         $form->text('address', __('address'));
+        $form->text('id_code', __('id_code'));
         $form->text('comment', __('comment'));
         $form->table('family_members', __('family_members'), function(\Encore\Admin\Form\NestedForm $form) {
             $form->text('name',__('name'))->required();
-            $form->text('passport_id', __('passport_id'));
-            $form->text('phone', __('phone'));
+            $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
+            $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
             $form->text('comment', __('comment'));
         });
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
