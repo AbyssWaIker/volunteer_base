@@ -41,5 +41,6 @@
     "time_of_crossing": "Время пересечения",
     "vacant_places": "Свободные места",
     "terms": "Условия аренды",
-    "conditions": "Условия проживания"
+    "conditions": "Условия проживания",
+    "Today we helped :number of people": "Сегодня мы помогли :number человек"
 }
