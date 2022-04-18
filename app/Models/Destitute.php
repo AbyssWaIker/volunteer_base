@@ -77,7 +77,7 @@ class Destitute extends Person
             parent::getTableInfoAttribute(),
             [
                 'helpGiven' => self::getHelpHistory($this->helpGiven->toArray()),
-                'family_members' => GridHelper::arrayToList(this->family_members, function(?array $member){return self::familyMemberToString($member);}),
+                'family_members' => GridHelper::arrayToList($this->family_members, function(?array $member){return self::familyMemberToString($member);}),
             ]
         );
     }
