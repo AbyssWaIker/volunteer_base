@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
+use App\Admin\Helpers\GridHelper;
 
 class Destitute extends Person
 {
@@ -62,13 +63,21 @@ class Destitute extends Person
             ]
         );
     }
+    public static function familyMemberToString($member):string
+    {
+        if(!$member || is_string($member)) {
+            return '';
+        }
+        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'];
+    }
 
     public function getTableInfoAttribute(): array
     {
         return array_merge(
             parent::getTableInfoAttribute(),
             [
-                'helpGiven' => self::getHelpHistory($this->helpGiven->toArray())
+                'helpGiven' => self::getHelpHistory($this->helpGiven->toArray()),
+                'family_members' => GridHelper::arrayToList(this->family_members, function(?array $member){return self::familyMemberToString($member);}),
             ]
         );
     }
