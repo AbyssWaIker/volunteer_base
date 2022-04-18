@@ -66,7 +66,8 @@ class DestitutesController extends PersonController
         });
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
-        $grid->header(function($all){
+        $grid->header(function($filtered){
+            $all = ($this->model)::query();
             $today_count = $all->whereHas(
                 'helpGiven',
                 function (Builder $query) {
@@ -97,7 +98,7 @@ class DestitutesController extends PersonController
                     [$this->attributesToArray()],
                     $destitute->family_members ?: []
                 );
-                return GridHelper::arrayToList($all_family, function($member){return Destitute::familitMemberToString($member));})
+                return GridHelper::arrayToList($all_family, function($member){return Destitute::familitMemberToString($member);})
             ->hideOnMobile();
         $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
