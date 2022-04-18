@@ -97,13 +97,7 @@ class DestitutesController extends PersonController
                     [$this->attributesToArray()],
                     $destitute->family_members ?: []
                 );
-                return GridHelper::arrayToList($all_family, function( $member){
-                    if(!$member || is_string($member)) {
-                        return '';
-                    }
-                    return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'];
-                });
-            })
+                return GridHelper::arrayToList($all_family, function($member){return Destitute::familitMemberToString($member));})
             ->hideOnMobile();
         $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         $grid->column('helpGiven',  __('Receivings'))
