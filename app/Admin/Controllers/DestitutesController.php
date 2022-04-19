@@ -152,6 +152,7 @@ class DestitutesController extends PersonController
             $form->text('name',__('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('phone', __('phone'));
+            $form->checkbox('is_child', __('is_child'));
             $form->text('comment', __('comment'));
         });
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
