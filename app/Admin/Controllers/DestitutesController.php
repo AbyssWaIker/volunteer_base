@@ -90,7 +90,7 @@ class DestitutesController extends PersonController
                             return;
                     }
 
-                }, __('family_members'),'children')
+                }, __('has children'),'children')
                     ->radio([
                         '' => __('all'),
                         '1' => __('has children'),
