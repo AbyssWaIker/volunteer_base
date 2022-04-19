@@ -83,9 +83,9 @@ class DestitutesController extends PersonController
                 $filter->where(function($query) {
                     switch($this->input) {
                         case '1':
-                            $query->whereJsonContains('family_members',['is_child', 1]);
+                            $query->whereJsonContains('family_members',['is_child'=> 1]);
                         case '0':
-                            $query->whereJsonDoesntContain('family_members',['is_child', 1]);
+                            $query->whereJsonDoesntContain('family_members',['is_child'=> 1]);
                         default:
                             return;
                     }
