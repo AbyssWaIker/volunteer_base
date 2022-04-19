@@ -12,7 +12,7 @@ Route::group([
 ], function (Router $router) {
     $router->resource('/', HomeController::class);
     $router->get('grannies/{id}/print-pdf', function($id) {
-        $destitute = Destitute::findOrFail($id);
+        $destitute = \App\Models\Destitute::findOrFail($id);
         $helpGiven = $destitute->helpGiven->last();
         $data = [
             'dest' => $destitute,
