@@ -30,6 +30,6 @@ Route::group([
         ];
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->download('invoice.pdf');
-    })
+    });
 
 });
