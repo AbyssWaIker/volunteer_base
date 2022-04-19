@@ -26,6 +26,9 @@ class UniquenesForDestitute implements Rule
      */
     public function passes($attribute, $value)
     {
+        if(!$value) {
+            return true;
+        }
         if(Destitute::query()->whereNotNull($attribute)->firstWhere($attribute, $value)){
             return false;
         }
