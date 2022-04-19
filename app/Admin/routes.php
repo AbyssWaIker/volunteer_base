@@ -28,7 +28,7 @@ Route::group([
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->format('j F Y');
         ];
-        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', );
+        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->download('invoice.pdf');
     })
 
