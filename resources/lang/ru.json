@@ -44,6 +44,7 @@
     "conditions": "Условия проживания",
     "Today we helped :number of people": "Сегодня мы помогли :number людям",
     "is_child":"Ребенок?",
+    "child":"ребенок",
     "all": "Все",
     "single person":"Один человек",
     "multiple people":"Много человек",
