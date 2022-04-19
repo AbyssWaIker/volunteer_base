@@ -63,7 +63,7 @@ class DestitutesController extends PersonController
                         '' => __('all'),
                         '1' => __('single person'),
                         '*' => __('multiple people'),
-                    ])
+                    ]);
             });
 
             $filter->column(1/2, function (Grid\Filter $filter) use($table) {
