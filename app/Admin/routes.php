@@ -21,5 +21,15 @@ Route::group([
     $router->resource('refugee-shelters', RefugeeShelterController::class);
     $router->resource('border-crossing-options', BorderCrossingOptionsController::class);
 
+    $router->get('print_pdf_for_destitute-{id}', function($id) {
+        $destitute = Destitute::findOrFail($id);
+        $helpGiven = $destitute->helpGiven->last();
+        $data = [
+            'dest' => $destitute,
+            'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->format('j F Y');
+        ];
+        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', );
+        return $pdf->download('invoice.pdf');
+    })
 
 });
