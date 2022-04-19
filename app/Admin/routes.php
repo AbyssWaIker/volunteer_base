@@ -11,17 +11,7 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
     $router->resource('/', HomeController::class);
-    $router->resource('grannies', DestitutesController::class);
-    $router->resource('sendings', SendingController::class);
-    $router->resource('stocks', StockController::class);
-    $router->resource('volunteers', VolunteerController::class);
-    $router->resource('destitute-categories', CategoryDestituteController::class);
-    $router->resource('stock-categories', CategoryStockController::class);
-    $router->resource('volunteer-categories', CategoryVolunteerController::class);
-    $router->resource('refugee-shelters', RefugeeShelterController::class);
-    $router->resource('border-crossing-options', BorderCrossingOptionsController::class);
-
-    $router->get('print_pdf_for_destitute-{id}', function($id) {
+    $router->get('grannies/{id}/print-pdf', function($id) {
         $destitute = Destitute::findOrFail($id);
         $helpGiven = $destitute->helpGiven->last();
         $data = [
@@ -31,5 +21,14 @@ Route::group([
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->download('invoice.pdf');
     });
+    $router->resource('grannies', DestitutesController::class);
+    $router->resource('sendings', SendingController::class);
+    $router->resource('stocks', StockController::class);
+    $router->resource('volunteers', VolunteerController::class);
+    $router->resource('destitute-categories', CategoryDestituteController::class);
+    $router->resource('stock-categories', CategoryStockController::class);
+    $router->resource('volunteer-categories', CategoryVolunteerController::class);
+    $router->resource('refugee-shelters', RefugeeShelterController::class);
+    $router->resource('border-crossing-options', BorderCrossingOptionsController::class);
 
 });
