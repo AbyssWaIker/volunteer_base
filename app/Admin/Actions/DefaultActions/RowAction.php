@@ -6,10 +6,11 @@ namespace App\Admin\Actions\DefaultActions;
 class RowAction extends \Encore\Admin\Actions\RowAction
 {
     public $name = '';
+    protected $href_target = '_self';
     protected function defaultRender():string
     {
         if ($href = $this->href()) {
-            return "<a href='{$href}'>{$this->html()}</a>";
+            return "<a href='{$href}' target={$this->href_target}>{$this->html()}</a>";
         }
 
         $this->addScript();
