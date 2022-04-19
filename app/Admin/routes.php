@@ -19,7 +19,6 @@ Route::group([
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->format('j F Y'),
             'number_of_rows' => 20,
         ];
-        \Barryvdh\DomPDF\Facade\Pdf::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->download('test.pdf');
     });
