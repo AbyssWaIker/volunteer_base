@@ -6,6 +6,14 @@
 	<title></title>
 	<style>
 		body { font-family: DejaVu Sans }
+		table {border: 1px black solid;}
+		th {border: 1px black solid;}
+		tr {border: 1px black solid;}
+		td {border: 1px black solid;}
+		table.no-border {border: 0}
+		table.no-border > th {border: 0}
+		table.no-border > tr {border: 0}
+		table.no-border > tr > td {border: 0}
 	</style>
 </head>
 <body>
@@ -13,7 +21,7 @@
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>{{$date}}</div>
 		<div><b>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</b></div>
-		<table style="border: 1px black solid;">
+		<table>
 			<thead>
 				<tr>
 					<th>ПІБ</th> <th>Контактний Телефон</th> <th>Паспортні данні/права водія</th> <th>Місце Проживання</th>
@@ -42,7 +50,7 @@
 			Матеріальні цінностф передані в належному стані. Сторони претензій не мають.
 		</div>
 
-		<table style="border: 1px black solid;">
+		<table>
 			<thead>
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
@@ -50,9 +58,10 @@
 				{!! str_repeat('<tr>'.str_repeat('<td> </td>', 4).'</tr>', $number_of_rows) !!}
 			</tbody>
 		</table>
+		<br/>
 		<div style="display:grid; grid-template-columns: 1tr,1tr,1tr;">
 			<div style="display:inline-block">
-				<table style="border:0">
+				<table class="no-border">
 					<tr><td colspan="2">Представник від благодійного фонду</td></tr>
 					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
 					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
@@ -60,7 +69,7 @@
 			</div>
 			<div style="display:inline-block"></div>
 			<div style="display:inline-block">
-				<table style="border:0">
+				<table class="no-border">
 					<tr><td colspan="2">Представник другої сторони</td></tr>
 					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
 					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
