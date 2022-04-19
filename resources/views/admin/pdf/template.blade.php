@@ -10,7 +10,7 @@
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>{{$date}}</div>
 		<div><b>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</b></div>
-		<table>>
+		<table style="border: 1px black solid;">
 			<thead>
 				<tr>
 					<th>ПІБ</th> <th>Контактний Телефон</th> <th>Паспортні данні/права водія</th> <th>Місце Проживання</th>
@@ -39,26 +39,30 @@
 			Матеріальні цінностф передані в належному стані. Сторони претензій не мають.
 		</div>
 
-		<table>
+		<table style="border: 1px black solid;">
 			<thead>
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
 			<tbody>
-				{!! str_repeat('<tr>'.str_repeat('<td></td>', 4).'</tr>', $number_of_rows) !!}
+				{!! str_repeat('<tr>'.str_repeat('<td> </td>', 4).'</tr>', $number_of_rows) !!}
 			</tbody>
 		</table>
-		<div style="display:grid; grid-template-columns: 1tr,10%,1tr;">
-			<table style="border:0">
-				<tr><td colspan="2">Представник від благодійного фонду</td></tr>
-				<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
-				<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
-			</table>
-			<div></div>
-			<table style="border:0">
-				<tr><td colspan="2">Представник другої сторони</td></tr>
-				<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
-				<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
-			</table>
+		<div style="display:grid; grid-template-columns: 1tr,1tr,1tr;">
+			<div style="display:inline-block">
+				<table style="border:0; display:inline-block;">
+					<tr><td colspan="2">Представник від благодійного фонду</td></tr>
+					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
+					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
+				</table>
+			</div>
+			<div style="display:inline-block"></div>
+			<div style="display:inline-block">
+				<table style="border:0; display:inline-block;">
+					<tr><td colspan="2">Представник другої сторони</td></tr>
+					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
+					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </body>
