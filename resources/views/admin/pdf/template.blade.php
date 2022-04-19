@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <div>
 	<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 	<div>{{$date}}</div>
