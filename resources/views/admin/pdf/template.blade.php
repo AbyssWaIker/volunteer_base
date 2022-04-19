@@ -52,7 +52,7 @@
 		</table>
 		<div style="display:grid; grid-template-columns: 1tr,1tr,1tr;">
 			<div style="display:inline-block">
-				<table style="border:0; display:inline-block;">
+				<table style="border:0">
 					<tr><td colspan="2">Представник від благодійного фонду</td></tr>
 					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
 					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
@@ -60,7 +60,7 @@
 			</div>
 			<div style="display:inline-block"></div>
 			<div style="display:inline-block">
-				<table style="border:0; display:inline-block;">
+				<table style="border:0">
 					<tr><td colspan="2">Представник другої сторони</td></tr>
 					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
 					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
