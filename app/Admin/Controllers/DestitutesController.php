@@ -97,8 +97,6 @@ class DestitutesController extends PersonController
                         '0' => __('no children'),
                     ]);
             });
-            });
-
         };
         return function(Grid\Filter $filter) {
             parent::filterCallBack()($filter);
