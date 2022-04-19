@@ -85,7 +85,7 @@ class DestitutesController extends PersonController
                         case '1':
                             $query->whereJsonContains('family_members',['is_child'=> 1]);
                         case '0':
-                            $query->whereJsonDoesntContain('family_members',['is_child'=> 1]);
+                            $query->whereNull('family_members')->orWhereJsonDoesntContain('family_members',['is_child'=> 1]);
                         default:
                             return;
                     }
