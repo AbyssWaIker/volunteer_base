@@ -79,7 +79,26 @@ class DestitutesController extends PersonController
                         $query->whereDate('hg_timestamp', $this->input);
                     });
                 }, 'Дата', 'date')->date();
+
+                $filter->where(function($query) {
+                    switch($this->input) {
+                        case '1':
+                            $query->whereJsonContains('family_members',['is_child', 1]);
+                        case '0':
+                            $query->whereJsonDoesntContain('family_members',['is_child', 1]);
+                        default:
+                            return;
+                    }
+
+                }, __('family_members'),'children')
+                    ->radio([
+                        '' => __('all'),
+                        '1' => __('has children'),
+                        '0' => __('no children'),
+                    ]);
             });
+            });
+
         };
         return function(Grid\Filter $filter) {
             parent::filterCallBack()($filter);
