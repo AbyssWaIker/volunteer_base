@@ -4,6 +4,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<style>
+		body { font-family: DejaVu Sans }
+	</style>
 </head>
 <body>
 	<div>
