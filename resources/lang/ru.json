@@ -42,5 +42,6 @@
     "vacant_places": "Свободные места",
     "terms": "Условия аренды",
     "conditions": "Условия проживания",
-    "Today we helped :number of people": "Сегодня мы помогли :number людям"
+    "Today we helped :number of people": "Сегодня мы помогли :number людям",
+    "is_child":"Ребенок?"
 }
