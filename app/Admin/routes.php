@@ -21,7 +21,7 @@ Route::group([
         ];
         \Barryvdh\DomPDF\Facade\Pdf::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('test.pdf');
     });
     $router->resource('grannies', DestitutesController::class);
     $router->resource('sendings', SendingController::class);
