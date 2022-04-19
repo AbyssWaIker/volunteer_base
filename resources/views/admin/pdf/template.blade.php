@@ -6,10 +6,10 @@
 	<title></title>
 	<style>
 		body { font-family: DejaVu Sans }
-		table {border: 1px black solid;}
-		th {border: 1px black solid;}
-		tr {border: 1px black solid;}
-		td {border: 1px black solid;}
+		table {border: 1px black solid; border-collapse: collapse;}
+		th {border: 1px black solid; border-collapse: collapse;}
+		tr {border: 1px black solid; border-collapse: collapse;}
+		td {border: 1px black solid; border-collapse: collapse;}
 		table.no-border {border: 0}
 		table.no-border > th {border: 0}
 		table.no-border > tr {border: 0}
