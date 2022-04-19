@@ -9,6 +9,7 @@ class Volunteer extends Person
 {
     public $category_class = VolunteerCategory::class;
     protected $fillable = ['comment', 'name', 'phone', 'sex'];
+    protected $casts = ['sex' => 'int'];
     public const SEX_MALE = 0;
     public const SEX_FEMALE = 1;
 //    public const SEX_MULTIPLE = 2;
