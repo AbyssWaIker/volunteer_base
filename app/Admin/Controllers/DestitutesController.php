@@ -41,13 +41,49 @@ class DestitutesController extends PersonController
     }
     protected function filterCallBack(): callable
     {
+        $model = ($this->getModel());
+        $table = (new $model->category_class)->getTable();
+        return function(Grid\Filter $filter) use($table) {
+            $filter->disableIdFilter();
+            $filter->column(1/2, function (Grid\Filter $filter) {
+                $filter->like('name', __('Name'));
+                $filter->like('phone', __('phone'));
+                $filter->where(function($query) {
+                    switch($this->input) {
+                        case '1':
+                            $query->whereNull('family_members');
+                        case '*':
+                            $query->whereNotNull('family_members');
+                        default:
+                            return;
+                    }
+
+                }, __('family_members'),'familiy_count')
+                    ->radio([
+                        '' => __('all'),
+                        '1' => __('single person'),
+                        '*' => __('multiple people'),
+                    ])
+            });
+
+            $filter->column(1/2, function (Grid\Filter $filter) use($table) {
+                $filter->where(function(Builder $query) use($table) {
+                    $query->whereHas('categories', function (Builder $query) use ($table) {
+                        $query->whereIn("$table.id", $this->input);
+                    });
+                }, 'Категории', 'categories')
+                    ->multipleSelect($this->getAllCategories());
+
+                $filter->where(function(Builder $query) {
+                    $query->whereHas('helpGiven', function (Builder $query) {
+                        $query->whereDate('hg_timestamp', $this->input);
+                    });
+                }, 'Дата', 'date')->date();
+            });
+        };
         return function(Grid\Filter $filter) {
             parent::filterCallBack()($filter);
-            $filter->where(function(Builder $query) {
-                $query->whereHas('helpGiven', function (Builder $query) {
-                    $query->whereDate('hg_timestamp', $this->input);
-                });
-            }, 'Дата', 'date')->date();
+
         };
     }
     /**
