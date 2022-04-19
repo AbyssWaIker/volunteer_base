@@ -17,7 +17,7 @@ Route::group([
         $data = [
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->format('j F Y'),
-            'number_of_rows' => 20,
+            'number_of_rows' => 15,
         ];
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->download('test.pdf');
