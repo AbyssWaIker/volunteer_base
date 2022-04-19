@@ -46,5 +46,8 @@
     "is_child":"Ребенок?",
     "all": "Все",
     "single person":"Один человек",
-    "multiple people":"Много человек"
+    "multiple people":"Много человек",
+    "has children":"Есть дети",
+    "no children":"Нет детей"
+
 }
