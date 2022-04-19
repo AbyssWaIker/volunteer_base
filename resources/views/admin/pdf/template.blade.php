@@ -55,7 +55,7 @@
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
 			<tbody>
-				{!! str_repeat('<tr>'.str_repeat('<td> </td>', 4).'</tr>', $number_of_rows) !!}
+				{!! str_repeat('<tr>'.str_repeat('<td> &nbsp; </td>', 4).'</tr>', $number_of_rows) !!}
 			</tbody>
 		</table>
 		<br/>
