@@ -69,7 +69,7 @@ class Destitute extends Person
             return '';
         }
 
-        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . ($member['is_child'] ? __('child') :'');
+        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
     }
 
     public function getTableInfoAttribute(): array
