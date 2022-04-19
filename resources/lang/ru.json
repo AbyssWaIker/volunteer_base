@@ -43,5 +43,8 @@
     "terms": "Условия аренды",
     "conditions": "Условия проживания",
     "Today we helped :number of people": "Сегодня мы помогли :number людям",
-    "is_child":"Ребенок?"
+    "is_child":"Ребенок?",
+    "all": "Все",
+    "single person":"Один человек",
+    "multiple people":"Много человек"
 }
