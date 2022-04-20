@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<style>
-		body { font-family: DejaVu Sans }
+		body { font-family: DejaVu Sans; font-size: 12px; }
 		table {border: 1px black solid; border-collapse: collapse;}
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
@@ -20,7 +20,7 @@
 	<div>
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>{{$date}}</div>
-		<div><b>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</b></div>
+		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
 		<table>
 			<thead>
 				<tr>
@@ -29,7 +29,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>{{$dest->name}}</td> <td>{{$dest->phone}}</td> <td>{{$dest->passport_id}}</td> <td>{{$dest->address}}</td>
+					<td><b>{{$dest->name}}</td></b> <td>{{$dest->phone}}</td> <td>{{$dest->passport_id}}</td> <td>{{$dest->address}}</td>
 				</tr>
 				@if($dest->family_members)
 					@foreach($dest->family_members as $memb)
