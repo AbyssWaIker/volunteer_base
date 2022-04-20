@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<style>
-		body { font-family: DejaVu Sans; font-size: 12px; }
+		body { font-family: DejaVu Sans; font-size: 14px; }
 		table {border: 1px black solid; border-collapse: collapse;}
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
@@ -50,7 +50,7 @@
 			Матеріальні цінності передані в належному стані. Сторони претензій не мають.
 		</div>
 
-		<table>
+		<table style="width:100%">
 			<thead>
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
