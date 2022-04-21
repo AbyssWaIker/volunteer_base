@@ -3,7 +3,7 @@
 namespace App\Admin\Actions\Destitute;
 use App\Admin\Actions\DefaultActions\RowAction;
 
-class DestitutePDF extends RowAction
+class PrintPDFLink extends RowAction
 {
     public $name = 'В PDF';
     protected $href_target = '_blank';
