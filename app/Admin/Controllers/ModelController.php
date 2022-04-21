@@ -55,7 +55,7 @@ abstract class ModelController extends AdminController
         $grid->filter($this->filterCallBack());
         $grid->exporter(new ModelExporter($grid,$this->getModel(), $this->title));
 
-        $grid->column('tableInfo', __('Info'))
+        $grid->column('tableInfo', __('Mobile Adaptiveness Hack'))
             ->display(function (){return [$this->tableInfo];})
             ->verticalTable($model::getTableTitles())
             ->hideOnDesktop();
