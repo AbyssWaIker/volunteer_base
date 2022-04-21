@@ -20,7 +20,7 @@ Route::group([
             'number_of_rows' => 20,
         ];
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
-        return $pdf->stream('test.pdf');
+        return $pdf->stream($destitute->name.'.pdf');
     });
     $router->resource('grannies', DestitutesController::class);
     $router->resource('sendings', SendingController::class);
