@@ -18,7 +18,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(SendReportForToday::class)->dailyAt('17:00')->timezone('Europe/Kiev');
-        $schedule->command(CreateDbBackUpCommand::class)->dailyAt('23:30')->timezone('Europe/Kiev');
+        $schedule->command('backup:run')->dailyAt('23:30')->timezone('Europe/Kiev');
     }
 
     /**
