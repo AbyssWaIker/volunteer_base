@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -6,7 +6,7 @@
 	<title></title>
 	<style>
 		body { font-family: DejaVu Sans; font-size: 14px; }
-		table {border: 1px black solid; border-collapse: collapse;}
+		table {border: 1px black solid; border-collapse: collapse; }
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
 		td {border: 1px black solid; border-collapse: collapse;}
@@ -17,7 +17,7 @@
 	</style>
 </head>
 <body>
-	<div>
+	<div style="height: 90%">
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>{{$date}}</div>
 		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
@@ -50,32 +50,33 @@
 			Матеріальні цінності передані в належному стані. Сторони претензій не мають.
 		</div>
 
-		<table style="width:100%">
+		<table style="width:100%; font-size: 12px">
 			<thead>
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
 			<tbody>
-				{!! str_repeat('<tr>'.str_repeat('<td> &nbsp; </td>', 4).'</tr>', $number_of_rows) !!}
+                @for($i = 1; $i <= $number_of_rows; $i++)
+                    <tr><td style="text-align: center">{{$i}}</td><td></td><td></td><td></td></tr>
+                @endfor
 			</tbody>
 		</table>
 		<br/>
-		<div style="display:grid; grid-template-columns: 1tr,1tr,1tr;">
-			<div style="display:inline-block">
-				<table class="no-border">
-					<tr><td colspan="2">Представник від благодійного фонду</td></tr>
-					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
-					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
-				</table>
-			</div>
-			<div style="display:inline-block"></div>
-			<div style="display:inline-block">
-				<table class="no-border">
-					<tr><td colspan="2">Представник другої сторони</td></tr>
-					<tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
-					<tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
-				</table>
-			</div>
-		</div>
 	</div>
+    <div>
+        <div style="display:inline-block; float: left">
+            <table class="no-border">
+                <tr><td colspan="2">Представник від благодійного фонду</td></tr>
+                <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
+                <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
+            </table>
+        </div>
+        <div style="display:inline-block; float: right">
+            <table class="no-border">
+                <tr><td colspan="2">Представник другої сторони</td></tr>
+                <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
+                <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
