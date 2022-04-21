@@ -3,7 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Destitute\DestituteHelper;
-use App\Admin\Actions\Destitute\DestitutePDF;
+use App\Admin\Actions\Destitute\PrintPDFLink;
 use App\Admin\Exporters\DestituteExporter;
 use App\Models\Destitute;
 use Carbon\Carbon;
@@ -116,7 +116,7 @@ class DestitutesController extends PersonController
 
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
-            $actions->prepend(new DestitutePDF);
+            $actions->prepend(new PrintPDFLink);
             $actions->prepend(new DestituteHelper);
         });
 
