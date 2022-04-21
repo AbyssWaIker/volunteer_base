@@ -27,7 +27,8 @@ class DestitutesController extends PersonController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->multipleSelect('categories[]', __('categories'))
+            $form->/*multipleSelect*/text('categories[]', __('categories'))
+                ->attribute('style', 'display:none')
                 ->options($this->getAllCategories())
                 ->default(Destitute::REFUGEE_ID)
                 ->value(Destitute::REFUGEE_ID);
@@ -36,7 +37,7 @@ class DestitutesController extends PersonController
             $form->text('phone', __('phone'));
             $form->text('passport_id', __('passport_id'));
             $form->text('address', __('address'));
-            $form->text('id_code', __('id_code'));
+//            $form->text('id_code', __('id_code'));
             $form->text('comment', __('comment'));
         };
     }
@@ -160,6 +161,7 @@ class DestitutesController extends PersonController
         $grid->column('helpGiven',  __('Receivings'))
             ->display(function (array $help) {return ($this->getModel())::getHelpHistory($help);})
             ->hideOnMobile();
+        $grid->hideColumns(['categories', 'id_code']);
         return $grid;
     }
 
