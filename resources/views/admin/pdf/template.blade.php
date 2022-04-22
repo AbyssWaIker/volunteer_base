@@ -70,8 +70,8 @@
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
 			<tbody>
-                @for($i = 1; $i <= $number_of_rows; $i++)
-                    <tr><td style="text-align: center">{{$i}}</td><td></td><td></td><td></td></tr>
+                @for($i = 0; $i < $min_number_of_rows || $i < $list_count; $i++)
+                    <tr><td style="text-align: center">{{$i+1}}</td>@$list[$i]<td></td><td></td><td></td></tr>
                 @endfor
 			</tbody>
 		</table>
