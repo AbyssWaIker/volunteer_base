@@ -24,7 +24,7 @@
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>{{$date}}</div>
 		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
-		<table class="no-border">
+		<table class="no-border" cellspacing="0" cellpadding="0">
 			<tbody>
 				<tr>
 					<td>ПІБ</td>
@@ -70,14 +70,14 @@
 	</div>
     <div>
         <div style="display:inline-block; float: left">
-            <table class="no-border">
+            <table class="no-border" cellspacing="0" cellpadding="0">
                 <tr><td colspan="2">Представник від благодійного фонду</td></tr>
                 <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
                 <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
             </table>
         </div>
         <div style="display:inline-block; float: right">
-            <table class="no-border">
+            <table class="no-border" cellspacing="0" cellpadding="0">
                 <tr><td colspan="2">Представник другої сторони</td></tr>
                 <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
                 <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
