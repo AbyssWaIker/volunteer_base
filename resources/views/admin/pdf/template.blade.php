@@ -12,8 +12,8 @@
 		td {border: 1px black solid; border-collapse: collapse;}
 		table.no-border, 
 		table.no-border > th, 
-		table.no-border > tr, 
-		table.no-border > tr > td {
+		table.no-border > tbody > tr, 
+		table.no-border > tbody > tr > td {
 			border: none !important;
 		}
 		table.no-border > tr > td: even {border-bottom: 1px black solid !important;}
