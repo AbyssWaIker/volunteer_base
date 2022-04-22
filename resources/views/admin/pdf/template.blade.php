@@ -14,10 +14,9 @@
 		table.no-border > th, 
 		table.no-border > tr, 
 		table.no-border > tr > td {
-			border: none;
-			color: darkgreen;
+			border: none !important;
 		}
-		table.no-border > tr > td: even {border-bottom: 1px black solid;}
+		table.no-border > tr > td: even {border-bottom: 1px black solid !important;}
 	</style>
 </head>
 <body>
