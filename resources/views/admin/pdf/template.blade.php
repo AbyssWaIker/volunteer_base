@@ -10,10 +10,13 @@
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
 		td {border: 1px black solid; border-collapse: collapse;}
-		table.no-border {border: none;}
-		table.no-border > th {border: none}
-		table.no-border > tr {border: none}
-		table.no-border > tr > td {border: none}
+		table.no-border, 
+		table.no-border > th, 
+		table.no-border > tr, 
+		table.no-border > tr > td {
+			border: none;
+			color: darkgreen;
+		}
 		table.no-border > tr > td: even {border-bottom: 1px black solid;}
 	</style>
 </head>
