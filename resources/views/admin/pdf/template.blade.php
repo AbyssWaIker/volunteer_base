@@ -16,7 +16,7 @@
 		table.no-border > tbody > tr > td {
 			border: none !important;
 		}
-		table.no-border > tr > td: even {border-bottom: 1px black solid !important;}
+		table.no-border > tbody > tr > td:nth-child(even) {border-bottom: 1px black solid !important;}
 	</style>
 </head>
 <body>
