@@ -21,23 +21,29 @@
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>{{$date}}</div>
 		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
-		<table>
+		<table class="no-border">
 			<thead>
 				<tr>
-					<th>ПІБ</th> <th>Контактний Телефон</th> <th>Паспортні данні/права водія</th> <th>Місце Проживання</th>
+					 <th>Контактний Телефон</th> <th></th> <th>Місце Проживання</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><b>{{$dest->name}}</td></b> <td>{{$dest->phone}}</td> <td>{{$dest->passport_id}}</td> <td>{{$dest->address}}</td>
+					<td>ПІБ</td>
+					<td>{{$dest->name}}</td>
 				</tr>
-				@if($dest->family_members)
-					@foreach($dest->family_members as $memb)
-						<tr>
-							<td>{{@$memb['name']}}</td> <td>{{@$memb['phone']}}</td> <td>{{@$memb['passport_id']}}</td> <td>{{$dest->address}}</td>
-						</tr>
-					@endforeach
-				@endif
+				<tr>
+					<td>Контактний Телефон</td>
+					<td>{{$dest->phone}}</td> 
+				</tr>
+				<tr>
+					<td>Паспортні данні/права водія</td>
+					<td>{{$dest->passport_id}}</td>
+				</tr>
+				<tr>
+					<td>Місце Проживання</td>
+					<td>{{$dest->address}}</td>
+				</tr>
 			</tbody>
 		</table>
         <br/>
