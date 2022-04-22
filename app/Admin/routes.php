@@ -19,6 +19,7 @@ Route::group([
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru')->format('j F Y'),
             'number_of_rows' => 20,
         ];
+        return view('admin.pdf.template', $data)->render();
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->stream($destitute->name.'.pdf');
     });
