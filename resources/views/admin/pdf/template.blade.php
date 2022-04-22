@@ -10,7 +10,7 @@
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
 		td {border: 1px black solid; border-collapse: collapse;}
-		table.no-border {border: none; background-color: darkred;}
+		table.no-border {border: none;}
 		table.no-border > th {border: none}
 		table.no-border > tr {border: none}
 		table.no-border > tr > td {border: none}
