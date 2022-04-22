@@ -51,6 +51,16 @@
 					<td>Місце Проживання:</td>
 					<td>{{$dest->address}}</td>
 				</tr>
+
+				<tr>
+					<td>Кількість осіб <span style="float: right;">дорослих</span></td>
+					<td>{{$dest->family_members_count - $dest->children_count}}</td>
+				</tr>
+				<tr>
+					<td>Місце Проживання:</td>
+					<td>{{$dest->children_count}}</td>
+				</tr>
+
 			</tbody>
 		</table>
         <br/>
