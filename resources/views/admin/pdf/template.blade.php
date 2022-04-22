@@ -16,13 +16,22 @@
 		table.no-border > tbody > tr > td {
 			border: none !important;
 		}
+		.border-bottom {
+			border-bottom:1px solid black;
+		}
 		table.no-border > tbody > tr > td:nth-child(even) {border-bottom: 1px black solid !important;}
 	</style>
 </head>
 <body>
 	<div style="height: 90%">
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
-		<div>{{$date}}</div>
+		<div>
+			«<span style="width:60px;" class="border-bottom"> {{$date->format('j')}} </span>» 
+			<span style="width: 100px;" class="border-bottom"> {{$date->format('F')}} </span>
+			20<span style="width:40px;" class="border-bottom">{{$date->format('y')}}</span> 
+			<span> </span>
+			м. Одеса
+		</div>
 		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
 		<table class="no-border">
 			<tbody>
