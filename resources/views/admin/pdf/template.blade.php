@@ -10,7 +10,7 @@
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
 		td {border: 1px black solid; border-collapse: collapse;}
-		table.no-border {border: 0}
+		table.no-border {border: 0; background-color: darkred;}
 		table.no-border > th {border: 0}
 		table.no-border > tr {border: 0}
 		table.no-border > tr > td {border: 0}
@@ -22,11 +22,6 @@
 		<div>{{$date}}</div>
 		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
 		<table class="no-border">
-			<thead>
-				<tr>
-					 <th>Контактний Телефон</th> <th></th> <th>Місце Проживання</th>
-				</tr>
-			</thead>
 			<tbody>
 				<tr>
 					<td>ПІБ</td>
