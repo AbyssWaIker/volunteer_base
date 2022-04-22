@@ -29,11 +29,13 @@ Route::group([
             'клітки для тварин',
             'Харчі (соціальний набір харів)',
         ];
-
+        $list = $list_placeholder;
         $data = [
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru'),
-            'number_of_rows' => 20,
+            'min_number_of_rows' => 20,
+            'list' => $list,
+            'list_count' => count($list),
         ];
         // return view('admin.pdf.template', $data)->render();
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
