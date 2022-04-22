@@ -24,6 +24,15 @@ class Destitute extends Person
         return count($family_members) + ($self = 1);
     }
 
+    public function getChildrenCountAttribute():string
+    {
+        $family_members = $this->family_members ? array_filter($this->family_members) : [];
+        $result = 0;
+        foreach($family_members as $member) {
+            $result += @$member['is_child'];
+        }
+        return $result;
+    }
     public function helpGiven():HasMany
     {
         return $this->hasMany(HelpGiven::class);
