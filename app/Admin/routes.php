@@ -14,9 +14,25 @@ Route::group([
     $router->get('grannies/{id}/print-pdf', function($id) {
         $destitute = \App\Models\Destitute::findOrFail($id);
         $helpGiven = $destitute->helpGiven->last();
+
+        $list_placeholder = [
+            'Підгузники',
+            'Гігієна',
+            'Корм для тварин',
+            'Литяче Харчування',
+            'Одяг',
+            'Дитячий Одяг',
+            'Взуття',
+            'Дитяче взуття',
+            'Книги',
+            'Дитячі іграшки',
+            'клітки для тварин',
+            'Харчі (соціальний набір харів)',
+        ];
+
         $data = [
             'dest' => $destitute,
-            'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru')->format('j F Y'),
+            'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru'),
             'number_of_rows' => 20,
         ];
         // return view('admin.pdf.template', $data)->render();
