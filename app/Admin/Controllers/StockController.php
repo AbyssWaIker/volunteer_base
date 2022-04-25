@@ -27,7 +27,7 @@ class StockController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
-        $grid->quickCreate(function(Grid\QuickCreate $form) {
+        $grid->quickCreate(function(Grid\Tools\QuickCreate $form) {
             $form->text('name', __('name'))->required();
         });
         $grid->column('id', __('Id'));
