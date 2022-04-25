@@ -9,7 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-abstract class StockController extends AdminController
+class StockController extends AdminController
 {
     protected $model = Stock::class;
     /**
