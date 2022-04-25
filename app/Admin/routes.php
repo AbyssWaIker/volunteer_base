@@ -30,7 +30,7 @@ Route::group([
             'Харчі (соціальний набір харів)',
             'Постільна Білизна'
         ];
-        $list = $list_placeholder;
+        $list = \App\Models\Stock::query()->where('enabled', true)->pluck('name');
         $data = [
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru'),
@@ -47,7 +47,6 @@ Route::group([
     $router->resource('stocks', StockController::class);
     $router->resource('volunteers', VolunteerController::class);
     $router->resource('destitute-categories', CategoryDestituteController::class);
-    $router->resource('stock-categories', CategoryStockController::class);
     $router->resource('volunteer-categories', CategoryVolunteerController::class);
     $router->resource('refugee-shelters', RefugeeShelterController::class);
     $router->resource('border-crossing-options', BorderCrossingOptionsController::class);
