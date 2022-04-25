@@ -27,6 +27,9 @@ class StockController extends AdminController
     protected function grid()
     {
         $grid = parent::grid();
+        $grid->quickCreate(function(Grid\QuickCreate $form) {
+            $form->text('name', __('name'))->required();
+        })
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'))/*->expand(function (Stock $stock) {
             $days = $stock->sentStocks->groupBy(function (StocksSent $sentStock){ return $sentStock->created_at->toDateString();});
