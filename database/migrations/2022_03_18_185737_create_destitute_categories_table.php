@@ -16,6 +16,7 @@ class CreateDestituteCategoriesTable extends Migration
         Schema::create('destitute_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->boolean('enabled')->default(true);
         });
     }
 
