@@ -75,7 +75,7 @@ abstract class StockController extends AdminController
         $form = parent::form($id);
 
         $form->text('name', __('Name'));
-        $form->checkbox('enabled', __('enabled'))
+        $form->checkbox('enabled', __('enabled'));
 
         return $form;
     }
