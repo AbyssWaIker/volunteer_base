@@ -30,7 +30,7 @@ Route::group([
             'Харчі (соціальний набір харів)',
             'Постільна Білизна'
         ];
-        $list = \App\Models\Stock::query()->where('enabled', true)->pluck('name');
+        $list = $list_placeholder;//\App\Models\Stock::query()->where('enabled', true)->pluck('name');
         $data = [
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru'),
