@@ -124,6 +124,7 @@ class DestitutesController extends PersonController
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
         $grid->header(function($filtered){
             $all = ($this->model)::query();
+            $all_count = $all->get()->sum('family_members_count');
             $today_count = $all->whereHas(
                 'helpGiven',
                 function (Builder $query) {
@@ -137,7 +138,7 @@ class DestitutesController extends PersonController
 
             return "<div style='display: grid; grid-template-columns: repeat(3, 1fr)' class='text-info`'>
     <div></div>
-    <h3 class='text-black'>$people_helped</h3>
+    <h3 class='text-black'>$people_helped (\ $all_count)</h3>
     <div>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
     <div>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
 
