@@ -31,7 +31,7 @@ class StockController extends AdminController
             $form->text('name', __('Name'))->required();
         });
         $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'))/*->expand(function (Stock $stock) {
+        $grid->column('name', __('Name'))->editable()/*->expand(function (Stock $stock) {
             $days = $stock->sentStocks->groupBy(function (StocksSent $sentStock){ return $sentStock->created_at->toDateString();});
             $resulting_html = '';
             foreach ($days as $day=>$stocks) {
