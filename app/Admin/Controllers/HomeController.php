@@ -20,11 +20,23 @@ class HomeController extends Controller
 //            ->row(Dashboard::title())
             ->row(function (Row $row) {
                 $menus = Menu::all()->filter(function (Menu $menu) {
-                    return $menu->uri && $menu->uri !== '/' && $menu->parent_id != 2;
-                });
-                foreach ($menus as $menu) {
+                    return $menu->uri && $menu->uri !== '/';
+                })->groupBy('parent_id');
+                foreach ($groupds as $parent_id => $group) {
+                    if(!$parent_id) {
+                        $foreach($group as $menu) {
+                            $row->column(4, function (Column $column) use ($menu) {
+                                $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, ''));
+                            });
+                        }
+                    }
+                    $menu = Menu::find($parent_id);
+                    $links = $group->map(function(Menu $menu) {
+                        return '<a href="'.config('admin.route.prefix').'/'.$menu->uri.'">'.$menu->title.'</a>'
+                    })->implode('<br/>');
                     $row->column(4, function (Column $column) use ($menu) {
-                        $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, ''));
+
+                        $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, $links));
                     });
                 }
 
