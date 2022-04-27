@@ -15,21 +15,6 @@ Route::group([
         $destitute = \App\Models\Destitute::findOrFail($id);
         $helpGiven = $destitute->helpGiven->last();
 
-        // $list_placeholder = [
-        //     'Підгузники',
-        //     'Гігієна',
-        //     'Корм для тварин',
-        //     'Дитяче Харчування',
-        //     'Одяг',
-        //     'Дитячий Одяг',
-        //     'Взуття',
-        //     'Дитяче взуття',
-        //     'Книги',
-        //     'Дитячі іграшки',
-        //     'клітки для тварин',
-        //     'Харчі (соціальний набір харів)',
-        //     'Постільна Білизна'
-        // ];
         $list = \App\Models\Stock::query()->where('enabled', true)->pluck('name');
         $data = [
             'dest' => $destitute,
