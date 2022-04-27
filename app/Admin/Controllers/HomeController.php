@@ -16,15 +16,13 @@ class HomeController extends Controller
     {
         return $content
             ->title(__('Main Page'))
-//            ->description('Description...')
-//            ->row(Dashboard::title())
             ->row(function (Row $row) {
                 $menus = Menu::all()->filter(function (Menu $menu) {
                     return $menu->uri && $menu->uri !== '/' && $menu->parent_id != 2;
                 });
                 foreach ($menus as $menu) {
                     $row->column(4, function (Column $column) use ($menu) {
-                        $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, ''));
+                        $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, 'тест'));
                     });
                 }
 
