@@ -19,7 +19,7 @@ class HomeController extends Controller
 //            ->description('Description...')
 //            ->row(Dashboard::title())
             ->row(function (Row $row) {
-                $menus = Menu::all()->filter(function (Menu $menu) {
+                $groups = Menu::all()->filter(function (Menu $menu) {
                     return $menu->uri && $menu->uri !== '/';
                 })->groupBy('parent_id');
                 foreach ($groups as $parent_id => $group) {
