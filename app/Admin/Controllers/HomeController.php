@@ -32,7 +32,7 @@ class HomeController extends Controller
                     }
                     $menu = Menu::find($parent_id);
                     $links = $group->map(function(Menu $menu) {
-                        return '<a href="'.config('admin.route.prefix').'/'.$menu->uri.'">'.$menu->title.'</a>'
+                        return '<a href="'.config('admin.route.prefix').'/'.$menu->uri.'">'.$menu->title.'</a>';
                     })->implode('<br/>');
                     $row->column(4, function (Column $column) use ($menu) {
 
