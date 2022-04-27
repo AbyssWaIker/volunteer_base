@@ -31,28 +31,13 @@ class DatabaseSeeder extends Seeder
         $this->call(MigrationsTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(PersonalAccessTokensTableSeeder::class);
-        $this->call(QuantityUnitsTableSeeder::class);
-        $this->call(ReceivingPointsTableSeeder::class);
-        $this->call(ReceivingPointsTableSeeder::class);
-        $this->call(StockCategoriesTableSeeder::class);
         $this->call(StocksTableSeeder::class);
-        $this->call(QuantityUnitsTableSeeder::class);
-        $this->call(SendingsTableSeeder::class);
-        $this->call(StocksSentsTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
-        $this->call(AdminOperationLogTableSeeder::class);
-        $this->call(AdminRoleMenuTableSeeder::class);
-        $this->call(PersonalAccessTokensTableSeeder::class);
-        $this->call(SendingsTableSeeder::class);
-        $this->call(StockCategoriesTableSeeder::class);
-        $this->call(StocksTableSeeder::class);
-        $this->call(StocksSentsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VolunteerCategoriesTableSeeder::class);
         $this->call(VolunteersTableSeeder::class);
         $this->call(VolunteerVolunteerCategoryTableSeeder::class);
         $this->call(AdminConfigTableSeeder::class);
-        $this->call(RefugeeSheltersTableSeeder::class);
-        $this->call(BorderCrossingOptionsTableSeeder::class);
+        // $this->call(RefugeeSheltersTableSeeder::class);
+        // $this->call(BorderCrossingOptionsTableSeeder::class);
     }
 }
