@@ -25,7 +25,13 @@ class Destitute extends Person
     }
     public function setFamilyMembersAttribute($value):self
     {
-        $this->attributes['family_members'] = $value ? json_encode(array_values($value)) : $value;
+        $this->attributes['family_members'] = $value ? json_encode(array_map(function($value){
+            if(!$value) {
+                return $value;
+            }
+            $value['name'] = mb_convert_case($value['name'], MB_CASE_TITLE);
+            return $value;
+        }, array_values($value)) : $value;
         return $this;
     }
     public function setNameAttribute($value):self
