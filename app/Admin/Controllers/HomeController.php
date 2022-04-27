@@ -24,7 +24,7 @@ class HomeController extends Controller
                 })->groupBy('parent_id');
                 foreach ($groupds as $parent_id => $group) {
                     if(!$parent_id) {
-                        $foreach($group as $menu) {
+                        foreach($group as $menu) {
                             $row->column(4, function (Column $column) use ($menu) {
                                 $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, ''));
                             });
