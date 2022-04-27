@@ -34,11 +34,12 @@ class DestitutesController extends PersonController
                 ->value(Destitute::REFUGEE_ID);
             ;
             $form->text('name', __('name'))->required();
-            $form->text('phone', __('phone'));
             $form->text('passport_id', __('passport_id'));
             $form->text('address', __('address'));
+            $form->text('phone', __('phone'));
 //            $form->text('id_code', __('id_code'));
             $form->text('comment', __('comment'));
+            $form->date('helpGiven[0][hg_timestamp]',__('Receivings'))->default(Carbon::today());
         };
     }
     protected function filterCallBack(): callable
@@ -144,9 +145,9 @@ class DestitutesController extends PersonController
 
 </div>";
         });
-        $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('id_code', __('id_code'))->editable()->filter('like')->hideOnMobile();
         $grid->column('family_members_count',__('family_members'))
             ->display(function ($test) {return$this->family_members_count;})
@@ -221,7 +222,7 @@ class DestitutesController extends PersonController
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
-        });
+        })->default([['hg_timestamp' => Carbon::today()]]);
 
         return $form;
     }
