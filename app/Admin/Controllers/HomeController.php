@@ -17,7 +17,6 @@ class HomeController extends Controller
         return $content
             ->title(__('Main Page'))
             ->row(function (Row $row) {
-                dd(Menu::all()->groupBy('parent_id')->map(function($collection){return $collection->map->id;}));
                 $menus = Menu::all()->filter(function (Menu $menu) {
                     return $menu->uri && $menu->uri !== '/' && $menu->parent_id != 2;
                 });
