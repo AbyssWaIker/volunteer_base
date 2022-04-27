@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
@@ -67,15 +65,6 @@ class Destitute extends Person
             $give_help_when_resources_are_low = ' ';
         }
         return trim($give_help_when_resources_are_low  . ' '. implode(', ', $dates));
-    }
-    protected static function boot()
-    {
-        parent::boot();
-        parent::created(function(self $granny) {
-            if(!$granny->helpGiven->count()) {
-                $granny->helpGiven()->create(['hg_timestamp' => Carbon::now()]);
-            }
-        });
     }
 
     public static function getTableTitles(): array
