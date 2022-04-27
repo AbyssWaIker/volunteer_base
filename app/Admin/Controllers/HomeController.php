@@ -23,19 +23,19 @@ class HomeController extends Controller
                     return $menu->uri && $menu->uri !== '/';
                 })->groupBy('parent_id');
                 foreach ($groups as $parent_id => $group) {
-                    if(!$parent_id) {
+                    
+                    $menu = Menu::find($parent_id);
+                    if(!$menu) {
                         foreach($group as $menu) {
                             $row->column(4, function (Column $column) use ($menu) {
                                 $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, ''));
                             });
                         }
                     }
-                    $menu = Menu::find($parent_id);
                     $links = $group->map(function(Menu $menu) {
                         return '<a href="'.config('admin.route.prefix').'/'.$menu->uri.'">'.$menu->title.'</a>';
                     })->implode('<br/>');
                     $row->column(4, function (Column $column) use ($menu, $links) {
-
                         $column->append(new InfoBox($menu->title, substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, $links));
                     });
                 }
