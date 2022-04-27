@@ -28,7 +28,7 @@ class StockController extends AdminController
     {
         $grid = parent::grid();
         $grid->quickCreate(function(Grid\Tools\QuickCreate $form) {
-            $form->text('name', __('name'))->required();
+            $form->text('name', __('Name'))->required();
         });
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'))/*->expand(function (Stock $stock) {
