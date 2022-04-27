@@ -31,7 +31,7 @@ class Destitute extends Person
             }
             $value['name'] = mb_convert_case($value['name'], MB_CASE_TITLE);
             return $value;
-        }, array_values($value)) : $value;
+        }, array_values($value))) : $value;
         return $this;
     }
     public function setNameAttribute($value):self
