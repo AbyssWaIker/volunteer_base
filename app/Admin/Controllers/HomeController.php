@@ -22,7 +22,7 @@ class HomeController extends Controller
                 });
                 foreach ($menus as $menu) {
                     $row->column(4, function (Column $column) use ($menu) {
-                        $column->append(new InfoBox('<a href="#" >t</a>', substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, $menu->title));
+                        $column->append(new InfoBox('', substr($menu->icon, 3), 'aqua', config('admin.route.prefix').'/'.$menu->uri, $menu->title));
                     });
                 }
 
