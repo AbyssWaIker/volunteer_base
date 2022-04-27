@@ -22,7 +22,7 @@ class HomeController extends Controller
                 $menus = Menu::all()->filter(function (Menu $menu) {
                     return $menu->uri && $menu->uri !== '/';
                 })->groupBy('parent_id');
-                foreach ($groupds as $parent_id => $group) {
+                foreach ($groups as $parent_id => $group) {
                     if(!$parent_id) {
                         foreach($group as $menu) {
                             $row->column(4, function (Column $column) use ($menu) {
