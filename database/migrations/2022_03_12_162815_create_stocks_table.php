@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
         });
     }

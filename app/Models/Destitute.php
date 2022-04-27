@@ -38,7 +38,7 @@ class Destitute extends Person
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
         $result = 0;
         foreach($family_members as $member) {
-            $result += @$member['is_child'];
+            $result += intval(@$member['is_child']);
         }
         return $result;
     }
