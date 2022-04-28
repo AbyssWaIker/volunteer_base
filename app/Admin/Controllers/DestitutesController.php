@@ -223,7 +223,10 @@ class DestitutesController extends PersonController
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){
             $form->hidden('id');
             $form->date('hg_timestamp', 'Время')->default(Carbon::now());
-        })->data([['hg_timestamp' => Carbon::now()]]);
+        })
+        ->default([['hg_timestamp' => Carbon::now()]])
+        ->data([['hg_timestamp' => Carbon::now()]])
+        ->value([['hg_timestamp' => Carbon::now()]]);
 
         return $form;
     }
