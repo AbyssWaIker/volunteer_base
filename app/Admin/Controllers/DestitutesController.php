@@ -40,7 +40,7 @@ class DestitutesController extends PersonController
 //            $form->text('id_code', __('id_code'));
             $form->text('comment', __('comment'));
             $form->date('helpGiven[0][hg_timestamp]',__('Receivings'))->default(Carbon::today());
-            $form->hidden('helpGiven[0][_remove_]');
+            $form->text('helpGiven[0][_remove_]')->attribute('style', 'display:none');
         };
     }
     protected function filterCallBack(): callable
