@@ -10,7 +10,7 @@ use App\Admin\Helpers\GridHelper;
 class Destitute extends Person
 {
     public $category_class = DestituteCategory::class;
-    public const REFUGEE_ID = 5;
+    public const REFUGEE_ID = 6;
 
     protected $fillable = ['name', 'phone', 'address', 'passport_id', 'id_code', 'comment', 'family_members'];
     protected $casts = ['family_members' => 'json'];
