@@ -203,9 +203,9 @@ class DestitutesController extends PersonController
 
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
         $form->text('name', __('name'))->required();
-        $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
         $form->text('address', __('address'));
+        $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
         $form->text('id_code', __('id_code'));
         $form->text('comment', __('comment'));
         $form->table('family_members', __('family_members'), function(\Encore\Admin\Form\NestedForm $form) {
