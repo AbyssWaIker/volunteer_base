@@ -37,6 +37,11 @@ class Destitute extends Person
         $this->attributes['name'] = $value ? mb_convert_case($value, MB_CASE_TITLE) : $value;
         return $this;
     }
+    public function setAddressAttribute($value):self
+    {
+        $this->attributes['address'] = $value ? mb_convert_case($value, MB_CASE_TITLE) : $value;
+        return $this;
+    }
     public function getChildrenCountAttribute():string
     {
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
