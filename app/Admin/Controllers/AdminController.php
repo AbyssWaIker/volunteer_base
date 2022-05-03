@@ -21,7 +21,7 @@ class AdminController extends BaseController
     protected function grid()
     {
         $grid = new Grid(new $this->model);
-        $grid->enableHotKeys();
+        // $grid->enableHotKeys();
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
         });
