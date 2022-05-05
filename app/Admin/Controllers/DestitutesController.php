@@ -33,6 +33,7 @@ class DestitutesController extends PersonController
                 ->default(Destitute::REFUGEE_ID)
                 ->value(Destitute::REFUGEE_ID);
             ;
+            $form->text('reference_id',__('reference_id'));
             $form->text('name', __('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('address', __('address'));
@@ -52,6 +53,8 @@ class DestitutesController extends PersonController
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('name', __('Name'));
                 $filter->like('phone', __('phone'));
+                $filter->like('address', __('address'));
+                $filter->like('id_code', __('id_code'));
                 $filter->where(function($query) {
                     switch($this->input) {
                         case '1':
@@ -62,7 +65,7 @@ class DestitutesController extends PersonController
                             return;
                     }
 
-                }, __('family_members'),'familiy_count')
+                }, __('family_members'), 'familiy_count')
                     ->radio([
                         '' => __('all'),
                         '1' => __('single person'),
@@ -71,6 +74,8 @@ class DestitutesController extends PersonController
             });
 
             $filter->column(1/2, function (Grid\Filter $filter) use($table) {
+                $filter->like('comment', __('comment'));
+                $filter->like('reference_id', __('reference_id'));
                 $filter->where(function(Builder $query) use($table) {
                     $query->whereHas('categories', function (Builder $query) use ($table) {
                         $query->whereIn("$table.id", $this->input);
@@ -146,6 +151,7 @@ class DestitutesController extends PersonController
 
 </div>";
         });
+        $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
@@ -202,6 +208,7 @@ class DestitutesController extends PersonController
         $validator = $this->formValidator($id);
 
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
+        $form->text('reference_id',__('reference_id'))->creationRules([new UniquenesForDestitute])
         $form->text('name', __('name'))->required();
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
         $form->text('address', __('address'));
