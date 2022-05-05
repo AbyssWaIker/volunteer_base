@@ -14,7 +14,7 @@ class FitCommentToReference extends Migration
     public function up()
     {
         Schema::table('destitutes', function (Blueprint $table) {
-            $table->renameColumn('comment', 'reference_id');
+            $table->string('comment');
         });
     }
 
@@ -26,7 +26,7 @@ class FitCommentToReference extends Migration
     public function down()
     {
         Schema::table('destitutes', function (Blueprint $table) {
-            $table->renameColumn('reference_id', 'comment');
+            $table->dropColumn('comment');
         });
     }
 }
