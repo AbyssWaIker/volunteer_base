@@ -44,7 +44,7 @@ class Destitute extends Person
     }
     public function setPassportIdAttribute($value):self
     {
-        $this->attributes['passport_id'] = $value ? mb_convert_case($value, MB_CASE_UPPER_SIMPLE) : $value;
+        $this->attributes['passport_id'] = $value ? mb_convert_case($value, MB_CASE_UPPER) : $value;
         return $this;
     }
     public function getChildrenCountAttribute():string
