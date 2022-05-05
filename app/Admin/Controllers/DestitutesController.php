@@ -208,7 +208,7 @@ class DestitutesController extends PersonController
         $validator = $this->formValidator($id);
 
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
-        $form->text('reference_id',__('reference_id'))->creationRules([new UniquenesForDestitute])
+        $form->text('reference_id',__('reference_id'))->creationRules([new UniquenesForDestitute]);
         $form->text('name', __('name'))->required();
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
         $form->text('address', __('address'));
