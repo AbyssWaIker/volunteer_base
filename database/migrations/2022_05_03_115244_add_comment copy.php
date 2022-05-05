@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MakeCommentNullable extends Migration
+class MakeComment extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class MakeCommentNullable extends Migration
     public function up()
     {
         Schema::table('destitutes', function (Blueprint $table) {
-            $table->string('comment')->nullable();
+            $table->string('comment');
         });
     }
 
@@ -26,7 +26,7 @@ class MakeCommentNullable extends Migration
     public function down()
     {
         Schema::table('destitutes', function (Blueprint $table) {
-            $table->string('comment')->nullable(false);
+            $table->dropColumn('comment');
         });
     }
 }
