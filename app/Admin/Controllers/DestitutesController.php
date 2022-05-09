@@ -143,13 +143,11 @@ class DestitutesController extends PersonController
             $people_helped = __('Today we helped :number of people', ['number' => $today_count . "(/ $all_count)"]);
 
 
-            return "<div style='display: grid; grid-template-columns: repeat(3, 1fr)' class='text-info`'>
-    <div></div>
-    <h3 class='text-black'>$people_helped</h3>
-    <div>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
-    <div>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
-
-</div>";
+            return "
+<div class='col-lg-4 pull-right'>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
+<h3 class='text-black text-center'>$people_helped</h3>
+<div class='pull-left'>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
+";
         });
         $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
