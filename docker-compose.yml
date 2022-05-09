@@ -7,10 +7,6 @@ services:
     container_name: "${DB_HOST}"
     restart: unless-stopped
     tty: true
-<<<<<<< HEAD
-    command: --default-authentication-plugin=mysql_native_password #ААААААААААААААААААААААА
-=======
->>>>>>> 2b00b683ad037aa0551780383d23816dfc301cf8
     ports:
         - "3306:3306"
     environment:
@@ -27,15 +23,9 @@ services:
   #PHP
   app:
     depends_on:
-<<<<<<< HEAD
-      - db
-    links:
-      - db
-=======
       - "${DB_HOST}"
     links:
       - "${DB_HOST}"
->>>>>>> 2b00b683ad037aa0551780383d23816dfc301cf8
     build:
       context: .
       dockerfile: Dockerfile
