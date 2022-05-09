@@ -43,6 +43,7 @@
     "terms": "Условия аренды",
     "conditions": "Условия проживания",
     "Today we helped :number of people": "Сегодня мы помогли :number людям",
+    "Last week we helped :number of people": "За прошедшую неделю мы помогли :number людям",
     "is_child":"Ребенок?",
     "child":"ребенок",
     "all": "Все",
