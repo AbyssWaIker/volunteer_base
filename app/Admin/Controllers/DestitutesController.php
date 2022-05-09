@@ -135,12 +135,12 @@ class DestitutesController extends PersonController
             $today_count = $all->whereHas(
                 'helpGiven',
                 function (Builder $query) {
-                    $query->whereDate('hg_timestamp', Carbon::today());
+                    $query->whereDate('hg_timestamp','>', Carbon::today()->subWeek());
                 }
             )
                 ->get()
                 ->sum('family_members_count');
-            $people_helped = __('Today we helped :number of people', ['number' => $today_count . "(/ $all_count)"]);
+            $people_helped = __('Last week we helped :number of people', ['number' => $today_count . "(/ $all_count)"]);
 
             return "
 <div class='col-lg-4 pull-right'>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
