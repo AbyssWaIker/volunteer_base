@@ -135,7 +135,7 @@ class DestitutesController extends PersonController
             $today_count = $all->whereHas(
                 'helpGiven',
                 function (Builder $query) {
-                    $query->whereDate('hg_timestamp', Carbon::today()));
+                    $query->whereDate('hg_timestamp', Carbon::today());
                 }
             )
                 ->get()
