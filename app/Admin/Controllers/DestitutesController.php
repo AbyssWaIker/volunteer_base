@@ -33,7 +33,7 @@ class DestitutesController extends PersonController
                 ->default(Destitute::REFUGEE_ID)
                 ->value(Destitute::REFUGEE_ID);
             ;
-            $form->text('reference_id',__('reference_id'));
+            $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999']);
             $form->text('name', __('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('address', __('address'));
@@ -205,7 +205,7 @@ HTML;
         $validator = $this->formValidator($id);
 
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
-        $form->text('reference_id',__('reference_id'))->creationRules([new UniquenesForDestitute]);
+        $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999'])->creationRules([new UniquenesForDestitute]);
         $form->text('name', __('name'))->required();
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
         $form->text('address', __('address'));
@@ -213,7 +213,7 @@ HTML;
         $form->text('id_code', __('id_code'));
         $form->text('comment', __('comment'));
         $form->table('family_members', __('family_members'), function(\Encore\Admin\Form\NestedForm $form) {
-            $form->text('reference_id',__('reference_id'));
+            $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999']);
             $form->text('name',__('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('phone', __('phone'));
