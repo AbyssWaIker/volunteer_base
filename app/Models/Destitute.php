@@ -16,9 +16,9 @@ class Destitute extends Person
     protected $casts = ['family_members' => 'json'];
     protected $appends = ['family_members_count'];
 
-    public function getReferenceIdTableAttribute():string
+    public function getReferenceIdAttribute():string
     {
-        return $this->reference_id ?: __('reference is being processed');
+        return @($this->attributes)['reference_id'] ?: __('reference is being processed');
     }
     public function getFamilyMembersCountAttribute():string
     {
