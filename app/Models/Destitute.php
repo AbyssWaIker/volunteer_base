@@ -18,7 +18,7 @@ class Destitute extends Person
 
     public function getReferenceIdTableAttribute():string
     {
-        return $tthis->reference_id ?: __('reference is being processed');
+        return $this->reference_id ?: __('reference is being processed');
     }
     public function getFamilyMembersCountAttribute():string
     {
