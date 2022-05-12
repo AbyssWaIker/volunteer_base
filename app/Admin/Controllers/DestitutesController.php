@@ -148,7 +148,7 @@ class DestitutesController extends PersonController
 <div class='pull-left'>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
 HTML;
         });
-        $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('reference_id_table',__('reference_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
