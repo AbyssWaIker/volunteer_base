@@ -34,7 +34,7 @@ class Destitute extends Person
             $value['name'] = mb_convert_case($value['name'], MB_CASE_TITLE);
             $value['passport_id'] = mb_convert_case($value['passport_id'], MB_CASE_UPPER);
             $value['reference_id'] = @$value['reference_id'] ?: __('reference is being processed');
-            if(str_starts_with('І-',$value['id_code'])) {
+            if(str_starts_with('І-',$value['passport_id'])) {
                 $value['is_child'] = true;
             }
             return $value;
