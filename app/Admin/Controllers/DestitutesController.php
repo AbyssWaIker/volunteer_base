@@ -55,10 +55,10 @@ class DestitutesController extends PersonController
                 $filter->like('phone', __('phone'));
                 $filter->like('address', __('address'));
                 $filter->like('id_code', __('id_code'));
-                $filter->where(function($query) {
+                $filter->where(function(Builder $query) {
                     switch($this->input) {
                         case '1':
-                            $query->whereNot(function($query){$query->whereNotNull('family_members');});
+                            $query->whereNull('family_members');
                         case '*':
                             $query->whereNotNull('family_members');
                         default:
