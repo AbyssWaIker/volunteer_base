@@ -58,7 +58,8 @@ class DestitutesController extends PersonController
                 $filter->where(function($query) {
                     switch($this->input) {
                         case '1':
-                            $query->whereNull('family_members');
+                            $query->whereJsonLength('family_members', 0)
+                                ->orWhereNull('family_members');
                         case '*':
                             $query->whereNotNull('family_members');
                         default:
