@@ -14,6 +14,7 @@ class PostgreFix extends Migration
      */
     public function up()
     {
+        //Needed because after migration from mysql, sequence is out of sunc
         $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
         $tables_without_id = [
             'password_resets',
