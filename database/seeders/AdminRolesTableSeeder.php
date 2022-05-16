@@ -26,6 +26,14 @@ class AdminRolesTableSeeder extends Seeder
                 'created_at' => '2022-03-14 21:47:24',
                 'updated_at' => '2022-03-14 21:47:24',
             ),
+            1 => 
+            array (
+                'id' => 2,
+                'name' => 'test',
+                'slug' => 'test',
+                'created_at' => '2022-04-28 11:10:00',
+                'updated_at' => '2022-04-28 11:10:00',
+            ),
         ));
 
         
