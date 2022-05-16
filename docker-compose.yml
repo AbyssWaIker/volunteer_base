@@ -3,8 +3,8 @@ services:
 
     #MySQL
   db:
-    image: mysql:5.7.38
-    container_name: db
+    image: mysql:5.7.22
+    container_name: "${DB_HOST}"
     restart: unless-stopped
     tty: true
     ports:
@@ -23,9 +23,9 @@ services:
   #PHP
   app:
     depends_on:
-      - db
+      - "${DB_HOST}"
     links:
-      - db
+      - "${DB_HOST}"
     build:
       context: .
       dockerfile: Dockerfile
