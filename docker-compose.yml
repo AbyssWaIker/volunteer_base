@@ -3,19 +3,22 @@ services:
 
     #MySQL
   db:
-    image: postgres
-    restart: always
+    image: mysql:5.7.38
+    container_name: db
+    restart: unless-stopped
+    tty: true
     ports:
-        - "5432:5432"
+        - "3306:3306"
     environment:
-        POSTGRES_DB: "${DB_DATABASE}"
-        POSTGRES_USER: "${DB_USERNAME}"
-        POSTGRES_PASSWORD: "${DB_PASSWORD}"
+        MYSQL_DATABASE: "${DB_DATABASE}"
+        MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+        MYSQL_USER: "${DB_USERNAME}"
+        MYSQL_PASSWORD: "${DB_PASSWORD}"
         SERVICE_TAGS: dev
         SERVICE_NAME: mysql
-#    volumes:
-#        - dbdata:/var/lib/mysql/
-#        - ./mysql/my.cnf:/etc/mysql/my.cnf
+    volumes:
+        - dbdata:/var/lib/mysql/
+        - ./mysql/my.cnf:/etc/mysql/my.cnf
 
   #PHP
   app:
