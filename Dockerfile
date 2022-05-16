@@ -23,7 +23,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     libxml++2.6-dev \
     libonig-dev \
-    libpq-dev \
     nodejs \
     npm
 
@@ -31,7 +30,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Устанавливаем расширения php
-RUN docker-php-ext-install -j$(nproc) pdo pdo_pgsql pgsql mbstring zip exif pcntl bz2
+RUN docker-php-ext-install -j$(nproc) pdo_mysql mbstring zip exif pcntl bz2
 RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
 RUN docker-php-ext-install gd
 
