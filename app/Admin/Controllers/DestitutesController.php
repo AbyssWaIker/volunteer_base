@@ -140,11 +140,14 @@ class DestitutesController extends PersonController
             )
                 ->get()
                 ->sum('family_members_count');
-            $people_helped = __('Today we helped :number of people', ['number' => $today_count . "(/ $all_count)"]);
-
+            $people_helped = __('Today we helped :number of people', ['number' => $today_count]);
+            $people_found = __('Found :number of people', ['number' => $filtered->sum('family_members_count')]);
             return <<<HTML
 <div class='col-lg-4 pull-right'>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
-<h3 class='text-black text-center'>$people_helped</h3>
+<div>
+    <h3 class='text-black text-center'>$people_helped</h3>
+    <h3 class='text-black text-center'>$people_found</h3>
+</div>
 <div class='pull-left'>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
 HTML;
         });
