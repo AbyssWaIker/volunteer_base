@@ -44,6 +44,7 @@
     "conditions": "Условия проживания",
     "Today we helped :number of people": "Сегодня мы помогли :number людям",
     "Last week we helped :number of people": "За прошедшую неделю мы помогли :number людям",
+    "Found :number of people": "Найдено :number людей",
     "is_child":"Ребенок?",
     "child":"ребенок",
     "all": "Все",
