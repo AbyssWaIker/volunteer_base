@@ -14,7 +14,7 @@ class PostgreFix extends Migration
      */
     public function up()
     {
-        //Needed because after migration from mysql, sequence is out of sunc
+        //Needed because after seeding, sequence is out of sync
         $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
         $tables_without_id = [
             'password_resets',
@@ -25,7 +25,9 @@ class PostgreFix extends Migration
         ];
         $tables = array_filter($tables, function ($table) use($tables_without_id){return !in_array($table,$tables_without_id);});
         foreach ($tables as $table) {
-            DB::select(DB::raw("SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('\"{$table}\"', 'id')), (SELECT (MAX(\"id\") + 1) FROM \"$table\"), FALSE);"));
+            DB::select(DB::raw(<<<SQL
+SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"{$table}"', 'id')), (SELECT (MAX("id") + 1) FROM "$table"), FALSE);
+SQL));
         }
     }
 
