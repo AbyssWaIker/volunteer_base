@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Admin\Extentions\Grid\Displayers\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
@@ -12,7 +13,7 @@ class Destitute extends Person
     public $category_class = DestituteCategory::class;
     public const REFUGEE_ID = 6;
 
-    protected $fillable = ['reference_id','name', 'phone', 'address', 'passport_id', 'id_code', 'comment', 'family_members'];
+    protected $fillable = ['reference_id','name', 'phone', 'address',  'date_of_birth', 'passport_id', 'comment',/* 'id_code', 'family_members'*/];
     protected $casts = ['family_members' => 'json'];
     protected $appends = ['family_members_count'];
 
@@ -70,6 +71,10 @@ class Destitute extends Person
     {
         return $this->hasMany(HelpGiven::class);
     }
+    public function receivings()
+    {
+        return $this->belongsToMany(HelpGiven::class);
+    }
 
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = false): string
     {
@@ -96,13 +101,13 @@ class Destitute extends Person
             ]
         );
     }
-    public static function familyMemberToString($member):string
+    public function getIsChildAttribute():bool
     {
-        if(!$member || is_string($member)) {
-            return '';
-        }
-
-        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
+        return $this->date_of_birth && Carbon::parse($this->date_of_birth)->addYears(16) < Carbon::now();
+    }
+    public function __toString():string
+    {
+        return $this->reference_id . ' ' . $this->name . ' ' . $this->phone . ' ' . $this->passport_id . ' ' . $this->comment . ($this->is_child ? __('child') :'');
     }
 
     public function getTableInfoAttribute(): array

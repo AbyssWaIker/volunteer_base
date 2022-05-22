@@ -28,6 +28,7 @@ Route::group([
         return $pdf->stream($destitute->name.'.pdf');
     });
     $router->resource('grannies', DestitutesController::class);
+    $router->resource('destitutes', HelpGivenController::class);
     $router->resource('sendings', SendingController::class);
     $router->resource('stocks', StockController::class);
     $router->resource('volunteers', VolunteerController::class);
@@ -35,5 +36,6 @@ Route::group([
     $router->resource('volunteer-categories', CategoryVolunteerController::class);
     $router->resource('refugee-shelters', RefugeeShelterController::class);
     $router->resource('border-crossing-options', BorderCrossingOptionsController::class);
+
 
 });
