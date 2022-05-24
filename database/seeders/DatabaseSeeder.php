@@ -37,8 +37,24 @@ class DatabaseSeeder extends Seeder
         $this->call(VolunteersTableSeeder::class);
         $this->call(VolunteerVolunteerCategoryTableSeeder::class);
         $this->call(AdminConfigTableSeeder::class);
-        // $this->call(RefugeeSheltersTableSeeder::class);
-        // $this->call(BorderCrossingOptionsTableSeeder::class);
-        $this->call(StockCategoriesTableSeeder::class);
+        $this->call(RefugeeSheltersTableSeeder::class);
+        $this->call(BorderCrossingOptionsTableSeeder::class);
+
+        //Needed because after seeding, sequence is out of sync in pgsql
+        $tables = \DB::connection()->getDoctrineSchemaManager()->listTableNames();
+        $tables_without_id = [
+            'password_resets',
+            'admin_role_menu',
+            'admin_role_permissions',
+            'admin_role_users',
+            'admin_user_permissions',
+        ];
+        $tables = array_filter($tables, function ($table) use($tables_without_id){return !in_array($table,$tables_without_id);});
+        foreach ($tables as $table) {
+            \DB::select(\DB::raw(<<<SQL
+SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"{$table}"', 'id')), (SELECT (MAX("id") + 1) FROM "$table"), FALSE);
+SQL));
+        }
+>>>>>>> 1d99179560177b6cc673a723239add5b2ad7eae0
     }
 }

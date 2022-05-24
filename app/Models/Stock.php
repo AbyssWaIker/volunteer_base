@@ -33,4 +33,8 @@ class Stock extends Model
     {
         return $this->hasMany(StocksSent::class);
     }
+    public function given():BelongsToMany
+    {
+        return $this->belongsToMany(HelpGiven::class);
+    }
 }
