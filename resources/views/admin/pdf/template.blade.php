@@ -3,32 +3,32 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>{{$dest->name}}</title>
 	<style>
 		body { font-family: DejaVu Sans; font-size: 14px; }
 		table {border: 1px black solid; border-collapse: collapse; }
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
 		td {border: 1px black solid; border-collapse: collapse;}
-		table.no-border, 
-		table.no-border > th, 
-		table.no-border > tbody > tr, 
+		table.no-border,
+		table.no-border > th,
+		table.no-border > tbody > tr,
 		table.no-border > tbody > tr > td {
 			border: none !important;
 		}
+        table.no-border > tbody > tr > td:nth-child(even) {border-bottom: 1px black solid !important;}
 		.border-bottom {
 			border-bottom:1px solid black;
 		}
-		table.no-border > tbody > tr > td:nth-child(even) {border-bottom: 1px black solid !important;}
 	</style>
 </head>
 <body>
 	<div style="height: 90%">
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>
-			«<span style="width:60px;" class="border-bottom"> {{$date->format('j')}} </span>» 
+			«<span style="width:60px;" class="border-bottom"> {{$date->format('j')}} </span>»
 			<span style="width: 100px;" class="border-bottom"> {{$date->format('F')}} </span>
-			20<span style="width:40px;" class="border-bottom">{{$date->format('y')}}</span> 
+			20<span style="width:40px;" class="border-bottom">{{$date->format('y')}}</span>
 			<span> </span>
 			м. Одеса
 		</div>
@@ -41,7 +41,7 @@
 				</tr>
 				<tr>
 					<td>Контактний Телефон:</td>
-					<td>{{$dest->phone}}</td> 
+					<td>{{$dest->phone}}</td>
 				</tr>
 				<tr>
 					<td>Паспортні данні/права водія:</td>
@@ -84,6 +84,7 @@
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
 			<tbody>
+                {{$list_count = count($list)}}
                 @for($i = 0; $i < $min_number_of_rows || $i < $list_count; $i++)
                     <tr><td style="text-align: center">{{$i+1}}</td><td>{{@$list[$i]}}</td><td></td><td></td></tr>
                 @endfor
@@ -95,7 +96,7 @@
         <div style="display:inline-block; float: left">
             <table class="no-border">
                 <tr><td colspan="2">Представник від благодійного фонду</td></tr>
-                <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
+                <tr><td>ПІБ</td><td style="border-bottom: 40px solid black;"></td></tr>
                 <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
             </table>
         </div>

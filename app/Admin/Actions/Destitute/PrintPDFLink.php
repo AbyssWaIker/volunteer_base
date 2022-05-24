@@ -2,22 +2,41 @@
 
 namespace App\Admin\Actions\Destitute;
 use App\Admin\Actions\DefaultActions\RowAction;
+use Encore\Admin\Admin;
 
 class PrintPDFLink extends RowAction
 {
-    public $name = 'В PDF';
+    public $name = 'Распечатать акт';
     protected $href_target = '_blank';
-
+    protected $wrapper_class = 'print';
+    protected $icon = 'fa-print';
+    protected function getRoute():string
+    {
+        return route(admin_get_route('print-pdf'), ['id'=>$this->getKey()]);
+    }
     public function html()
     {
-        return '<i class="fa fa-print"></i>';
+        Admin::script($this->script());
+        return <<<HTML
+        <i class="fa {$this->icon}"></i>
+        <div class='hidden'>
+            <iframe src="{$this->getRoute()}" title="{$this->row->name}" id="{$this->wrapper_class}-{$this->getKey()}" name="{$this->wrapper_class}-{$this->getKey()}">
+            </iframe>
+        </div>
+        HTML;
     }
-
-    /**
-     * @return string
-     */
-    public function href()
+    public function script():string
     {
-        return "{$this->getResource()}/{$this->getKey()}/print-pdf";
+        return <<<JS
+        $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
+            const iframe = window.frames['{$this->wrapper_class}-{$this->getKey()}'];
+            iframe.focus();
+            iframe.print();
+        });
+        JS;
+    }
+    public function handle()
+    {
+        return true;
     }
 }
