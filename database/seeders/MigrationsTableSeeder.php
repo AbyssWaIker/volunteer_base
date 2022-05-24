@@ -96,6 +96,12 @@ class MigrationsTableSeeder extends Seeder
                 'migration' => '2022_03_12_174934_create_stocks_sents_table',
                 'batch' => 1,
             ),
+            13 => 
+            array (
+                'id' => 14,
+                'migration' => '2022_05_16_234517_postgre_fix',
+                'batch' => 2,
+            ),
         ));
 
         
