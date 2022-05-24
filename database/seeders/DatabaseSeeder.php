@@ -39,8 +39,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminConfigTableSeeder::class);
         // $this->call(RefugeeSheltersTableSeeder::class);
         // $this->call(BorderCrossingOptionsTableSeeder::class);
-        $this->call(QuantityUnitsTableSeeder::class);
-        $this->call(ReceivingPointsTableSeeder::class);
-        $this->call(SendingsTableSeeder::class);
+        $this->call(StockCategoriesTableSeeder::class);
     }
 }
