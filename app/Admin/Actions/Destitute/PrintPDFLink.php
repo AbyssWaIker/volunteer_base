@@ -47,7 +47,6 @@ class PrintPDFLink extends RowAction
         $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
             const iframe = window.frames['{$this->wrapper_class}-{$this->getKey()}'];
             iframe.focus();
-            iframe.document.head.lastElementChild.addEventListener('load', ()=>console.log('aaaaaaaaa'));
             iframe.print();
         });
         JS;
