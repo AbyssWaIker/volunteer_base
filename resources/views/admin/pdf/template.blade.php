@@ -16,10 +16,10 @@
 		table.no-border > tbody > tr > td {
 			border: none !important;
 		}
+        table.no-border > tbody > tr > td:nth-child(even) {border-bottom: 1px black solid !important;}
 		.border-bottom {
 			border-bottom:1px solid black;
 		}
-		table.no-border > tbody > tr > td:nth-child(even) {border-bottom: 1px black solid !important;}
 	</style>
 </head>
 <body>
@@ -95,7 +95,7 @@
         <div style="display:inline-block; float: left">
             <table class="no-border">
                 <tr><td colspan="2">Представник від благодійного фонду</td></tr>
-                <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
+                <tr><td>ПІБ</td><td style="border-bottom: 40px solid black;"></td></tr>
                 <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
             </table>
         </div>
