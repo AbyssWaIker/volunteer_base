@@ -23,10 +23,10 @@ Route::group([
             'list' => $list,
             'list_count' => count($list),
         ];
-        // return view('admin.pdf.template', $data)->render();
+        return view('admin.pdf.template', $data)->render();
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);
         return $pdf->stream($destitute->name.'.pdf');
-    });
+    })->name('print-pdf');
     $router->resource('grannies', DestitutesController::class);
     $router->resource('sendings', SendingController::class);
     $router->resource('stocks', StockController::class);
