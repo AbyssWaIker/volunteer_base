@@ -11,17 +11,14 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
     $router->resource('/', HomeController::class);
-    $router->get('grannies/{id}/print-pdf', function($id) {
+    $router->get('grannies/{id}/print-pdf/{?skip_list}', function($id, $skip_list = false) {
         $destitute = \App\Models\Destitute::findOrFail($id);
         $helpGiven = $destitute->helpGiven->last();
-
-        $list = \App\Models\Stock::query()->where('enabled', true)->pluck('name');
         $data = [
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru'),
             'min_number_of_rows' => 20,
-            'list' => $list,
-            'list_count' => count($list),
+            'list' => $skip_list ? [] : \App\Models\Stock::query()->where('enabled', true)->pluck('name'),
         ];
         return view('admin.pdf.template', $data)->render();
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.pdf.template', $data);

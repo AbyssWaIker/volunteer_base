@@ -84,6 +84,7 @@
 				<th>№</th> <th>Назва матеріальних цінностей</th> <th> Од. Виміру</th> <th>Кількість</th>
 			</thead>
 			<tbody>
+                {{$list_count = count($list)}}
                 @for($i = 0; $i < $min_number_of_rows || $i < $list_count; $i++)
                     <tr><td style="text-align: center">{{$i+1}}</td><td>{{@$list[$i]}}</td><td></td><td></td></tr>
                 @endfor
