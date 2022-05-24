@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Actions\Destitute\DestituteHelper;
+use App\Admin\Actions\Destitute\PrintPDFForMedicalLink;
 use App\Admin\Actions\Destitute\PrintPDFLink;
 use App\Admin\Exporters\DestituteExporter;
 use App\Models\Destitute;
@@ -125,6 +126,7 @@ class DestitutesController extends PersonController
         $grid->actions(function(Grid\Displayers\Actions $actions) {
             $actions->disableView();
             $actions->prepend(new PrintPDFLink);
+            $actions->prepend(new PrintPDFForMedicalLink);
             $actions->prepend(new DestituteHelper);
         });
 
