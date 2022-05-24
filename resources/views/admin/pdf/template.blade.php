@@ -3,16 +3,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>{{$dest->name}}</title>
 	<style>
 		body { font-family: DejaVu Sans; font-size: 14px; }
 		table {border: 1px black solid; border-collapse: collapse; }
 		th {border: 1px black solid; border-collapse: collapse;}
 		tr {border: 1px black solid; border-collapse: collapse;}
 		td {border: 1px black solid; border-collapse: collapse;}
-		table.no-border, 
-		table.no-border > th, 
-		table.no-border > tbody > tr, 
+		table.no-border,
+		table.no-border > th,
+		table.no-border > tbody > tr,
 		table.no-border > tbody > tr > td {
 			border: none !important;
 		}
@@ -26,9 +26,9 @@
 	<div style="height: 90%">
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>
-			«<span style="width:60px;" class="border-bottom"> {{$date->format('j')}} </span>» 
+			«<span style="width:60px;" class="border-bottom"> {{$date->format('j')}} </span>»
 			<span style="width: 100px;" class="border-bottom"> {{$date->format('F')}} </span>
-			20<span style="width:40px;" class="border-bottom">{{$date->format('y')}}</span> 
+			20<span style="width:40px;" class="border-bottom">{{$date->format('y')}}</span>
 			<span> </span>
 			м. Одеса
 		</div>
@@ -41,7 +41,7 @@
 				</tr>
 				<tr>
 					<td>Контактний Телефон:</td>
-					<td>{{$dest->phone}}</td> 
+					<td>{{$dest->phone}}</td>
 				</tr>
 				<tr>
 					<td>Паспортні данні/права водія:</td>
