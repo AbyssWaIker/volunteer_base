@@ -14,15 +14,12 @@ class PrintPDFLink extends RowAction
 
     public function html()
     {
-        $pdf = view('admin.pdf.template', $this->getData())->render();
-        Admin::js(asset('js/print.js'));
         Admin::script($this->script());
         $route = route(admin_get_route('print-pdf'), ['id'=>$this->getKey()]);
         return <<<HTML
         <i class="fa fa-print"></i>
         <div class='hidden'>
             <iframe src="$route" title="{$this->row->name}" id="{$this->wrapper_class}-{$this->getKey()}" name="{$this->wrapper_class}-{$this->getKey()}">
-                {$pdf}
             </iframe>
         </div>
         HTML;
@@ -50,10 +47,8 @@ class PrintPDFLink extends RowAction
         $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
             const iframe = window.frames['{$this->wrapper_class}-{$this->getKey()}'];
             iframe.focus();
+            iframe.document.head.lastElementChild.addEventListener('load', ()=>console.log('aaaaaaaaa'));
             iframe.print();
-            // window.frames['{$this->wrapper_class}-{$this->getKey()}'].focus();
-            // setTimeout(()=>window.frames['{$this->wrapper_class}-{$this->getKey()}'].print(), 1000);
-            // window.frames['{$this->wrapper_class}-{$this->getKey()}'].print();
         });
         JS;
     }
