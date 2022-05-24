@@ -11,7 +11,7 @@ Route::group([
     'as'            => config('admin.route.prefix') . '.',
 ], function (Router $router) {
     $router->resource('/', HomeController::class);
-    $router->get('grannies/{id}/print-pdf/{?skip_list}', function($id, $skip_list = false) {
+    $router->get('grannies/{id}/print-pdf/{skip_list?}', function($id, $skip_list = false) {
         $destitute = \App\Models\Destitute::findOrFail($id);
         $helpGiven = $destitute->helpGiven->last();
         $data = [
