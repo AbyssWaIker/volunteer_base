@@ -20,8 +20,6 @@ class PrintPDFLink extends RowAction
         return <<<HTML
         <i class="fa {$this->icon}"></i>
         <div class='hidden'>
-            <iframe src="{$this->getRoute()}" title="{$this->row->name}" id="{$this->wrapper_class}-{$this->getKey()}" name="{$this->wrapper_class}-{$this->getKey()}">
-            </iframe>
         </div>
         HTML;
     }
@@ -29,9 +27,18 @@ class PrintPDFLink extends RowAction
     {
         return <<<JS
         $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
-            const iframe = window.frames['{$this->wrapper_class}-{$this->getKey()}'];
-            iframe.focus();
-            iframe.print();
+            const iframe = document.createElement('iframe');
+            iframe.src = '{$this->getRoute()}';
+            iframe.title = '{$this->row->name}';
+            iframe.id =  "{$this->wrapper_class}-{$this->getKey()}";
+            iframe.name = iframe.id;
+            const parent = ev.target.nextElementSibling;
+            iframe.onload = ()=>{
+                    window.frames[iframe.id].focus();
+                    window.frames[iframe.id].print();
+                    setTimeout(()=>parent.removeChild(iframe),200);
+            }
+            parent.appendChild(iframe);
         });
         JS;
     }
