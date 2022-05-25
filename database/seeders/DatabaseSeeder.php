@@ -55,6 +55,5 @@ class DatabaseSeeder extends Seeder
 SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"{$table}"', 'id')), (SELECT (MAX("id") + 1) FROM "$table"), FALSE);
 SQL));
         }
->>>>>>> 1d99179560177b6cc673a723239add5b2ad7eae0
     }
 }
