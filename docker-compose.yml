@@ -13,7 +13,7 @@ services:
         POSTGRES_PASSWORD: "${DB_PASSWORD}"
         SERVICE_TAGS: dev
         SERVICE_NAME: mysql
-#    volumes:
+   volumes:
        - dbdata:/var/lib/postgresql/data
        - ./postgresql/postgresql.conf:/etc/postgresql/postgresql.conf
 
