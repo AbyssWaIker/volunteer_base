@@ -6,7 +6,7 @@ use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 
 class Model extends \Illuminate\Database\Eloquent\Model
 {
-    use Cachable;
+    // use Cachable;
     protected $appends = ['table_info'];
     static public function pluckNameAndID():array
     {
