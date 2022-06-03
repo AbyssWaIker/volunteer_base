@@ -43,9 +43,7 @@ class CreateDbBackUpCommand extends Command
         $total = count($tables);
         foreach ($tables as $index => $table) {
             echo "\r$index/$total";
-            foreach ($table as $key => $value){
-                Artisan::call("iseed $value --force");
-            }
+            Artisan::call("iseed $table --force");
         }
         echo PHP_EOL;
         return 0;
