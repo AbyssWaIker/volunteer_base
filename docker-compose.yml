@@ -1,9 +1,9 @@
 version: '3'
 services:
 
-    #MySQL
+    #postgres
   db:
-    image: postgres:alpine
+    image: postgres
     restart: always
     ports:
         - "5432:5432"
@@ -12,9 +12,9 @@ services:
         POSTGRES_USER: "${DB_USERNAME}"
         POSTGRES_PASSWORD: "${DB_PASSWORD}"
         SERVICE_TAGS: dev
-        SERVICE_NAME: mysql
+        SERVICE_NAME: postgres
     volumes:
-       - dbdata:/var/lib/postgresql/data
+      #  - dbdata:/var/lib/postgresql/data
        - ./postgresql/postgresql.conf:/etc/postgresql/postgresql.conf
 
   #PHP
@@ -37,6 +37,7 @@ services:
     volumes:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./nginx/log:/var/log/nginx/
 
   #Nginx
   webserver:
@@ -53,9 +54,10 @@ services:
       - "443:443"
     volumes:
       - ./:/var/www
+      - ./nginx/log:/var/log/nginx/
       - ./nginx/conf.d/:/etc/nginx/conf.d/
 
 #Volumes
-volumes:
-  dbdata:
-    driver: local
+# volumes:
+  # dbdata:
+    # driver: local
