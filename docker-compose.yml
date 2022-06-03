@@ -3,7 +3,7 @@ services:
 
     #MySQL
   db:
-    image: postgres
+    image: postgres:alpine
     restart: always
     ports:
         - "5432:5432"
@@ -14,8 +14,8 @@ services:
         SERVICE_TAGS: dev
         SERVICE_NAME: mysql
 #    volumes:
-#        - dbdata:/var/lib/mysql/
-#        - ./mysql/my.cnf:/etc/mysql/my.cnf
+       - dbdata:/var/lib/postgresql/data
+       - ./postgresql/postgresql.conf:/etc/postgresql/postgresql.conf
 
   #PHP
   app:
