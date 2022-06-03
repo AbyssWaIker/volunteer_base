@@ -39,7 +39,15 @@ class CreateDbBackUpCommand extends Command
      */
     public function handle()
     {
-        Artisan::call("iseed:all --force");
+        $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
+        $total = count($tables);
+        foreach ($tables as $index => $table) {
+            echo "\r$index/$total";
+            foreach ($table as $key => $value){
+                Artisan::call("iseed $value --force");
+            }
+        }
+        echo PHP_EOL;
         return 0;
     }
 }
