@@ -1,8 +1,5 @@
 #!/usr/bin/env ash
 
-npm clean-install
-npm run prod
-
 composer install
 
 php artisan vendor:publish --all
