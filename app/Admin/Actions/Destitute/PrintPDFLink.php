@@ -25,11 +25,12 @@ class PrintPDFLink extends RowAction
     }
     public function script():string
     {
+        $title = htmlspecialchars($this->row->name);
         return <<<JS
         $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
             const iframe = document.createElement('iframe');
             iframe.src = '{$this->getRoute()}';
-            iframe.title = '{$this->row->name}';
+            iframe.title = '{$title}';
             iframe.id =  "{$this->wrapper_class}-{$this->getKey()}";
             iframe.name = iframe.id;
             const parent = ev.target.nextElementSibling;
