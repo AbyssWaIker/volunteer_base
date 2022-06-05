@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(DestituteCategoriesTableSeeder::class);
-        $this->call(DestitutesTableSeeder::class);
-        $this->call(DestituteDestituteCategoryTableSeeder::class);
+        // $this->call(DestitutesTableSeeder::class);
+        // $this->call(DestituteDestituteCategoryTableSeeder::class);
         $this->call(HelpGivensTableSeeder::class);
         $this->call(AdminUsersTableSeeder::class);
         $this->call(AdminRolesTableSeeder::class);
@@ -34,12 +34,13 @@ class DatabaseSeeder extends Seeder
         $this->call(StocksTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VolunteerCategoriesTableSeeder::class);
-        $this->call(VolunteersTableSeeder::class);
-        $this->call(VolunteerVolunteerCategoryTableSeeder::class);
+        // $this->call(VolunteersTableSeeder::class);
+        // $this->call(VolunteerVolunteerCategoryTableSeeder::class);
         $this->call(AdminConfigTableSeeder::class);
         $this->call(RefugeeSheltersTableSeeder::class);
         $this->call(BorderCrossingOptionsTableSeeder::class);
-
+        $this->call(StockCategoriesTableSeeder::class);
+        
         //Needed because after seeding, sequence is out of sync in pgsql
         $tables = \DB::connection()->getDoctrineSchemaManager()->listTableNames();
         $tables_without_id = [
