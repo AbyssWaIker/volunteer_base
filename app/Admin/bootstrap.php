@@ -23,6 +23,7 @@ use Encore\Admin\Grid\Column;
 
 Encore\Admin\Form::forget(['map', 'editor']);
 Admin::css(asset('css/app.css'));
+Admin::js(asset('js/app.js'));
 Column::$displayers = array_merge(
     Column::$displayers,
     [
