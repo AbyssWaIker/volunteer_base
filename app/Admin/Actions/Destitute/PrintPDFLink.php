@@ -10,9 +10,11 @@ class PrintPDFLink extends RowAction
     protected $href_target = '_blank';
     protected $wrapper_class = 'print';
     protected $icon = 'fa-print';
+    public const LIST_REGULAR = 'regular';
+    public const LIST_SKIP = 'skip';
     protected function getRoute():string
     {
-        return route(admin_get_route('print-pdf'), ['id'=>$this->getKey()]);
+        return route(admin_get_route('print-pdf'), ['id'=>$this->getKey(), 'list' => 'regular']);
     }
     public function html()
     {
@@ -28,8 +30,14 @@ class PrintPDFLink extends RowAction
         $title = htmlspecialchars($this->row->name);
         return <<<JS
         $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
+            const url = '{$this->getRoute()}';
+            if(mobileCheck()) {
+                window.open(url+'.pdf', '_blank').focus();
+                return;
+            }
+
             const iframe = document.createElement('iframe');
-            iframe.src = '{$this->getRoute()}';
+            iframe.src = url;
             iframe.title = '{$title}';
             iframe.id =  "{$this->wrapper_class}-{$this->getKey()}";
             iframe.name = iframe.id;
