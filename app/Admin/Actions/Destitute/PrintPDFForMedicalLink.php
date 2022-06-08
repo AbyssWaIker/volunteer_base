@@ -12,6 +12,6 @@ class PrintPDFForMedicalLink extends PrintPDFLink
     protected $icon = 'fa-plus-square';
     protected function getRoute():string
     {
-        return route(admin_get_route('print-pdf'), ['id'=>$this->getKey(), 'skip_list'=>'skip_list']);
+        return route(admin_get_route('print-pdf'), ['id'=>$this->getKey(), 'list'=>self::LIST_SKIP]);
     }
 }
