@@ -18,7 +18,7 @@ class AdminController extends BaseController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid():Grid
     {
         $grid = new Grid(new $this->model);
         // $grid->enableHotKeys();
@@ -37,7 +37,7 @@ class AdminController extends BaseController
      * @param mixed $id
      * @return Show
      */
-    protected function detail($id)
+    protected function detail($id):Show
     {
         $show = new Show(($this->model)::findOrFail($id));
 
