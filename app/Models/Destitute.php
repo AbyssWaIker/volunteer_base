@@ -25,6 +25,15 @@ class Destitute extends Person
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
         return count($family_members) + ($self = 1);
     }
+    public function getChildrenCountAttribute():string
+    {
+        $family_members = $this->family_members ? array_filter($this->family_members) : [];
+        $result = 0;
+        foreach($family_members as $member) {
+            $result += intval(@$member['is_child']);
+        }
+        return $result;
+    }
     public function setFamilyMembersAttribute($value):self
     {
         $this->attributes['family_members'] = $value ? json_encode(array_map(function($value){
@@ -57,18 +66,15 @@ class Destitute extends Person
         $this->attributes['passport_id'] = $value ? mb_convert_case($value, MB_CASE_UPPER) : $value;
         return $this;
     }
-    public function getChildrenCountAttribute():string
+    
+
+    public static function familyMemberToString($member):string
     {
-        $family_members = $this->family_members ? array_filter($this->family_members) : [];
-        $result = 0;
-        foreach($family_members as $member) {
-            $result += intval(@$member['is_child']);
+        if(!$member || is_string($member)) {
+            return '';
         }
-        return $result;
-    }
-    public function helpGiven():HasMany
-    {
-        return $this->hasMany(HelpGiven::class);
+
+        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
     }
 
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = false): string
@@ -96,15 +102,6 @@ class Destitute extends Person
             ]
         );
     }
-    public static function familyMemberToString($member):string
-    {
-        if(!$member || is_string($member)) {
-            return '';
-        }
-
-        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
-    }
-
     public function getTableInfoAttribute(): array
     {
         return array_merge(
@@ -114,5 +111,9 @@ class Destitute extends Person
                 'family_members' => $this->family_members ? GridHelper::arrayToList($this->family_members, function( $member){return '' ;self::familyMemberToString($member);}) : '',
             ]
         );
+    }
+    public function helpGiven():HasMany
+    {
+        return $this->hasMany(HelpGiven::class);
     }
 }

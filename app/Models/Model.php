@@ -8,6 +8,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
 {
     // use Cachable;
     protected $appends = ['table_info'];
+    protected $fillable = ['name'];
     static public function pluckNameAndID():array
     {
         return self::query()->pluck('name', 'id')->toArray();
