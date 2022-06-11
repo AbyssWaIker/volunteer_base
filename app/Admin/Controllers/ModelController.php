@@ -61,11 +61,4 @@ abstract class ModelController extends AdminController
             ->hideOnDesktop();
         return $grid;
     }
-
-    protected function formValidator($id):callable
-    {
-        $model = $this->getModel();
-        $table = $model->getTable();
-        return function(?string $column = null)use($table,$id){return ValidatorHelper::validatorUnique($table, $column);};
-    }
 }
