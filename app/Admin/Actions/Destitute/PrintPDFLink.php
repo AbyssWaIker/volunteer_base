@@ -7,7 +7,6 @@ use Encore\Admin\Admin;
 class PrintPDFLink extends RowAction
 {
     public $name = 'Распечатать акт';
-    protected $href_target = '_blank';
     protected $wrapper_class = 'print';
     protected $icon = 'fa-print';
     public const LIST_REGULAR = 'regular';
