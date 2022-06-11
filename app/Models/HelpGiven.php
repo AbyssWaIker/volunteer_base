@@ -10,8 +10,8 @@ class HelpGiven extends Model
 {
     public $timestamps = false;
     use HasFactory;
-    protected $fillable = ['hg_timestamp', 'granny_id'];
-    public function granny():BelongsTo
+    protected $fillable = ['hg_timestamp', 'destitute_id'];
+    public function destitute():BelongsTo
     {
         return $this->belongsTo(Destitute::class);
     }

@@ -13,14 +13,14 @@ class Volunteer extends Person
     public const SEX_MALE = 0;
     public const SEX_FEMALE = 1;
 //    public const SEX_MULTIPLE = 2;
-    public const SEX_SWITCH_STATES = [
-        'off' => ['value' => self::SEX_MALE, 'text' => self::SEX_OPTIONS[self::SEX_MALE], 'color' => 'primary'],
-        'on' => ['value' => self::SEX_FEMALE, 'text' => self::SEX_OPTIONS[self::SEX_FEMALE], 'color' => 'success'],
-    ];
     public const SEX_OPTIONS = [
         self::SEX_MALE => 'Мужчина',
         self::SEX_FEMALE => 'Женщина',
 //        self::SEX_MULTIPLE => 'Несколько человек',
+    ];
+    public const SEX_SWITCH_STATES = [
+        'off' => ['value' => self::SEX_MALE, 'text' => self::SEX_OPTIONS[self::SEX_MALE], 'color' => 'primary'],
+        'on' => ['value' => self::SEX_FEMALE, 'text' => self::SEX_OPTIONS[self::SEX_FEMALE], 'color' => 'success'],
     ];
     public function getTableInfoAttribute(): array
     {
