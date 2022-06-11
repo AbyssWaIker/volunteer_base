@@ -10,8 +10,5 @@ class PrintPDFForMedicalLink extends PrintPDFLink
     protected $href_target = '_blank';
     protected $wrapper_class = 'print-for-med';
     protected $icon = 'fa-plus-square';
-    protected function getRoute():string
-    {
-        return route(admin_get_route('print-pdf'), ['id'=>$this->getKey(), 'list'=>self::LIST_SKIP]);
-    }
+    protected const DEFAULT_LIST_TYPE = self::LIST_SKIP;
 }
