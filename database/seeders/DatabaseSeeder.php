@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DestituteCategoriesTableSeeder::class);
         // $this->call(DestitutesTableSeeder::class);
         // $this->call(DestituteDestituteCategoryTableSeeder::class);
-        $this->call(HelpGivensTableSeeder::class);
+        // $this->call(HelpGivensTableSeeder::class);
         $this->call(AdminUsersTableSeeder::class);
         $this->call(AdminRolesTableSeeder::class);
         $this->call(AdminMenuTableSeeder::class);
