@@ -25,8 +25,6 @@ class Destitute extends Person
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
         return count($family_members) + ($self = 1);
     }
-<<<<<<< HEAD
-=======
     public function getChildrenCountAttribute():string
     {
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
@@ -36,7 +34,6 @@ class Destitute extends Person
         }
         return $result;
     }
->>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
     public function setFamilyMembersAttribute($value):self
     {
         $this->attributes['family_members'] = $value ? json_encode(array_map(function($value){
@@ -69,22 +66,10 @@ class Destitute extends Person
         $this->attributes['passport_id'] = $value ? mb_convert_case($value, MB_CASE_UPPER) : $value;
         return $this;
     }
-<<<<<<< HEAD
-    public function getChildrenCountAttribute():string
-    {
-        $family_members = $this->family_members ? array_filter($this->family_members) : [];
-        $result = 0;
-        foreach($family_members as $member) {
-            $result += intval(@$member['is_child']);
-        }
-        return $result;
-    }
     public function helpGiven():HasMany
     {
         return $this->hasMany(HelpGiven::class);
-=======
-    
-
+    }
     public static function familyMemberToString($member):string
     {
         if(!$member || is_string($member)) {
@@ -92,7 +77,6 @@ class Destitute extends Person
         }
 
         return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
->>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
     }
 
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = false): string
@@ -120,18 +104,6 @@ class Destitute extends Person
             ]
         );
     }
-<<<<<<< HEAD
-    public static function familyMemberToString($member):string
-    {
-        if(!$member || is_string($member)) {
-            return '';
-        }
-
-        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
-    }
-
-=======
->>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
     public function getTableInfoAttribute(): array
     {
         return array_merge(
@@ -142,11 +114,4 @@ class Destitute extends Person
             ]
         );
     }
-<<<<<<< HEAD
-=======
-    public function helpGiven():HasMany
-    {
-        return $this->hasMany(HelpGiven::class);
-    }
->>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
 }
