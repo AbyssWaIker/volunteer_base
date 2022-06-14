@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 176.97.63.250 - - [07/Jun/2022:22:11:42 +0000] "GET / HTTP/1.1" 302 402 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
 176.97.63.250 - - [07/Jun/2022:22:11:42 +0000] "GET /admin HTTP/1.1" 302 446 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
 176.97.63.250 - - [07/Jun/2022:22:11:42 +0000] "GET /admin/auth/login HTTP/1.1" 200 3447 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
@@ -1313,6 +1314,8 @@
 209.141.57.178 - - [08/Jun/2022:20:16:52 +0000] "GET /admin/auth/login HTTP/1.1" 200 3375 "http://159.223.227.144/admin" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
 91.243.37.32 - - [08/Jun/2022:20:24:48 +0000] "GET / HTTP/1.1" 302 370 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 =======
+=======
+>>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
 172.19.0.1 - - [08/Jun/2022:19:25:51 +0000] "GET / HTTP/1.1" 302 346 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
 172.19.0.1 - - [08/Jun/2022:19:25:51 +0000] "GET /admin HTTP/1.1" 200 23576 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
 172.19.0.1 - - [08/Jun/2022:19:25:51 +0000] "GET /css/app.css HTTP/1.1" 304 0 "http://localhost/admin" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
@@ -1764,4 +1767,7 @@
 172.19.0.1 - - [08/Jun/2022:20:06:22 +0000] "GET /vendor/laravel-admin/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.min.js HTTP/1.1" 200 31024 "http://localhost/admin/grannies" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
 172.19.0.1 - - [08/Jun/2022:20:06:22 +0000] "GET /vendor/laravel-admin/bootstrap-fileinput/js/plugins/sortable.min.js?v=4.5.2 HTTP/1.1" 200 16187 "http://localhost/admin/grannies" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
 172.19.0.1 - - [08/Jun/2022:20:06:27 +0000] "GET /admin/grannies/3685/print-pdf-regular-list HTTP/1.1" 200 6571 "http://localhost/admin/grannies" "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
+<<<<<<< HEAD
 >>>>>>> 0ef04d2375f5cc7e04bbe23c0b1dc6fa472ef31d
+=======
+>>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221

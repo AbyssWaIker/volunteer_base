@@ -207,8 +207,11 @@ HTML;
     {
         $form = parent::form($id);
 
+<<<<<<< HEAD
         $validator = $this->formValidator($id);
 
+=======
+>>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
         $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999'])->creationRules([new UniquenesForDestitute]);
         $form->text('name', __('name'))->required();
