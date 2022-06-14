@@ -64,7 +64,7 @@ abstract class PersonController extends ModelController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid():Grid
     {
         $grid = parent::grid();
 
@@ -80,7 +80,7 @@ abstract class PersonController extends ModelController
      * @param mixed $id
      * @return Show
      */
-    protected function detail($id)
+    protected function detail($id):Show
     {
         $show = parent::detail($id);
 

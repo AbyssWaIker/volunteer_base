@@ -3,7 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Exporters\ModelExporter;
-<<<<<<< HEAD
 use App\Admin\Helpers\ValidatorHelper;
 use App\Models\Model;
 use App\Models\Person;
@@ -11,10 +10,6 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Database\Eloquent\Builder;
-=======
-use App\Models\Model;
-use Encore\Admin\Grid;
->>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
 
 abstract class ModelController extends AdminController
 {
@@ -50,7 +45,7 @@ abstract class ModelController extends AdminController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid():Grid
     {
         $grid = parent::grid();
         $model = $this->getModel();
@@ -66,14 +61,4 @@ abstract class ModelController extends AdminController
             ->hideOnDesktop();
         return $grid;
     }
-<<<<<<< HEAD
-
-    protected function formValidator($id):callable
-    {
-        $model = $this->getModel();
-        $table = $model->getTable();
-        return function(?string $column = null)use($table,$id){return ValidatorHelper::validatorUnique($table, $column);};
-    }
-=======
->>>>>>> 0e56d897e4a333d4f5c4540d48a1196b4c3dd221
 }
