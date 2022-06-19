@@ -56,22 +56,22 @@ class DestitutesController extends PersonController
                 $filter->like('phone', __('phone'));
                 $filter->like('address', __('address'));
                 $filter->like('id_code', __('id_code'));
-                $filter->where(function(Builder $query) {
-                    switch($this->input) {
-                        case '1':
-                            $query->whereNull('family_members');
-                        case '*':
-                            $query->whereNotNull('family_members');
-                        default:
-                            return;
-                    }
+                // $filter->where(function(Builder $query) {
+                //     switch($this->input) {
+                //         case '1':
+                //             $query->whereNull('family_members');
+                //         case '*':
+                //             $query->whereNotNull('family_members');
+                //         default:
+                //             return;
+                //     }
 
-                }, __('family_members'), 'familiy_count')
-                    ->radio([
-                        '' => __('all'),
-                        '1' => __('single person'),
-                        '*' => __('multiple people'),
-                    ]);
+                // }, __('family_members'), 'familiy_count')
+                //     ->radio([
+                //         '' => __('all'),
+                //         '1' => __('single person'),
+                //         '*' => __('multiple people'),
+                //     ]);
             });
 
             $filter->column(1/2, function (Grid\Filter $filter) use($table) {
@@ -90,22 +90,22 @@ class DestitutesController extends PersonController
                     });
                 }, 'Дата', 'date')->date();
 
-                $filter->where(function($query) {
-                    switch($this->input) {
-                        case '1':
-                            $query->whereJsonContains('family_members',['is_child'=> 1]);
-                        case '0':
-                            $query->whereNull('family_members')->orWhereJsonDoesntContain('family_members',['is_child'=> 1]);
-                        default:
-                            return;
-                    }
+                // $filter->where(function($query) {
+                //     switch($this->input) {
+                //         case '1':
+                //             $query->whereJsonContains('family_members',['is_child'=> 1]);
+                //         case '0':
+                //             $query->whereNull('family_members')->orWhereJsonDoesntContain('family_members',['is_child'=> 1]);
+                //         default:
+                //             return;
+                //     }
 
-                }, __('has children'),'children')
-                    ->radio([
-                        '' => __('all'),
-                        '1' => __('has children'),
-                        '0' => __('no children'),
-                    ]);
+                // }, __('has children'),'children')
+                //     ->radio([
+                //         '' => __('all'),
+                //         '1' => __('has children'),
+                //         '0' => __('no children'),
+                //     ]);
             });
         };
         return function(Grid\Filter $filter) {
