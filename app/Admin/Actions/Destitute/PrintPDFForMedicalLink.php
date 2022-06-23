@@ -9,5 +9,5 @@ class PrintPDFForMedicalLink extends PrintPDFLink
     public $name = 'Распечатать медицинский акт';
     protected $wrapper_class = 'print-for-med';
     protected $icon = 'fa-plus-square';
-    protected const DEFAULT_LIST_TYPE = self::LIST_SKIP;
+    protected $default_list_type = self::LIST_SKIP;
 }
