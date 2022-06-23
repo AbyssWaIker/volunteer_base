@@ -18,6 +18,10 @@ class StockController extends AdminController
      * @var string
      */
     protected $title = 'Запас';
+    public const DEFAULT_SWITCH_STATES =  [
+            'off' => ['value' => 0, 'text' => 'Выключен', 'color' => 'danger'],
+            'on' => ['value' => 1, 'text' => 'Включен', 'color' => 'success'],
+        ];
     protected $category_id;
     /**
      * Make a grid builder.
@@ -40,12 +44,7 @@ class StockController extends AdminController
             }
             return $resulting_html;
         })*/;
-        $grid->column('enabled', __('enabled'))->switch(
-            [
-                'off' => ['value' => 0, 'text' => 'Выключен', 'color' => 'danger'],
-                'on' => ['value' => 1, 'text' => 'Включен', 'color' => 'success'],
-            ]
-        );
+        $grid->column('enabled', __('enabled'))->switch(self::DEFAULT_SWITCH_STATES );
 
         return $grid;
     }
@@ -78,7 +77,7 @@ class StockController extends AdminController
         $form = parent::form($id);
 
         $form->text('name', __('Name'));
-        $form->checkbox('enabled', __('enabled'));
+        $form->switch('enabled', __('enabled'))->states(self::DEFAULT_SWITCH_STATES);
 
         return $form;
     }
