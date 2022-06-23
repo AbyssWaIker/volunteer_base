@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use function ddd;
 
 class Stock extends Model
 {
@@ -20,6 +21,10 @@ class Stock extends Model
     ];
     protected $fillable = ['name', 'enabled'];
 
+    public function setEnabledAttribute($value)
+    {
+        ddd($value);
+    }
     public function category():BelongsTo
     {
         return $this->belongsTo(StockCategory::class);
