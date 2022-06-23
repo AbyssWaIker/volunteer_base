@@ -38,6 +38,7 @@ class PrintPDFLink extends RowAction
         $title = htmlspecialchars(json_encode($this->row->name), ENT_QUOTES, 'UTF-8');
         return <<<JS
         $('.{$this->getElementClass()}').off('click').on('click', (ev)=>{
+            console.log(ev.target);
             if(mobileCheck()) {
                 window.open('{$this->getRoute(true)}', '_blank').focus();
                 return;
