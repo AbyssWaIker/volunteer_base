@@ -22,7 +22,7 @@ class RefugeeShelterController extends ModelController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid():Grid
     {
         $grid = parent::grid();
         $grid->quickCreate(function(Grid\Tools\QuickCreate $form){
@@ -56,7 +56,7 @@ class RefugeeShelterController extends ModelController
      * @param mixed $id
      * @return Show
      */
-    protected function detail($id)
+    protected function detail($id):Show
     {
         $show = parent::detail($id);
 
@@ -78,7 +78,7 @@ class RefugeeShelterController extends ModelController
      *
      * @return Form
      */
-    protected function form($id = 0)
+    protected function form($id = 0): Form
     {
         $form = parent::form($id);
 
