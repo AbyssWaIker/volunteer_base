@@ -11,10 +11,10 @@ class PrintPDFLink extends RowAction
     protected $icon = 'fa-print';
     public const LIST_REGULAR = 'regular';
     public const LIST_SKIP = 'skip';
-    protected const DEFAULT_LIST_TYPE = self::LIST_REGULAR;
+    protected $default_list_type = self::LIST_REGULAR;
     protected function getRouteOptions($as_file = false):array
     {
-        $options = ['id'=>$this->getKey(), 'list' =>self::DEFAULT_LIST_TYPE];
+        $options = ['id'=>$this->getKey(), 'list' =>$this->default_list_type];
         if($as_file) {
             $options['pdf'] = '.pdf';
         }
