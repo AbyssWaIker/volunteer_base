@@ -41,10 +41,10 @@ class StockController extends AdminController
             return $resulting_html;
         })*/;
         $grid->column('enabled', __('enabled'))->switch(
-//             [
-//                 'off' => ['value' => 0, 'text' => 'Выключен', 'color' => 'danger'],
-//                 'on' => ['value' => 1, 'text' => 'Включен', 'color' => 'success'],
-//             ]
+            [
+                'off' => ['value' => 0, 'text' => 'Выключен', 'color' => 'danger'],
+                'on' => ['value' => 1, 'text' => 'Включен', 'color' => 'success'],
+            ]
         );
 
         return $grid;
