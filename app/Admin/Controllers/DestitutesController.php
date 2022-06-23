@@ -132,18 +132,16 @@ class DestitutesController extends PersonController
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
         $grid->header(function($filtered){
-            $all = ($this->model)::query();
-            $all_count = $all->get()->sum('family_members_count');
-            $today_count = $all->whereHas(
+            $today= ($this->model)::query()->whereHas(
                 'helpGiven',
                 function (Builder $query) {
                     $query->whereDate('hg_timestamp', Carbon::today());
                 }
             )
-                ->get()
-                ->sum('family_members_count');
-            $people_helped = __('Today we helped :number of people', ['number' => $today_count]);
-            $people_found = __('Found :number of people', ['number' => $filtered->get()->sum('family_members_count')]);
+                ->get();
+            $found = $filtered->get();
+            $people_helped = __('Today we helped :families of families (:people of people)', ['families'=>$all->count(), 'people' => $all->sum('family_members_count'),]);
+            $people_found = __('Found :families of families (:people of people', ['families' => $found->count(), 'people' => $found->sum('family_members_count').]);
             return <<<HTML
 <div class='col-lg-4 pull-right'>Для добавления семьи используй форму по ссылке <i class='fa fa-arrow-up' aria-hidden='true'></i>, чтобы указать членов семьи</div>
 <div>
