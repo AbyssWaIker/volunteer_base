@@ -18,7 +18,7 @@ class Stock extends Model
         Stock::DEFICIT_STATUS_STOCK_IS_LOW => 'Дефицит',
         Stock::DEFICIT_STATUS_NO_STOCK => 'Отсутствие',
     ];
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'enabled'];
 
     public function category():BelongsTo
     {
