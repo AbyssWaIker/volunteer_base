@@ -21,10 +21,6 @@ class Stock extends Model
     ];
     protected $fillable = ['name', 'enabled'];
 
-    public function setEnabledAttribute($value)
-    {
-        ddd($value);
-    }
     public function category():BelongsTo
     {
         return $this->belongsTo(StockCategory::class);
