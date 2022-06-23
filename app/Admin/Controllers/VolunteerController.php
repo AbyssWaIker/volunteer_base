@@ -38,7 +38,7 @@ class VolunteerController extends PersonController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid():Grid
     {
         $grid = parent::grid();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
@@ -53,7 +53,7 @@ class VolunteerController extends PersonController
      * @param mixed $id
      * @return Show
      */
-    protected function detail($id)
+    protected function detail($id):Show
     {
         $show = parent::detail($id);
 

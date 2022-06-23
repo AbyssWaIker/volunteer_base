@@ -24,7 +24,7 @@ class StockController extends AdminController
      *
      * @return Grid
      */
-    protected function grid():Grid
+    protected function grid():Grid:Grid
     {
         $grid = parent::grid();
         $grid->quickCreate(function(Grid\Tools\QuickCreate $form) {

@@ -57,7 +57,7 @@ class AdminController extends BaseController
      *
      * @return Form
      */
-    protected function form($id = 0)
+    protected function form($id = 0): Form
     {
         $model = ($this->model)::query()->findOrNew($id);
         $form = new Form($model);
