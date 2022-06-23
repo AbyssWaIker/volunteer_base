@@ -44,12 +44,13 @@ class PrintPDFLink extends RowAction
                 return;
             }
 
+            const parent = ev.target.nextElementSibling;
+
             const iframe = document.createElement('iframe');
             iframe.src = '{$this->getRoute()}';
-            iframe.title = '{$title}';
+            iframe.title =ev.target.innerText;
             iframe.id =  "{$this->wrapper_class}-{$this->getKey()}";
             iframe.name = iframe.id;
-            const parent = ev.target.nextElementSibling;
             iframe.onload = ()=>{
                     window.frames[iframe.id].focus();
                     window.frames[iframe.id].print();
