@@ -44,7 +44,7 @@ class StockController extends AdminController
             }
             return $resulting_html;
         })*/;
-        $grid->column('enabled', __('enabled'))->switch(self::DEFAULT_SWITCH_STATES );
+        $grid->column('enabled', __('enabled'))->bool();
 
         return $grid;
     }
