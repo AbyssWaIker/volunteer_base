@@ -158,3 +158,11 @@
 2022/06/23 23:19:39 [notice] 1#1: start worker process 35
 2022/06/23 23:19:39 [notice] 1#1: start worker process 36
 2022/06/23 23:19:39 [notice] 1#1: start worker process 37
+2022/07/01 19:09:22 [notice] 1#1: using the "epoll" event method
+2022/07/01 19:09:22 [notice] 1#1: nginx/1.23.0
+2022/07/01 19:09:22 [notice] 1#1: built by gcc 11.2.1 20220219 (Alpine 11.2.1_git20220219) 
+2022/07/01 19:09:22 [notice] 1#1: OS: Linux 5.17.6-arch1-1
+2022/07/01 19:09:22 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/07/01 19:09:22 [notice] 1#1: start worker processes
+2022/07/01 19:09:22 [notice] 1#1: start worker process 23
+2022/07/01 19:09:22 [notice] 1#1: start worker process 24
