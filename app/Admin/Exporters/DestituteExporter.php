@@ -19,14 +19,14 @@ class DestituteExporter extends ModelExporter
     {
         return [
             'id' => $row->id,
-		'reference_id'=>$row->reference_id,
+            'reference_id'=>$row->reference_id,
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
             'address' => $row->address,
             'passport_id' => ' '.$row->passport_id . ' ',
             'id_code' => ' '.$row->id_code . ' ',
             'comment' => $row->comment,
-		''=>$row->family_members_count . ' (' . $row->children_count. ' детей)',
+            'familiy_members'=>$row->family_members_count . ' (' . __(':number of children'.['number'=>$row->children_count]). ')',
             'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
             'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray()),
         ];
