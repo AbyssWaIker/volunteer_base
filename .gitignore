@@ -14,3 +14,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+database/seeders/DestituteDestituteCategoryTableSeeder.php
+database/seeders/VolunteerVolunteerCategoryTableSeeder.php
+database/seeders/VolunteersTableSeeder.php
