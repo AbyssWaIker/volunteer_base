@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
@@ -46,6 +47,8 @@ class CreateDbBackUpCommand extends Command
             Artisan::call("iseed $table --force");
         }
         echo PHP_EOL;
+        $today = str_replace('-','_',Carbon::now()->toDateString());
+        exec("tar -czf database/backups/$today.tar.gz database/seeders");
         return 0;
     }
 }
