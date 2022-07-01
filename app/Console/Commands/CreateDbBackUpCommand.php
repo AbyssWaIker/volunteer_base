@@ -47,7 +47,7 @@ class CreateDbBackUpCommand extends Command
             Artisan::call("iseed $table --force");
         }
         echo PHP_EOL;
-        $today = str_replace('-','_',Carbon::now()->toDateString());
+        $today = str_replace('-','_',Carbon::now()->toString());
         exec("tar -czf database/backups/$today.tar.gz database/seeders");
         return 0;
     }
