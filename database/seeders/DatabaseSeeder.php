@@ -14,10 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+	\DB::statement("SET session_replication_role = 'replica';");
         $this->call(DestituteCategoriesTableSeeder::class);
-        // $this->call(DestitutesTableSeeder::class);
-        // $this->call(DestituteDestituteCategoryTableSeeder::class);
-        // $this->call(HelpGivensTableSeeder::class);
+        $this->call(DestitutesTableSeeder::class);
+        $this->call(DestituteDestituteCategoryTableSeeder::class);
+        $this->call(HelpGivensTableSeeder::class);
         $this->call(AdminUsersTableSeeder::class);
         $this->call(AdminRolesTableSeeder::class);
         $this->call(AdminMenuTableSeeder::class);
@@ -34,8 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call(StocksTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VolunteerCategoriesTableSeeder::class);
-        // $this->call(VolunteersTableSeeder::class);
-        // $this->call(VolunteerVolunteerCategoryTableSeeder::class);
+        $this->call(VolunteersTableSeeder::class);
+        $this->call(VolunteerVolunteerCategoryTableSeeder::class);
         $this->call(AdminConfigTableSeeder::class);
         $this->call(RefugeeSheltersTableSeeder::class);
         $this->call(BorderCrossingOptionsTableSeeder::class);
@@ -56,5 +57,6 @@ class DatabaseSeeder extends Seeder
 SELECT SETVAL((SELECT PG_GET_SERIAL_SEQUENCE('"{$table}"', 'id')), (SELECT (MAX("id") + 1) FROM "$table"), FALSE);
 SQL));
         }
+	\DB::statement("SET session_replication_role = 'origin';");
     }
 }
