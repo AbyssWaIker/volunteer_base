@@ -23,11 +23,6 @@ class Volunteer extends Person
         'on' => ['value' => self::SEX_FEMALE, 'text' => self::SEX_OPTIONS[self::SEX_FEMALE], 'color' => 'success'],
     ];
 
-    public const DAYS_TO_RECEIVE_HELP = 5;
-    public const DAYS_REACHED_SIGN = '❗';
-    public const HELP_RECEIVED_SIGN = '✅';
-    public const HELP_REJECTED_SIGN = '🏅';
-
     public function getTableInfoAttribute(): array
     {
         return array_merge(
