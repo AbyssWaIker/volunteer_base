@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class DestituteCategory extends Model
+class DestituteCategory extends Category
 {
     public $timestamps = false;
 
