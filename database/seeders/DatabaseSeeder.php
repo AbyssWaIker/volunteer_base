@@ -15,9 +15,15 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(DestituteCategoriesTableSeeder::class);
-        $this->call(DestitutesTableSeeder::class);
-         $this->call(DestituteDestituteCategoryTableSeeder::class);
-        $this->call(HelpGivensTableSeeder::class);
+        if(class_exists(DestitutesTableSeeder::class)){
+            $this->call(DestitutesTableSeeder::class);
+        }
+        if(class_exists(DestituteDestituteCategoryTableSeeder::class)){
+            $this->call(DestituteDestituteCategoryTableSeeder::class);
+        }
+        if(class_exists(HelpGivensTableSeeder::class)){
+            $this->call(HelpGivensTableSeeder::class);
+        }
         $this->call(AdminUsersTableSeeder::class);
         $this->call(AdminRolesTableSeeder::class);
         $this->call(AdminMenuTableSeeder::class);
@@ -34,8 +40,12 @@ class DatabaseSeeder extends Seeder
         $this->call(StocksTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VolunteerCategoriesTableSeeder::class);
-         $this->call(VolunteersTableSeeder::class);
-         $this->call(VolunteerVolunteerCategoryTableSeeder::class);
+        if(class_exists(VolunteersTableSeeder::class)){
+            $this->call(VolunteersTableSeeder::class);
+        }
+        if(class_exists(VolunteerVolunteerCategoryTableSeeder::class)){
+            $this->call(VolunteerVolunteerCategoryTableSeeder::class);
+        }
         $this->call(AdminConfigTableSeeder::class);
         $this->call(RefugeeSheltersTableSeeder::class);
         $this->call(BorderCrossingOptionsTableSeeder::class);
