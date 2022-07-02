@@ -2,12 +2,12 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Exporters\CategoryExporter;
-use Encore\Admin\Grid\Displayers\Actions;
+use App\Models\Category;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Grid\Tools\QuickCreate;
+use Encore\Admin\Tree;
 use Encore\Admin\Show;
+use Illuminate\Database\Query\Builder;
 
 abstract class CategoryController extends AdminController
 {
@@ -17,32 +17,16 @@ abstract class CategoryController extends AdminController
      * @var string
      */
     protected $title = 'Категории';
-    protected $model;
-    /**
-     * Make a grid builder.
-     *
-     * @return Grid
-     */
-    protected function grid():Grid
+    protected $model = Category::class;
+    
+    protected function grid()
     {
-        $grid = parent::grid();
-        $grid->actions(function (Actions $actions) {
-            $actions->disableEdit();
-        });
-        $grid->disableCreateButton();
-        $grid->disableFilter();
-        $grid->quickSearch('name');
-
-        $grid->exporter(new CategoryExporter);
-        $grid->quickCreate(function (QuickCreate $form) {
-            $form->text('name', __('Name'));
-        });
-        $grid->column('name', __('Name'))->sortable()->editable();
-
-
-        return $grid;
+        return ($this->model)::tree(function(Tree $tree){$this->treeCallback($tree);});
     }
-
+    protected function treeCallback(Tree $tree)
+    {
+        return;
+    }
     /**
      * Make a show builder.
      *
