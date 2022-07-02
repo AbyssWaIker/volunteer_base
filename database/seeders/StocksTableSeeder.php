@@ -84,43 +84,43 @@ class StocksTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'id' => 9,
-                'name' => 'Книги',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:11:06',
-                'updated_at' => '2022-04-27 09:11:06',
-            ),
-            9 => 
-            array (
                 'id' => 11,
             'name' => 'Харчі (соціальний набір харчів)',
                 'enabled' => true,
                 'created_at' => '2022-04-27 09:11:17',
                 'updated_at' => '2022-04-27 09:11:17',
             ),
-            10 => 
-            array (
-                'id' => 12,
-                'name' => 'постільна білизна',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:11:22',
-                'updated_at' => '2022-04-27 09:11:22',
-            ),
-            11 => 
+            9 => 
             array (
                 'id' => 13,
             'name' => 'First response WASH and dignity kit (для семей с детьми)',
-                'enabled' => true,
+                'enabled' => false,
                 'created_at' => '2022-05-16 18:00:03',
-                'updated_at' => '2022-05-16 18:00:03',
+                'updated_at' => '2022-07-02 20:24:09',
             ),
-            12 => 
+            10 => 
             array (
                 'id' => 14,
             'name' => 'First aid kit A (для семей с детьми)',
-                'enabled' => true,
+                'enabled' => false,
                 'created_at' => '2022-05-16 18:00:36',
-                'updated_at' => '2022-05-16 18:00:36',
+                'updated_at' => '2022-07-02 20:24:15',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'name' => 'постільна білизна',
+                'enabled' => false,
+                'created_at' => '2022-04-27 09:11:22',
+                'updated_at' => '2022-07-02 20:24:28',
+            ),
+            12 => 
+            array (
+                'id' => 9,
+                'name' => 'Книги',
+                'enabled' => false,
+                'created_at' => '2022-04-27 09:11:06',
+                'updated_at' => '2022-07-02 20:24:32',
             ),
         ));
 

@@ -40,6 +40,17 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-04-28 11:10:50',
                 'updated_at' => '2022-04-28 11:10:50',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'username' => 'Kristina',
+                'password' => '$2y$10$QtOVUN3vhs.uAdaB87zsfuxqKmqERYM/K/3zApI2Rs3xz.bxAcoAm',
+                'name' => 'Кристина',
+                'avatar' => NULL,
+                'remember_token' => NULL,
+                'created_at' => '2022-06-29 12:30:09',
+                'updated_at' => '2022-06-29 12:30:09',
+            ),
         ));
 
         

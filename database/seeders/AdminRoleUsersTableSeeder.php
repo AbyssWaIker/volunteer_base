@@ -32,6 +32,13 @@ class AdminRoleUsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            2 => 
+            array (
+                'role_id' => 1,
+                'user_id' => 3,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
 
         

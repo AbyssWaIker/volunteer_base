@@ -32,6 +32,13 @@ class AdminUserPermissionsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            2 => 
+            array (
+                'user_id' => 3,
+                'permission_id' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
 
         

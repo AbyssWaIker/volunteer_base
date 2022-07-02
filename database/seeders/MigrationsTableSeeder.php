@@ -39,68 +39,104 @@ class MigrationsTableSeeder extends Seeder
             3 => 
             array (
                 'id' => 4,
-                'migration' => '2019_08_19_000000_create_failed_jobs_table',
+                'migration' => '2017_07_17_040159_create_config_table',
                 'batch' => 1,
             ),
             4 => 
             array (
                 'id' => 5,
-                'migration' => '2019_12_14_000001_create_personal_access_tokens_table',
+                'migration' => '2019_08_19_000000_create_failed_jobs_table',
                 'batch' => 1,
             ),
             5 => 
             array (
                 'id' => 6,
-                'migration' => '2022_03_11_195906_create_destitutes_table',
+                'migration' => '2019_12_14_000001_create_personal_access_tokens_table',
                 'batch' => 1,
             ),
             6 => 
             array (
                 'id' => 7,
-                'migration' => '2022_03_11_220616_create_help_givens_table',
+                'migration' => '2022_03_11_195906_create_destitutes_table',
                 'batch' => 1,
             ),
             7 => 
             array (
                 'id' => 8,
-                'migration' => '2022_03_12_154348_create_categories_table',
+                'migration' => '2022_03_11_220616_create_help_givens_table',
                 'batch' => 1,
             ),
             8 => 
             array (
                 'id' => 9,
-                'migration' => '2022_03_12_162815_create_stocks_table',
+                'migration' => '2022_03_12_154348_create_categories_table',
                 'batch' => 1,
             ),
             9 => 
             array (
                 'id' => 10,
-                'migration' => '2022_03_12_162854_create_quantity_units_table',
+                'migration' => '2022_03_12_162815_create_stocks_table',
                 'batch' => 1,
             ),
             10 => 
             array (
                 'id' => 11,
-                'migration' => '2022_03_12_170142_create_receiving_points_table',
+                'migration' => '2022_03_18_185737_create_destitute_categories_table',
                 'batch' => 1,
             ),
             11 => 
             array (
                 'id' => 12,
-                'migration' => '2022_03_12_173722_create_sendings_table',
+                'migration' => '2022_03_18_194927_create_destitute_destitute_categories_table',
                 'batch' => 1,
             ),
             12 => 
             array (
                 'id' => 13,
-                'migration' => '2022_03_12_174934_create_stocks_sents_table',
+                'migration' => '2022_03_19_101032_create_volunteer_categories_table',
                 'batch' => 1,
             ),
             13 => 
             array (
                 'id' => 14,
-                'migration' => '2022_05_16_234517_postgre_fix',
-                'batch' => 2,
+                'migration' => '2022_03_19_101601_create_volunteers_table',
+                'batch' => 1,
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'migration' => '2022_03_19_101825_create_volunteer_volunteer_categories_table',
+                'batch' => 1,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'migration' => '2022_04_08_212054_create_refugee_shelters_table',
+                'batch' => 1,
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'migration' => '2022_04_08_212620_create_border_crossing_options_table',
+                'batch' => 1,
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'migration' => '2022_05_03_115243_fit_comment_to_reference',
+                'batch' => 1,
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'migration' => '2022_05_03_115244_add_comment copy',
+                'batch' => 1,
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'migration' => '2022_05_03_115245_make_comment_nullable',
+                'batch' => 1,
             ),
         ));
 
