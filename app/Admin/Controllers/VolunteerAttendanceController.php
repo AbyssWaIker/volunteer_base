@@ -20,7 +20,7 @@ class VolunteerAttendanceController extends VolunteerController
      *
      * @var string
      */
-    protected $title = 'Посещение';
+    protected $title = 'Выдача';
 
     /**
      * Make a grid builder.
