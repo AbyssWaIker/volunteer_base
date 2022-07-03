@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Models\Volunteer;
 use Encore\Admin\Form;
+use Encore\Admin\Form\NestedForm;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
@@ -78,6 +79,9 @@ class VolunteerController extends PersonController
         $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
         $form->switch('sex', __('sex'))->states(Volunteer::SEX_SWITCH_STATES);
         $form->text('comment', __('comment'));
+        $form->hasMany('attendance', __('attendance'), function(NestedForm $form){
+            $form->datetime('attendance', __('attendance'));
+        });
         return $form;
     }
 }

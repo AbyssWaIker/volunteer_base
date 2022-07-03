@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Volunteer extends Person
 {
@@ -31,5 +30,9 @@ class Volunteer extends Person
                 'sex' => self::SEX_OPTIONS[(bool)$this->sex]
             ]
         );
+    }
+    public function Attendance():HasMany
+    {
+        return $this->hasMany(Attendance::class);
     }
 }
