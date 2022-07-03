@@ -194,6 +194,94 @@ class AdminOperationLogTableSeeder extends Seeder
                 'created_at' => '2022-07-02 20:24:47',
                 'updated_at' => '2022-07-02 20:24:47',
             ),
+            16 => 
+            array (
+                'id' => 17,
+                'user_id' => 1,
+                'path' => 'admin/volunteer-categories',
+                'method' => 'GET',
+                'ip' => '176.97.63.206',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-07-02 22:06:39',
+                'updated_at' => '2022-07-02 22:06:39',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '176.97.63.206',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-07-02 22:16:41',
+                'updated_at' => '2022-07-02 22:16:41',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'user_id' => 1,
+                'path' => 'admin',
+                'method' => 'GET',
+                'ip' => '176.97.63.220',
+                'input' => '[]',
+                'created_at' => '2022-07-03 09:31:29',
+                'updated_at' => '2022-07-03 09:31:29',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '176.97.63.220',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-07-03 09:31:30',
+                'updated_at' => '2022-07-03 09:31:30',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'user_id' => 1,
+                'path' => 'admin/auth/login',
+                'method' => 'GET',
+                'ip' => '176.97.63.220',
+                'input' => '[]',
+                'created_at' => '2022-07-03 12:23:07',
+                'updated_at' => '2022-07-03 12:23:07',
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'user_id' => 1,
+                'path' => 'admin',
+                'method' => 'GET',
+                'ip' => '176.97.63.220',
+                'input' => '[]',
+                'created_at' => '2022-07-03 20:31:05',
+                'updated_at' => '2022-07-03 20:31:05',
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'user_id' => 1,
+                'path' => 'admin/volunteers',
+                'method' => 'GET',
+                'ip' => '176.97.63.220',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-07-03 20:31:08',
+                'updated_at' => '2022-07-03 20:31:08',
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'user_id' => 1,
+                'path' => 'admin/volunteers',
+                'method' => 'GET',
+                'ip' => '176.97.63.220',
+                'input' => '{"_pjax":"#pjax-container","_export_":"all"}',
+                'created_at' => '2022-07-03 20:31:11',
+                'updated_at' => '2022-07-03 20:31:11',
+            ),
         ));
 
         
