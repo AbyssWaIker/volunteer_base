@@ -17,8 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DestituteCategoriesTableSeeder::class);
         if(class_exists(DestitutesTableSeeder::class)){
             $this->call(DestitutesTableSeeder::class);
-            $this->call(AttendancesTableSeeder::class);
-    }
+        }
         if(class_exists(DestituteDestituteCategoryTableSeeder::class)){
             $this->call(DestituteDestituteCategoryTableSeeder::class);
         }
@@ -43,6 +42,10 @@ class DatabaseSeeder extends Seeder
         $this->call(VolunteerCategoriesTableSeeder::class);
         if(class_exists(VolunteersTableSeeder::class)){
             $this->call(VolunteersTableSeeder::class);
+        }
+
+        if(class_exists(AttendancesTableSeeder::class)){
+            $this->call(AttendancesTableSeeder::class);
         }
         if(class_exists(VolunteerVolunteerCategoryTableSeeder::class)){
             $this->call(VolunteerVolunteerCategoryTableSeeder::class);
