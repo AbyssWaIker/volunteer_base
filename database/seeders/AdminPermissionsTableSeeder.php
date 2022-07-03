@@ -98,11 +98,11 @@ class AdminPermissionsTableSeeder extends Seeder
                 'name' => 'volunteers',
                 'slug' => 'волонтеры',
                 'http_method' => '',
-                'http_path' => '/,
-/volunteers,
+                'http_path' => '/
+/volunteers
 /attendance',
                 'created_at' => '2022-07-03 21:53:11',
-                'updated_at' => '2022-07-03 21:53:32',
+                'updated_at' => '2022-07-03 22:19:33',
             ),
         ));
 

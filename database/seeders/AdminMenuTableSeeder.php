@@ -32,18 +32,6 @@ class AdminMenuTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 2,
-                'parent_id' => 0,
-                'order' => 10,
-                'title' => 'Admin',
-                'icon' => 'fa-tasks',
-                'uri' => '',
-                'permission' => NULL,
-                'created_at' => NULL,
-                'updated_at' => '2022-04-27 09:44:58',
-            ),
-            2 => 
-            array (
                 'id' => 3,
                 'parent_id' => 2,
                 'order' => 12,
@@ -54,7 +42,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            3 => 
+            2 => 
             array (
                 'id' => 4,
                 'parent_id' => 2,
@@ -66,7 +54,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            4 => 
+            3 => 
             array (
                 'id' => 5,
                 'parent_id' => 2,
@@ -78,7 +66,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            5 => 
+            4 => 
             array (
                 'id' => 6,
                 'parent_id' => 2,
@@ -90,7 +78,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            6 => 
+            5 => 
             array (
                 'id' => 7,
                 'parent_id' => 2,
@@ -102,7 +90,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 8,
                 'parent_id' => 0,
@@ -114,7 +102,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-15 13:38:21',
                 'updated_at' => '2022-04-27 09:44:26',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 9,
                 'parent_id' => 0,
@@ -126,7 +114,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-17 11:23:57',
                 'updated_at' => '2022-04-27 09:44:26',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 11,
                 'parent_id' => 0,
@@ -138,7 +126,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:49:38',
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            10 => 
+            9 => 
             array (
                 'id' => 12,
                 'parent_id' => 0,
@@ -150,7 +138,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:57:21',
                 'updated_at' => '2022-04-27 09:44:26',
             ),
-            11 => 
+            10 => 
             array (
                 'id' => 13,
                 'parent_id' => 11,
@@ -162,7 +150,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:58:01',
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            12 => 
+            11 => 
             array (
                 'id' => 14,
                 'parent_id' => 11,
@@ -174,7 +162,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-19 11:58:48',
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            13 => 
+            12 => 
             array (
                 'id' => 16,
                 'parent_id' => 2,
@@ -186,7 +174,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-20 16:40:52',
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            14 => 
+            13 => 
             array (
                 'id' => 17,
                 'parent_id' => 2,
@@ -198,7 +186,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-29 10:53:42',
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            15 => 
+            14 => 
             array (
                 'id' => 18,
                 'parent_id' => 2,
@@ -210,7 +198,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-03-29 12:03:05',
                 'updated_at' => '2022-04-27 09:44:58',
             ),
-            16 => 
+            15 => 
             array (
                 'id' => 19,
                 'parent_id' => 0,
@@ -222,7 +210,7 @@ class AdminMenuTableSeeder extends Seeder
                 'created_at' => '2022-04-09 07:26:26',
                 'updated_at' => '2022-04-27 09:44:26',
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 20,
                 'parent_id' => 0,
@@ -233,6 +221,18 @@ class AdminMenuTableSeeder extends Seeder
                 'permission' => NULL,
                 'created_at' => '2022-04-09 07:26:58',
                 'updated_at' => '2022-04-27 09:44:26',
+            ),
+            17 => 
+            array (
+                'id' => 2,
+                'parent_id' => 0,
+                'order' => 10,
+                'title' => 'Admin',
+                'icon' => 'fa-tasks',
+                'uri' => NULL,
+                'permission' => NULL,
+                'created_at' => NULL,
+                'updated_at' => '2022-07-03 22:19:23',
             ),
         ));
 
