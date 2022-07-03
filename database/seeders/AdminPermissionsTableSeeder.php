@@ -92,6 +92,18 @@ class AdminPermissionsTableSeeder extends Seeder
                 'created_at' => '2022-04-28 11:15:01',
                 'updated_at' => '2022-04-28 11:52:12',
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'name' => 'volunteers',
+                'slug' => 'волонтеры',
+                'http_method' => '',
+                'http_path' => '/,
+/volunteers,
+/attendance',
+                'created_at' => '2022-07-03 21:53:11',
+                'updated_at' => '2022-07-03 21:53:32',
+            ),
         ));
 
         
