@@ -2,11 +2,16 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Destitute\WriteVolunteerAttendance;
+use App\Admin\Exporters\VolunteerExporter;
 use App\Models\Volunteer;
 use Encore\Admin\Form;
 use Encore\Admin\Form\NestedForm;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use App\Models\Attendance;
+use Carbon\Carbon;
+use Encore\Admin\Grid\Displayers\Actions;
 
 class VolunteerController extends PersonController
 {
@@ -41,8 +46,16 @@ class VolunteerController extends PersonController
     protected function grid():Grid
     {
         $grid = parent::grid();
+        $grid->actions(function (Actions $actions) {
+            $actions->disableView();
+            $actions->prepend(new WriteVolunteerAttendance);
+        });
+        $grid->exporter(new VolunteerExporter($grid, (new $this->model), $this->title()));
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
-        $grid->column('sex', __('sex'))->editable()->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
+        $grid->column('sex', __('sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
+        $grid->column('placeholder', __('attendance'))->display(function(){
+            return Attendance::attendanceToString($this->attendance);
+        });
         $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         return $grid;
     }
@@ -80,7 +93,8 @@ class VolunteerController extends PersonController
         $form->switch('sex', __('sex'))->states(Volunteer::SEX_SWITCH_STATES);
         $form->text('comment', __('comment'));
         $form->hasMany('attendance', __('attendance'), function(NestedForm $form){
-            $form->datetime('attendance', __('attendance'));
+            $form->date('attendance_day', __('attendance_day'))->default(Carbon::now());
+            $form->select('status', __('status'))->options(Attendance::SIGNS_DAYS_COVERED)->disable();
         });
         return $form;
     }

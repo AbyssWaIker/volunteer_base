@@ -56,5 +56,8 @@
     "Main Page": "Главная страница",
     "Mobile Adaptiveness Hack": "Кривое решение для отображения инфы на телефонах",
     "reference_id":"Справка",
-    "reference is being processed": "Довідка в обробці"
+    "reference is being processed": "Довідка в обробці",
+    "attendance":"посещение",
+    "attendance_day":"день посещения",
+    "status":"статус"
 }

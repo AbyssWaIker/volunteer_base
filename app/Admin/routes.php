@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\Router;
 use \App\Admin\Actions\Destitute\PrintPDFLink;
+
 Admin::routes();
 
 Route::group([
@@ -31,6 +32,7 @@ Route::group([
     $router->resource('sendings', SendingController::class);
     $router->resource('stocks', StockController::class);
     $router->resource('volunteers', VolunteerController::class);
+    $router->resource('attendance', VolunteerAttendanceController::class);
     $router->resource('destitute-categories', CategoryDestituteController::class);
     $router->resource('volunteer-categories', CategoryVolunteerController::class);
     $router->resource('refugee-shelters', RefugeeShelterController::class);

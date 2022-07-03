@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany as RelationsBelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Volunteer extends Person
@@ -31,7 +32,7 @@ class Volunteer extends Person
             ]
         );
     }
-    public function Attendance():HasMany
+    public function attendance():HasMany
     {
         return $this->hasMany(Attendance::class);
     }

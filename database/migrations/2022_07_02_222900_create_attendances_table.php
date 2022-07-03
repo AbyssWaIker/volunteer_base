@@ -17,7 +17,7 @@ class CreateAttendancesTable extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('volunteer_id')->constrained();
-            $table->datetime('attendance');
+            $table->date('attendance_day');
             $table->tinyInteger('status')->default(Attendance::STATUS_DAY_WASNT_COVERED);
             $table->timestamps();
         });
