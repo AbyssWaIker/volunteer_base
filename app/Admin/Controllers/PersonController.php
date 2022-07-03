@@ -2,11 +2,8 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Exporters\ModelExporter;
-use App\Admin\Helpers\ValidatorHelper;
 use App\Models\Model;
 use App\Models\Person;
-use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Illuminate\Database\Eloquent\Builder;
@@ -41,19 +38,16 @@ abstract class PersonController extends ModelController
     }
     protected function filterCallBack():callable
     {
-        $model = ($this->getModel());
-        $table = (new $model->category_class)->getTable();
-        return function(Grid\Filter $filter) use($table) {
+        $placeholder_model = (new $this->model);
+        return function(Grid\Filter $filter) use($placeholder_model) {
             $filter->disableIdFilter();
             $filter->column(1/2, function (Grid\Filter $filter) {
                 $filter->like('name', __('Name'));
                 $filter->like('phone', __('phone'));
             });
-            $filter->column(1/2, function (Grid\Filter $filter) use($table) {
-                $filter->where(function(Builder $query) use($table) {
-                    $query->whereHas('categories', function (Builder $query) use ($table) {
-                        $query->whereIn("$table.id", $this->input);
-                    });
+            $filter->column(1/2, function (Grid\Filter $filter) use ($placeholder_model) {
+                $filter->where(function(Builder $query) use ($placeholder_model) {
+                    $placeholder_model->scopeCategories($query, $this->input);
                 }, 'Категории', 'categories')
                     ->multipleSelect($this->getAllCategories());
             });

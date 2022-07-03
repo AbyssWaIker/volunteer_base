@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Arr;
 
 abstract class Person extends Model
 {
@@ -28,5 +30,55 @@ abstract class Person extends Model
     public function categories():BelongsToMany
     {
         return $this->belongsToMany($this->category_class);
+    }
+    public function withAllChildrenIds($category_id):array
+    {
+        if(!$category_id) {
+            return [];
+        }
+        $children = ($this->category_class)::query()->where('parent_id', $category_id)->pluck('id');
+        
+        return $children->push($category_id)->toArray();
+    }
+    /**
+     * Scope a query to only include popular users.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  int  $category_id
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCategory($query, $category_id)
+    {
+        if(!$category_id) {
+            return $query;
+        }
+        $table = (new $this->category_class)->getTable();
+
+        $categories = $this->withAllChildrenIds($category_id);
+        return $query->whereHas('categories', function (Builder $query) use ($table, $categories) {
+            $query->whereIn("$table.id", $categories);
+        });;
+    }
+
+    /**
+     * Scope a query to only include popular users.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  array  $category_ids
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCategories($query, $category_ids)
+    {
+        if(!count($category_ids)) {
+            return $query;
+        }
+        $table = (new $this->category_class)->getTable();
+        
+        $categories = array_merge(...array_map(function(int $category_id):array {
+            return $this->withAllChildrenIds((int)$category_id);
+        }, $category_ids));
+        return $query->whereHas('categories', function (Builder $query) use ($table, $categories) {
+            $query->whereIn("$table.id", $categories);
+        });;
     }
 }
