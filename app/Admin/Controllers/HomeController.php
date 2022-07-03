@@ -17,14 +17,16 @@ class HomeController extends Controller
         return $content
             ->title(__('Main Page'))
             ->row(function (Row $row) {
-                $menus = array_filter(Admin::menu(), function (array $menu) {
-                    return $menu['uri'] 
+                $menus = Admin::menu();
+                foreach ($menus as $menu) {
+                    $menu_is_valid =  $menu['uri'] 
                         && $menu['uri'] !== '/' 
                         && $menu['parent_id'] == null 
                         && Admin::user()->visible(\Illuminate\Support\Arr::get($menu, 'roles', [])) 
                         && Admin::user()->can(\Illuminate\Support\Arr::get($menu, 'permission'));
-                });
-                foreach ($menus as $menu) {
+                    if(!$menu_is_valid) {
+                        continue;
+                    }
                     $row->column(4, function (Column $column) use ($menu) {
                         $column->append(new InfoBox('', substr($menu['icon'], 3), 'aqua', config('admin.route.prefix').'/'.$menu['uri'], $menu['title']));
                     });
