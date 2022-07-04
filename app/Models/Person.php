@@ -52,9 +52,13 @@ abstract class Person extends Model
         if(!$category_id) {
             return $query;
         }
-        $table = (new $this->category_class)->getTable();
+        $category_class = (new $this->category_class);
+        $table = $category_class->getTable();
 
-        $categories = $this->withAllChildrenIds($category_id);
+        $categories = $category_class::withAllChildrenIds($category_id);
+        if(!count($categories)) {
+            return $query;
+        }
         return $query->whereHas('categories', function (Builder $query) use ($table, $categories) {
             $query->whereIn("$table.id", $categories);
         });;
@@ -77,8 +81,11 @@ abstract class Person extends Model
         $categories = array_merge(...array_map(function(int $category_id):array {
             return $this->withAllChildrenIds((int)$category_id);
         }, $category_ids));
+        if(!count($categories)) {
+            return $query;
+        }
         return $query->whereHas('categories', function (Builder $query) use ($table, $categories) {
             $query->whereIn("$table.id", $categories);
-        });;
+        });
     }
 }

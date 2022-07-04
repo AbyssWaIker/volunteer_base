@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsToMany as RelationsBelongsToMany;
+use App\Admin\Scopes\VolunteersForRoleScope;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Volunteer extends Person
@@ -35,5 +35,10 @@ class Volunteer extends Person
     public function attendance():HasMany
     {
         return $this->hasMany(Attendance::class);
+    }
+
+    public function __construct()
+    {
+        static::addGlobalScope(new VolunteersForRoleScope);
     }
 }
