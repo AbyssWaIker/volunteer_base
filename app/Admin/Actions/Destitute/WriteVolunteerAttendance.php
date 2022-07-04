@@ -15,7 +15,7 @@ class WriteVolunteerAttendance extends RowAction
     }
     public function handle(Volunteer $model)
     {
-        $model->attendance()->create(['attendance' => Carbon::now()]);
+        $model->attendance()->create(['attendance_day' => Carbon::now()]);
         return $this->response()->success('Смена волонтера записана')->refresh();
     }
 }
