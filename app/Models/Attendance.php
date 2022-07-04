@@ -17,9 +17,9 @@ class Attendance extends Model
     public const STATUS_DAY_WAS_COVERED = 1;
     public const STATUS_DAY_COVER_WAS_REJECTED = 2;
     public const SIGNS_DAYS_COVERED = [
-        self::STATUS_DAY_WASNT_COVERED => '❗',
-        self::STATUS_DAY_WAS_COVERED => '✅',
-        self::STATUS_DAY_COVER_WAS_REJECTED => '🥇',
+        self::STATUS_DAY_WASNT_COVERED => '<i class="fa fa-exclamation text-red" aria-hidden="true"></i>',
+        self::STATUS_DAY_WAS_COVERED => '<i class="fa fa-check text-green" aria-hidden="true"></i>',
+        self::STATUS_DAY_COVER_WAS_REJECTED => '<i class="fa fa-angellist text-yellow" aria-hidden="true"></i>',
     ];
     public function Volunteer():BelongsTo
     {

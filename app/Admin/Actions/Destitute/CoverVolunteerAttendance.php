@@ -22,7 +22,7 @@ class CoverVolunteerAttendance extends RowAction
             ->paginate(Attendance::DAYS_OF_ATTENDANCE_TO_COVER);
 
         foreach ($days as $key => $day) {
-            $day->status = self::NEW_STATUS;
+            $day->status = static::NEW_STATUS;
             $day->save();
         }
         return $this->response()->success('Выдача помощи волонтера записана')->refresh();
