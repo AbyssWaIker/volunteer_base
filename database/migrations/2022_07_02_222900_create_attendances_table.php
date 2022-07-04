@@ -20,6 +20,7 @@ class CreateAttendancesTable extends Migration
             $table->date('attendance_day');
             $table->tinyInteger('status')->default(Attendance::STATUS_DAY_WASNT_COVERED);
             $table->timestamps();
+            $table->unique(['volunteer_id', 'attendance_day']);
         });
     }
 

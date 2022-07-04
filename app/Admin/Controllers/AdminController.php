@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Exporters\ModelExporter;
 use App\Models\Model;
+use App\Models\Volunteer;
 use Encore\Admin\Controllers\AdminController as BaseController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -61,9 +62,6 @@ class AdminController extends BaseController
     {
         $model = ($this->model)::query()->findOrNew($id);
         $form = new Form($model);
-        $form->tools(function (Form\Tools $tools) {
-            $tools->disableView();
-        });
         $form->disableViewCheck();
         $form->disableEditingCheck();
         $form->disableCreatingCheck();

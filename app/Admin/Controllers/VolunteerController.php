@@ -46,6 +46,7 @@ class VolunteerController extends PersonController
     protected function grid():Grid
     {
         $grid = parent::grid();
+        $grid->with(['lastWeekAttendance']);
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
             $actions->prepend(new WriteVolunteerAttendance);
@@ -53,6 +54,14 @@ class VolunteerController extends PersonController
         $grid->exporter(new VolunteerExporter($grid, (new $this->model), $this->title()));
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('sex', __('sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
+        foreach (Volunteer::LAST_WEEK_DAYS as $key => $value) {
+            $grid->column($value, __($value))->switch();
+        }
+        $grid->column('last_week_count', __('last_week_count'))->sortable()->filter([0,1,2,3,4,5]);
+        foreach (Volunteer::THIS_WEEK_DAYS as $key => $value) {
+            $grid->column($value, __($value))->switch();
+        }
+        $grid->column('this_week_count', __('this_week_count'))->sortable()->filter([0,1,2,3,4,5]);
         $grid->column('placeholder', __('attendance'))->display(function(){
             return Attendance::attendanceToString($this->attendance);
         });
@@ -96,6 +105,10 @@ class VolunteerController extends PersonController
             $form->date('attendance_day', __('attendance_day'))->default(Carbon::now());
             $form->select('status', __('status'))->options(Attendance::SIGNS_DAYS_COVERED)->disable();
         });
+        foreach((new Volunteer)->public_appends as $hidden) 
+        {
+            $form->hidden($hidden);
+        }
         return $form;
     }
 }
