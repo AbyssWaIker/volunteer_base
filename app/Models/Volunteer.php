@@ -39,6 +39,7 @@ class Volunteer extends Person
 
     public function __construct()
     {
+        parent::__construct();
         static::addGlobalScope(new VolunteersForRoleScope);
     }
 }

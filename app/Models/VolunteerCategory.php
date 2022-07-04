@@ -13,6 +13,7 @@ class VolunteerCategory extends Category
     }
     public function __construct()
     {
+        parent::__construct();
         static::addGlobalScope(new VolunteerCategoriesForRoleScope);
     }
     public static function withAllChildrenIds($category_id):array
