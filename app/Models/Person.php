@@ -47,7 +47,7 @@ abstract class Person extends Model
      * @param  int  $category_id
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeCategory($query, $category_id)
+    public function scopeCategory($query, $category_id, bool $in = true)
     {
         if(!$category_id) {
             return $query;
@@ -59,8 +59,13 @@ abstract class Person extends Model
         if(!count($categories)) {
             return $query;
         }
-        return $query->whereHas('categories', function (Builder $query) use ($table, $categories) {
-            $query->whereIn("$table.id", $categories);
+        return $query->whereHas('categories', function (Builder $query) use ($table, $categories, $in) {
+            if($in){
+                $query->whereIn("$table.id", $categories);
+            } else {
+                
+                $query->whereNotIn("$table.id", $categories);
+            }
         });;
     }
 

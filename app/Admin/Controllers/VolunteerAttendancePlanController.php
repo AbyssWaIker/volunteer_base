@@ -2,8 +2,9 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Actions\Destitute\WriteVolunteerAttendance;
+use App\Admin\Controllers\VolunteerController;
 use App\Admin\Exporters\VolunteerExporter;
+use App\Admin\Scopes\VolunteerCategoriesForRoleScope;
 use App\Models\Volunteer;
 use Encore\Admin\Form;
 use Encore\Admin\Form\NestedForm;
@@ -13,7 +14,7 @@ use App\Models\Attendance;
 use Carbon\Carbon;
 use Encore\Admin\Grid\Displayers\Actions;
 
-class VolunteerController extends PersonController
+class VolunteerAttendancePlanController extends VolunteerController
 {
     protected $model = Volunteer::class;
     /**
@@ -21,7 +22,7 @@ class VolunteerController extends PersonController
      *
      * @var string
      */
-    protected $title = 'Волонтеры';
+    protected $title = 'Расписание';
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
@@ -46,17 +47,24 @@ class VolunteerController extends PersonController
     protected function grid():Grid
     {
         $grid = parent::grid();
+        $grid->model()->category(VolunteerCategoriesForRoleScope::VOLUNTEER_WITHOUT_CATEGORY, false);
+        $grid->hideColumns(['phone', 'sex','comment','placeholder']);
         $grid->actions(function (Actions $actions) {
             $actions->disableView();
-            $actions->prepend(new WriteVolunteerAttendance);
+            $actions->disableDelete();
         });
         $grid->exporter(new VolunteerExporter($grid, (new $this->model), $this->title()));
-        $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
-        $grid->column('sex', __('sex'))->switch(Volunteer::SEX_SWITCH_STATES)->hideOnMobile();
-        $grid->column('placeholder', __('attendance'))->display(function(){
+        foreach (Volunteer::LAST_WEEK_DAYS as $key => $value) {
+            $grid->column($value, __($value))->switch();
+        }
+        $grid->column('last_week_count', __('last_week_count'))->sortable()->filter([0,1,2,3,4,5]);
+        foreach (Volunteer::THIS_WEEK_DAYS as $key => $value) {
+            $grid->column($value, __($value))->switch();
+        }
+        $grid->column('this_week_count', __('this_week_count'))->sortable()->filter([0,1,2,3,4,5]);
+        $grid->column('attendance', __('attendance'))->display(function(){
             return Attendance::attendanceToString($this->attendance);
         });
-        $grid->column('comment', __('comment'))->editable()->hideOnMobile();
         return $grid;
     }
 

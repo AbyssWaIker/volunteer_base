@@ -33,6 +33,7 @@ Route::group([
     $router->resource('stocks', StockController::class);
     $router->resource('volunteers', VolunteerController::class);
     $router->resource('attendance', VolunteerAttendanceController::class);
+    $router->resource('attendance-plan',VolunteerAttendancePlanController::class);
     $router->resource('destitute-categories', CategoryDestituteController::class);
     $router->resource('volunteer-categories', CategoryVolunteerController::class);
     $router->resource('refugee-shelters', RefugeeShelterController::class);

@@ -59,5 +59,17 @@
     "reference is being processed": "Довідка в обробці",
     "attendance":"посещение",
     "attendance_day":"день посещения",
-    "status":"статус"
+    "status":"статус",
+    "last_monday":"Понедельник", 
+    "last_tuesday":"Вторник", 
+    "last_wednesday":"Среда",
+    "last_thursday":"Четверг",
+    "last_friday":"Пятница",
+    "this_monday":"Понедельник", 
+    "this_tuesday":"Вторник", 
+    "this_wednesday":"Среда",
+    "this_thursday":"Четверг",
+    "this_friday":"Пятница",
+    "last_week_count":"Прошлая неделя",
+    "this_week_count":"Эта неделя"
 }

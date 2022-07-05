@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Encore\Admin\Traits\ModelTree;
 use Encore\Admin\Traits\AdminBuilder;
+use Illuminate\Database\Eloquent\Builder;
 
 abstract class Category extends Model
 {
@@ -32,15 +33,19 @@ abstract class Category extends Model
      * @param  int  $category_id
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeCategory($query, $category_id)
+    public function scopeCategory(Builder $query, $category_id,bool $in = true)
     {
         if(!$category_id) {
             return $query;
         }
 
-        $categories = self::withAllChildrenIds($category_id);
+        $categories = static::withAllChildrenIds($category_id);
         if(!count($categories)) {
             return $query;
+        }
+        if(!$in) {
+            $query->whereNotIn("id", $categories);
+            return;
         }
         $query->whereIn("id", $categories);
     }
