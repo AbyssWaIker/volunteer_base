@@ -55,11 +55,17 @@ class VolunteerAttendancePlanController extends VolunteerController
         });
         $grid->exporter(new VolunteerExporter($grid, (new $this->model), $this->title()));
         foreach (Volunteer::LAST_WEEK_DAYS as $key => $value) {
-            $grid->column($value, __($value))->switch();
+            $grid->column($value, __($value))->switch([
+                'off' => ['value' => 0, 'text' => 'Нет', 'color' => 'default'],
+                'on' => ['value' => 1, 'text' => 'Был', 'color' => 'primary']
+            ]);
         }
         $grid->column('last_week_count', __('last_week_count'))->sortable()->filter([0,1,2,3,4,5]);
         foreach (Volunteer::THIS_WEEK_DAYS as $key => $value) {
-            $grid->column($value, __($value))->switch();
+            $grid->column($value, __($value))->switch([
+                'off' => ['value' => 0, 'text' => 'Нет', 'color' => 'default'],
+                'on' => ['value' => 1, 'text' => 'Был', 'color' => 'primary']
+            ]);
         }
         $grid->column('this_week_count', __('this_week_count'))->sortable()->filter([0,1,2,3,4,5]);
         $grid->column('attendance', __('attendance'))->display(function(){
