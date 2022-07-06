@@ -28,11 +28,25 @@ class Destitute extends Person
     public function getChildrenCountAttribute():string
     {
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
-        $result = 0;
-        foreach($family_members as $member) {
-            $result += intval(@$member['is_child']);
+        $only_children = array_filter($family_members, function($member){
+            return @$member['date_of_birth'] 
+            && Carbon::now()->diffInYears(Carbon::parse($member['date_of_birth'])) <= 16;
+        });
+        return count($only_children);
+    }
+    public function getChildrenYearsAttribute():string
+    {
+        $family_members = array_filter(array_values($this->family_members));
+        $only_children = array_filter($family_members, function($member){
+            return @$member['date_of_birth'] 
+            && Carbon::now()->diffInYears(Carbon::parse($member['date_of_birth'])) <= 16;
+        });
+        if(!count($only_children)) {
+            return '';
         }
-        return $result;
+        return '('.implode(', ', array_map(function($child){
+            return Carbon::now()->diffInYears(Carbon::parse($child['date_of_birth']));
+        }, $only_children)).')';
     }
     public function setFamilyMembersAttribute($value):self
     {
@@ -41,11 +55,11 @@ class Destitute extends Person
                 return $value;
             }
             $value['name'] = mb_convert_case($value['name'], MB_CASE_TITLE);
-            $value['passport_id'] = mb_convert_case($value['passport_id'], MB_CASE_UPPER);
-            $value['reference_id'] = @$value['reference_id'] ?: __('reference is being processed');
-
-            if(str_starts_with($value['passport_id'], 'І-')) {
-                $value['is_child'] = true;
+            if(@$value['passport_id']){
+                $value['passport_id'] = mb_convert_case($value['passport_id'], MB_CASE_UPPER);
+            }
+            if(@$value['reference_id']){
+                $value['reference_id'] = @$value['reference_id'] ?: __('reference is being processed');
             }
             return $value;
         }, array_values($value))) : $value;
@@ -76,7 +90,7 @@ class Destitute extends Person
             return '';
         }
 
-        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] . (@$member['is_child'] ? __('child') :'');
+        return @$member['name'] . ' ' . @$member['phone'] . ' ' . @$member['passport_id'] . ' ' . @$member['comment'] .' ' . (@$member['date_of_birth'] ? Carbon::now()->diffInYears(Carbon::parse($member['date_of_birth'])) .' '. __('of_years') : '');
     }
 
     static public function getHelpHistory(array $helpGiven, bool $use_emoji = false): string

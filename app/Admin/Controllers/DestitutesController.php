@@ -218,12 +218,7 @@ HTML;
             $form->text('name',__('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('phone', __('phone'));
-            $form->switch('is_child', __('is_child'))->states(
-                [
-                    'off' => ['value' => 0, 'text' => 'Взрослый', 'color' => 'primary'],
-                    'on' => ['value' => 1, 'text' => 'Ребенок', 'color' => 'success'],
-                ]
-            );
+            $form->date('date_of_birth', __('date_of_birth'));
             $form->text('comment', __('comment'));
         });
         $form->hasMany('helpGiven', 'Получила гуманитарную помощь', function(\Encore\Admin\Form\NestedForm $form){

@@ -62,7 +62,7 @@
 				</tr>
 				<tr>
 					<td><span style="float: right;">дітей:</span></td>
-					<td>{{$dest->children_count}}</td>
+					<td>{{$dest->children_count}} {{$dest->children_years}}</td>
 				</tr>
 
 			</tbody>
