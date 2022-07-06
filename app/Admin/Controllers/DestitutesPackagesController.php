@@ -23,7 +23,7 @@ class DestitutesController extends PersonController
      *
      * @var string
      */
-    protected $title = 'Нуждающиеся';
+    protected $title = 'Посылки';
 
     protected function quickCreateCallback(): callable
     {
@@ -31,10 +31,10 @@ class DestitutesController extends PersonController
             $form->/*multipleSelect*/text('categories[]', __('categories'))
                 ->attribute('style', 'display:none')
                 ->options($this->getAllCategories())
-                ->default(Destitute::REFUGEE_ID)
-                ->value(Destitute::REFUGEE_ID);
+                ->default(Destitute::PACKAGE_ID)
+                ->value(Destitute::PACKAGE_ID);
             ;
-            $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999']);
+            // $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999']);
             $form->text('name', __('name'))->required();
             $form->text('passport_id', __('passport_id'));
             $form->text('address', __('address'));
@@ -121,9 +121,10 @@ class DestitutesController extends PersonController
     protected function grid():Grid
     {
         $grid = parent::grid();
+        $model = $this->getModel();
         $table = (new $model->category_class)->getTable();
         $grid->model()->with(['categories', 'helpGiven'])->whereHas('categories', function (Builder $query) use ($table) {
-            $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
+            $query->where("$table.id", Destitute::PACKAGE_ID);
         });
 
         $grid->actions(function(Grid\Displayers\Actions $actions) {
@@ -143,7 +144,7 @@ class DestitutesController extends PersonController
                     }
                 )
                 ->whereHas('categories', function (Builder $query) use ($table) {
-                    $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
+                    $query->where("$table.id", Destitute::PACKAGE_ID);
                 })
                 ->get();
             $found = $filtered->get();
@@ -158,7 +159,7 @@ class DestitutesController extends PersonController
 <div class='pull-left'>Для добавления одного человека используй <i class='fa fa-arrow-down' aria-hidden='true'></i> быстрое добавление</div>
 HTML;
         });
-        $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
+        // $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();

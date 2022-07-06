@@ -29,6 +29,7 @@ Route::group([
         return $pdf->stream($destitute->name.'.pdf');
     })->name('print-pdf');
     $router->resource('grannies', DestitutesController::class);
+    $router->resource('packages', DestitutesPackagesController::class);
     $router->resource('sendings', SendingController::class);
     $router->resource('stocks', StockController::class);
     $router->resource('volunteers', VolunteerController::class);

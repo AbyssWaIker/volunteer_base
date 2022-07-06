@@ -11,6 +11,7 @@ class Destitute extends Person
 {
     public $category_class = DestituteCategory::class;
     public const REFUGEE_ID = 6;
+    public const PACKAGE_ID = 14;
 
     protected $fillable = ['reference_id','name', 'phone', 'address', 'passport_id', 'id_code', 'comment', 'family_members'];
     protected $casts = ['family_members' => 'json'];
