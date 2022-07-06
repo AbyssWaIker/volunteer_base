@@ -121,6 +121,7 @@ class DestitutesController extends PersonController
     protected function grid():Grid
     {
         $grid = parent::grid();
+        $model = $this->getModel();
         $table = (new $model->category_class)->getTable();
         $grid->model()->with(['categories', 'helpGiven'])->whereHas('categories', function (Builder $query) use ($table) {
             $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
