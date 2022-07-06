@@ -82,6 +82,14 @@ class DestituteCategoriesTableSeeder extends Seeder
                 'parent_id' => NULL,
                 'order' => NULL,
             ),
+            8 => 
+            array (
+                'id' => 14,
+                'name' => 'Передача посылкой',
+                'enabled' => true,
+                'parent_id' => NULL,
+                'order' => NULL,
+            ),
         ));
 
         

@@ -55,7 +55,7 @@ class DestitutesController extends PersonController
                 $filter->like('name', __('Name'));
                 $filter->like('phone', __('phone'));
                 $filter->like('address', __('address'));
-                $filter->like('id_code', __('id_code'));
+                $filter->like('passport_id', __('passport_id'));
                 // $filter->where(function(Builder $query) {
                 //     switch($this->input) {
                 //         case '1':

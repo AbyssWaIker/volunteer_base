@@ -60,21 +60,13 @@ class AdminRolesTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 7,
-                'name' => 'гигиена',
-                'slug' => 'hygiene',
-                'created_at' => '2022-07-03 22:01:26',
-                'updated_at' => '2022-07-03 22:01:26',
-            ),
-            6 => 
-            array (
                 'id' => 8,
                 'name' => 'Склад продуктов',
                 'slug' => 'products',
                 'created_at' => '2022-07-03 22:01:42',
                 'updated_at' => '2022-07-03 22:01:42',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 9,
             'name' => 'Кухня (Повара)',
@@ -82,7 +74,7 @@ class AdminRolesTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:02:09',
                 'updated_at' => '2022-07-03 22:02:09',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 10,
                 'name' => 'Склад одежды',
@@ -90,13 +82,21 @@ class AdminRolesTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:03:14',
                 'updated_at' => '2022-07-03 22:03:14',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 11,
             'name' => 'Логистика (Водители)',
                 'slug' => 'drivers',
                 'created_at' => '2022-07-03 22:03:47',
                 'updated_at' => '2022-07-03 22:03:47',
+            ),
+            9 => 
+            array (
+                'id' => 7,
+                'name' => 'Гигиена',
+                'slug' => 'hygiene',
+                'created_at' => '2022-07-03 22:01:26',
+                'updated_at' => '2022-07-03 22:51:41',
             ),
         ));
 
