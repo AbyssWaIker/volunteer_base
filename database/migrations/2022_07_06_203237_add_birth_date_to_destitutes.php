@@ -26,7 +26,7 @@ class AddBirthDateToDestitutes extends Migration
                         $original_destitute->date_of_birth = \Carbon\Carbon::create($original_destitute->year_of_birth);
                     }
                     if($original_destitute->family_members) {
-                        $family_members = array_filter(array_values($original_destitute->family_members));
+                        $family_members = $original_destitute->family_members ? array_filter($original_destitute->family_members) : [];
                         foreach ($family_members as &$member) {
                             if(@$member['is_child']){
                                 unset($member['is_child']);
