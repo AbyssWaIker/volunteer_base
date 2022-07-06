@@ -35,9 +35,9 @@ class AddBirthDateToDestitutes extends Migration
                         }
                         $original_destitute->family_members = $family_members;
                     }
-                    // if($original_destitute->year_of_birth || @$original_destitute->family_members){
+                    if($original_destitute->year_of_birth || @$original_destitute->family_members){
                         $original_destitute->save();
-                    // }
+                    }
                 }
             // });
             Schema::table('destitutes', function (Blueprint $table) {
