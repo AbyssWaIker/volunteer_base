@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Admin\Helpers\GridHelper;
 use App\Rules\UniquenesForDestitute;
 
-class DestitutesController extends PersonController
+class DestitutesPackagesController extends PersonController
 {
     protected $model = Destitute::class;
     /**
