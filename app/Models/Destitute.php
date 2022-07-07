@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
 use App\Admin\Helpers\GridHelper;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Destitute extends Person
 {
+    use SoftDeletes;
     public $category_class = DestituteCategory::class;
     public const REFUGEE_ID = 6;
     public const PACKAGE_ID = 14;
