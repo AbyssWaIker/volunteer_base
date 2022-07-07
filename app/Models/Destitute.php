@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Jenssegers\Date\Date;
 use App\Admin\Helpers\GridHelper;
@@ -83,6 +84,10 @@ class Destitute extends Person
     {
         $this->attributes['passport_id'] = $value ? mb_convert_case($value, MB_CASE_UPPER) : $value;
         return $this;
+    }
+    public function region():BelongsTo
+    {
+        return $this->belongsTo(Region::class);
     }
     public function helpGiven():HasMany
     {

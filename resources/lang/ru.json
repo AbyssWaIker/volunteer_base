@@ -73,5 +73,6 @@
     "last_week_count":"Прошлая неделя",
     "this_week_count":"Эта неделя",
     "of_years": "лет",
-    "date_of_birth":"дата рождения"
+    "date_of_birth":"дата рождения",
+    "region":"Область"
 }
