@@ -26,7 +26,7 @@ class DestituteExporter extends ModelExporter
             'passport_id' => ' '.$row->passport_id . ' ',
             'id_code' => ' '.$row->id_code . ' ',
             'comment' => $row->comment,
-            'familiy_members'=>$row->family_members_count . ' (' . __(':number of children'.['number'=>$row->children_count]). ')',
+            'familiy_members'=>$row->family_members_count . ' (' . __(':number of children',['number'=>$row->children_count]). ')',
             'categories' => $row->categories->map(function ($category){return $category->name;})->implode(', '),
             'helpGiven'=>Destitute::getHelpHistory($row->helpGiven->toArray()),
         ];
