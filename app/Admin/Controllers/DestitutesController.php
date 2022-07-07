@@ -124,7 +124,7 @@ class DestitutesController extends PersonController
         $model = $this->getModel();
         $table = (new $model->category_class)->getTable();
         $grid->model()->with(['categories', 'helpGiven'])->whereDoesntHave('categories', function (Builder $query) use ($table) {
-            $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
+            $query->where("$table.id", Destitute::PACKAGE_ID);
         });
 
         $grid->actions(function(Grid\Displayers\Actions $actions) {
