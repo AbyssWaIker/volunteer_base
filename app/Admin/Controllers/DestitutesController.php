@@ -132,8 +132,8 @@ class DestitutesController extends PersonController
 
         $grid->exporter(new DestituteExporter($grid, $this->getModel(), $this->title));
         $grid->model()->with(['categories', 'helpGiven']);//->whereHas('categories', function (Builder $query) use ($table) {
-            $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
-        });
+            // $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
+        // });
 
         $grid->header(function($filtered) use ($table){
             $today= ($this->model)::query()
