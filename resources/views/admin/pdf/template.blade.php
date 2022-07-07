@@ -32,7 +32,7 @@
 			<span> </span>
 			м. Одеса
 		</div>
-		<div>Благодійний фонд "Пліч-о-пліч", в собі Голови Правління, Михайлика Олега Станіславовича, з однієї сторони та,</div>
+		<div>БЛАГОДІНИЙ ФОНД "РАНОК ВІДРОДЖЕННЯ", в собі Голови Правління,Погребної Ю. А., з однієї сторони та,</div>
 		<table class="no-border">
 			<tbody>
 				<tr>
@@ -91,6 +91,7 @@
 			</tbody>
 		</table>
 		<br/>
+		<div>Матеріальні цінності не подлежать продажу</div>
 	</div>
     <div>
         <div style="display:inline-block; float: left">
@@ -104,7 +105,7 @@
             <table class="no-border" >
                 <tr><td colspan="2">Представник другої сторони</td></tr>
                 <tr><td>ПІБ</td><td style="border-bottom: 1px solid black;"></td></tr>
-                <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>
+                <tr><td>Підпис</td><td style="border-bottom: 1px solid black;"></td></tr>r
             </table>
         </div>
     </div>
