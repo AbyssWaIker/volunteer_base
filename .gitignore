@@ -18,3 +18,4 @@ database/backups/*
 database/seeders/DestituteDestituteCategoryTableSeeder.php
 database/seeders/VolunteerVolunteerCategoryTableSeeder.php
 database/seeders/VolunteersTableSeeder.php
+nginx/log
