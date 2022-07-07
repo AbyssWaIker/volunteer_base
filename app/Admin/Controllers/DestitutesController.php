@@ -165,7 +165,7 @@ HTML;
         $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('region.name', __('region'))->filter('select', Region::pluckNameAndID())->hideOnMobile();
-	$grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
+        $grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('id_code', __('id_code'))->editable()->filter('like')->hideOnMobile();
         $grid->column('family_members_count',__('family_members'))
@@ -221,7 +221,7 @@ HTML;
         $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999'])->creationRules([new UniquenesForDestitute]);
         $form->text('name', __('name'))->required();
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
-	$form->multipleSelect('region_id', __('region'))->options(Region::pluckNameAndID());
+        $form->multipleSelect('region_id', __('region'))->options(Region::pluckNameAndID());
         $form->text('address', __('address'));
         $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
         $form->text('id_code', __('id_code'));
