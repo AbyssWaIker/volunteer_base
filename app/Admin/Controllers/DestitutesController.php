@@ -164,7 +164,7 @@ HTML;
         });
         $grid->column('reference_id',__('reference_id'))->editable()->filter('like')->hideOnMobile();
         $grid->column('passport_id', __('passport_id'))->editable()->filter('like')->hideOnMobile();
-        $grid->column('region_id', __('region'))->select(Region::pluckNameAndID())->sortable()->hideOnMobile();
+        $grid->column('region_id', __('region'))->select(Region::pluckNameAndID())->hideOnMobile();
 	$grid->column('address', __('address'))->editable()->filter('like')->hideOnMobile();
         $grid->column('phone', __('phone'))->editable()->filter('like')->hideOnMobile();
         $grid->column('id_code', __('id_code'))->editable()->filter('like')->hideOnMobile();
