@@ -74,6 +74,7 @@ class DestitutesController extends PersonController
                 //         '1' => __('single person'),
                 //         '*' => __('multiple people'),
                 //     ]);
+                $filter->equal('region_id',__('region'))->select(Region::pluckNameAndID());
             });
 
             $filter->column(1/2, function (Grid\Filter $filter) use($table) {
