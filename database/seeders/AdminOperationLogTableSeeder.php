@@ -21650,6 +21650,28 @@ class AdminOperationLogTableSeeder extends Seeder
                 'created_at' => '2022-07-06 20:20:03',
                 'updated_at' => '2022-07-06 20:20:03',
             ),
+            466 => 
+            array (
+                'id' => 1967,
+                'user_id' => 1,
+                'path' => 'admin/grannies',
+                'method' => 'GET',
+                'ip' => '176.97.63.207',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-07-06 22:44:27',
+                'updated_at' => '2022-07-06 22:44:27',
+            ),
+            467 => 
+            array (
+                'id' => 1968,
+                'user_id' => 1,
+                'path' => 'admin/grannies/5224/edit',
+                'method' => 'GET',
+                'ip' => '176.97.63.207',
+                'input' => '{"_pjax":"#pjax-container"}',
+                'created_at' => '2022-07-06 22:44:49',
+                'updated_at' => '2022-07-06 22:44:49',
+            ),
         ));
 
         

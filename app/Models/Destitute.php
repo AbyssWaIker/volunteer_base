@@ -37,7 +37,7 @@ class Destitute extends Person
     }
     public function getChildrenYearsAttribute():string
     {
-        $family_members = array_filter(array_values($this->family_members));
+        $family_members = $this->family_family ? array_filter(array_values($this->family_members)) : [];
         $only_children = array_filter($family_members, function($member){
             return @$member['date_of_birth'] 
             && Carbon::now()->diffInYears(Carbon::parse($member['date_of_birth'])) <= 16;

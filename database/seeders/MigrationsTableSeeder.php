@@ -138,6 +138,12 @@ class MigrationsTableSeeder extends Seeder
                 'migration' => '2022_05_03_115245_make_comment_nullable',
                 'batch' => 1,
             ),
+            20 => 
+            array (
+                'id' => 21,
+                'migration' => '2022_07_06_203237_add_birth_date_to_destitutes',
+                'batch' => 2,
+            ),
         ));
 
         
