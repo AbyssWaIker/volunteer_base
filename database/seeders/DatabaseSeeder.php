@@ -44,9 +44,9 @@ class DatabaseSeeder extends Seeder
             $this->call(VolunteersTableSeeder::class);
         }
 
-        if(class_exists(AttendancesTableSeeder::class)){
-            $this->call(AttendancesTableSeeder::class);
-        }
+        // if(class_exists(AttendancesTableSeeder::class)){
+            // $this->call(AttendancesTableSeeder::class);
+        // }
         if(class_exists(VolunteerVolunteerCategoryTableSeeder::class)){
             $this->call(VolunteerVolunteerCategoryTableSeeder::class);
         }
