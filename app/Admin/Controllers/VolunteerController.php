@@ -89,7 +89,7 @@ class VolunteerController extends PersonController
         $form = parent::form($id);
         $form->text('name', __('name'))->required();
         $form->text('phone', __('phone'))/*->creationRules($validator('phone'))*/;
-        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories());
+        $form->select('categories', __('categories'))->options($this->getAllCategories());
         $form->switch('sex', __('sex'))->states(Volunteer::SEX_SWITCH_STATES);
         $form->text('comment', __('comment'));
         $form->hasMany('attendance', __('attendance'), function(NestedForm $form){
