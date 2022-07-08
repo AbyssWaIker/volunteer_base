@@ -74,5 +74,6 @@
     "this_week_count":"Эта неделя",
     "of_years": "лет",
     "date_of_birth":"дата рождения",
-    "region":"Область"
+    "region":"Область",
+    "region_id":"Область"
 }

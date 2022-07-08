@@ -22,6 +22,7 @@ class DestituteExporter extends ModelExporter
             'reference_id'=>$row->reference_id,
             'name' => $row->name,
             'phone' => ' '.$row->phone . ' ',
+            'region_id' => $row->region ? $row->region->name : '',
             'address' => $row->address,
             'passport_id' => ' '.$row->passport_id . ' ',
             'id_code' => ' '.$row->id_code . ' ',
