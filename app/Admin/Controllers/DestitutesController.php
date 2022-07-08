@@ -38,7 +38,7 @@ class DestitutesController extends PersonController
             $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999']);
             $form->text('name', __('name'))->required();
             $form->text('passport_id', __('passport_id'));
-            $form->multipleSelect('region_id', __('region'))->options(Region::pluckNameAndID());
+            $form->select('region_id', __('region'))->options(Region::pluckNameAndID());
             $form->text('address', __('address'));
             $form->text('phone', __('phone'));
 //            $form->text('id_code', __('id_code'));
@@ -221,7 +221,7 @@ HTML;
         $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999'])->creationRules([new UniquenesForDestitute]);
         $form->text('name', __('name'))->required();
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
-        $form->multipleSelect('region_id', __('region'))->options(Region::pluckNameAndID());
+        $form->select('region_id', __('region'))->options(Region::pluckNameAndID());
         $form->text('address', __('address'));
         $form->text('phone', __('phone'))->creationRules([new UniquenesForDestitute]);
         $form->text('id_code', __('id_code'));
