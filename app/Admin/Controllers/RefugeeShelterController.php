@@ -15,7 +15,7 @@ class RefugeeShelterController extends ModelController
      *
      * @var string
      */
-    protected $title = 'Места для беженцев';
+    protected $title = 'Refugee Shelters';
 
     /**
      * Make a grid builder.

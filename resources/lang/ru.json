@@ -75,5 +75,19 @@
     "of_years": "лет",
     "date_of_birth":"дата рождения",
     "region":"Область",
-    "region_id":"Область"
+    "region_id":"Область",
+    "Border Crossing":"Отправка за границу",
+    "Destitutes":"Нуждающиеся",
+    "Packages":"Посылки",
+    "Categories":"Категории",
+    "Destitute Categories":"Категории Нуждающихся",
+    "Volunteer Categories":"Категории волонтеров",
+    "Model":"Модель",
+    "Person":"Человек",
+    "Refugee Shelters": "Места для беженцев",
+    "Sendings":"Отправки",
+    "Stocks":"Запасы",
+    "Rewarding":"Вознаграждение",
+    "Attendnance Plan":"Расписание посещений",
+    "Volunteers":"Волонтеры"
 }

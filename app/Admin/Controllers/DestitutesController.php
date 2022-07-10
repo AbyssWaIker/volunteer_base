@@ -24,7 +24,7 @@ class DestitutesController extends PersonController
      *
      * @var string
      */
-    protected $title = 'Нуждающиеся';
+    protected $title = 'Destitutes';
 
     protected function quickCreateCallback(): callable
     {

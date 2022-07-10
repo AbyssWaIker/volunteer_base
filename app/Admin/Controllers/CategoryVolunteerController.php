@@ -7,5 +7,5 @@ use App\Models\VolunteerCategory;
 class CategoryVolunteerController extends CategoryController
 {
     protected $model = VolunteerCategory::class;
-    protected $title = 'Категории волонтеров';
+    protected $title = 'Volunteer Categories';
 }

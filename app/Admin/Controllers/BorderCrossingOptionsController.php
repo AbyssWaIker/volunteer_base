@@ -14,7 +14,7 @@ class BorderCrossingOptionsController extends ModelController
      *
      * @var string
      */
-    protected $title = 'Отправка за границу';
+    protected $title = 'Border Crossing';
     protected $model = BorderCrossingOption::class;
     /**
      * Make a grid builder.

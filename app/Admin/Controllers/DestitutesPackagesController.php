@@ -23,7 +23,7 @@ class DestitutesPackagesController extends PersonController
      *
      * @var string
      */
-    protected $title = 'Посылки';
+    protected $title = 'Packages';
 
     protected function quickCreateCallback(): callable
     {

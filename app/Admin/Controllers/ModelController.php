@@ -19,7 +19,7 @@ abstract class ModelController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Модель';
+    protected $title = 'Model';
 
     protected function getModel():Model
     {

@@ -22,7 +22,7 @@ class VolunteerAttendancePlanController extends VolunteerController
      *
      * @var string
      */
-    protected $title = 'Расписание';
+    protected $title = 'Attendance Plan';
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {

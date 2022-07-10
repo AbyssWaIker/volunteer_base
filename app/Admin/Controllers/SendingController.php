@@ -22,7 +22,7 @@ class SendingController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Отправки';
+    protected $title = 'Sendings';
 
     /**
      * Make a grid builder.
