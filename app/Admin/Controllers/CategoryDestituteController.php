@@ -6,5 +6,5 @@ use App\Models\DestituteCategory;
 class CategoryDestituteController extends CategoryController
 {
     protected $model = DestituteCategory::class;
-    protected $title = 'Категории Нуждающихся';
+    protected $title = 'Destitute Categories';
 }

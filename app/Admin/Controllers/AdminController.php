@@ -14,6 +14,11 @@ use Encore\Admin\Show;
 class AdminController extends BaseController
 {
     protected $model = Model::class;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->title = __($this->title);
+    }
     /**
      * Make a grid builder.
      *

@@ -17,7 +17,7 @@ class StockController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Запас';
+    protected $title = 'Stocks';
     public const DEFAULT_SWITCH_STATES =  [
             'off' => ['value' => 0, 'text' => 'Выключен', 'color' => 'danger'],
             'on' => ['value' => 1, 'text' => 'Включен', 'color' => 'success'],

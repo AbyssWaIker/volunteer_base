@@ -16,7 +16,7 @@ abstract class CategoryController extends AdminController
      *
      * @var string
      */
-    protected $title = 'Категории';
+    protected $title = 'Categories';
     protected $model = Category::class;
     
     protected function grid()

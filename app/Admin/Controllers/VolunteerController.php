@@ -21,7 +21,7 @@ class VolunteerController extends PersonController
      *
      * @var string
      */
-    protected $title = 'Волонтеры';
+    protected $title = 'Volunteers';
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {

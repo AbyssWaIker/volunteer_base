@@ -16,7 +16,7 @@ abstract class PersonController extends ModelController
      *
      * @var string
      */
-    protected $title = 'Человек';
+    protected $title = 'Person';
 
     protected function getModel():Model
     {
