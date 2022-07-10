@@ -213,7 +213,7 @@ HTML;
     {
         $form = parent::form($id);
 
-        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::REFUGEE_ID]);
+        $form->multipleSelect('categories', __('categories'))->options($this->getAllCategories())->default([Destitute::PACKAGE_ID]);
         $form->text('reference_id',__('reference_id'))->inputmask(['9999-9999999999'])->creationRules([new UniquenesForDestitute]);
         $form->text('name', __('name'))->required();
         $form->text('passport_id', __('passport_id'))->creationRules([new UniquenesForDestitute]);
