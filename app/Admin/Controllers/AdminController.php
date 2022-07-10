@@ -16,7 +16,6 @@ class AdminController extends BaseController
     protected $model = Model::class;
     public function __construct()
     {
-        parent::__construct();
         $this->title = __($this->title);
     }
     /**
