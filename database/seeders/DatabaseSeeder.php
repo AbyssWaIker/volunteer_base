@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DestituteCategoriesTableSeeder::class);
         if(class_exists(DestitutesTableSeeder::class)){
             $this->call(DestitutesTableSeeder::class);
-        }
+            $this->call(RegionsTableSeeder::class);
+    }
         if(class_exists(DestituteDestituteCategoryTableSeeder::class)){
             $this->call(DestituteDestituteCategoryTableSeeder::class);
         }

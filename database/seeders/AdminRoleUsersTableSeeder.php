@@ -95,6 +95,34 @@ class AdminRoleUsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            11 => 
+            array (
+                'role_id' => 4,
+                'user_id' => 13,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            12 => 
+            array (
+                'role_id' => 1,
+                'user_id' => 15,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            13 => 
+            array (
+                'role_id' => 5,
+                'user_id' => 16,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            14 => 
+            array (
+                'role_id' => 1,
+                'user_id' => 14,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
 
         

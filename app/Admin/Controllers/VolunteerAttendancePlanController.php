@@ -26,7 +26,6 @@ class VolunteerAttendancePlanController extends VolunteerController
     protected function quickCreateCallback(): callable
     {
         return function (Grid\Tools\QuickCreate $form) {
-            $form->select('sex', __('sex'))->options(Volunteer::SEX_OPTIONS);
             parent::quickCreateCallback()($form);
         };
     }

@@ -144,6 +144,24 @@ class MigrationsTableSeeder extends Seeder
                 'migration' => '2022_07_06_203237_add_birth_date_to_destitutes',
                 'batch' => 2,
             ),
+            21 => 
+            array (
+                'id' => 22,
+                'migration' => '2022_07_07_171213_add_soft_deletes_to_destitutes',
+                'batch' => 3,
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'migration' => '2022_07_07_185537_create_regions_table',
+                'batch' => 4,
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'migration' => '2022_07_07_191439_add_region_id_to_destitutes',
+                'batch' => 5,
+            ),
         ));
 
         

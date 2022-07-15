@@ -20,29 +20,13 @@ class StocksTableSeeder extends Seeder
         \DB::table('stocks')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'name' => 'Підгузники',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:10:16',
-                'updated_at' => '2022-04-27 09:10:16',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'name' => 'Гігієна',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:10:23',
-                'updated_at' => '2022-04-27 09:10:23',
-            ),
-            2 => 
-            array (
                 'id' => 3,
                 'name' => 'Корм Для Тварин',
                 'enabled' => true,
                 'created_at' => '2022-04-27 09:10:33',
                 'updated_at' => '2022-04-27 09:10:33',
             ),
-            3 => 
+            1 => 
             array (
                 'id' => 4,
                 'name' => 'Дитяче Харчування',
@@ -50,39 +34,7 @@ class StocksTableSeeder extends Seeder
                 'created_at' => '2022-04-27 09:10:39',
                 'updated_at' => '2022-04-27 09:10:39',
             ),
-            4 => 
-            array (
-                'id' => 5,
-                'name' => 'Одяг',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:10:45',
-                'updated_at' => '2022-04-27 09:10:45',
-            ),
-            5 => 
-            array (
-                'id' => 6,
-                'name' => 'Дитячий Одяг',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:10:49',
-                'updated_at' => '2022-04-27 09:10:49',
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'name' => 'Взуття',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:10:55',
-                'updated_at' => '2022-04-27 09:10:55',
-            ),
-            7 => 
-            array (
-                'id' => 8,
-                'name' => 'Дитяче Взуття',
-                'enabled' => true,
-                'created_at' => '2022-04-27 09:11:00',
-                'updated_at' => '2022-04-27 09:11:00',
-            ),
-            8 => 
+            2 => 
             array (
                 'id' => 11,
             'name' => 'Харчі (соціальний набір харчів)',
@@ -90,37 +42,109 @@ class StocksTableSeeder extends Seeder
                 'created_at' => '2022-04-27 09:11:17',
                 'updated_at' => '2022-04-27 09:11:17',
             ),
-            9 => 
-            array (
-                'id' => 13,
-            'name' => 'First response WASH and dignity kit (для семей с детьми)',
-                'enabled' => false,
-                'created_at' => '2022-05-16 18:00:03',
-                'updated_at' => '2022-07-02 20:24:09',
-            ),
-            10 => 
-            array (
-                'id' => 14,
-            'name' => 'First aid kit A (для семей с детьми)',
-                'enabled' => false,
-                'created_at' => '2022-05-16 18:00:36',
-                'updated_at' => '2022-07-02 20:24:15',
-            ),
-            11 => 
+            3 => 
             array (
                 'id' => 12,
                 'name' => 'постільна білизна',
-                'enabled' => false,
+                'enabled' => true,
                 'created_at' => '2022-04-27 09:11:22',
-                'updated_at' => '2022-07-02 20:24:28',
+                'updated_at' => '2022-07-08 12:11:58',
+            ),
+            4 => 
+            array (
+                'id' => 15,
+                'name' => 'посуд',
+                'enabled' => true,
+                'created_at' => '2022-07-08 12:12:27',
+                'updated_at' => '2022-07-08 12:12:27',
+            ),
+            5 => 
+            array (
+                'id' => 16,
+                'name' => 'іграшки',
+                'enabled' => true,
+                'created_at' => '2022-07-08 12:12:49',
+                'updated_at' => '2022-07-08 12:12:49',
+            ),
+            6 => 
+            array (
+                'id' => 2,
+            'name' => 'Гігієна ( соціальний набір)',
+                'enabled' => true,
+                'created_at' => '2022-04-27 09:10:23',
+                'updated_at' => '2022-07-08 13:01:48',
+            ),
+            7 => 
+            array (
+                'id' => 1,
+                'name' => 'Підгузники дитячі',
+                'enabled' => true,
+                'created_at' => '2022-04-27 09:10:16',
+                'updated_at' => '2022-07-08 13:02:18',
+            ),
+            8 => 
+            array (
+                'id' => 17,
+                'name' => 'Підгузники дорослі',
+                'enabled' => true,
+                'created_at' => '2022-07-08 13:02:59',
+                'updated_at' => '2022-07-08 13:02:59',
+            ),
+            9 => 
+            array (
+                'id' => 5,
+                'name' => 'Одяг дорослий',
+                'enabled' => true,
+                'created_at' => '2022-04-27 09:10:45',
+                'updated_at' => '2022-07-08 13:03:20',
+            ),
+            10 => 
+            array (
+                'id' => 7,
+                'name' => 'Взуття доросле',
+                'enabled' => true,
+                'created_at' => '2022-04-27 09:10:55',
+                'updated_at' => '2022-07-08 13:03:35',
+            ),
+            11 => 
+            array (
+                'id' => 8,
+                'name' => 'Взуття дитяче',
+                'enabled' => true,
+                'created_at' => '2022-04-27 09:11:00',
+                'updated_at' => '2022-07-08 13:03:59',
             ),
             12 => 
             array (
+                'id' => 6,
+                'name' => 'Одяг дитячий',
+                'enabled' => true,
+                'created_at' => '2022-04-27 09:10:49',
+                'updated_at' => '2022-07-08 13:04:19',
+            ),
+            13 => 
+            array (
+                'id' => 18,
+            'name' => 'Текстиль ( рушники покривало ковдра )',
+                'enabled' => true,
+                'created_at' => '2022-07-08 13:06:33',
+                'updated_at' => '2022-07-08 13:06:33',
+            ),
+            14 => 
+            array (
+                'id' => 19,
+            'name' => 'Інше ( інвалідний візок дитячий візок  матрац ходунки )',
+                'enabled' => true,
+                'created_at' => '2022-07-08 13:09:13',
+                'updated_at' => '2022-07-08 13:09:13',
+            ),
+            15 => 
+            array (
                 'id' => 9,
-                'name' => 'Книги',
+                'name' => 'Книги канцтовари',
                 'enabled' => false,
                 'created_at' => '2022-04-27 09:11:06',
-                'updated_at' => '2022-07-02 20:24:32',
+                'updated_at' => '2022-07-08 13:10:12',
             ),
         ));
 

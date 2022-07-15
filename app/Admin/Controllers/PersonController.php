@@ -32,7 +32,7 @@ abstract class PersonController extends ModelController
         return function (Grid\Tools\QuickCreate $form) {
             $form->multipleSelect('categories[]', __('categories'))->options($this->getAllCategories());
             $form->text('name', __('name'))->required();
-            $form->text('phone', __('phone'))->required();
+            $form->text('phone', __('phone'));
             $form->text('comment', __('comment'));
         };
     }
