@@ -44,23 +44,23 @@ class Volunteer extends Person
             ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
             ->where('attendance_day', '<=', Carbon::now()->subWeek()->endOfWeek());
     }
-    protected $attendance_cache = null;
+    protected $attendance_cache = [];
     protected function updateAttendanceCache()
     {
         $this->attendance_cache = $this->attendance()
             ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
-            ->get();
+            ->pluck('attendance_day');
     }
     protected function clearAttendanceCache()
     {
-        $this->attendance_cache = null;
+        $this->attendance_cache = [];
     }
     protected function getDayAttendance(Carbon $day):bool
     {
         if(!$this->attendance_cache) {
             $this->updateAttendanceCache();
         }
-        return (bool) $this->attendance_cache->firstWhere('attendance_day', $day->toDateString());
+        return (bool) in_array($day->toDateString(), $this->attendance_cache);
     }
     protected function setDayAttendance(Carbon $day, bool $attended)
     {
