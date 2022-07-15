@@ -37,29 +37,48 @@ class Volunteer extends Person
     {
         return $this->hasMany(Attendance::class);
     }
-    
+
     public function lastWeekAttendance():HasMany
     {
         return $this->attendance()
             ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
             ->where('attendance_day', '<=', Carbon::now()->subWeek()->endOfWeek());
     }
+    protected $attendance_cache = null;
+    protected function updateAttendanceCache()
+    {
+        $this->attendance_cache = $this->attendance()
+            ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
+            ->get();
+    }
+    protected function clearAttendanceCache()
+    {
+        $this->attendance_cache = null;
+    }
     protected function getDayAttendance(Carbon $day):bool
     {
-        return (bool) $this->attendance->firstWhere('attendance_day', $day->toDateString());
+        if(!$this->attendance_cache) {
+            $this->updateAttendanceCache();
+        }
+        return (bool) $this->attendance_cache->firstWhere('attendance_day', $day->toDateString());
     }
     protected function setDayAttendance(Carbon $day, bool $attended)
     {
         if($attended) {
-            return (bool) $this->attendance()->firstOrCreate(['attendance_day' => $day->toDateString()]);
+            $result = $this->attendance()->firstOrCreate(['attendance_day' => $day->toDateString()]);
+        } else {
+            $result = $this->attendance()->where('attendance_day', $day->toDateString())->delete();
         }
-        return (bool) $this->attendance()->where('attendance_day', $day->toDateString())->delete();
+        if($result) {
+            $this->clearAttendanceCache();
+        }
+        return $result;
     }
     // public function __construct()
     // {
         // parent::__construct();
         // static::addGlobalScope(new VolunteersForRoleScope);
-        //АААААААААААААА. 
+        //АААААААААААААА.
         //Из-за того что это не работает, мне придется делать самый уродливый копипастный код(((
         // $this->getTodayAttendanceAttribute = function():bool
         // {
@@ -71,8 +90,8 @@ class Volunteer extends Person
     // }
     ///БЛИИИИИИИИИИИИН!!!!! ЭТО ТОЖЕ НЕ РАБОТАЕТ!!!!!!
     protected const DAYS_OF_WEEK = [
-        'Monday', 
-        'Tuesday', 
+        'Monday',
+        'Tuesday',
         'Wednesday',
         'Thursday',
         'Friday',
@@ -80,7 +99,7 @@ class Volunteer extends Person
     // public static function boot()
     // {
     //     parent::boot();
-    
+
     //     //last week
     //     foreach(self::DAYS_OF_WEEK as $day) {
     //         runkit7_method_add(
@@ -108,15 +127,15 @@ class Volunteer extends Person
     //     }
     // }
     public const LAST_WEEK_DAYS = [
-        'last_monday', 
-        'last_tuesday', 
+        'last_monday',
+        'last_tuesday',
         'last_wednesday',
         'last_thursday',
         'last_friday',
     ];
     public const THIS_WEEK_DAYS = [
-        'this_monday', 
-        'this_tuesday', 
+        'this_monday',
+        'this_tuesday',
         'this_wednesday',
         'this_thursday',
         'this_friday',
