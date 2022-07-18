@@ -60,7 +60,6 @@ class Volunteer extends Person
         if(!$this->attendance_cache) {
             $this->updateAttendanceCache();
         }
-        dd($this->attendance_cache);
         return (bool) in_array($day->toDateString(), $this->attendance_cache);
     }
     protected function setDayAttendance(Carbon $day, ?bool $attended)
