@@ -44,25 +44,25 @@ class Volunteer extends Person
             ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
             ->where('attendance_day', '<=', Carbon::now()->subWeek()->endOfWeek());
     }
-    protected $attendance_cache = null;
+    protected $attendance_cache = [];
     protected function updateAttendanceCache()
     {
         $this->attendance_cache = $this->attendance()
             ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
-            ->get();
+            ->pluck('attendance_day','id');
     }
     protected function clearAttendanceCache()
     {
-        $this->attendance_cache = null;
+        $this->attendance_cache = [];
     }
     protected function getDayAttendance(Carbon $day):bool
     {
         if(!$this->attendance_cache) {
             $this->updateAttendanceCache();
         }
-        return (bool) $this->attendance_cache->firstWhere('attendance_day', $day->toDateString());
+        return (bool) in_array($day->toDateString(), $this->attendance_cache);
     }
-    protected function setDayAttendance(Carbon $day, bool $attended)
+    protected function setDayAttendance(Carbon $day, ?bool $attended)
     {
         if($attended) {
             $result = $this->attendance()->firstOrCreate(['attendance_day' => $day->toDateString()]);
@@ -72,7 +72,7 @@ class Volunteer extends Person
         if($result) {
             $this->clearAttendanceCache();
         }
-        return $result;
+        return (bool) $result;
     }
     // public function __construct()
     // {
@@ -194,81 +194,81 @@ class Volunteer extends Person
     {
         return $this->getDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Monday"));
     }
-    public function setLastMondayAttribute(bool $attended):bool
+    public function setLastMondayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Monday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Monday"), (bool) $attended);
     }
     public function getLastTuesdayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Tuesday"));
     }
-    public function setLastTuesdayAttribute(bool $attended):bool
+    public function setLastTuesdayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Tuesday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Tuesday"), (bool) $attended);
     }
     public function getLastWednesdayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Wednesday"));
     }
-    public function setLastWednesdayAttribute(bool $attended):bool
+    public function setLastWednesdayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Wednesday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Wednesday"), (bool) $attended);
     }
     public function getLastThursdayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Thursday"));
     }
-    public function setLastThursdayAttribute(bool $attended):bool
+    public function setLastThursdayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Thursday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Thursday"), (bool) $attended);
     }
     public function getLastFridayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Friday"));
     }
-    public function setLastFridayAttribute(bool $attended):bool
+    public function setLastFridayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Friday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->subWeek()->startOfWeek()->subSecond()->next("Friday"), (bool) $attended);
     }
     public function getThisMondayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Monday"));
     }
-    public function setThisMondayAttribute(bool $attended):bool
+    public function setThisMondayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Monday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Monday"), (bool) $attended);
     }
     public function getThisTuesdayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Tuesday"));
     }
-    public function setThisTuesdayAttribute(bool $attended):bool
+    public function setThisTuesdayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Tuesday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Tuesday"), (bool) $attended);
     }
     public function getThisWednesdayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Wednesday"));
     }
-    public function setThisWednesdayAttribute(bool $attended):bool
+    public function setThisWednesdayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Wednesday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Wednesday"), (bool) $attended);
     }
     public function getThisThursdayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Thursday"));
     }
-    public function setThisThursdayAttribute(bool $attended):bool
+    public function setThisThursdayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Thursday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Thursday"), (bool) $attended);
     }
     public function getThisFridayAttribute():bool
     {
         return $this->getDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Friday"));
     }
-    public function setThisFridayAttribute(bool $attended):bool
+    public function setThisFridayAttribute(?bool $attended):bool
     {
-        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Friday"), $attended);
+        return $this->setDayAttendance(Carbon::today()->startOfWeek()->subSecond()->next("Friday"), (bool) $attended);
     }
 
 }
