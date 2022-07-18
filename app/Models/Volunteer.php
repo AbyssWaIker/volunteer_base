@@ -147,7 +147,7 @@ class Volunteer extends Person
     {
         parent::__construct();
         static::addGlobalScope(new VolunteersForRoleScope);
-        $this->public_appends = array_merge(self::LAST_WEEK_DAYS,self::THIS_WEEK_DAYS, ['last_week_count', 'this_week_count']);
+        $this->public_appends = array_merge(self::LAST_WEEK_DAYS,self::THIS_WEEK_DAYS, /*['last_week_count', 'this_week_count']*/);
         $this->appends = $this->public_appends;
     }
 
