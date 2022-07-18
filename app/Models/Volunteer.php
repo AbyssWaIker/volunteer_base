@@ -49,7 +49,8 @@ class Volunteer extends Person
     {
         $this->attendance_cache = $this->attendance()
             ->where('attendance_day', '>=', Carbon::now()->subWeek()->startOfWeek())
-            ->pluck('attendance_day','id');
+            ->pluck('attendance_day','id')
+            ->toArray();
     }
     protected function clearAttendanceCache()
     {
