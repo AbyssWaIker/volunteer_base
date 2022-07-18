@@ -14,8 +14,8 @@ class AddPlaceholderFieldsToVolunteer extends Migration
     public function up()
     {
         Schema::table('volunteers', function (Blueprint $table) {
-            $table->tinyInteger('last_week_count');
-            $table->tinyInteger('this_week_count');
+            $table->tinyInteger('last_week_count')->nullable();
+            $table->tinyInteger('this_week_count')->nullable();
         });
     }
 
