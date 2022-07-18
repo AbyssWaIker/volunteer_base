@@ -13,7 +13,7 @@ class AddPlaceholderFieldsToVolunteer extends Migration
      */
     public function up()
     {
-        Schema::table('volunteer', function (Blueprint $table) {
+        Schema::table('volunteers', function (Blueprint $table) {
             $table->tinyInteger('last_week_count');
             $table->tinyInteger('this_week_count');
         });
@@ -26,7 +26,7 @@ class AddPlaceholderFieldsToVolunteer extends Migration
      */
     public function down()
     {
-        Schema::table('volunteer', function (Blueprint $table) {
+        Schema::table('volunteers', function (Blueprint $table) {
             $table->dropColumn('last_week_count');
             $table->dropColumn('this_week_count');
         });
