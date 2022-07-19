@@ -89,9 +89,14 @@ class DestitutesController extends PersonController
 
                 $filter->where(function(Builder $query) {
                     $query->whereHas('helpGiven', function (Builder $query) {
-                        $query->whereDate('hg_timestamp', $this->input);
+                        $query->whereDate('hg_timestamp', '>=',$this->input);
                     });
-                }, 'Дата', 'date')->date();
+                }, 'Дата с', 'date_start')->date();
+                $filter->where(function(Builder $query) {
+                    $query->whereHas('helpGiven', function (Builder $query) {
+                        $query->whereDate('hg_timestamp', '=<',$this->input);
+                    });
+                }, 'Дата по', 'date_end')->date();
 
                 // $filter->where(function($query) {
                 //     switch($this->input) {
