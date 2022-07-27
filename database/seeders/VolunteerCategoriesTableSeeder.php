@@ -297,6 +297,33 @@ class VolunteerCategoriesTableSeeder extends Seeder
                 'parent_id' => 0,
                 'order' => 21,
             ),
+            31 => 
+            array (
+                'id' => 35,
+                'name' => 'Детские праздники',
+                'created_at' => '2022-07-13 16:42:17',
+                'updated_at' => '2022-07-13 16:42:20',
+                'parent_id' => 34,
+                'order' => 1,
+            ),
+            32 => 
+            array (
+                'id' => 36,
+                'name' => 'Закупка',
+                'created_at' => '2022-07-13 16:42:17',
+                'updated_at' => '2022-07-13 16:42:17',
+                'parent_id' => 34,
+                'order' => 2,
+            ),
+            33 => 
+            array (
+                'id' => 37,
+                'name' => 'массаж',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'parent_id' => NULL,
+                'order' => NULL,
+            ),
         ));
 
         

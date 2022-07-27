@@ -31,17 +31,6 @@ class AdminUsersTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 5,
-                'username' => 'Рецепшен',
-                'password' => '$2y$10$1BYZzCB6MDF7v0AO5HtkV.I1oarMejHee/DQsHiwg/HB/Xe6Q2TDa',
-                'name' => 'Рецепшен',
-                'avatar' => NULL,
-                'remember_token' => NULL,
-                'created_at' => '2022-07-03 22:51:11',
-                'updated_at' => '2022-07-03 22:51:11',
-            ),
-            2 => 
-            array (
                 'id' => 7,
                 'username' => 'Гигиена',
                 'password' => '$2y$10$C6nIbkfVEap/T5P5BZ5Np.4xowTHYshh6D88w/oaUCX3BFWkHK/sS',
@@ -51,7 +40,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:52:01',
                 'updated_at' => '2022-07-03 22:52:01',
             ),
-            3 => 
+            2 => 
             array (
                 'id' => 8,
                 'username' => 'Склад продуктов',
@@ -62,7 +51,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:52:33',
                 'updated_at' => '2022-07-03 22:52:33',
             ),
-            4 => 
+            3 => 
             array (
                 'id' => 9,
             'username' => 'Кухня (Повара)',
@@ -73,7 +62,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:52:52',
                 'updated_at' => '2022-07-03 22:52:52',
             ),
-            5 => 
+            4 => 
             array (
                 'id' => 10,
                 'username' => 'Склад одежды',
@@ -84,7 +73,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:53:10',
                 'updated_at' => '2022-07-03 22:53:10',
             ),
-            6 => 
+            5 => 
             array (
                 'id' => 11,
             'username' => 'Логистика (Водители)',
@@ -95,7 +84,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-03 22:53:27',
                 'updated_at' => '2022-07-03 22:53:27',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 14,
                 'username' => 'rebirth',
@@ -106,7 +95,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-08 11:40:44',
                 'updated_at' => '2022-07-10 19:06:06',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 3,
                 'username' => 'Kristina',
@@ -117,7 +106,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-06-29 12:30:09',
                 'updated_at' => '2022-06-29 12:30:09',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 12,
                 'username' => 'Oleg',
@@ -128,7 +117,7 @@ class AdminUsersTableSeeder extends Seeder
                 'created_at' => '2022-07-04 11:20:02',
                 'updated_at' => '2022-07-04 11:20:02',
             ),
-            10 => 
+            9 => 
             array (
                 'id' => 13,
                 'username' => 'vika67',
@@ -138,6 +127,17 @@ class AdminUsersTableSeeder extends Seeder
                 'remember_token' => 'lCySxfGPejtak9JGgO3ERjnGPNlTeQis8SB2Gi4G0inxM6ihmBqNponKfyVU',
                 'created_at' => '2022-07-07 10:38:48',
                 'updated_at' => '2022-07-07 10:39:45',
+            ),
+            10 => 
+            array (
+                'id' => 5,
+                'username' => 'reception',
+                'password' => '$2y$10$.WKz6G8wLTi1fP0JgsKbbuwZyRNqZy/4EnoEyvUpC22owGy3iZtb2',
+                'name' => 'Рецепшен',
+                'avatar' => NULL,
+                'remember_token' => 'iLJQ8OrIfxh3RGnfvdpb9oqpTGTFaHr7aPxgltm8dRM9j8sABqdqXLGFRtfD',
+                'created_at' => '2022-07-03 22:51:11',
+                'updated_at' => '2022-07-19 07:26:05',
             ),
             11 => 
             array (

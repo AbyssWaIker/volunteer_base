@@ -162,6 +162,12 @@ class MigrationsTableSeeder extends Seeder
                 'migration' => '2022_07_07_191439_add_region_id_to_destitutes',
                 'batch' => 5,
             ),
+            24 => 
+            array (
+                'id' => 25,
+                'migration' => '2022_07_18_101544_add_placeholder_fields_to_volunteer',
+                'batch' => 6,
+            ),
         ));
 
         
