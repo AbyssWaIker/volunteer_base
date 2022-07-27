@@ -60,13 +60,13 @@
     "attendance":"посещение",
     "attendance_day":"день посещения",
     "status":"статус",
-    "last_monday":"Понедельник", 
-    "last_tuesday":"Вторник", 
+    "last_monday":"Понедельник",
+    "last_tuesday":"Вторник",
     "last_wednesday":"Среда",
     "last_thursday":"Четверг",
     "last_friday":"Пятница",
-    "this_monday":"Понедельник", 
-    "this_tuesday":"Вторник", 
+    "this_monday":"Понедельник",
+    "this_tuesday":"Вторник",
     "this_wednesday":"Среда",
     "this_thursday":"Четверг",
     "this_friday":"Пятница",
@@ -89,5 +89,6 @@
     "Stocks":"Запасы",
     "Rewarding":"Вознаграждение",
     "Attendnance Plan":"Расписание посещений",
-    "Volunteers":"Волонтеры"
+    "Volunteers":"Волонтеры",
+    "repeated giving of help": "Повторная выдача помощи"
 }

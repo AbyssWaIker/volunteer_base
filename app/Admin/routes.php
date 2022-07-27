@@ -14,13 +14,15 @@ Route::group([
     $router->resource('/', HomeController::class);
     $router->get('grannies/{id}/print-pdf-{list}-list{pdf?}', function($id, $list = PrintPDFLink::LIST_REGULAR, $pdf = null) {
         $skip_list = $list === PrintPDFLink::LIST_SKIP;
-        $destitute = \App\Models\Destitute::findOrFail($id);
+        $destitute = \App\Models\Destitute::query()->with('helpGiven')->findOrFail($id);
+        $is_repeat = $destitute->helpGiven->count() > 1;
         $helpGiven = $destitute->helpGiven->last();
         $data = [
+            'is_repeat' => $is_repeat,
             'dest' => $destitute,
             'date' => Jenssegers\Date\Date::parse($helpGiven->hg_timestamp)->locale('uk','ru'),
             'min_number_of_rows' => 20,
-            'list' => $skip_list ? [] : \App\Models\Stock::query()->where('enabled', true)->pluck('name'),
+            'list' => $skip_list || $is_repeat ? [] : \App\Models\Stock::query()->where('enabled', true)->pluck('name'),
         ];
         if(!$pdf){
             return view('admin.pdf.template', $data)->render();

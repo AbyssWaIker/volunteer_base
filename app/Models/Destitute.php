@@ -34,16 +34,16 @@ class Destitute extends Person
     {
         $family_members = $this->family_members ? array_filter($this->family_members) : [];
         $only_children = array_filter($family_members, function($member){
-            return @$member['date_of_birth'] 
+            return @$member['date_of_birth']
             && Carbon::now()->diffInYears(Carbon::parse($member['date_of_birth'])) <= 16;
         });
         return count($only_children);
     }
     public function getChildrenYearsAttribute():string
     {
-        $family_members = $this->family_family ? array_filter(array_values($this->family_members)) : [];
+        $family_members = $this->family_members ? array_filter(array_values($this->family_members)) : [];
         $only_children = array_filter($family_members, function($member){
-            return @$member['date_of_birth'] 
+            return @$member['date_of_birth']
             && Carbon::now()->diffInYears(Carbon::parse($member['date_of_birth'])) <= 16;
         });
         if(!count($only_children)) {

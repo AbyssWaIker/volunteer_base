@@ -24,6 +24,9 @@
 </head>
 <body>
 	<div style="height: 90%">
+        @if($is_repeat)
+        <h2 style="text-align: center">{{__('repeated giving of help')}}</h2>
+        @endif
 		<h3>Акт приймання-передачі гуманіторної (благодійної) допомоги</h3>
 		<div>
 			«<span style="width:60px;" class="border-bottom"> {{$date->format('j')}} </span>»
