@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(DestituteCategoriesTableSeeder::class);
+        $this->call(RegionsTableSeeder::class);
         if(class_exists(DestitutesTableSeeder::class)){
             $this->call(DestitutesTableSeeder::class);
-            $this->call(RegionsTableSeeder::class);
-    }
+        }
         if(class_exists(DestituteDestituteCategoryTableSeeder::class)){
             $this->call(DestituteDestituteCategoryTableSeeder::class);
         }

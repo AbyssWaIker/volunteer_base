@@ -151,8 +151,8 @@ class DestitutesController extends PersonController
                         $query->whereDate('hg_timestamp', Carbon::today());
                     }
                 )
-                ->whereHas('categories', function (Builder $query) use ($table) {
-                    $query->where("$table.id", '!=', Destitute::PACKAGE_ID);
+                ->whereDoesntHave('categories', function (Builder $query) use ($table) {
+                    $query->where("$table.id", Destitute::PACKAGE_ID);
                 })
                 ->get();
             $found = $filtered->get();
